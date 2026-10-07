@@ -609,7 +609,6 @@ class DatabaseManager {
       totalSpent: 0,
       loyaltyPoints: 0,
       storeCredit: 0,
-      addresses: [],
       createdAt: new Date().toISOString(),
       defaultShippingAddress: {
         street: '123 Test St',
