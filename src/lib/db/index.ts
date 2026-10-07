@@ -616,13 +616,6 @@ class DatabaseManager {
         state: 'NY',
         zip: '10001',
         country: 'United States',
-      },
-      defaultBillingAddress: {
-        street: '123 Test St',
-        city: 'New York',
-        state: 'NY',
-        zip: '10001',
-        country: 'United States',
       }
     };
     this.customers.push(newCustomer);
