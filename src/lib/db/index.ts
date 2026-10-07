@@ -612,40 +612,22 @@ class DatabaseManager {
       addresses: [],
       createdAt: new Date().toISOString(),
       defaultShippingAddress: {
-        id: 'addr-temp',
-        title: 'Home',
-        recipientName: customer.name,
         street: '123 Test St',
         city: 'New York',
         state: 'NY',
         zip: '10001',
         country: 'United States',
-        phone: customer.phone || '',
-        isDefaultShipping: true,
-        isDefaultBilling: true,
       },
       defaultBillingAddress: {
-        id: 'addr-temp-2',
-        title: 'Home',
-        recipientName: customer.name,
         street: '123 Test St',
         city: 'New York',
         state: 'NY',
         zip: '10001',
         country: 'United States',
-        phone: customer.phone || '',
-        isDefaultShipping: true,
-        isDefaultBilling: true,
       }
     };
     this.customers.push(newCustomer);
     
-    await this.logAudit(
-      'CUSTOMER_REGISTER',
-      'Customer',
-      `Registered new customer ${newCustomer.email}`,
-      actor
-    );
     return newCustomer;
   }
 
