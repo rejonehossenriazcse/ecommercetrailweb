@@ -19,7 +19,7 @@ export async function POST(req: Request) {
       let score = 0;
       const searchableText = `${product.name} ${product.description} ${product.category} ${product.brand} ${product.tags?.join(' ') || ''}`.toLowerCase();
       
-      terms.forEach(term => {
+      terms.forEach((term: string) => {
         if (term.length > 2 && searchableText.includes(term)) {
           score += 1;
         }
