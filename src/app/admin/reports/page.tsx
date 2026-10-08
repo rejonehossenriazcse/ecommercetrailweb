@@ -209,7 +209,7 @@ export default function AdminReportsPage() {
               <button
                 type="button"
                 onClick={handleExportMarketingCSV}
-                className="flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-zinc-100 hover:bg-zinc-200 text-zinc-900 font-bold text-xs font-bold transition-colors cursor-pointer border border-zinc-300"
+                className="flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-white text-xs font-bold transition-colors cursor-pointer border border-zinc-700"
               >
                 <Download className="w-3.5 h-3.5 text-amber-400" />
                 <span>Export Marketing Telemetry (.CSV)</span>
@@ -229,13 +229,13 @@ export default function AdminReportsPage() {
       />
 
       {/* Navigation Tabs */}
-      <div className="flex border-b border-zinc-200 text-xs font-mono">
+      <div className="flex border-b border-zinc-800 text-xs font-mono">
         <button
           onClick={() => setActiveTab('sales')}
           className={`px-5 py-3 border-b-2 font-bold transition-colors cursor-pointer flex items-center gap-2 ${
             activeTab === 'sales'
               ? 'border-amber-400 text-amber-400'
-              : 'border-transparent text-zinc-600 hover:text-zinc-800'
+              : 'border-transparent text-zinc-400 hover:text-zinc-200'
           }`}
         >
           <DollarSign className="w-4 h-4" />
@@ -247,7 +247,7 @@ export default function AdminReportsPage() {
           className={`px-5 py-3 border-b-2 font-bold transition-colors cursor-pointer flex items-center gap-2 ${
             activeTab === 'customers'
               ? 'border-amber-400 text-amber-400'
-              : 'border-transparent text-zinc-600 hover:text-zinc-800'
+              : 'border-transparent text-zinc-400 hover:text-zinc-200'
           }`}
         >
           <Users className="w-4 h-4" />
@@ -259,7 +259,7 @@ export default function AdminReportsPage() {
           className={`px-5 py-3 border-b-2 font-bold transition-colors cursor-pointer flex items-center gap-2 ${
             activeTab === 'inventory'
               ? 'border-amber-400 text-amber-400'
-              : 'border-transparent text-zinc-600 hover:text-zinc-800'
+              : 'border-transparent text-zinc-400 hover:text-zinc-200'
           }`}
         >
           <Package className="w-4 h-4" />
@@ -271,7 +271,7 @@ export default function AdminReportsPage() {
           className={`px-5 py-3 border-b-2 font-bold transition-colors cursor-pointer flex items-center gap-2 ${
             activeTab === 'marketing'
               ? 'border-amber-400 text-amber-400'
-              : 'border-transparent text-zinc-600 hover:text-zinc-800'
+              : 'border-transparent text-zinc-400 hover:text-zinc-200'
           }`}
         >
           <Target className="w-4 h-4" />
@@ -284,12 +284,12 @@ export default function AdminReportsPage() {
         <div className="space-y-6">
           {/* Top KPI Cards */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-            <div className="p-5 rounded-3xl bg-[#14181f] border border-zinc-200">
-              <div className="flex items-center justify-between text-xs text-zinc-800 font-semibold">
+            <div className="p-5 rounded-3xl bg-[#14181f] border border-zinc-800">
+              <div className="flex items-center justify-between text-xs text-zinc-400">
                 <span>Net Settled Revenue</span>
                 <DollarSign className="w-4 h-4 text-emerald-400" />
               </div>
-              <div className="text-2xl font-black text-zinc-900 font-bold font-mono mt-2">
+              <div className="text-2xl font-black text-white font-mono mt-2">
                 ${netRevenue.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
               </div>
               <div className="flex items-center gap-1 text-[11px] text-emerald-400 font-mono mt-1">
@@ -298,94 +298,94 @@ export default function AdminReportsPage() {
               </div>
             </div>
 
-            <div className="p-5 rounded-3xl bg-[#14181f] border border-zinc-200">
-              <div className="flex items-center justify-between text-xs text-zinc-800 font-semibold">
+            <div className="p-5 rounded-3xl bg-[#14181f] border border-zinc-800">
+              <div className="flex items-center justify-between text-xs text-zinc-400">
                 <span>Average Order Value (AOV)</span>
                 <TrendingUp className="w-4 h-4 text-amber-400" />
               </div>
-              <div className="text-2xl font-black text-zinc-900 font-bold font-mono mt-2">
+              <div className="text-2xl font-black text-white font-mono mt-2">
                 ${aov.toFixed(2)}
               </div>
-              <div className="text-[10px] text-zinc-800 font-semibold font-medium font-mono mt-1">
+              <div className="text-[10px] text-zinc-500 font-mono mt-1">
                 Across {orderCount} customer consignments
               </div>
             </div>
 
-            <div className="p-5 rounded-3xl bg-[#14181f] border border-zinc-200">
-              <div className="flex items-center justify-between text-xs text-zinc-800 font-semibold">
+            <div className="p-5 rounded-3xl bg-[#14181f] border border-zinc-800">
+              <div className="flex items-center justify-between text-xs text-zinc-400">
                 <span>Estimated Gross Margin</span>
                 <Percent className="w-4 h-4 text-blue-400" />
               </div>
               <div className="text-2xl font-black text-blue-400 font-mono mt-2">
                 {grossMarginPercent.toFixed(1)}%
               </div>
-              <div className="text-[10px] text-zinc-800 font-semibold font-medium font-mono mt-1">
+              <div className="text-[10px] text-zinc-500 font-mono mt-1">
                 Est. Gross Profit: ${grossProfit.toLocaleString('en-US', { maximumFractionDigits: 0 })}
               </div>
             </div>
 
-            <div className="p-5 rounded-3xl bg-[#14181f] border border-zinc-200">
-              <div className="flex items-center justify-between text-xs text-zinc-800 font-semibold">
+            <div className="p-5 rounded-3xl bg-[#14181f] border border-zinc-800">
+              <div className="flex items-center justify-between text-xs text-zinc-400">
                 <span>Total Consignments</span>
                 <ShoppingBag className="w-4 h-4 text-purple-400" />
               </div>
               <div className="text-2xl font-black text-purple-400 font-mono mt-2">
                 {orderCount}
               </div>
-              <div className="text-[10px] text-zinc-800 font-semibold font-medium font-mono mt-1">
+              <div className="text-[10px] text-zinc-500 font-mono mt-1">
                 RMA Return Rate: {refundedOrders.length > 0 ? ((refundedOrders.length / orderCount) * 100).toFixed(1) : '1.2'}%
               </div>
             </div>
           </div>
 
           {/* Consolidated P&L Table */}
-          <div className="p-6 rounded-3xl bg-[#14181f] border border-zinc-200 space-y-4">
-            <div className="flex items-center justify-between pb-3 border-b border-zinc-200">
+          <div className="p-6 rounded-3xl bg-[#14181f] border border-zinc-800 space-y-4">
+            <div className="flex items-center justify-between pb-3 border-b border-zinc-800">
               <div>
-                <h3 className="text-base font-bold text-zinc-900 font-bold font-mono">Consolidated Profit & Loss Summary</h3>
-                <p className="text-xs text-zinc-800 font-semibold mt-0.5">Automated statutory ledger of revenues, allowances, and calculated margins.</p>
+                <h3 className="text-base font-bold text-white font-mono">Consolidated Profit & Loss Summary</h3>
+                <p className="text-xs text-zinc-400 mt-0.5">Automated statutory ledger of revenues, allowances, and calculated margins.</p>
               </div>
-              <span className="text-[10px] font-mono text-zinc-800 font-semibold uppercase bg-zinc-50 px-3 py-1 rounded-full border border-zinc-200">
+              <span className="text-[10px] font-mono text-zinc-400 uppercase bg-zinc-900 px-3 py-1 rounded-full border border-zinc-800">
                 Currency: USD &bull; Swiss GAAP
               </span>
             </div>
 
             <div className="overflow-x-auto font-mono text-xs">
               <table className="w-full text-left">
-                <thead className="bg-[#0f1217] text-zinc-800 font-semibold uppercase font-bold text-[10px] border-b border-zinc-200">
+                <thead className="bg-[#0f1217] text-zinc-400 uppercase font-bold text-[10px] border-b border-zinc-800">
                   <tr>
                     <th className="p-3">Accounting Line Item</th>
                     <th className="p-3 text-right">Amount (USD)</th>
                     <th className="p-3">Audit Details</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-zinc-200/60 text-zinc-800 font-bold">
+                <tbody className="divide-y divide-zinc-800/60 text-zinc-300">
                   <tr>
-                    <td className="p-3 font-bold text-zinc-900 font-bold">Gross Merchandise Value (GMV)</td>
-                    <td className="p-3 text-right font-bold text-zinc-900 font-bold">${grossSales.toFixed(2)}</td>
-                    <td className="p-3 text-zinc-800 font-semibold font-medium text-[11px]">Subtotal of all design line items</td>
+                    <td className="p-3 font-bold text-white">Gross Merchandise Value (GMV)</td>
+                    <td className="p-3 text-right font-bold text-white">${grossSales.toFixed(2)}</td>
+                    <td className="p-3 text-zinc-500 text-[11px]">Subtotal of all design line items</td>
                   </tr>
                   <tr>
                     <td className="p-3 text-emerald-400">Less: Promotional Discounts & Coupons</td>
                     <td className="p-3 text-right font-bold text-emerald-400">-${totalDiscounts.toFixed(2)}</td>
-                    <td className="p-3 text-zinc-800 font-semibold font-medium text-[11px]">Applied promotional codes & patron credits</td>
+                    <td className="p-3 text-zinc-500 text-[11px]">Applied promotional codes & patron credits</td>
                   </tr>
-                  <tr className="bg-zinc-50/40">
-                    <td className="p-3 font-bold text-zinc-900 font-bold">Net Product Revenue</td>
-                    <td className="p-3 text-right font-bold text-zinc-900 font-bold">${(grossSales - totalDiscounts).toFixed(2)}</td>
-                    <td className="p-3 text-zinc-800 font-semibold font-medium text-[11px]">Base taxable acquisition volume</td>
-                  </tr>
-                  <tr>
-                    <td className="p-3 text-zinc-800 font-semibold">Plus: Estimated Sales Tax / VAT</td>
-                    <td className="p-3 text-right text-zinc-800 font-bold">${totalTax.toFixed(2)}</td>
-                    <td className="p-3 text-zinc-800 font-semibold font-medium text-[11px]">Remitted to regional tax authorities</td>
+                  <tr className="bg-zinc-900/40">
+                    <td className="p-3 font-bold text-white">Net Product Revenue</td>
+                    <td className="p-3 text-right font-bold text-white">${(grossSales - totalDiscounts).toFixed(2)}</td>
+                    <td className="p-3 text-zinc-500 text-[11px]">Base taxable acquisition volume</td>
                   </tr>
                   <tr>
-                    <td className="p-3 text-zinc-800 font-semibold">Plus: Courier & Freight Shipping Billed</td>
-                    <td className="p-3 text-right text-zinc-800 font-bold">${totalShipping.toFixed(2)}</td>
-                    <td className="p-3 text-zinc-800 font-semibold font-medium text-[11px]">Priority express courier transit fees</td>
+                    <td className="p-3 text-zinc-400">Plus: Estimated Sales Tax / VAT</td>
+                    <td className="p-3 text-right text-zinc-300">${totalTax.toFixed(2)}</td>
+                    <td className="p-3 text-zinc-500 text-[11px]">Remitted to regional tax authorities</td>
                   </tr>
-                  <tr className="bg-zinc-50/70 border-t border-zinc-300">
+                  <tr>
+                    <td className="p-3 text-zinc-400">Plus: Courier & Freight Shipping Billed</td>
+                    <td className="p-3 text-right text-zinc-300">${totalShipping.toFixed(2)}</td>
+                    <td className="p-3 text-zinc-500 text-[11px]">Priority express courier transit fees</td>
+                  </tr>
+                  <tr className="bg-zinc-900/70 border-t border-zinc-700">
                     <td className="p-3 font-black text-amber-400 uppercase">Total Settled Cash Revenue</td>
                     <td className="p-3 text-right font-black text-amber-400 text-sm">${totalRevenue.toFixed(2)}</td>
                     <td className="p-3 text-amber-400/80 text-[11px] font-bold">Total funds captured through gateways</td>
@@ -393,17 +393,17 @@ export default function AdminReportsPage() {
                   <tr>
                     <td className="p-3 text-rose-400">Less: Processed RMA Refunds</td>
                     <td className="p-3 text-right font-bold text-rose-400">-${totalRefunded.toFixed(2)}</td>
-                    <td className="p-3 text-zinc-800 font-semibold font-medium text-[11px]">Reversed customer settlements</td>
+                    <td className="p-3 text-zinc-500 text-[11px]">Reversed customer settlements</td>
                   </tr>
-                  <tr className="bg-zinc-50 border-t-2 border-zinc-300">
+                  <tr className="bg-zinc-900 border-t-2 border-zinc-700">
                     <td className="p-3 font-black text-emerald-400 uppercase">Final Net Revenue</td>
                     <td className="p-3 text-right font-black text-emerald-400 text-sm">${netRevenue.toFixed(2)}</td>
                     <td className="p-3 text-emerald-400/80 text-[11px] font-bold">Net operational cash inflow</td>
                   </tr>
                   <tr>
-                    <td className="p-3 text-zinc-800 font-semibold">Estimated Cost of Goods Sold (42% COGS)</td>
-                    <td className="p-3 text-right text-zinc-800 font-semibold">-${estimatedCost.toFixed(2)}</td>
-                    <td className="p-3 text-zinc-800 font-semibold font-medium text-[11px]">Deadstock acquisition, consignment payouts, vault intake</td>
+                    <td className="p-3 text-zinc-400">Estimated Cost of Goods Sold (42% COGS)</td>
+                    <td className="p-3 text-right text-zinc-400">-${estimatedCost.toFixed(2)}</td>
+                    <td className="p-3 text-zinc-500 text-[11px]">Deadstock acquisition, consignment payouts, vault intake</td>
                   </tr>
                   <tr className="bg-emerald-950/20 border-t border-emerald-800/40">
                     <td className="p-3 font-black text-emerald-300 uppercase">Estimated Gross Profit Margin</td>
@@ -417,10 +417,10 @@ export default function AdminReportsPage() {
 
           {/* Gateways & Categories */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <div className="p-6 rounded-3xl bg-[#14181f] border border-zinc-200 space-y-4">
+            <div className="p-6 rounded-3xl bg-[#14181f] border border-zinc-800 space-y-4">
               <div className="flex items-center gap-2">
                 <PieChart className="w-4 h-4 text-amber-400" />
-                <h3 className="text-sm font-bold text-zinc-900 font-bold font-mono uppercase tracking-wider">
+                <h3 className="text-sm font-bold text-white font-mono uppercase tracking-wider">
                   Settlements by Gateway Provider
                 </h3>
               </div>
@@ -429,11 +429,11 @@ export default function AdminReportsPage() {
                   const pct = totalRevenue > 0 ? (amount / totalRevenue) * 100 : 0;
                   return (
                     <div key={method} className="space-y-1">
-                      <div className="flex justify-between text-zinc-800 font-bold">
+                      <div className="flex justify-between text-zinc-300">
                         <span className="font-bold">{method}</span>
                         <span>${amount.toFixed(2)} ({pct.toFixed(1)}%)</span>
                       </div>
-                      <div className="w-full h-2 rounded-full bg-zinc-100 overflow-hidden">
+                      <div className="w-full h-2 rounded-full bg-zinc-800 overflow-hidden">
                         <div className="h-full bg-amber-400 rounded-full" style={{ width: `${pct}%` }} />
                       </div>
                     </div>
@@ -442,10 +442,10 @@ export default function AdminReportsPage() {
               </div>
             </div>
 
-            <div className="p-6 rounded-3xl bg-[#14181f] border border-zinc-200 space-y-4">
+            <div className="p-6 rounded-3xl bg-[#14181f] border border-zinc-800 space-y-4">
               <div className="flex items-center gap-2">
                 <Layers className="w-4 h-4 text-blue-400" />
-                <h3 className="text-sm font-bold text-zinc-900 font-bold font-mono uppercase tracking-wider">
+                <h3 className="text-sm font-bold text-white font-mono uppercase tracking-wider">
                   Sales Volume by Storefront Category
                 </h3>
               </div>
@@ -454,11 +454,11 @@ export default function AdminReportsPage() {
                   const pct = grossSales > 0 ? (amount / grossSales) * 100 : 0;
                   return (
                     <div key={cat} className="space-y-1">
-                      <div className="flex justify-between text-zinc-800 font-bold">
+                      <div className="flex justify-between text-zinc-300">
                         <span className="font-bold">{cat}</span>
                         <span>${amount.toFixed(2)} ({pct.toFixed(1)}%)</span>
                       </div>
-                      <div className="w-full h-2 rounded-full bg-zinc-100 overflow-hidden">
+                      <div className="w-full h-2 rounded-full bg-zinc-800 overflow-hidden">
                         <div className="h-full bg-blue-400 rounded-full" style={{ width: `${pct}%` }} />
                       </div>
                     </div>
@@ -474,38 +474,38 @@ export default function AdminReportsPage() {
       {activeTab === 'customers' && (
         <div className="space-y-6">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-            <div className="p-5 rounded-3xl bg-[#14181f] border border-zinc-200">
-              <div className="text-xs text-zinc-800 font-semibold">Total Patrons Registered</div>
-              <div className="text-2xl font-black text-zinc-900 font-bold font-mono mt-2">{totalCustomers}</div>
-              <div className="text-[10px] text-zinc-800 font-semibold font-medium font-mono mt-1">Verified VIP accounts</div>
+            <div className="p-5 rounded-3xl bg-[#14181f] border border-zinc-800">
+              <div className="text-xs text-zinc-400">Total Patrons Registered</div>
+              <div className="text-2xl font-black text-white font-mono mt-2">{totalCustomers}</div>
+              <div className="text-[10px] text-zinc-500 font-mono mt-1">Verified VIP accounts</div>
             </div>
 
-            <div className="p-5 rounded-3xl bg-[#14181f] border border-zinc-200">
-              <div className="text-xs text-zinc-800 font-semibold">Repeat Purchase Rate</div>
+            <div className="p-5 rounded-3xl bg-[#14181f] border border-zinc-800">
+              <div className="text-xs text-zinc-400">Repeat Purchase Rate</div>
               <div className="text-2xl font-black text-emerald-400 font-mono mt-2">{repeatRate.toFixed(1)}%</div>
-              <div className="text-[10px] text-zinc-800 font-semibold font-medium font-mono mt-1">Purchased &ge; 2 consignments</div>
+              <div className="text-[10px] text-zinc-500 font-mono mt-1">Purchased &ge; 2 consignments</div>
             </div>
 
-            <div className="p-5 rounded-3xl bg-[#14181f] border border-zinc-200">
-              <div className="text-xs text-zinc-800 font-semibold">Average Lifetime Value (LTV)</div>
+            <div className="p-5 rounded-3xl bg-[#14181f] border border-zinc-800">
+              <div className="text-xs text-zinc-400">Average Lifetime Value (LTV)</div>
               <div className="text-2xl font-black text-amber-400 font-mono mt-2">${averageLTV.toFixed(2)}</div>
-              <div className="text-[10px] text-zinc-800 font-semibold font-medium font-mono mt-1">Per patron lifetime</div>
+              <div className="text-[10px] text-zinc-500 font-mono mt-1">Per patron lifetime</div>
             </div>
 
-            <div className="p-5 rounded-3xl bg-[#14181f] border border-zinc-200">
-              <div className="text-xs text-zinc-800 font-semibold">VIP Tier Allocation</div>
+            <div className="p-5 rounded-3xl bg-[#14181f] border border-zinc-800">
+              <div className="text-xs text-zinc-400">VIP Tier Allocation</div>
               <div className="text-2xl font-black text-purple-400 font-mono mt-2">
                 {customers.filter((c) => c.tier === 'Platinum' || c.tier === 'Gold').length} VIPs
               </div>
-              <div className="text-[10px] text-zinc-800 font-semibold font-medium font-mono mt-1">Tier privilege holders</div>
+              <div className="text-[10px] text-zinc-500 font-mono mt-1">Tier privilege holders</div>
             </div>
           </div>
 
-          <div className="p-6 rounded-3xl bg-[#14181f] border border-zinc-200 space-y-4">
-            <h3 className="text-base font-bold text-zinc-900 font-bold font-mono">High-Value VIP Patron Roster</h3>
+          <div className="p-6 rounded-3xl bg-[#14181f] border border-zinc-800 space-y-4">
+            <h3 className="text-base font-bold text-white font-mono">High-Value VIP Patron Roster</h3>
             <div className="overflow-x-auto font-mono text-xs">
               <table className="w-full text-left">
-                <thead className="bg-[#0f1217] text-zinc-800 font-semibold uppercase font-bold text-[10px] border-b border-zinc-200">
+                <thead className="bg-[#0f1217] text-zinc-400 uppercase font-bold text-[10px] border-b border-zinc-800">
                   <tr>
                     <th className="p-3">Patron Name</th>
                     <th className="p-3">Email Address</th>
@@ -515,11 +515,11 @@ export default function AdminReportsPage() {
                     <th className="p-3 text-right">Loyalty Balance</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-zinc-200/60 text-zinc-800 font-bold">
+                <tbody className="divide-y divide-zinc-800/60 text-zinc-300">
                   {customers.slice(0, 10).map((c) => (
                     <tr key={c.id}>
-                      <td className="p-3 font-bold text-zinc-900 font-bold">{c.name}</td>
-                      <td className="p-3 text-zinc-800 font-semibold">{c.email}</td>
+                      <td className="p-3 font-bold text-white">{c.name}</td>
+                      <td className="p-3 text-zinc-400">{c.email}</td>
                       <td className="p-3">
                         <span className="px-2 py-0.5 rounded bg-amber-400/10 text-amber-400 text-[10px] font-bold">
                           {c.tier || 'Patron'}
@@ -529,7 +529,7 @@ export default function AdminReportsPage() {
                       <td className="p-3 text-right font-bold text-emerald-400">
                         ${(c.totalSpent || 0).toLocaleString('en-US', { minimumFractionDigits: 2 })}
                       </td>
-                      <td className="p-3 text-right text-zinc-800 font-semibold">{c.loyaltyPoints || 0} pts</td>
+                      <td className="p-3 text-right text-zinc-400">{c.loyaltyPoints || 0} pts</td>
                     </tr>
                   ))}
                 </tbody>
@@ -543,40 +543,40 @@ export default function AdminReportsPage() {
       {activeTab === 'inventory' && (
         <div className="space-y-6">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-            <div className="p-5 rounded-3xl bg-[#14181f] border border-zinc-200">
-              <div className="text-xs text-zinc-800 font-semibold">Physical Stock Count</div>
-              <div className="text-2xl font-black text-zinc-900 font-bold font-mono mt-2">{totalUnitsInStock}</div>
-              <div className="text-[10px] text-zinc-800 font-semibold font-medium font-mono mt-1">Across Zurich & US Hubs</div>
+            <div className="p-5 rounded-3xl bg-[#14181f] border border-zinc-800">
+              <div className="text-xs text-zinc-400">Physical Stock Count</div>
+              <div className="text-2xl font-black text-white font-mono mt-2">{totalUnitsInStock}</div>
+              <div className="text-[10px] text-zinc-500 font-mono mt-1">Across Zurich & US Hubs</div>
             </div>
 
-            <div className="p-5 rounded-3xl bg-[#14181f] border border-zinc-200">
-              <div className="text-xs text-zinc-800 font-semibold">Retail Asset Valuation</div>
+            <div className="p-5 rounded-3xl bg-[#14181f] border border-zinc-800">
+              <div className="text-xs text-zinc-400">Retail Asset Valuation</div>
               <div className="text-2xl font-black text-purple-400 font-mono mt-2">
                 ${totalRetailValuation.toLocaleString('en-US', { maximumFractionDigits: 0 })}
               </div>
-              <div className="text-[10px] text-zinc-800 font-semibold font-medium font-mono mt-1">Total market retail value</div>
+              <div className="text-[10px] text-zinc-500 font-mono mt-1">Total market retail value</div>
             </div>
 
-            <div className="p-5 rounded-3xl bg-[#14181f] border border-zinc-200">
-              <div className="text-xs text-zinc-800 font-semibold">Asset Cost Valuation</div>
+            <div className="p-5 rounded-3xl bg-[#14181f] border border-zinc-800">
+              <div className="text-xs text-zinc-400">Asset Cost Valuation</div>
               <div className="text-2xl font-black text-blue-400 font-mono mt-2">
                 ${totalCostValuation.toLocaleString('en-US', { maximumFractionDigits: 0 })}
               </div>
-              <div className="text-[10px] text-zinc-800 font-semibold font-medium font-mono mt-1">Capital invested in stock</div>
+              <div className="text-[10px] text-zinc-500 font-mono mt-1">Capital invested in stock</div>
             </div>
 
-            <div className="p-5 rounded-3xl bg-[#14181f] border border-zinc-200">
-              <div className="text-xs text-zinc-800 font-semibold">Low Stock Positions</div>
+            <div className="p-5 rounded-3xl bg-[#14181f] border border-zinc-800">
+              <div className="text-xs text-zinc-400">Low Stock Positions</div>
               <div className="text-2xl font-black text-rose-400 font-mono mt-2">{lowStockProducts.length}</div>
-              <div className="text-[10px] text-zinc-800 font-semibold font-medium font-mono mt-1">&lt; 15 units remaining</div>
+              <div className="text-[10px] text-zinc-500 font-mono mt-1">&lt; 15 units remaining</div>
             </div>
           </div>
 
-          <div className="p-6 rounded-3xl bg-[#14181f] border border-zinc-200 space-y-4">
-            <h3 className="text-base font-bold text-zinc-900 font-bold font-mono">Vault Asset Inventory & Reorder Thresholds</h3>
+          <div className="p-6 rounded-3xl bg-[#14181f] border border-zinc-800 space-y-4">
+            <h3 className="text-base font-bold text-white font-mono">Vault Asset Inventory & Reorder Thresholds</h3>
             <div className="overflow-x-auto font-mono text-xs">
               <table className="w-full text-left">
-                <thead className="bg-[#0f1217] text-zinc-800 font-semibold uppercase font-bold text-[10px] border-b border-zinc-200">
+                <thead className="bg-[#0f1217] text-zinc-400 uppercase font-bold text-[10px] border-b border-zinc-800">
                   <tr>
                     <th className="p-3">SKU</th>
                     <th className="p-3">Creation Name</th>
@@ -587,14 +587,14 @@ export default function AdminReportsPage() {
                     <th className="p-3">Stock Status</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-zinc-200/60 text-zinc-800 font-bold">
+                <tbody className="divide-y divide-zinc-800/60 text-zinc-300">
                   {products.map((p) => (
                     <tr key={p.id}>
-                      <td className="p-3 font-mono text-zinc-800 font-semibold font-medium">{p.sku}</td>
-                      <td className="p-3 font-bold text-zinc-900 font-bold">{p.name}</td>
-                      <td className="p-3 text-zinc-800 font-semibold">{p.category}</td>
+                      <td className="p-3 font-mono text-zinc-500">{p.sku}</td>
+                      <td className="p-3 font-bold text-white">{p.name}</td>
+                      <td className="p-3 text-zinc-400">{p.category}</td>
                       <td className="p-3 text-right font-bold">{p.stock}</td>
-                      <td className="p-3 text-right text-zinc-800 font-bold">${p.price.toFixed(2)}</td>
+                      <td className="p-3 text-right text-zinc-300">${p.price.toFixed(2)}</td>
                       <td className="p-3 text-right font-bold text-purple-400">
                         ${(p.stock * p.price).toLocaleString()}
                       </td>
@@ -626,36 +626,36 @@ export default function AdminReportsPage() {
       {activeTab === 'marketing' && (
         <div className="space-y-6">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-            <div className="p-5 rounded-3xl bg-[#14181f] border border-zinc-200">
-              <div className="text-xs text-zinc-800 font-semibold">Tracked Visitors (30d)</div>
-              <div className="text-2xl font-black text-zinc-900 font-bold font-mono mt-2">80,550</div>
-              <div className="text-[10px] text-zinc-800 font-semibold font-medium font-mono mt-1">Across multi-channel pixels</div>
+            <div className="p-5 rounded-3xl bg-[#14181f] border border-zinc-800">
+              <div className="text-xs text-zinc-400">Tracked Visitors (30d)</div>
+              <div className="text-2xl font-black text-white font-mono mt-2">80,550</div>
+              <div className="text-[10px] text-zinc-500 font-mono mt-1">Across multi-channel pixels</div>
             </div>
 
-            <div className="p-5 rounded-3xl bg-[#14181f] border border-zinc-200">
-              <div className="text-xs text-zinc-800 font-semibold">Average ROAS Multiplier</div>
+            <div className="p-5 rounded-3xl bg-[#14181f] border border-zinc-800">
+              <div className="text-xs text-zinc-400">Average ROAS Multiplier</div>
               <div className="text-2xl font-black text-emerald-400 font-mono mt-2">6.8x</div>
-              <div className="text-[10px] text-zinc-800 font-semibold font-medium font-mono mt-1">Meta Ads & Google Shopping</div>
+              <div className="text-[10px] text-zinc-500 font-mono mt-1">Meta Ads & Google Shopping</div>
             </div>
 
-            <div className="p-5 rounded-3xl bg-[#14181f] border border-zinc-200">
-              <div className="text-xs text-zinc-800 font-semibold">Storewide Conversion Rate</div>
+            <div className="p-5 rounded-3xl bg-[#14181f] border border-zinc-800">
+              <div className="text-xs text-zinc-400">Storewide Conversion Rate</div>
               <div className="text-2xl font-black text-amber-400 font-mono mt-2">3.82%</div>
-              <div className="text-[10px] text-zinc-800 font-semibold font-medium font-mono mt-1">Sessions to completed order</div>
+              <div className="text-[10px] text-zinc-500 font-mono mt-1">Sessions to completed order</div>
             </div>
 
-            <div className="p-5 rounded-3xl bg-[#14181f] border border-zinc-200">
-              <div className="text-xs text-zinc-800 font-semibold">Active Promo Vouchers</div>
+            <div className="p-5 rounded-3xl bg-[#14181f] border border-zinc-800">
+              <div className="text-xs text-zinc-400">Active Promo Vouchers</div>
               <div className="text-2xl font-black text-blue-400 font-mono mt-2">{promotions.length}</div>
-              <div className="text-[10px] text-zinc-800 font-semibold font-medium font-mono mt-1">Coupons configured in CMS</div>
+              <div className="text-[10px] text-zinc-500 font-mono mt-1">Coupons configured in CMS</div>
             </div>
           </div>
 
-          <div className="p-6 rounded-3xl bg-[#14181f] border border-zinc-200 space-y-4">
-            <h3 className="text-base font-bold text-zinc-900 font-bold font-mono">Multi-Channel Acquisition & ROAS Attribution</h3>
+          <div className="p-6 rounded-3xl bg-[#14181f] border border-zinc-800 space-y-4">
+            <h3 className="text-base font-bold text-white font-mono">Multi-Channel Acquisition & ROAS Attribution</h3>
             <div className="overflow-x-auto font-mono text-xs">
               <table className="w-full text-left">
-                <thead className="bg-[#0f1217] text-zinc-800 font-semibold uppercase font-bold text-[10px] border-b border-zinc-200">
+                <thead className="bg-[#0f1217] text-zinc-400 uppercase font-bold text-[10px] border-b border-zinc-800">
                   <tr>
                     <th className="p-3">Acquisition Channel</th>
                     <th className="p-3 text-right">Visitors</th>
@@ -665,16 +665,16 @@ export default function AdminReportsPage() {
                     <th className="p-3 text-right">ROAS Multiplier</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-zinc-200/60 text-zinc-800 font-bold">
+                <tbody className="divide-y divide-zinc-800/60 text-zinc-300">
                   {trafficChannels.map((c) => (
                     <tr key={c.channel}>
-                      <td className="p-3 font-bold text-zinc-900 font-bold">{c.channel}</td>
-                      <td className="p-3 text-right text-zinc-800 font-semibold">{c.visitors.toLocaleString()}</td>
-                      <td className="p-3 text-right font-bold text-zinc-900 font-bold">{c.orders}</td>
+                      <td className="p-3 font-bold text-white">{c.channel}</td>
+                      <td className="p-3 text-right text-zinc-400">{c.visitors.toLocaleString()}</td>
+                      <td className="p-3 text-right font-bold text-white">{c.orders}</td>
                       <td className="p-3 text-right font-bold text-emerald-400">
                         ${c.revenue.toLocaleString('en-US', { minimumFractionDigits: 2 })}
                       </td>
-                      <td className="p-3 text-right text-zinc-800 font-bold">{c.cr.toFixed(2)}%</td>
+                      <td className="p-3 text-right text-zinc-300">{c.cr.toFixed(2)}%</td>
                       <td className="p-3 text-right font-bold text-amber-400">{c.roas}</td>
                     </tr>
                   ))}

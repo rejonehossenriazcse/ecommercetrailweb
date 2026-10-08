@@ -393,7 +393,7 @@ export default function AdminOrdersPage() {
             <button
               type="button"
               onClick={handleExportCSV}
-              className="flex items-center gap-2 px-3.5 py-2.5 rounded-xl bg-zinc-100 hover:bg-zinc-200 text-zinc-900 font-bold text-xs font-bold transition-colors cursor-pointer border border-zinc-300"
+              className="flex items-center gap-2 px-3.5 py-2.5 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-white text-xs font-bold transition-colors cursor-pointer border border-zinc-700"
             >
               <Download className="w-4 h-4 text-amber-400" />
               <span>Export CSV</span>
@@ -404,61 +404,61 @@ export default function AdminOrdersPage() {
 
       {/* KPI Stats Ribbon */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-        <div className="p-4 rounded-2xl bg-[#14181f] border border-zinc-200">
-          <div className="flex items-center justify-between text-zinc-800 font-semibold text-xs">
+        <div className="p-4 rounded-2xl bg-[#14181f] border border-zinc-800">
+          <div className="flex items-center justify-between text-zinc-400 text-xs">
             <span>Gross Revenue</span>
             <DollarSign className="w-4 h-4 text-emerald-400" />
           </div>
-          <div className="text-xl sm:text-2xl font-black text-zinc-900 font-bold font-mono mt-2">
+          <div className="text-xl sm:text-2xl font-black text-white font-mono mt-2">
             ${grossRevenue.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
           </div>
-          <div className="text-[10px] text-zinc-800 font-semibold font-medium font-mono mt-1">Across settled orders</div>
+          <div className="text-[10px] text-zinc-500 font-mono mt-1">Across settled orders</div>
         </div>
 
-        <div className="p-4 rounded-2xl bg-[#14181f] border border-zinc-200">
-          <div className="flex items-center justify-between text-zinc-800 font-semibold text-xs">
+        <div className="p-4 rounded-2xl bg-[#14181f] border border-zinc-800">
+          <div className="flex items-center justify-between text-zinc-400 text-xs">
             <span>Pending Dispatch</span>
             <Clock className="w-4 h-4 text-amber-400" />
           </div>
           <div className="text-xl sm:text-2xl font-black text-amber-400 font-mono mt-2">
             {pendingFulfillmentCount}
           </div>
-          <div className="text-[10px] text-zinc-800 font-semibold font-medium font-mono mt-1">Awaiting vault packaging</div>
+          <div className="text-[10px] text-zinc-500 font-mono mt-1">Awaiting vault packaging</div>
         </div>
 
-        <div className="p-4 rounded-2xl bg-[#14181f] border border-zinc-200">
-          <div className="flex items-center justify-between text-zinc-800 font-semibold text-xs">
+        <div className="p-4 rounded-2xl bg-[#14181f] border border-zinc-800">
+          <div className="flex items-center justify-between text-zinc-400 text-xs">
             <span>In-Transit Air Cargo</span>
             <Truck className="w-4 h-4 text-blue-400" />
           </div>
           <div className="text-xl sm:text-2xl font-black text-blue-400 font-mono mt-2">
             {inTransitCount}
           </div>
-          <div className="text-[10px] text-zinc-800 font-semibold font-medium font-mono mt-1">Courier active telemetry</div>
+          <div className="text-[10px] text-zinc-500 font-mono mt-1">Courier active telemetry</div>
         </div>
 
-        <div className="p-4 rounded-2xl bg-[#14181f] border border-zinc-200">
-          <div className="flex items-center justify-between text-zinc-800 font-semibold text-xs">
+        <div className="p-4 rounded-2xl bg-[#14181f] border border-zinc-800">
+          <div className="flex items-center justify-between text-zinc-400 text-xs">
             <span>RMA Return Claims</span>
             <RotateCcw className="w-4 h-4 text-purple-400" />
           </div>
           <div className="text-xl sm:text-2xl font-black text-purple-400 font-mono mt-2">
             {returnsCount}
           </div>
-          <div className="text-[10px] text-zinc-800 font-semibold font-medium font-mono mt-1">Needs review & restock</div>
+          <div className="text-[10px] text-zinc-500 font-mono mt-1">Needs review & restock</div>
         </div>
       </div>
 
       {/* Filter Tabs & Search Bar */}
       <div className="flex flex-col sm:flex-row gap-4 justify-between items-start sm:items-center">
         {/* Status Tabs */}
-        <div className="flex flex-wrap gap-1.5 p-1 bg-[#14181f] border border-zinc-200 rounded-2xl text-xs">
+        <div className="flex flex-wrap gap-1.5 p-1 bg-[#14181f] border border-zinc-800 rounded-2xl text-xs">
           {['all', 'pending', 'processing', 'shipped', 'delivered', 'returns', 'refunded', 'cancelled'].map((st) => (
             <button
               key={st}
               onClick={() => setStatusFilter(st)}
               className={`px-3.5 py-1.5 rounded-xl font-bold uppercase tracking-wider transition-all cursor-pointer ${
-                statusFilter === st ? 'bg-amber-400 text-zinc-950 shadow-sm' : 'text-zinc-600 hover:text-white'
+                statusFilter === st ? 'bg-amber-400 text-zinc-950 shadow-sm' : 'text-zinc-400 hover:text-white'
               }`}
             >
               {st} {st === 'returns' && returnsCount > 0 && `(${returnsCount})`}
@@ -468,22 +468,22 @@ export default function AdminOrdersPage() {
 
         {/* Search Input */}
         <div className="relative w-full sm:w-72">
-          <Search className="w-4 h-4 text-zinc-800 font-semibold font-medium absolute left-3 top-1/2 -translate-y-1/2" />
+          <Search className="w-4 h-4 text-zinc-500 absolute left-3 top-1/2 -translate-y-1/2" />
           <input
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search order #, email, or tracking..."
-            className="w-full pl-9 pr-4 py-2 rounded-xl bg-[#14181f] border border-zinc-200 text-xs text-zinc-900 font-bold placeholder:text-zinc-800 font-semibold font-medium focus:outline-none focus:ring-1 focus:ring-amber-400"
+            className="w-full pl-9 pr-4 py-2 rounded-xl bg-[#14181f] border border-zinc-800 text-xs text-white placeholder:text-zinc-500 focus:outline-none focus:ring-1 focus:ring-amber-400"
           />
         </div>
       </div>
 
       {/* Orders Table */}
-      <div className="rounded-3xl bg-[#14181f] border border-zinc-200/80 overflow-hidden shadow-sm">
+      <div className="rounded-3xl bg-[#14181f] border border-zinc-800/80 overflow-hidden shadow-sm">
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs">
-            <thead className="bg-[#0f1217] border-b border-zinc-200 text-zinc-800 font-semibold font-bold uppercase tracking-wider">
+            <thead className="bg-[#0f1217] border-b border-zinc-800 text-zinc-400 font-bold uppercase tracking-wider">
               <tr>
                 <th className="p-4">Order ID</th>
                 <th className="p-4">Collector</th>
@@ -494,17 +494,17 @@ export default function AdminOrdersPage() {
                 <th className="p-4 text-right">Inspect</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-zinc-200/60 text-zinc-800 font-bold">
+            <tbody className="divide-y divide-zinc-800/60 text-zinc-300">
               {filtered.length === 0 ? (
                 <tr>
-                  <td colSpan={7} className="p-8 text-center text-zinc-800 font-semibold font-medium font-mono">
+                  <td colSpan={7} className="p-8 text-center text-zinc-500 font-mono">
                     No orders matching filter criteria.
                   </td>
                 </tr>
               ) : (
                 filtered.map((ord) => (
-                  <tr key={ord.id} className="hover:bg-zinc-100/30 transition-colors">
-                    <td className="p-4 font-mono font-bold text-zinc-900 font-bold flex items-center gap-1.5">
+                  <tr key={ord.id} className="hover:bg-zinc-800/30 transition-colors">
+                    <td className="p-4 font-mono font-bold text-white flex items-center gap-1.5">
                       <span>{ord.orderNumber}</span>
                       {ord.returnStatus === 'requested' && (
                         <span className="w-2 h-2 rounded-full bg-purple-400 animate-pulse" title="RMA Requested" />
@@ -512,11 +512,11 @@ export default function AdminOrdersPage() {
                     </td>
 
                     <td className="p-4">
-                      <div className="font-semibold text-zinc-900 font-bold">{ord.customerName}</div>
-                      <div className="text-[11px] text-zinc-800 font-semibold font-medium">{ord.customerEmail}</div>
+                      <div className="font-semibold text-white">{ord.customerName}</div>
+                      <div className="text-[11px] text-zinc-500">{ord.customerEmail}</div>
                     </td>
 
-                    <td className="p-4 font-mono text-zinc-800 font-semibold text-[11px]">
+                    <td className="p-4 font-mono text-zinc-400 text-[11px]">
                       {new Date(ord.createdAt).toLocaleDateString()}
                     </td>
 
@@ -548,15 +548,15 @@ export default function AdminOrdersPage() {
                             : ord.status === 'refunded'
                             ? 'bg-rose-500/20 text-rose-400'
                             : ord.status === 'cancelled'
-                            ? 'bg-zinc-200 text-zinc-600'
-                            : 'bg-zinc-100 text-zinc-600'
+                            ? 'bg-zinc-700 text-zinc-400'
+                            : 'bg-zinc-800 text-zinc-400'
                         }`}
                       >
                         {ord.status}
                       </span>
                     </td>
 
-                    <td className="p-4 font-mono font-bold text-zinc-900 font-bold">
+                    <td className="p-4 font-mono font-bold text-white">
                       ${ord.total.toFixed(2)}
                     </td>
 
@@ -566,7 +566,7 @@ export default function AdminOrdersPage() {
                           setSelectedOrder(ord);
                           setRefundAmount(ord.total);
                         }}
-                        className="px-3 py-1.5 rounded-xl bg-zinc-100 hover:bg-zinc-200 text-zinc-900 font-bold font-semibold transition-colors cursor-pointer text-[11px]"
+                        className="px-3 py-1.5 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-white font-semibold transition-colors cursor-pointer text-[11px]"
                       >
                         Manage
                       </button>
@@ -582,20 +582,20 @@ export default function AdminOrdersPage() {
       {/* Order Detail Modal / Drawer */}
       {selectedOrder && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-200">
-          <div className="w-full max-w-3xl bg-[#14181f] text-zinc-900 font-bold rounded-3xl p-6 sm:p-8 border border-zinc-200 shadow-2xl max-h-[92vh] overflow-y-auto space-y-6">
+          <div className="w-full max-w-3xl bg-[#14181f] text-white rounded-3xl p-6 sm:p-8 border border-zinc-800 shadow-2xl max-h-[92vh] overflow-y-auto space-y-6">
             {/* Modal Header */}
-            <div className="flex items-center justify-between pb-4 border-b border-zinc-200">
+            <div className="flex items-center justify-between pb-4 border-b border-zinc-800">
               <div>
-                <span className="text-[10px] font-mono text-zinc-800 font-semibold uppercase tracking-widest">
+                <span className="text-[10px] font-mono text-zinc-400 uppercase tracking-widest">
                   Order Dossier
                 </span>
-                <h3 className="text-xl font-black text-zinc-900 font-bold font-mono mt-0.5">
+                <h3 className="text-xl font-black text-white font-mono mt-0.5">
                   {selectedOrder.orderNumber}
                 </h3>
               </div>
               <button
                 onClick={() => setSelectedOrder(null)}
-                className="p-1.5 rounded-xl text-zinc-800 font-semibold hover:text-zinc-900 font-bold hover:bg-zinc-100 transition-colors"
+                className="p-1.5 rounded-xl text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -613,13 +613,13 @@ export default function AdminOrdersPage() {
                     Action Required
                   </span>
                 </div>
-                <div className="text-xs text-zinc-800 font-bold">
+                <div className="text-xs text-zinc-300">
                   <strong>Reason:</strong> {selectedOrder.returnReason || 'Customer requested return'}
                 </div>
                 <div className="flex gap-2 pt-1 text-xs">
                   <button
                     onClick={() => handleReviewReturn('approved', 'Approved by store management. Refund issued & inventory restocked.')}
-                    className="px-3.5 py-1.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-zinc-900 font-bold font-bold transition-colors cursor-pointer"
+                    className="px-3.5 py-1.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold transition-colors cursor-pointer"
                   >
                     Approve RMA & Restock
                   </button>
@@ -628,7 +628,7 @@ export default function AdminOrdersPage() {
                       const reason = prompt('State reason for RMA rejection:') || 'Not eligible for return';
                       handleReviewReturn('rejected', reason);
                     }}
-                    className="px-3.5 py-1.5 rounded-xl bg-zinc-100 hover:bg-zinc-200 text-zinc-800 font-bold font-semibold transition-colors cursor-pointer"
+                    className="px-3.5 py-1.5 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-zinc-300 font-semibold transition-colors cursor-pointer"
                   >
                     Reject RMA
                   </button>
@@ -637,7 +637,7 @@ export default function AdminOrdersPage() {
             )}
 
             {/* Quick Actions Bar */}
-            <div className="flex flex-wrap gap-2 p-3 rounded-2xl bg-zinc-50 border border-zinc-200 text-xs">
+            <div className="flex flex-wrap gap-2 p-3 rounded-2xl bg-zinc-900 border border-zinc-800 text-xs">
               {selectedOrder.status !== 'shipped' &&
                 selectedOrder.status !== 'delivered' &&
                 selectedOrder.status !== 'refunded' &&
@@ -664,7 +664,7 @@ export default function AdminOrdersPage() {
               {selectedOrder.status !== 'cancelled' && selectedOrder.status !== 'refunded' && (
                 <button
                   onClick={() => setIsCancelModalOpen(true)}
-                  className="px-3.5 py-2 rounded-xl bg-zinc-100 hover:bg-zinc-200 text-zinc-800 font-bold hover:text-rose-400 font-semibold transition-colors flex items-center gap-1.5 cursor-pointer"
+                  className="px-3.5 py-2 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-zinc-300 hover:text-rose-400 font-semibold transition-colors flex items-center gap-1.5 cursor-pointer"
                 >
                   <Ban className="w-3.5 h-3.5" />
                   <span>Cancel Order</span>
@@ -687,7 +687,7 @@ export default function AdminOrdersPage() {
                     setInvoiceModalOrder(selectedOrder);
                     setInvoiceModalMode('invoice');
                   }}
-                  className="px-3 py-2 rounded-xl bg-zinc-100 text-zinc-800 font-bold hover:text-zinc-900 font-bold font-semibold transition-colors flex items-center gap-1.5 cursor-pointer"
+                  className="px-3 py-2 rounded-xl bg-zinc-800 text-zinc-300 hover:text-white font-semibold transition-colors flex items-center gap-1.5 cursor-pointer"
                   title="Official Tax Invoice"
                 >
                   <FileText className="w-3.5 h-3.5 text-amber-400" />
@@ -699,7 +699,7 @@ export default function AdminOrdersPage() {
                     setInvoiceModalOrder(selectedOrder);
                     setInvoiceModalMode('packing_slip');
                   }}
-                  className="px-3 py-2 rounded-xl bg-zinc-100 text-zinc-800 font-bold hover:text-zinc-900 font-bold font-semibold transition-colors flex items-center gap-1.5 cursor-pointer"
+                  className="px-3 py-2 rounded-xl bg-zinc-800 text-zinc-300 hover:text-white font-semibold transition-colors flex items-center gap-1.5 cursor-pointer"
                   title="Warehouse Packing Slip"
                 >
                   <PackageCheck className="w-3.5 h-3.5 text-blue-400" />
@@ -710,27 +710,27 @@ export default function AdminOrdersPage() {
 
             {/* Line Items */}
             <div className="space-y-3">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-zinc-800 font-semibold">Purchased Designs</h4>
-              <div className="divide-y divide-zinc-200 rounded-2xl bg-zinc-50 border border-zinc-200 p-4">
+              <h4 className="text-xs font-bold uppercase tracking-wider text-zinc-400">Purchased Designs</h4>
+              <div className="divide-y divide-zinc-800 rounded-2xl bg-zinc-900 border border-zinc-800 p-4">
                 {selectedOrder.items.map((it) => (
                   <div key={it.id} className="py-3 first:pt-0 last:pb-0 flex items-center justify-between gap-4">
                     <div className="flex items-center gap-3">
-                      <div className="relative w-12 h-12 rounded-xl overflow-hidden bg-zinc-100 shrink-0">
+                      <div className="relative w-12 h-12 rounded-xl overflow-hidden bg-zinc-800 shrink-0">
                         <Image src={it.image} alt={it.name} fill className="object-cover" />
                       </div>
                       <div>
-                        <div className="font-bold text-zinc-900 font-bold text-xs">{it.name}</div>
-                        <div className="text-[10px] text-zinc-800 font-semibold font-medium font-mono">
+                        <div className="font-bold text-white text-xs">{it.name}</div>
+                        <div className="text-[10px] text-zinc-500 font-mono">
                           SKU: {it.sku} • Qty: {it.quantity} • Unit: ${it.price.toFixed(2)}
                         </div>
                         {it.selectedOptions && (
-                          <div className="text-[10px] text-zinc-800 font-semibold">
+                          <div className="text-[10px] text-zinc-400">
                             {Object.entries(it.selectedOptions).map(([k, v]) => `${k}: ${v}`).join(', ')}
                           </div>
                         )}
                       </div>
                     </div>
-                    <div className="font-mono font-bold text-zinc-900 font-bold text-xs">
+                    <div className="font-mono font-bold text-white text-xs">
                       ${it.total.toFixed(2)}
                     </div>
                   </div>
@@ -740,27 +740,27 @@ export default function AdminOrdersPage() {
 
             {/* Logistics & Address Info */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
-              <div className="p-4 rounded-2xl bg-zinc-50 border border-zinc-200 space-y-1.5">
-                <div className="font-bold text-zinc-900 font-bold flex items-center gap-1.5">
+              <div className="p-4 rounded-2xl bg-zinc-900 border border-zinc-800 space-y-1.5">
+                <div className="font-bold text-white flex items-center gap-1.5">
                   <MapPin className="w-3.5 h-3.5 text-amber-400" />
                   <span>Shipping Destination</span>
                 </div>
-                <div className="text-zinc-800 font-semibold leading-relaxed font-mono">
+                <div className="text-zinc-400 leading-relaxed font-mono">
                   {selectedOrder.shippingAddress.street}<br />
                   {selectedOrder.shippingAddress.city}, {selectedOrder.shippingAddress.state} {selectedOrder.shippingAddress.zip}<br />
                   {selectedOrder.shippingAddress.country}
                 </div>
               </div>
 
-              <div className="p-4 rounded-2xl bg-zinc-50 border border-zinc-200 space-y-1.5">
-                <div className="font-bold text-zinc-900 font-bold flex items-center gap-1.5">
+              <div className="p-4 rounded-2xl bg-zinc-900 border border-zinc-800 space-y-1.5">
+                <div className="font-bold text-white flex items-center gap-1.5">
                   <CreditCard className="w-3.5 h-3.5 text-emerald-400" />
                   <span>Financial Breakdown</span>
                 </div>
-                <div className="text-zinc-800 font-semibold space-y-1 font-mono text-[11px]">
+                <div className="text-zinc-400 space-y-1 font-mono text-[11px]">
                   <div className="flex justify-between">
                     <span>Subtotal:</span>
-                    <span className="text-zinc-900 font-bold">${selectedOrder.subtotal.toFixed(2)}</span>
+                    <span className="text-white">${selectedOrder.subtotal.toFixed(2)}</span>
                   </div>
                   {selectedOrder.discount > 0 && (
                     <div className="flex justify-between text-emerald-400">
@@ -770,15 +770,15 @@ export default function AdminOrdersPage() {
                   )}
                   <div className="flex justify-between">
                     <span>Shipping:</span>
-                    <span className="text-zinc-900 font-bold">
+                    <span className="text-white">
                       {selectedOrder.shipping === 0 ? 'FREE' : `$${selectedOrder.shipping.toFixed(2)}`}
                     </span>
                   </div>
                   <div className="flex justify-between">
                     <span>Tax (8%):</span>
-                    <span className="text-zinc-900 font-bold">${selectedOrder.tax.toFixed(2)}</span>
+                    <span className="text-white">${selectedOrder.tax.toFixed(2)}</span>
                   </div>
-                  <div className="flex justify-between font-bold text-zinc-900 font-bold pt-1 border-t border-zinc-200 text-xs">
+                  <div className="flex justify-between font-bold text-white pt-1 border-t border-zinc-800 text-xs">
                     <span>Total Settled:</span>
                     <span>${selectedOrder.total.toFixed(2)} {selectedOrder.currency}</span>
                   </div>
@@ -805,16 +805,16 @@ export default function AdminOrdersPage() {
       {/* Dispatch Modal */}
       {isFulfillModalOpen && selectedOrder && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-200">
-          <div className="w-full max-w-md bg-[#14181f] text-zinc-900 font-bold rounded-3xl p-6 border border-zinc-200 shadow-2xl space-y-4">
-            <h3 className="text-base font-bold text-zinc-900 font-bold">Assign Carrier & Dispatch Shipment</h3>
+          <div className="w-full max-w-md bg-[#14181f] text-white rounded-3xl p-6 border border-zinc-800 shadow-2xl space-y-4">
+            <h3 className="text-base font-bold text-white">Assign Carrier & Dispatch Shipment</h3>
 
             <div className="space-y-3 text-xs">
               <div>
-                <label className="font-bold text-zinc-800 font-bold block mb-1">Carrier Provider</label>
+                <label className="font-bold text-zinc-300 block mb-1">Carrier Provider</label>
                 <select
                   value={carrier}
                   onChange={(e) => setCarrier(e.target.value)}
-                  className="w-full px-3 py-2 rounded-xl bg-zinc-50 border border-zinc-200 text-zinc-900 font-bold"
+                  className="w-full px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-800 text-white"
                 >
                   <option value="DHL Express">DHL Express Worldwide</option>
                   <option value="FedEx International Priority">FedEx International Priority</option>
@@ -824,13 +824,13 @@ export default function AdminOrdersPage() {
               </div>
 
               <div>
-                <label className="font-bold text-zinc-800 font-bold block mb-1">Waybill / Tracking Number</label>
+                <label className="font-bold text-zinc-300 block mb-1">Waybill / Tracking Number</label>
                 <input
                   type="text"
                   value={trackingNumber}
                   onChange={(e) => setTrackingNumber(e.target.value)}
                   placeholder="e.g. DHL-9481928371"
-                  className="w-full px-3 py-2 rounded-xl bg-zinc-50 border border-zinc-200 text-zinc-900 font-bold font-mono"
+                  className="w-full px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-800 text-white font-mono"
                 />
               </div>
             </div>
@@ -838,7 +838,7 @@ export default function AdminOrdersPage() {
             <div className="pt-2 flex justify-end gap-2 text-xs">
               <button
                 onClick={() => setIsFulfillModalOpen(false)}
-                className="px-4 py-2 rounded-xl text-zinc-800 font-semibold hover:text-zinc-900 font-bold"
+                className="px-4 py-2 rounded-xl text-zinc-400 hover:text-white"
               >
                 Cancel
               </button>
@@ -856,20 +856,20 @@ export default function AdminOrdersPage() {
       {/* Cancellation Modal */}
       {isCancelModalOpen && selectedOrder && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-200">
-          <div className="w-full max-w-md bg-[#14181f] text-zinc-900 font-bold rounded-3xl p-6 border border-zinc-200 shadow-2xl space-y-4">
-            <h3 className="text-base font-bold text-zinc-900 font-bold">Cancel Order & Restock Inventory</h3>
-            <p className="text-xs text-zinc-800 font-semibold leading-relaxed">
+          <div className="w-full max-w-md bg-[#14181f] text-white rounded-3xl p-6 border border-zinc-800 shadow-2xl space-y-4">
+            <h3 className="text-base font-bold text-white">Cancel Order & Restock Inventory</h3>
+            <p className="text-xs text-zinc-400 leading-relaxed">
               Are you sure you want to cancel order <strong>{selectedOrder.orderNumber}</strong>? All items will be restored to warehouse inventory stock.
             </p>
 
             <div className="space-y-3 text-xs">
               <div>
-                <label className="font-bold text-zinc-800 font-bold block mb-1">Cancellation Reason</label>
+                <label className="font-bold text-zinc-300 block mb-1">Cancellation Reason</label>
                 <input
                   type="text"
                   value={cancelReason}
                   onChange={(e) => setCancelReason(e.target.value)}
-                  className="w-full px-3 py-2 rounded-xl bg-zinc-50 border border-zinc-200 text-zinc-900 font-bold"
+                  className="w-full px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-800 text-white"
                   required
                 />
               </div>
@@ -878,7 +878,7 @@ export default function AdminOrdersPage() {
             <div className="pt-2 flex justify-end gap-2 text-xs">
               <button
                 onClick={() => setIsCancelModalOpen(false)}
-                className="px-4 py-2 rounded-xl text-zinc-800 font-semibold hover:text-zinc-900 font-bold"
+                className="px-4 py-2 rounded-xl text-zinc-400 hover:text-white"
               >
                 Back
               </button>
@@ -896,15 +896,15 @@ export default function AdminOrdersPage() {
       {/* Refund Modal (Full & Partial) */}
       {isRefundModalOpen && selectedOrder && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-200">
-          <div className="w-full max-w-md bg-[#14181f] text-zinc-900 font-bold rounded-3xl p-6 border border-zinc-200 shadow-2xl space-y-4">
-            <h3 className="text-base font-bold text-zinc-900 font-bold">Process Refund Settlement</h3>
-            <p className="text-xs text-zinc-800 font-semibold">
+          <div className="w-full max-w-md bg-[#14181f] text-white rounded-3xl p-6 border border-zinc-800 shadow-2xl space-y-4">
+            <h3 className="text-base font-bold text-white">Process Refund Settlement</h3>
+            <p className="text-xs text-zinc-400">
               Order Total: <strong>${selectedOrder.total.toFixed(2)}</strong> via {selectedOrder.paymentMethod}.
             </p>
 
             <div className="space-y-3 text-xs">
               <div>
-                <label className="font-bold text-zinc-800 font-bold block mb-1">
+                <label className="font-bold text-zinc-300 block mb-1">
                   Refund Amount ($)
                 </label>
                 <input
@@ -913,10 +913,10 @@ export default function AdminOrdersPage() {
                   max={selectedOrder.total}
                   value={refundAmount}
                   onChange={(e) => setRefundAmount(parseFloat(e.target.value) || 0)}
-                  className="w-full px-3 py-2 rounded-xl bg-zinc-50 border border-zinc-200 text-zinc-900 font-bold font-mono"
+                  className="w-full px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-800 text-white font-mono"
                   required
                 />
-                <div className="text-[10px] text-zinc-800 font-semibold font-medium mt-1 flex justify-between">
+                <div className="text-[10px] text-zinc-500 mt-1 flex justify-between">
                   <span>Enter {selectedOrder.total} for Full Refund</span>
                   <button
                     type="button"
@@ -929,12 +929,12 @@ export default function AdminOrdersPage() {
               </div>
 
               <div>
-                <label className="font-bold text-zinc-800 font-bold block mb-1">RMA Reason / Note</label>
+                <label className="font-bold text-zinc-300 block mb-1">RMA Reason / Note</label>
                 <input
                   type="text"
                   value={refundReason}
                   onChange={(e) => setRefundReason(e.target.value)}
-                  className="w-full px-3 py-2 rounded-xl bg-zinc-50 border border-zinc-200 text-zinc-900 font-bold"
+                  className="w-full px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-800 text-white"
                   required
                 />
               </div>
@@ -945,9 +945,9 @@ export default function AdminOrdersPage() {
                   id="refundRestock"
                   checked={refundRestock}
                   onChange={(e) => setRefundRestock(e.target.checked)}
-                  className="rounded border-zinc-300 bg-zinc-100 text-amber-400 focus:ring-0"
+                  className="rounded border-zinc-700 bg-zinc-800 text-amber-400 focus:ring-0"
                 />
-                <label htmlFor="refundRestock" className="text-zinc-800 font-bold cursor-pointer">
+                <label htmlFor="refundRestock" className="text-zinc-300 cursor-pointer">
                   Restock line items to warehouse inventory
                 </label>
               </div>
@@ -956,7 +956,7 @@ export default function AdminOrdersPage() {
             <div className="pt-2 flex justify-end gap-2 text-xs">
               <button
                 onClick={() => setIsRefundModalOpen(false)}
-                className="px-4 py-2 rounded-xl text-zinc-800 font-semibold hover:text-zinc-900 font-bold"
+                className="px-4 py-2 rounded-xl text-zinc-400 hover:text-white"
               >
                 Cancel
               </button>
@@ -974,21 +974,21 @@ export default function AdminOrdersPage() {
       {/* Manual Order Creation Modal */}
       {isCreateModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm overflow-y-auto">
-          <div className="relative w-full max-w-3xl rounded-2xl bg-[#0f1217] border border-zinc-200 p-6 space-y-6 text-zinc-900 font-bold my-8 shadow-2xl max-h-[90vh] overflow-y-auto">
-            <div className="flex items-center justify-between border-b border-zinc-200/80 pb-4">
+          <div className="relative w-full max-w-3xl rounded-2xl bg-[#0f1217] border border-zinc-800 p-6 space-y-6 text-white my-8 shadow-2xl max-h-[90vh] overflow-y-auto">
+            <div className="flex items-center justify-between border-b border-zinc-800/80 pb-4">
               <div className="flex items-center gap-3">
                 <div className="p-2.5 rounded-xl bg-amber-500/10 text-amber-400 border border-amber-500/20">
                   <ShoppingBag className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg text-zinc-900 font-bold">Create Manual Back-Office Order</h3>
-                  <p className="text-xs text-zinc-800 font-semibold">Dispatch phone orders, VIP client reservations, or walk-in purchases</p>
+                  <h3 className="font-bold text-lg text-white">Create Manual Back-Office Order</h3>
+                  <p className="text-xs text-zinc-400">Dispatch phone orders, VIP client reservations, or walk-in purchases</p>
                 </div>
               </div>
               <button
                 type="button"
                 onClick={() => setIsCreateModalOpen(false)}
-                className="p-1.5 rounded-lg hover:bg-zinc-100 text-zinc-800 font-semibold hover:text-zinc-900 font-bold transition-colors"
+                className="p-1.5 rounded-lg hover:bg-zinc-800 text-zinc-400 hover:text-white transition-colors"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -1000,25 +1000,25 @@ export default function AdminOrdersPage() {
                 <h4 className="text-xs font-bold uppercase tracking-wider text-amber-400">1. Customer Information</h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
                   <div>
-                    <label className="text-zinc-800 font-semibold block mb-1">Full Name *</label>
+                    <label className="text-zinc-400 block mb-1">Full Name *</label>
                     <input
                       type="text"
                       required
                       value={manualCustomerName}
                       onChange={(e) => setManualCustomerName(e.target.value)}
                       placeholder="e.g. Lady Genevieve Vance"
-                      className="w-full px-3 py-2 rounded-xl bg-zinc-50 border border-zinc-200 text-zinc-900 font-bold focus:border-amber-400/50 outline-none"
+                      className="w-full px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-800 text-white focus:border-amber-400/50 outline-none"
                     />
                   </div>
                   <div>
-                    <label className="text-zinc-800 font-semibold block mb-1">Email Address *</label>
+                    <label className="text-zinc-400 block mb-1">Email Address *</label>
                     <input
                       type="email"
                       required
                       value={manualCustomerEmail}
                       onChange={(e) => setManualCustomerEmail(e.target.value)}
                       placeholder="e.g. genevieve@vance-holdings.co.uk"
-                      className="w-full px-3 py-2 rounded-xl bg-zinc-50 border border-zinc-200 text-zinc-900 font-bold focus:border-amber-400/50 outline-none"
+                      className="w-full px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-800 text-white focus:border-amber-400/50 outline-none"
                     />
                   </div>
                 </div>
@@ -1029,43 +1029,43 @@ export default function AdminOrdersPage() {
                 <h4 className="text-xs font-bold uppercase tracking-wider text-amber-400">2. Delivery Address</h4>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
                   <div className="sm:col-span-3">
-                    <label className="text-zinc-800 font-semibold block mb-1">Street Address</label>
+                    <label className="text-zinc-400 block mb-1">Street Address</label>
                     <input
                       type="text"
                       value={manualStreet}
                       onChange={(e) => setManualStreet(e.target.value)}
                       placeholder="e.g. 740 Park Avenue, Penthouse B"
-                      className="w-full px-3 py-2 rounded-xl bg-zinc-50 border border-zinc-200 text-zinc-900 font-bold focus:border-amber-400/50 outline-none"
+                      className="w-full px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-800 text-white focus:border-amber-400/50 outline-none"
                     />
                   </div>
                   <div>
-                    <label className="text-zinc-800 font-semibold block mb-1">City</label>
+                    <label className="text-zinc-400 block mb-1">City</label>
                     <input
                       type="text"
                       value={manualCity}
                       onChange={(e) => setManualCity(e.target.value)}
                       placeholder="New York"
-                      className="w-full px-3 py-2 rounded-xl bg-zinc-50 border border-zinc-200 text-zinc-900 font-bold focus:border-amber-400/50 outline-none"
+                      className="w-full px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-800 text-white focus:border-amber-400/50 outline-none"
                     />
                   </div>
                   <div>
-                    <label className="text-zinc-800 font-semibold block mb-1">State / Province</label>
+                    <label className="text-zinc-400 block mb-1">State / Province</label>
                     <input
                       type="text"
                       value={manualState}
                       onChange={(e) => setManualState(e.target.value)}
                       placeholder="NY"
-                      className="w-full px-3 py-2 rounded-xl bg-zinc-50 border border-zinc-200 text-zinc-900 font-bold focus:border-amber-400/50 outline-none"
+                      className="w-full px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-800 text-white focus:border-amber-400/50 outline-none"
                     />
                   </div>
                   <div>
-                    <label className="text-zinc-800 font-semibold block mb-1">Postal Code</label>
+                    <label className="text-zinc-400 block mb-1">Postal Code</label>
                     <input
                       type="text"
                       value={manualZip}
                       onChange={(e) => setManualZip(e.target.value)}
                       placeholder="10021"
-                      className="w-full px-3 py-2 rounded-xl bg-zinc-50 border border-zinc-200 text-zinc-900 font-bold focus:border-amber-400/50 outline-none"
+                      className="w-full px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-800 text-white focus:border-amber-400/50 outline-none"
                     />
                   </div>
                 </div>
@@ -1078,7 +1078,7 @@ export default function AdminOrdersPage() {
                   <div className="flex items-center gap-2">
                     <select
                       id="manualProductPicker"
-                      className="px-3 py-1.5 rounded-xl bg-zinc-50 border border-zinc-200 text-xs text-zinc-900 font-bold outline-none"
+                      className="px-3 py-1.5 rounded-xl bg-zinc-900 border border-zinc-800 text-xs text-white outline-none"
                       defaultValue=""
                       onChange={(e) => {
                         if (e.target.value) {
@@ -1098,46 +1098,46 @@ export default function AdminOrdersPage() {
                 </div>
 
                 {manualItems.length === 0 ? (
-                  <div className="p-4 rounded-xl border border-dashed border-zinc-200 text-center text-xs text-zinc-800 font-semibold font-medium">
+                  <div className="p-4 rounded-xl border border-dashed border-zinc-800 text-center text-xs text-zinc-500">
                     No items added yet. Select a product above to add to this order.
                   </div>
                 ) : (
-                  <div className="space-y-2 border border-zinc-200/80 rounded-xl overflow-hidden bg-black/20">
+                  <div className="space-y-2 border border-zinc-800/80 rounded-xl overflow-hidden bg-black/20">
                     {manualItems.map((item, idx) => (
-                      <div key={item.productId} className="flex items-center justify-between p-3 border-b border-zinc-200/60 last:border-b-0 text-xs">
+                      <div key={item.productId} className="flex items-center justify-between p-3 border-b border-zinc-800/60 last:border-b-0 text-xs">
                         <div className="flex items-center gap-3">
-                          <img src={item.image} alt={item.productName} className="w-10 h-10 rounded-lg object-cover bg-zinc-100" />
+                          <img src={item.image} alt={item.productName} className="w-10 h-10 rounded-lg object-cover bg-zinc-800" />
                           <div>
-                            <div className="font-bold text-zinc-900 font-bold">{item.productName}</div>
-                            <div className="text-[10px] text-zinc-800 font-semibold font-medium font-mono">{item.sku} &bull; ${item.price.toFixed(2)} ea</div>
+                            <div className="font-bold text-white">{item.productName}</div>
+                            <div className="text-[10px] text-zinc-500 font-mono">{item.sku} &bull; ${item.price.toFixed(2)} ea</div>
                           </div>
                         </div>
 
                         <div className="flex items-center gap-3">
-                          <div className="flex items-center border border-zinc-200 rounded-lg bg-zinc-50">
+                          <div className="flex items-center border border-zinc-800 rounded-lg bg-zinc-900">
                             <button
                               type="button"
                               onClick={() => handleUpdateItemQuantity(idx, item.quantity - 1)}
-                              className="px-2 py-1 text-zinc-800 font-semibold hover:text-zinc-900 font-bold"
+                              className="px-2 py-1 text-zinc-400 hover:text-white"
                             >
                               -
                             </button>
-                            <span className="px-2 text-zinc-900 font-bold font-mono">{item.quantity}</span>
+                            <span className="px-2 text-white font-mono">{item.quantity}</span>
                             <button
                               type="button"
                               onClick={() => handleUpdateItemQuantity(idx, item.quantity + 1)}
-                              className="px-2 py-1 text-zinc-800 font-semibold hover:text-zinc-900 font-bold"
+                              className="px-2 py-1 text-zinc-400 hover:text-white"
                             >
                               +
                             </button>
                           </div>
-                          <span className="font-mono font-bold text-zinc-900 font-bold w-20 text-right">
+                          <span className="font-mono font-bold text-white w-20 text-right">
                             ${(item.price * item.quantity).toFixed(2)}
                           </span>
                           <button
                             type="button"
                             onClick={() => handleRemoveManualItem(idx)}
-                            className="p-1 text-zinc-800 font-semibold font-medium hover:text-rose-400 transition-colors"
+                            className="p-1 text-zinc-500 hover:text-rose-400 transition-colors"
                           >
                             <Trash2 className="w-4 h-4" />
                           </button>
@@ -1153,11 +1153,11 @@ export default function AdminOrdersPage() {
                 <h4 className="text-xs font-bold uppercase tracking-wider text-amber-400">4. Payment & Billing Details</h4>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
                   <div>
-                    <label className="text-zinc-800 font-semibold block mb-1">Payment Method</label>
+                    <label className="text-zinc-400 block mb-1">Payment Method</label>
                     <select
                       value={manualPaymentMethod}
                       onChange={(e) => setManualPaymentMethod(e.target.value)}
-                      className="w-full px-3 py-2 rounded-xl bg-zinc-50 border border-zinc-200 text-zinc-900 font-bold outline-none"
+                      className="w-full px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-800 text-white outline-none"
                     >
                       <option value="Stripe Credit Card">Stripe Credit Card (Pre-authorized)</option>
                       <option value="Direct Bank Wire">Direct Bank Wire (IBAN/SWIFT)</option>
@@ -1166,68 +1166,68 @@ export default function AdminOrdersPage() {
                     </select>
                   </div>
                   <div>
-                    <label className="text-zinc-800 font-semibold block mb-1">Payment Status</label>
+                    <label className="text-zinc-400 block mb-1">Payment Status</label>
                     <select
                       value={manualPaymentStatus}
                       onChange={(e) => setManualPaymentStatus(e.target.value as any)}
-                      className="w-full px-3 py-2 rounded-xl bg-zinc-50 border border-zinc-200 text-zinc-900 font-bold outline-none"
+                      className="w-full px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-800 text-white outline-none"
                     >
                       <option value="paid">Paid / Settled</option>
                       <option value="pending">Pending Payment</option>
                     </select>
                   </div>
                   <div>
-                    <label className="text-zinc-800 font-semibold block mb-1">Shipping Fee ($)</label>
+                    <label className="text-zinc-400 block mb-1">Shipping Fee ($)</label>
                     <input
                       type="number"
                       min="0"
                       step="0.01"
                       value={manualShippingFee}
                       onChange={(e) => setManualShippingFee(parseFloat(e.target.value) || 0)}
-                      className="w-full px-3 py-2 rounded-xl bg-zinc-50 border border-zinc-200 text-zinc-900 font-bold font-mono outline-none"
+                      className="w-full px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-800 text-white font-mono outline-none"
                     />
                   </div>
                   <div>
-                    <label className="text-zinc-800 font-semibold block mb-1">Discounts / Concessions ($)</label>
+                    <label className="text-zinc-400 block mb-1">Discounts / Concessions ($)</label>
                     <input
                       type="number"
                       min="0"
                       step="0.01"
                       value={manualDiscount}
                       onChange={(e) => setManualDiscount(parseFloat(e.target.value) || 0)}
-                      className="w-full px-3 py-2 rounded-xl bg-zinc-50 border border-zinc-200 text-zinc-900 font-bold font-mono outline-none"
+                      className="w-full px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-800 text-white font-mono outline-none"
                     />
                   </div>
                   <div className="sm:col-span-2">
-                    <label className="text-zinc-800 font-semibold block mb-1">Internal Notes</label>
+                    <label className="text-zinc-400 block mb-1">Internal Notes</label>
                     <input
                       type="text"
                       value={manualNotes}
                       onChange={(e) => setManualNotes(e.target.value)}
                       placeholder="e.g. VIP client booked via private concierge telephone line."
-                      className="w-full px-3 py-2 rounded-xl bg-zinc-50 border border-zinc-200 text-zinc-900 font-bold outline-none"
+                      className="w-full px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-800 text-white outline-none"
                     />
                   </div>
                 </div>
               </div>
 
               {/* Order Summary & Submit */}
-              <div className="p-4 rounded-xl bg-white border border-zinc-200/80 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div className="p-4 rounded-xl bg-zinc-950 border border-zinc-800/80 flex flex-col sm:flex-row items-center justify-between gap-4">
                 <div className="flex items-center gap-6 text-xs font-mono">
                   <div>
-                    <span className="text-zinc-800 font-semibold font-medium block text-[10px]">SUBTOTAL</span>
-                    <span className="text-zinc-900 font-bold font-bold">
+                    <span className="text-zinc-500 block text-[10px]">SUBTOTAL</span>
+                    <span className="text-white font-bold">
                       ${manualItems.reduce((acc, i) => acc + i.price * i.quantity, 0).toFixed(2)}
                     </span>
                   </div>
                   <div>
-                    <span className="text-zinc-800 font-semibold font-medium block text-[10px]">EST. TAX (8%)</span>
-                    <span className="text-zinc-800 font-bold">
+                    <span className="text-zinc-500 block text-[10px]">EST. TAX (8%)</span>
+                    <span className="text-zinc-300">
                       ${(manualItems.reduce((acc, i) => acc + i.price * i.quantity, 0) * 0.08).toFixed(2)}
                     </span>
                   </div>
                   <div>
-                    <span className="text-zinc-800 font-semibold font-medium block text-[10px]">GRAND TOTAL</span>
+                    <span className="text-zinc-500 block text-[10px]">GRAND TOTAL</span>
                     <span className="text-emerald-400 font-bold text-base">
                       ${Math.max(
                         0,
@@ -1243,7 +1243,7 @@ export default function AdminOrdersPage() {
                   <button
                     type="button"
                     onClick={() => setIsCreateModalOpen(false)}
-                    className="px-4 py-2 rounded-xl text-xs text-zinc-800 font-semibold hover:text-zinc-900 font-bold"
+                    className="px-4 py-2 rounded-xl text-xs text-zinc-400 hover:text-white"
                   >
                     Cancel
                   </button>

@@ -41,7 +41,7 @@ export default function AdminConfirmModal({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-150">
-      <div className="bg-[#16191f] border border-zinc-200 rounded-2xl p-6 max-w-md w-full shadow-2xl space-y-4">
+      <div className="bg-[#16191f] border border-zinc-800 rounded-2xl p-6 max-w-md w-full shadow-2xl space-y-4">
         <div className="flex items-start justify-between gap-3">
           <div className="flex items-center gap-3">
             <div
@@ -54,27 +54,27 @@ export default function AdminConfirmModal({
               {variant === 'danger' ? <Trash2 className="w-5 h-5" /> : <AlertTriangle className="w-5 h-5" />}
             </div>
             <div>
-              <h3 className="text-base font-bold text-zinc-900 font-bold">{title}</h3>
-              <p className="text-xs text-zinc-800 font-semibold font-medium font-mono mt-0.5">Confirmation Required</p>
+              <h3 className="text-base font-bold text-white">{title}</h3>
+              <p className="text-xs text-zinc-500 font-mono mt-0.5">Confirmation Required</p>
             </div>
           </div>
           <button
             onClick={onCancel}
             disabled={isLoading}
-            className="text-zinc-800 font-semibold font-medium hover:text-zinc-800 font-bold p-1 rounded-lg transition-colors"
+            className="text-zinc-500 hover:text-zinc-300 p-1 rounded-lg transition-colors"
           >
             <X className="w-4 h-4" />
           </button>
         </div>
 
-        <p className="text-sm text-zinc-800 font-bold leading-relaxed">{description}</p>
+        <p className="text-sm text-zinc-300 leading-relaxed">{description}</p>
 
-        <div className="flex items-center justify-end gap-3 pt-3 border-t border-zinc-200/80">
+        <div className="flex items-center justify-end gap-3 pt-3 border-t border-zinc-800/80">
           <button
             type="button"
             onClick={onCancel}
             disabled={isLoading}
-            className="px-4 py-2 rounded-xl bg-zinc-100 hover:bg-zinc-200 text-zinc-800 font-bold text-xs font-semibold transition-colors"
+            className="px-4 py-2 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-zinc-300 text-xs font-semibold transition-colors"
           >
             {cancelText}
           </button>

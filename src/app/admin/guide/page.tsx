@@ -248,16 +248,16 @@ export default function AdminGuidePage() {
       />
 
       {/* Filter and Search Bar */}
-      <div className="bg-[#14171d] border border-zinc-200 rounded-2xl p-4 sm:p-6 space-y-4">
+      <div className="bg-[#14171d] border border-zinc-800 rounded-2xl p-4 sm:p-6 space-y-4">
         <div className="flex flex-col sm:flex-row gap-3">
           <div className="relative flex-1">
-            <Search className="w-4 h-4 text-zinc-800 font-semibold font-medium absolute left-3 top-1/2 -translate-y-1/2" />
+            <Search className="w-4 h-4 text-zinc-500 absolute left-3 top-1/2 -translate-y-1/2" />
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search guides (e.g. logo, menu, product, coupon, order, stripe)..."
-              className="w-full pl-9 pr-4 py-2.5 rounded-xl bg-zinc-50 border border-zinc-300 text-xs text-zinc-900 font-bold placeholder:text-zinc-800 font-semibold font-medium focus:outline-none focus:border-amber-400"
+              className="w-full pl-9 pr-4 py-2.5 rounded-xl bg-zinc-900 border border-zinc-700 text-xs text-white placeholder:text-zinc-500 focus:outline-none focus:border-amber-400"
             />
           </div>
 
@@ -269,7 +269,7 @@ export default function AdminGuidePage() {
                 className={`px-3 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-colors capitalize ${
                   selectedCategory === cat
                     ? 'bg-amber-400 text-zinc-950 font-bold shadow-sm'
-                    : 'bg-zinc-850 text-zinc-600 hover:text-white hover:bg-zinc-100'
+                    : 'bg-zinc-850 text-zinc-400 hover:text-white hover:bg-zinc-800'
                 }`}
               >
                 {cat === 'all' ? 'All Guides' : cat}
@@ -281,9 +281,9 @@ export default function AdminGuidePage() {
         {/* Guides List */}
         <div className="space-y-3 pt-2">
           {filteredGuides.length === 0 ? (
-            <div className="py-12 text-center text-zinc-800 font-semibold space-y-2">
+            <div className="py-12 text-center text-zinc-400 space-y-2">
               <p className="text-sm font-semibold">No guides match your search term.</p>
-              <p className="text-xs text-zinc-800 font-semibold font-medium">Try clearing the search or category filter.</p>
+              <p className="text-xs text-zinc-500">Try clearing the search or category filter.</p>
             </div>
           ) : (
             filteredGuides.map((guide) => {
@@ -295,8 +295,8 @@ export default function AdminGuidePage() {
                   key={guide.id}
                   className={`rounded-2xl border transition-all overflow-hidden ${
                     isOpen
-                      ? 'bg-zinc-50/90 border-amber-400/40 shadow-lg'
-                      : 'bg-zinc-50/50 border-zinc-200 hover:border-zinc-300'
+                      ? 'bg-zinc-900/90 border-amber-400/40 shadow-lg'
+                      : 'bg-zinc-900/50 border-zinc-800 hover:border-zinc-700'
                   }`}
                 >
                   {/* Header / Toggle button */}
@@ -309,38 +309,38 @@ export default function AdminGuidePage() {
                         className={`p-2.5 rounded-xl shrink-0 ${
                           isOpen
                             ? 'bg-amber-400 text-zinc-950 font-bold shadow-md'
-                            : 'bg-zinc-100 text-zinc-600 border border-zinc-300'
+                            : 'bg-zinc-800 text-zinc-400 border border-zinc-700'
                         }`}
                       >
                         <Icon className="w-5 h-5" />
                       </div>
                       <div className="min-w-0">
                         <div className="flex items-center gap-2 flex-wrap">
-                          <h3 className="text-sm font-bold text-zinc-900 font-bold">{guide.title}</h3>
-                          <span className="text-[10px] font-mono px-2 py-0.2 rounded-full bg-zinc-100 text-zinc-800 font-semibold border border-zinc-300">
+                          <h3 className="text-sm font-bold text-white">{guide.title}</h3>
+                          <span className="text-[10px] font-mono px-2 py-0.2 rounded-full bg-zinc-800 text-zinc-400 border border-zinc-700">
                             {guide.category}
                           </span>
                         </div>
-                        <p className="text-xs text-zinc-800 font-semibold mt-1 line-clamp-1">{guide.summary}</p>
+                        <p className="text-xs text-zinc-400 mt-1 line-clamp-1">{guide.summary}</p>
                       </div>
                     </div>
 
-                    <div className="p-1 rounded-lg text-zinc-800 font-semibold font-medium hover:text-zinc-900 font-bold transition-colors shrink-0">
+                    <div className="p-1 rounded-lg text-zinc-500 hover:text-white transition-colors shrink-0">
                       {isOpen ? <ChevronDown className="w-4 h-4 text-amber-400" /> : <ChevronRight className="w-4 h-4" />}
                     </div>
                   </button>
 
                   {/* Expanded Step-by-Step Instructions */}
                   {isOpen && (
-                    <div className="px-5 pb-5 pt-2 border-t border-zinc-200/80 space-y-4 animate-in fade-in duration-150">
+                    <div className="px-5 pb-5 pt-2 border-t border-zinc-800/80 space-y-4 animate-in fade-in duration-150">
                       <div className="space-y-2.5">
                         <span className="text-xs font-mono font-bold uppercase tracking-wider text-amber-300">
                           Step-by-Step Instructions:
                         </span>
-                        <div className="space-y-2 text-xs text-zinc-800 font-bold">
+                        <div className="space-y-2 text-xs text-zinc-300">
                           {guide.steps.map((step, idx) => (
                             <div key={idx} className="flex items-start gap-3">
-                              <span className="w-5 h-5 rounded-full bg-zinc-100 text-amber-400 font-mono text-[11px] font-bold flex items-center justify-center shrink-0 border border-zinc-300 mt-0.5">
+                              <span className="w-5 h-5 rounded-full bg-zinc-800 text-amber-400 font-mono text-[11px] font-bold flex items-center justify-center shrink-0 border border-zinc-700 mt-0.5">
                                 {idx + 1}
                               </span>
                               <span className="leading-relaxed flex-1 pt-0.5">{step}</span>
@@ -350,8 +350,8 @@ export default function AdminGuidePage() {
                       </div>
 
                       {/* Direct Navigation Button */}
-                      <div className="pt-2 flex items-center justify-between border-t border-zinc-200/60 flex-wrap gap-2">
-                        <span className="text-[11px] text-zinc-800 font-semibold font-medium font-mono">
+                      <div className="pt-2 flex items-center justify-between border-t border-zinc-800/60 flex-wrap gap-2">
+                        <span className="text-[11px] text-zinc-500 font-mono">
                           Ready to make this change?
                         </span>
                         <Link

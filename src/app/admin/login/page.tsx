@@ -59,27 +59,27 @@ export default function AdminLoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0d0f12] text-zinc-900 flex flex-col justify-center items-center p-4 relative overflow-hidden font-sans">
+    <div className="min-h-screen bg-[#0d0f12] text-zinc-100 flex flex-col justify-center items-center p-4 relative overflow-hidden font-sans">
       {/* Background ambient glow */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-gradient-to-tr from-orange-500/10 via-amber-400/5 to-transparent blur-3xl rounded-full pointer-events-none" />
 
       {/* Main card */}
-      <div className="w-full max-w-md bg-[#13161c] border border-zinc-200 rounded-3xl p-8 sm:p-10 shadow-2xl relative z-10">
+      <div className="w-full max-w-md bg-[#13161c] border border-zinc-800 rounded-3xl p-8 sm:p-10 shadow-2xl relative z-10">
         {/* Brand identity */}
         <div className="flex flex-col items-center text-center mb-8">
           <div className="w-14 h-14 rounded-2xl bg-orange-500 text-black font-black text-3xl flex items-center justify-center shadow-lg shadow-orange-500/20 mb-4 italic transform -rotate-3">
             S
           </div>
           <div className="flex items-center gap-2">
-            <span className="font-mono font-black text-lg tracking-wider text-zinc-900 font-bold">
+            <span className="font-mono font-black text-lg tracking-wider text-white">
               STRIDE<span className="text-orange-500 ml-1">DISTRICT</span>
-              <span className="text-zinc-800 font-semibold font-medium font-light text-xs ml-1">CMS</span>
+              <span className="text-zinc-500 font-light text-xs ml-1">CMS</span>
             </span>
-            <span className="text-[10px] font-mono uppercase bg-orange-400/10 text-orange-600 font-bold border border-orange-400/20 px-2 py-0.5 rounded-full font-bold">
+            <span className="text-[10px] font-mono uppercase bg-orange-400/10 text-orange-400 border border-orange-400/20 px-2 py-0.5 rounded-full font-bold">
               v1.0
             </span>
           </div>
-          <p className="text-xs text-zinc-800 font-semibold mt-2 font-mono">
+          <p className="text-xs text-zinc-400 mt-2 font-mono">
             Streetwear Drop Control & Architecture Center
           </p>
         </div>
@@ -103,35 +103,35 @@ export default function AdminLoginPage() {
         {/* Form */}
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-xs font-mono text-zinc-800 font-semibold mb-1.5 uppercase tracking-wider">
+            <label className="block text-xs font-mono text-zinc-400 mb-1.5 uppercase tracking-wider">
               Root Admin Email
             </label>
             <div className="relative">
-              <Mail className="w-4 h-4 text-zinc-800 font-semibold font-medium absolute left-3.5 top-1/2 -translate-y-1/2" />
+              <Mail className="w-4 h-4 text-zinc-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
               <input
                 type="email"
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter admin email"
-                className="w-full pl-10 pr-4 py-3 rounded-xl bg-zinc-50 border border-zinc-200 text-zinc-900 font-bold placeholder-zinc-600 text-sm focus:outline-none focus:border-amber-400 transition-colors"
+                className="w-full pl-10 pr-4 py-3 rounded-xl bg-zinc-900 border border-zinc-800 text-white placeholder-zinc-600 text-sm focus:outline-none focus:border-amber-400 transition-colors"
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-xs font-mono text-zinc-800 font-semibold mb-1.5 uppercase tracking-wider">
+            <label className="block text-xs font-mono text-zinc-400 mb-1.5 uppercase tracking-wider">
               Master Password
             </label>
             <div className="relative">
-              <Lock className="w-4 h-4 text-zinc-800 font-semibold font-medium absolute left-3.5 top-1/2 -translate-y-1/2" />
+              <Lock className="w-4 h-4 text-zinc-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
               <input
                 type="password"
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Enter password"
-                className="w-full pl-10 pr-4 py-3 rounded-xl bg-zinc-50 border border-zinc-200 text-zinc-900 font-bold placeholder-zinc-600 text-sm focus:outline-none focus:border-amber-400 transition-colors"
+                className="w-full pl-10 pr-4 py-3 rounded-xl bg-zinc-900 border border-zinc-800 text-white placeholder-zinc-600 text-sm focus:outline-none focus:border-amber-400 transition-colors"
               />
             </div>
           </div>
@@ -160,14 +160,14 @@ export default function AdminLoginPage() {
         </form>
 
         {/* Security badges */}
-        <div className="mt-8 pt-6 border-t border-zinc-200/80 flex items-center justify-between text-[11px] text-zinc-800 font-semibold font-medium font-mono">
+        <div className="mt-8 pt-6 border-t border-zinc-800/80 flex items-center justify-between text-[11px] text-zinc-500 font-mono">
           <div className="flex items-center gap-1.5">
             <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
             <span>256-Bit JWT Session</span>
           </div>
           <Link
             href="/"
-            className="text-zinc-800 font-semibold hover:text-zinc-900 font-bold flex items-center gap-1 transition-colors"
+            className="text-zinc-400 hover:text-white flex items-center gap-1 transition-colors"
           >
             <span>Live Storefront</span>
             <ExternalLink className="w-3 h-3" />

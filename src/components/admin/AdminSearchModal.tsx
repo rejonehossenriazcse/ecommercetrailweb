@@ -264,11 +264,11 @@ export default function AdminSearchModal({ isOpen, onClose }: AdminSearchModalPr
       onClick={onClose}
     >
       <div
-        className="bg-[#14171d] border border-zinc-300/80 rounded-2xl w-full max-w-2xl shadow-2xl overflow-hidden flex flex-col max-h-[80vh]"
+        className="bg-[#14171d] border border-zinc-700/80 rounded-2xl w-full max-w-2xl shadow-2xl overflow-hidden flex flex-col max-h-[80vh]"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Search Input Bar */}
-        <div className="p-4 border-b border-zinc-200 flex items-center gap-3">
+        <div className="p-4 border-b border-zinc-800 flex items-center gap-3">
           <Search className="w-5 h-5 text-amber-400 shrink-0" />
           <input
             type="text"
@@ -280,27 +280,27 @@ export default function AdminSearchModal({ isOpen, onClose }: AdminSearchModalPr
             }}
             onKeyDown={handleKeyDown}
             placeholder="Search any setting, menu, banner, product, order, or guide..."
-            className="flex-1 bg-transparent text-sm text-zinc-900 font-bold placeholder:text-zinc-800 font-semibold font-medium focus:outline-none"
+            className="flex-1 bg-transparent text-sm text-white placeholder:text-zinc-500 focus:outline-none"
           />
           {query && (
             <button
               onClick={() => setQuery('')}
-              className="text-zinc-800 font-semibold font-medium hover:text-zinc-900 font-bold p-1 rounded-lg transition-colors"
+              className="text-zinc-500 hover:text-white p-1 rounded-lg transition-colors"
             >
               <X className="w-4 h-4" />
             </button>
           )}
-          <kbd className="hidden sm:inline-block text-[10px] font-mono px-2 py-0.5 rounded bg-zinc-100 text-zinc-800 font-semibold border border-zinc-300">
+          <kbd className="hidden sm:inline-block text-[10px] font-mono px-2 py-0.5 rounded bg-zinc-800 text-zinc-400 border border-zinc-700">
             ESC
           </kbd>
         </div>
 
         {/* Search Results List */}
-        <div className="flex-1 overflow-y-auto p-2 divide-y divide-zinc-200/40">
+        <div className="flex-1 overflow-y-auto p-2 divide-y divide-zinc-800/40">
           {filteredItems.length === 0 ? (
             <div className="p-8 text-center space-y-2">
-              <p className="text-sm font-semibold text-zinc-800 font-bold">No admin controls match &ldquo;{query}&rdquo;</p>
-              <p className="text-xs text-zinc-800 font-semibold font-medium">
+              <p className="text-sm font-semibold text-zinc-300">No admin controls match &ldquo;{query}&rdquo;</p>
+              <p className="text-xs text-zinc-500">
                 Try searching for &ldquo;logo&rdquo;, &ldquo;header&rdquo;, &ldquo;footer&rdquo;, &ldquo;banner&rdquo;, &ldquo;stripe&rdquo;, or &ldquo;discounts&rdquo;.
               </p>
             </div>
@@ -315,7 +315,7 @@ export default function AdminSearchModal({ isOpen, onClose }: AdminSearchModalPr
                   onClick={() => handleSelect(item.href)}
                   onMouseEnter={() => setSelectedIndex(idx)}
                   className={`w-full text-left p-3 rounded-xl flex items-center justify-between gap-3 transition-colors ${
-                    isSelected ? 'bg-zinc-100 text-white' : 'text-zinc-700 hover:bg-zinc-850'
+                    isSelected ? 'bg-zinc-800 text-white' : 'text-zinc-300 hover:bg-zinc-850'
                   }`}
                 >
                   <div className="flex items-center gap-3 min-w-0">
@@ -323,19 +323,19 @@ export default function AdminSearchModal({ isOpen, onClose }: AdminSearchModalPr
                       className={`p-2 rounded-xl shrink-0 ${
                         isSelected
                           ? 'bg-amber-400 text-zinc-950 font-bold shadow-md'
-                          : 'bg-zinc-100/80 text-zinc-600 border border-zinc-300/60'
+                          : 'bg-zinc-800/80 text-zinc-400 border border-zinc-700/60'
                       }`}
                     >
                       <Icon className="w-4 h-4" />
                     </div>
                     <div className="min-w-0">
                       <div className="flex items-center gap-2">
-                        <span className="text-xs font-bold text-zinc-900 font-bold truncate">{item.title}</span>
-                        <span className="text-[10px] font-mono px-2 py-0.2 rounded-full bg-zinc-750 text-amber-300/80 border border-zinc-300">
+                        <span className="text-xs font-bold text-white truncate">{item.title}</span>
+                        <span className="text-[10px] font-mono px-2 py-0.2 rounded-full bg-zinc-750 text-amber-300/80 border border-zinc-700">
                           {item.category}
                         </span>
                       </div>
-                      <p className="text-[11px] text-zinc-800 font-semibold truncate mt-0.5">{item.description}</p>
+                      <p className="text-[11px] text-zinc-400 truncate mt-0.5">{item.description}</p>
                     </div>
                   </div>
 
@@ -351,7 +351,7 @@ export default function AdminSearchModal({ isOpen, onClose }: AdminSearchModalPr
         </div>
 
         {/* Footer shortcuts hint */}
-        <div className="p-3 bg-[#0f1115] border-t border-zinc-200 flex items-center justify-between text-[11px] text-zinc-800 font-semibold font-medium font-mono">
+        <div className="p-3 bg-[#0f1115] border-t border-zinc-800 flex items-center justify-between text-[11px] text-zinc-500 font-mono">
           <div className="flex items-center gap-3">
             <span>↑↓ Navigate</span>
             <span>↵ Select</span>

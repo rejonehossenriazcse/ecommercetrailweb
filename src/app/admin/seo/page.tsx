@@ -74,7 +74,7 @@ export default function AdminSEOPage() {
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
-        <div className="flex flex-col items-center gap-3 text-zinc-800 font-semibold">
+        <div className="flex flex-col items-center gap-3 text-zinc-400">
           <div className="w-6 h-6 border-2 border-amber-400 border-t-transparent rounded-full animate-spin" />
           <span className="text-xs font-mono">Loading SEO Engine Configuration...</span>
         </div>
@@ -129,19 +129,19 @@ export default function AdminSEOPage() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* Left Column: Form Controls */}
         <div className="lg:col-span-7 space-y-6">
-          <div className="bg-[#14171d] border border-zinc-200 rounded-2xl p-6 space-y-4">
-            <div className="pb-3 border-b border-zinc-200">
-              <h3 className="text-sm font-bold text-zinc-900 font-bold">Default Meta Tags</h3>
-              <p className="text-xs text-zinc-800 font-semibold mt-0.5">Primary information indexed by Google and Bing search engines</p>
+          <div className="bg-[#14171d] border border-zinc-800 rounded-2xl p-6 space-y-4">
+            <div className="pb-3 border-b border-zinc-800">
+              <h3 className="text-sm font-bold text-white">Default Meta Tags</h3>
+              <p className="text-xs text-zinc-400 mt-0.5">Primary information indexed by Google and Bing search engines</p>
             </div>
 
             <div className="space-y-4">
               <div>
                 <div className="flex items-center justify-between mb-1">
-                  <label className="text-xs font-semibold text-zinc-800 font-bold">
+                  <label className="text-xs font-semibold text-zinc-300">
                     Store Meta Title
                   </label>
-                  <span className="text-[10px] font-mono text-zinc-800 font-semibold font-medium">
+                  <span className="text-[10px] font-mono text-zinc-500">
                     {settings.metaTitle.length} / 60 characters
                   </span>
                 </div>
@@ -150,16 +150,16 @@ export default function AdminSEOPage() {
                   value={settings.metaTitle}
                   onChange={(e) => setSettings({ ...settings, metaTitle: e.target.value })}
                   placeholder="e.g. STRIDE DISTRICT | Verified Authentic Sneaker Drops & Streetwear Culture"
-                  className="w-full px-3 py-2.5 rounded-xl bg-zinc-50 border border-zinc-300 text-xs text-zinc-900 font-bold focus:outline-none focus:border-amber-400"
+                  className="w-full px-3 py-2.5 rounded-xl bg-zinc-900 border border-zinc-700 text-xs text-white focus:outline-none focus:border-amber-400"
                 />
               </div>
 
               <div>
                 <div className="flex items-center justify-between mb-1">
-                  <label className="text-xs font-semibold text-zinc-800 font-bold">
+                  <label className="text-xs font-semibold text-zinc-300">
                     Meta Description
                   </label>
-                  <span className="text-[10px] font-mono text-zinc-800 font-semibold font-medium">
+                  <span className="text-[10px] font-mono text-zinc-500">
                     {settings.metaDescription.length} / 160 characters
                   </span>
                 </div>
@@ -168,12 +168,12 @@ export default function AdminSEOPage() {
                   value={settings.metaDescription}
                   onChange={(e) => setSettings({ ...settings, metaDescription: e.target.value })}
                   placeholder="Short, compelling store overview that appears under your Google link..."
-                  className="w-full px-3 py-2.5 rounded-xl bg-zinc-50 border border-zinc-300 text-xs text-zinc-900 font-bold focus:outline-none focus:border-amber-400"
+                  className="w-full px-3 py-2.5 rounded-xl bg-zinc-900 border border-zinc-700 text-xs text-white focus:outline-none focus:border-amber-400"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-zinc-800 font-bold mb-1">
+                <label className="block text-xs font-semibold text-zinc-300 mb-1">
                   Meta Keywords (comma separated)
                 </label>
                 <input
@@ -181,22 +181,22 @@ export default function AdminSEOPage() {
                   value={settings.metaKeywords}
                   onChange={(e) => setSettings({ ...settings, metaKeywords: e.target.value })}
                   placeholder="e.g. sneakers, air jordan, supreme, travis scott, streetwear"
-                  className="w-full px-3 py-2.5 rounded-xl bg-zinc-50 border border-zinc-300 text-xs text-zinc-900 font-bold focus:outline-none focus:border-amber-400"
+                  className="w-full px-3 py-2.5 rounded-xl bg-zinc-900 border border-zinc-700 text-xs text-white focus:outline-none focus:border-amber-400"
                 />
               </div>
             </div>
           </div>
 
           {/* Social Cards Section */}
-          <div className="bg-[#14171d] border border-zinc-200 rounded-2xl p-6 space-y-4">
-            <div className="pb-3 border-b border-zinc-200">
-              <h3 className="text-sm font-bold text-zinc-900 font-bold">Social Sharing (OpenGraph & Twitter Cards)</h3>
-              <p className="text-xs text-zinc-800 font-semibold mt-0.5">Controls image and title when your website link is shared in iMessage, Slack, or X</p>
+          <div className="bg-[#14171d] border border-zinc-800 rounded-2xl p-6 space-y-4">
+            <div className="pb-3 border-b border-zinc-800">
+              <h3 className="text-sm font-bold text-white">Social Sharing (OpenGraph & Twitter Cards)</h3>
+              <p className="text-xs text-zinc-400 mt-0.5">Controls image and title when your website link is shared in iMessage, Slack, or X</p>
             </div>
 
             <div className="space-y-4">
               <div>
-                <label className="block text-xs font-semibold text-zinc-800 font-bold mb-1">
+                <label className="block text-xs font-semibold text-zinc-300 mb-1">
                   Social Share Image URL (1200x630px recommended)
                 </label>
                 <input
@@ -204,12 +204,12 @@ export default function AdminSEOPage() {
                   value={settings.ogImage}
                   onChange={(e) => setSettings({ ...settings, ogImage: e.target.value })}
                   placeholder="https://..."
-                  className="w-full px-3 py-2.5 rounded-xl bg-zinc-50 border border-zinc-300 text-xs text-zinc-900 font-bold focus:outline-none focus:border-amber-400"
+                  className="w-full px-3 py-2.5 rounded-xl bg-zinc-900 border border-zinc-700 text-xs text-white focus:outline-none focus:border-amber-400"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-zinc-800 font-bold mb-1">
+                <label className="block text-xs font-semibold text-zinc-300 mb-1">
                   Twitter / X Account Handle
                 </label>
                 <input
@@ -217,28 +217,28 @@ export default function AdminSEOPage() {
                   value={settings.twitterHandle}
                   onChange={(e) => setSettings({ ...settings, twitterHandle: e.target.value })}
                   placeholder="@yourstore"
-                  className="w-full px-3 py-2.5 rounded-xl bg-zinc-50 border border-zinc-300 text-xs text-zinc-900 font-bold font-mono focus:outline-none focus:border-amber-400"
+                  className="w-full px-3 py-2.5 rounded-xl bg-zinc-900 border border-zinc-700 text-xs text-white font-mono focus:outline-none focus:border-amber-400"
                 />
               </div>
             </div>
           </div>
 
           {/* Robots & Sitemap */}
-          <div className="bg-[#14171d] border border-zinc-200 rounded-2xl p-6 space-y-4">
-            <div className="pb-3 border-b border-zinc-200">
-              <h3 className="text-sm font-bold text-zinc-900 font-bold">Search Engine Crawlers & Indexing</h3>
-              <p className="text-xs text-zinc-800 font-semibold mt-0.5">Directives for search engine robots and spiders</p>
+          <div className="bg-[#14171d] border border-zinc-800 rounded-2xl p-6 space-y-4">
+            <div className="pb-3 border-b border-zinc-800">
+              <h3 className="text-sm font-bold text-white">Search Engine Crawlers & Indexing</h3>
+              <p className="text-xs text-zinc-400 mt-0.5">Directives for search engine robots and spiders</p>
             </div>
 
             <div className="grid grid-cols-2 gap-3">
               <div>
-                <label className="block text-xs font-semibold text-zinc-800 font-bold mb-1">
+                <label className="block text-xs font-semibold text-zinc-300 mb-1">
                   Robots Directive
                 </label>
                 <select
                   value={settings.robotsDirective}
                   onChange={(e) => setSettings({ ...settings, robotsDirective: e.target.value })}
-                  className="w-full px-3 py-2.5 rounded-xl bg-zinc-50 border border-zinc-300 text-xs text-zinc-900 font-bold focus:outline-none focus:border-amber-400"
+                  className="w-full px-3 py-2.5 rounded-xl bg-zinc-900 border border-zinc-700 text-xs text-white focus:outline-none focus:border-amber-400"
                 >
                   <option value="index, follow">Index, Follow (Recommended)</option>
                   <option value="noindex, follow">Noindex, Follow</option>
@@ -247,7 +247,7 @@ export default function AdminSEOPage() {
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-zinc-800 font-bold mb-1">
+                <label className="block text-xs font-semibold text-zinc-300 mb-1">
                   XML Sitemap Route
                 </label>
                 <div className="flex items-center gap-2">
@@ -255,12 +255,12 @@ export default function AdminSEOPage() {
                     type="text"
                     disabled
                     value={settings.sitemapUrl}
-                    className="flex-1 px-3 py-2.5 rounded-xl bg-zinc-50/60 border border-zinc-200 text-xs text-zinc-800 font-semibold font-mono"
+                    className="flex-1 px-3 py-2.5 rounded-xl bg-zinc-900/60 border border-zinc-800 text-xs text-zinc-400 font-mono"
                   />
                   <Link
                     href="/sitemap.xml"
                     target="_blank"
-                    className="p-2.5 rounded-xl bg-zinc-100 text-zinc-800 font-bold hover:text-zinc-900 font-bold"
+                    className="p-2.5 rounded-xl bg-zinc-800 text-zinc-300 hover:text-white"
                     title="View sitemap XML"
                   >
                     <ExternalLink className="w-4 h-4 text-amber-400" />
@@ -274,19 +274,19 @@ export default function AdminSEOPage() {
         {/* Right Column: Live Interactive Google & Social Previews */}
         <div className="lg:col-span-5 space-y-6">
           {/* Live Google Search Preview Card */}
-          <div className="bg-[#14171d] border border-zinc-200 rounded-2xl p-6 space-y-3">
-            <div className="flex items-center gap-2 pb-2 border-b border-zinc-200 text-xs font-mono text-zinc-800 font-semibold">
+          <div className="bg-[#14171d] border border-zinc-800 rounded-2xl p-6 space-y-3">
+            <div className="flex items-center gap-2 pb-2 border-b border-zinc-800 text-xs font-mono text-zinc-400">
               <Search className="w-3.5 h-3.5 text-amber-400" />
               <span>Live Google Search Result Preview</span>
             </div>
 
             <div className="p-4 rounded-xl bg-white text-left font-sans space-y-1 shadow-sm border border-zinc-200">
-              <div className="flex items-center gap-2 text-[11px] text-zinc-800 font-semibold">
+              <div className="flex items-center gap-2 text-[11px] text-zinc-600">
                 <span className="w-4 h-4 rounded-full bg-orange-500 text-black text-[9px] font-black flex items-center justify-center">
                   S
                 </span>
                 <span className="font-semibold text-zinc-800">stridedistrict.com</span>
-                <span className="text-zinc-800 font-semibold">&rsaquo;</span>
+                <span className="text-zinc-400">&rsaquo;</span>
               </div>
               <h4 className="text-base font-semibold text-[#1a0dab] hover:underline cursor-pointer line-clamp-1 leading-snug">
                 {settings.metaTitle || 'STRIDE DISTRICT'}
@@ -296,20 +296,20 @@ export default function AdminSEOPage() {
               </p>
             </div>
 
-            <p className="text-[11px] text-zinc-800 font-semibold font-medium">
+            <p className="text-[11px] text-zinc-500">
               This preview reflects how prospective customers see your store listing on desktop and mobile search.
             </p>
           </div>
 
           {/* Live Social Share Card Preview */}
-          <div className="bg-[#14171d] border border-zinc-200 rounded-2xl p-6 space-y-3">
-            <div className="flex items-center gap-2 pb-2 border-b border-zinc-200 text-xs font-mono text-zinc-800 font-semibold">
+          <div className="bg-[#14171d] border border-zinc-800 rounded-2xl p-6 space-y-3">
+            <div className="flex items-center gap-2 pb-2 border-b border-zinc-800 text-xs font-mono text-zinc-400">
               <Share2 className="w-3.5 h-3.5 text-amber-400" />
               <span>Social Media Link Preview Card</span>
             </div>
 
-            <div className="rounded-xl border border-zinc-300/80 bg-zinc-50 overflow-hidden shadow-md">
-              <div className="h-36 w-full bg-zinc-100 relative">
+            <div className="rounded-xl border border-zinc-700/80 bg-zinc-900 overflow-hidden shadow-md">
+              <div className="h-36 w-full bg-zinc-800 relative">
                 {settings.ogImage ? (
                   <img
                     src={settings.ogImage}
@@ -317,19 +317,19 @@ export default function AdminSEOPage() {
                     className="w-full h-full object-cover"
                   />
                 ) : (
-                  <div className="w-full h-full flex items-center justify-center text-xs text-zinc-800 font-semibold font-medium">
+                  <div className="w-full h-full flex items-center justify-center text-xs text-zinc-500">
                     No image configured
                   </div>
                 )}
               </div>
               <div className="p-3.5 space-y-1 bg-[#181b22]">
-                <span className="text-[10px] uppercase font-mono tracking-wider text-orange-600 font-bold font-bold">
+                <span className="text-[10px] uppercase font-mono tracking-wider text-orange-400 font-bold">
                   stridedistrict.com
                 </span>
-                <h5 className="text-xs font-bold text-zinc-900 font-bold line-clamp-1">
+                <h5 className="text-xs font-bold text-white line-clamp-1">
                   {settings.metaTitle}
                 </h5>
-                <p className="text-[11px] text-zinc-800 font-semibold line-clamp-2">
+                <p className="text-[11px] text-zinc-400 line-clamp-2">
                   {settings.metaDescription}
                 </p>
               </div>

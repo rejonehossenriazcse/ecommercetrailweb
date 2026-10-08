@@ -99,45 +99,45 @@ export default function AdminReviewsPage() {
 
       {/* KPI Ribbon */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div className="bg-[#12151a] border border-zinc-200/80 p-5 rounded-2xl">
-          <div className="flex items-center justify-between text-zinc-800 font-semibold mb-2">
+        <div className="bg-[#12151a] border border-zinc-800/80 p-5 rounded-2xl">
+          <div className="flex items-center justify-between text-zinc-400 mb-2">
             <span className="text-xs font-medium">Pending Moderation</span>
             <Clock className="w-4 h-4 text-amber-400" />
           </div>
           <div className="text-2xl font-black text-amber-400">{pendingCount} reviews</div>
-          <div className="text-[11px] text-zinc-800 font-semibold font-medium mt-1 font-mono">Requires Action</div>
+          <div className="text-[11px] text-zinc-500 mt-1 font-mono">Requires Action</div>
         </div>
 
-        <div className="bg-[#12151a] border border-zinc-200/80 p-5 rounded-2xl">
-          <div className="flex items-center justify-between text-zinc-800 font-semibold mb-2">
+        <div className="bg-[#12151a] border border-zinc-800/80 p-5 rounded-2xl">
+          <div className="flex items-center justify-between text-zinc-400 mb-2">
             <span className="text-xs font-medium">Approved & Live</span>
             <CheckCircle className="w-4 h-4 text-emerald-400" />
           </div>
-          <div className="text-2xl font-black text-zinc-900 font-bold">{approvedCount} published</div>
+          <div className="text-2xl font-black text-white">{approvedCount} published</div>
           <div className="text-[11px] text-emerald-400/90 mt-1 font-mono">Visible on Storefront</div>
         </div>
 
-        <div className="bg-[#12151a] border border-zinc-200/80 p-5 rounded-2xl">
-          <div className="flex items-center justify-between text-zinc-800 font-semibold mb-2">
+        <div className="bg-[#12151a] border border-zinc-800/80 p-5 rounded-2xl">
+          <div className="flex items-center justify-between text-zinc-400 mb-2">
             <span className="text-xs font-medium">Average Store Rating</span>
             <Star className="w-4 h-4 text-amber-400 fill-amber-400" />
           </div>
-          <div className="text-2xl font-black text-zinc-900 font-bold">{avgRating} / 5.0</div>
-          <div className="text-[11px] text-zinc-800 font-semibold font-medium mt-1 font-mono">From All Verified Purchases</div>
+          <div className="text-2xl font-black text-white">{avgRating} / 5.0</div>
+          <div className="text-[11px] text-zinc-500 mt-1 font-mono">From All Verified Purchases</div>
         </div>
 
-        <div className="bg-[#12151a] border border-zinc-200/80 p-5 rounded-2xl">
-          <div className="flex items-center justify-between text-zinc-800 font-semibold mb-2">
+        <div className="bg-[#12151a] border border-zinc-800/80 p-5 rounded-2xl">
+          <div className="flex items-center justify-between text-zinc-400 mb-2">
             <span className="text-xs font-medium">Verified Buyers Ratio</span>
             <ShieldCheck className="w-4 h-4 text-cyan-400" />
           </div>
-          <div className="text-2xl font-black text-zinc-900 font-bold">98.2%</div>
-          <div className="text-[11px] text-zinc-800 font-semibold font-medium mt-1 font-mono">Cryptographically Proven</div>
+          <div className="text-2xl font-black text-white">98.2%</div>
+          <div className="text-[11px] text-zinc-500 mt-1 font-mono">Cryptographically Proven</div>
         </div>
       </div>
 
       {/* Filters and Search Bar */}
-      <div className="bg-[#12151a] border border-zinc-200/80 p-4 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-4">
+      <div className="bg-[#12151a] border border-zinc-800/80 p-4 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-4">
         {/* Status Tabs */}
         <div className="flex items-center gap-1.5 overflow-x-auto w-full md:w-auto">
           {(['all', 'pending', 'approved', 'rejected'] as const).map((status) => (
@@ -147,7 +147,7 @@ export default function AdminReviewsPage() {
               className={`px-3.5 py-1.5 rounded-xl text-xs font-medium capitalize transition-colors shrink-0 ${
                 statusFilter === status
                   ? 'bg-amber-400 text-zinc-950 font-bold'
-                  : 'bg-zinc-50 text-zinc-600 hover:text-white hover:bg-zinc-100'
+                  : 'bg-zinc-900 text-zinc-400 hover:text-white hover:bg-zinc-800'
               }`}
             >
               {status}
@@ -158,20 +158,20 @@ export default function AdminReviewsPage() {
         {/* Search & Rating Filter */}
         <div className="flex items-center gap-3 w-full md:w-auto">
           <div className="relative flex-1 md:w-64">
-            <Search className="w-4 h-4 text-zinc-800 font-semibold font-medium absolute left-3.5 top-1/2 -translate-y-1/2" />
+            <Search className="w-4 h-4 text-zinc-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
             <input
               type="text"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder="Search product or customer..."
-              className="w-full pl-9 pr-4 py-2 rounded-xl bg-zinc-50 border border-zinc-200 text-xs text-zinc-900 font-bold placeholder-zinc-500 focus:outline-none focus:border-amber-400"
+              className="w-full pl-9 pr-4 py-2 rounded-xl bg-zinc-900 border border-zinc-800 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-amber-400"
             />
           </div>
 
           <select
             value={ratingFilter}
             onChange={(e) => setRatingFilter(e.target.value)}
-            className="px-3 py-2 rounded-xl bg-zinc-50 border border-zinc-200 text-xs text-zinc-900 font-bold focus:outline-none focus:border-amber-400"
+            className="px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-800 text-xs text-white focus:outline-none focus:border-amber-400"
           >
             <option value="all">All Stars</option>
             <option value="5">5 Stars</option>
@@ -186,18 +186,18 @@ export default function AdminReviewsPage() {
       {/* Reviews List */}
       <div className="space-y-4">
         {loading ? (
-          <div className="bg-[#12151a] border border-zinc-200/80 rounded-2xl p-12 text-center text-zinc-800 font-semibold font-medium text-xs">
+          <div className="bg-[#12151a] border border-zinc-800/80 rounded-2xl p-12 text-center text-zinc-500 text-xs">
             Querying customer testimonials queue...
           </div>
         ) : filteredReviews.length === 0 ? (
-          <div className="bg-[#12151a] border border-zinc-200/80 rounded-2xl p-12 text-center text-zinc-800 font-semibold font-medium text-xs">
+          <div className="bg-[#12151a] border border-zinc-800/80 rounded-2xl p-12 text-center text-zinc-500 text-xs">
             No reviews matching selected criteria.
           </div>
         ) : (
           filteredReviews.map((review) => (
             <div
               key={review.id}
-              className="bg-[#12151a] border border-zinc-200/80 p-5 rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-6 hover:border-zinc-300 transition-colors"
+              className="bg-[#12151a] border border-zinc-800/80 p-5 rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-6 hover:border-zinc-700 transition-colors"
             >
               {/* Review Details */}
               <div className="flex-1 space-y-2">
@@ -216,7 +216,7 @@ export default function AdminReviewsPage() {
                     ))}
                   </div>
 
-                  <h3 className="text-sm font-bold text-zinc-900 font-bold">{review.title}</h3>
+                  <h3 className="text-sm font-bold text-white">{review.title}</h3>
 
                   {/* Status Badge */}
                   <span
@@ -240,13 +240,13 @@ export default function AdminReviewsPage() {
                 </div>
 
                 {/* Comment body */}
-                <p className="text-xs text-zinc-800 font-bold leading-relaxed italic">
+                <p className="text-xs text-zinc-300 leading-relaxed italic">
                   &ldquo;{review.comment}&rdquo;
                 </p>
 
                 {/* Author and Product Footnote */}
-                <div className="flex items-center gap-4 text-[11px] font-mono text-zinc-800 font-semibold font-medium pt-1">
-                  <span className="text-zinc-800 font-bold font-semibold">{review.customerName}</span>
+                <div className="flex items-center gap-4 text-[11px] font-mono text-zinc-500 pt-1">
+                  <span className="text-zinc-300 font-semibold">{review.customerName}</span>
                   <span>•</span>
                   <span className="text-amber-400/90">{review.productName}</span>
                   <span>•</span>

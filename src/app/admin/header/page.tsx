@@ -221,7 +221,7 @@ export default function AdminHeaderPage() {
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
-        <div className="flex flex-col items-center gap-3 text-zinc-800 font-semibold">
+        <div className="flex flex-col items-center gap-3 text-zinc-400">
           <div className="w-6 h-6 border-2 border-amber-400 border-t-transparent rounded-full animate-spin" />
           <span className="text-xs font-mono">Loading Header Configuration...</span>
         </div>
@@ -284,46 +284,46 @@ export default function AdminHeaderPage() {
       />
 
       {/* Live Interactive Header Preview Card */}
-      <div className="bg-[#14171d] border border-zinc-200 rounded-2xl overflow-hidden shadow-lg">
-        <div className="px-5 py-3 border-b border-zinc-200 bg-[#0f1115] flex items-center justify-between">
-          <div className="flex items-center gap-2 text-xs font-mono text-zinc-800 font-semibold">
+      <div className="bg-[#14171d] border border-zinc-800 rounded-2xl overflow-hidden shadow-lg">
+        <div className="px-5 py-3 border-b border-zinc-800 bg-[#0f1115] flex items-center justify-between">
+          <div className="flex items-center gap-2 text-xs font-mono text-zinc-400">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
             <span>Interactive Live Header Preview (How visitors see it)</span>
           </div>
-          <span className="text-[10px] font-mono text-zinc-800 font-semibold font-medium uppercase tracking-widest">
+          <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest">
             {settings.stickyHeader ? 'Sticky Header: ON' : 'Sticky Header: OFF'}
           </span>
         </div>
 
-        <div className="bg-black text-white overflow-x-auto select-none border-b border-zinc-200">
+        <div className="bg-black text-white overflow-x-auto select-none border-b border-zinc-800">
           {/* 1. Top Announcement Marquee Preview */}
           {settings.announcementEnabled && (
             <div
-              className="py-2 px-4 border-b border-zinc-200/80 text-[11px] font-medium flex items-center justify-between gap-3 transition-colors"
+              className="py-2 px-4 border-b border-zinc-800/80 text-[11px] font-medium flex items-center justify-between gap-3 transition-colors"
               style={{ backgroundColor: settings.announcementBgColor || '#000000' }}
             >
               <div className="flex items-center gap-2.5 truncate">
-                <div className="flex items-center gap-1.5 text-orange-600 font-bold font-bold uppercase tracking-wider shrink-0 text-[10px]">
+                <div className="flex items-center gap-1.5 text-orange-400 font-bold uppercase tracking-wider shrink-0 text-[10px]">
                   <Flame className="w-3.5 h-3.5 fill-current animate-pulse text-orange-500" />
                   <span>LIMITED DROP:</span>
                 </div>
-                <p className="truncate text-zinc-800 font-bold text-xs">
+                <p className="truncate text-zinc-300 text-xs">
                   {settings.announcementText || 'Jordan Retro 4 & Stussy Fleece drops live | Complimentary insured shipping over $150'}
                 </p>
                 {settings.announcementCoupon && (
-                  <span className="hidden sm:inline-flex items-center gap-1 px-2 py-0.5 rounded bg-zinc-50 border border-zinc-300 text-orange-600 font-bold font-mono text-[10px] font-bold shrink-0">
+                  <span className="hidden sm:inline-flex items-center gap-1 px-2 py-0.5 rounded bg-zinc-900 border border-zinc-700 text-orange-400 font-mono text-[10px] font-bold shrink-0">
                     USE '{settings.announcementCoupon}' FOR 10% OFF
                   </span>
                 )}
               </div>
 
               {settings.showCurrencySelector && (
-                <div className="hidden md:flex items-center gap-4 text-[10px] text-zinc-800 font-semibold shrink-0 font-mono">
-                  <span className="hover:text-zinc-900 font-bold transition-colors cursor-pointer">$ USD</span>
-                  <span className="text-zinc-800 font-semibold">•</span>
-                  <span className="hover:text-zinc-900 font-bold transition-colors cursor-pointer">Help & FAQ</span>
-                  <span className="text-zinc-800 font-semibold">•</span>
-                  <span className="text-orange-600 font-bold flex items-center gap-1">
+                <div className="hidden md:flex items-center gap-4 text-[10px] text-zinc-400 shrink-0 font-mono">
+                  <span className="hover:text-white transition-colors cursor-pointer">$ USD</span>
+                  <span className="text-zinc-600">•</span>
+                  <span className="hover:text-white transition-colors cursor-pointer">Help & FAQ</span>
+                  <span className="text-zinc-600">•</span>
+                  <span className="text-orange-400 flex items-center gap-1">
                     <Zap className="w-3 h-3" />
                     Track Drop
                   </span>
@@ -333,7 +333,7 @@ export default function AdminHeaderPage() {
           )}
 
           {/* 2. Main Navigation Bar Preview */}
-          <div className="w-full bg-white/95 border-b border-zinc-200 py-3.5 px-4 sm:px-6">
+          <div className="w-full bg-zinc-950/95 border-b border-zinc-900 py-3.5 px-4 sm:px-6">
             <div className="flex items-center justify-between gap-4">
               
               {/* Left: Brand Logo */}
@@ -343,14 +343,14 @@ export default function AdminHeaderPage() {
                 </div>
                 <div className="flex flex-col">
                   <div className="flex items-baseline gap-1">
-                    <span className="font-black text-base tracking-tighter text-zinc-900 font-bold uppercase leading-none">
+                    <span className="font-black text-base tracking-tighter text-white uppercase leading-none">
                       {settings.logoText || 'STRIDE'}
                     </span>
                     <span className="font-black text-base tracking-tighter text-orange-500 uppercase leading-none">
                       {settings.logoSubtitle || 'DISTRICT'}
                     </span>
                   </div>
-                  <span className="text-[8px] font-mono tracking-widest text-zinc-800 font-semibold uppercase leading-none mt-0.5">
+                  <span className="text-[8px] font-mono tracking-widest text-zinc-400 uppercase leading-none mt-0.5">
                     Hype & Culture Drops
                   </span>
                 </div>
@@ -368,16 +368,16 @@ export default function AdminHeaderPage() {
                         className={`text-xs font-bold uppercase tracking-wider flex items-center gap-1 cursor-pointer transition-colors ${
                           isSale
                             ? 'text-orange-400 hover:text-orange-300'
-                            : 'text-zinc-700 hover:text-orange-400'
+                            : 'text-zinc-300 hover:text-orange-400'
                         }`}
                       >
                         {isSale && (
                           <span className="w-1.5 h-1.5 rounded-full bg-orange-500 animate-ping inline-block mr-0.5" />
                         )}
                         <span>{link.label}</span>
-                        {link.isMegaMenu && <ChevronDown className="w-3 h-3 text-zinc-800 font-semibold font-medium" />}
+                        {link.isMegaMenu && <ChevronDown className="w-3 h-3 text-zinc-500" />}
                         {link.badge && link.badge !== 'Sale' && (
-                          <span className="px-1.5 py-0.5 bg-orange-500/20 text-orange-600 font-bold text-[9px] rounded font-mono font-bold">
+                          <span className="px-1.5 py-0.5 bg-orange-500/20 text-orange-400 text-[9px] rounded font-mono font-bold">
                             {link.badge}
                           </span>
                         )}
@@ -395,15 +395,15 @@ export default function AdminHeaderPage() {
                       type="text"
                       readOnly
                       placeholder="Search Jordan, Dunks, Hoodies..."
-                      className="bg-zinc-50 border border-zinc-200 text-zinc-900 font-bold placeholder:text-zinc-800 font-semibold font-medium text-xs rounded-full pl-8 pr-4 py-1.5 w-44 lg:w-56 focus:outline-none"
+                      className="bg-zinc-900 border border-zinc-800 text-white placeholder:text-zinc-500 text-xs rounded-full pl-8 pr-4 py-1.5 w-44 lg:w-56 focus:outline-none"
                     />
-                    <Search className="w-3.5 h-3.5 text-zinc-800 font-semibold absolute left-2.5 pointer-events-none" />
+                    <Search className="w-3.5 h-3.5 text-zinc-400 absolute left-2.5 pointer-events-none" />
                   </div>
                 )}
 
                 {/* Wishlist */}
                 {settings.showWishlist && (
-                  <div className="relative p-2 rounded-full text-zinc-800 font-semibold hover:text-zinc-900 font-bold transition-colors cursor-pointer" title="Saved Items">
+                  <div className="relative p-2 rounded-full text-zinc-400 hover:text-white transition-colors cursor-pointer" title="Saved Items">
                     <Heart className="w-4 h-4" />
                     <span className="absolute 0 top-0.5 right-0.5 w-3.5 h-3.5 rounded-full bg-rose-500 text-white text-[8px] font-mono font-bold flex items-center justify-center">
                       2
@@ -413,8 +413,8 @@ export default function AdminHeaderPage() {
 
                 {/* Cart / Shopping Bag */}
                 {settings.showCart && (
-                  <div className="relative p-2 rounded-full text-zinc-800 font-semibold hover:text-zinc-900 font-bold transition-colors cursor-pointer" title="Shopping Bag">
-                    <ShoppingBag className="w-4 h-4 text-zinc-900 font-bold" />
+                  <div className="relative p-2 rounded-full text-zinc-400 hover:text-white transition-colors cursor-pointer" title="Shopping Bag">
+                    <ShoppingBag className="w-4 h-4 text-white" />
                     <span className="absolute 0 top-0.5 right-0.5 min-w-[16px] h-4 px-1 rounded-full bg-orange-500 text-white text-[9px] font-mono font-bold flex items-center justify-center shadow-[0_0_8px_rgba(249,115,22,0.6)]">
                       3
                     </span>
@@ -423,7 +423,7 @@ export default function AdminHeaderPage() {
 
                 {/* Account */}
                 {settings.showAccount && (
-                  <div className="p-2 rounded-full text-zinc-800 font-semibold hover:text-zinc-900 font-bold transition-colors cursor-pointer" title="Account">
+                  <div className="p-2 rounded-full text-zinc-400 hover:text-white transition-colors cursor-pointer" title="Account">
                     <User className="w-4 h-4" />
                   </div>
                 )}
@@ -445,11 +445,11 @@ export default function AdminHeaderPage() {
         {/* Left Column: Announcement & Brand Settings */}
         <div className="lg:col-span-6 space-y-6">
           {/* Section 1: Announcement Bar */}
-          <div className="bg-[#14171d] border border-zinc-200 rounded-2xl p-6 space-y-4">
-            <div className="flex items-center justify-between pb-3 border-b border-zinc-200">
+          <div className="bg-[#14171d] border border-zinc-800 rounded-2xl p-6 space-y-4">
+            <div className="flex items-center justify-between pb-3 border-b border-zinc-800">
               <div>
-                <h3 className="text-sm font-bold text-zinc-900 font-bold">Top Announcement Bar</h3>
-                <p className="text-xs text-zinc-800 font-semibold mt-0.5">Controls the high-visibility promotional bar at the top</p>
+                <h3 className="text-sm font-bold text-white">Top Announcement Bar</h3>
+                <p className="text-xs text-zinc-400 mt-0.5">Controls the high-visibility promotional bar at the top</p>
               </div>
               <label className="relative inline-flex items-center cursor-pointer">
                 <input
@@ -458,13 +458,13 @@ export default function AdminHeaderPage() {
                   onChange={(e) => setSettings({ ...settings, announcementEnabled: e.target.checked })}
                   className="sr-only peer"
                 />
-                <div className="w-9 h-5 bg-zinc-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-zinc-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-amber-400"></div>
+                <div className="w-9 h-5 bg-zinc-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-zinc-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-amber-400"></div>
               </label>
             </div>
 
             <div className="space-y-3">
               <div>
-                <label className="block text-xs font-semibold text-zinc-800 font-bold mb-1">
+                <label className="block text-xs font-semibold text-zinc-300 mb-1">
                   Announcement Text
                 </label>
                 <input
@@ -472,13 +472,13 @@ export default function AdminHeaderPage() {
                   value={settings.announcementText}
                   onChange={(e) => setSettings({ ...settings, announcementText: e.target.value })}
                   placeholder="e.g. Free Express Shipping on orders over $150"
-                  className="w-full px-3 py-2 rounded-xl bg-zinc-50 border border-zinc-300 text-xs text-zinc-900 font-bold placeholder:text-zinc-800 font-semibold font-medium focus:outline-none focus:border-amber-400"
+                  className="w-full px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-700 text-xs text-white placeholder:text-zinc-500 focus:outline-none focus:border-amber-400"
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs font-semibold text-zinc-800 font-bold mb-1">
+                  <label className="block text-xs font-semibold text-zinc-300 mb-1">
                     Voucher Coupon Code
                   </label>
                   <input
@@ -486,12 +486,12 @@ export default function AdminHeaderPage() {
                     value={settings.announcementCoupon}
                     onChange={(e) => setSettings({ ...settings, announcementCoupon: e.target.value })}
                     placeholder="e.g. WELCOME10"
-                    className="w-full px-3 py-2 rounded-xl bg-zinc-50 border border-zinc-300 text-xs text-zinc-900 font-bold font-mono placeholder:text-zinc-800 font-semibold font-medium focus:outline-none focus:border-amber-400"
+                    className="w-full px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-700 text-xs text-white font-mono placeholder:text-zinc-500 focus:outline-none focus:border-amber-400"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-zinc-800 font-bold mb-1">
+                  <label className="block text-xs font-semibold text-zinc-300 mb-1">
                     Background Color
                   </label>
                   <div className="flex items-center gap-2">
@@ -499,9 +499,9 @@ export default function AdminHeaderPage() {
                       type="color"
                       value={settings.announcementBgColor || '#09090b'}
                       onChange={(e) => setSettings({ ...settings, announcementBgColor: e.target.value })}
-                      className="w-8 h-8 rounded-lg border border-zinc-300 cursor-pointer bg-transparent"
+                      className="w-8 h-8 rounded-lg border border-zinc-700 cursor-pointer bg-transparent"
                     />
-                    <span className="text-xs font-mono text-zinc-800 font-semibold">
+                    <span className="text-xs font-mono text-zinc-400">
                       {settings.announcementBgColor || '#09090b'}
                     </span>
                   </div>
@@ -511,15 +511,15 @@ export default function AdminHeaderPage() {
           </div>
 
           {/* Section 2: Brand Identity & Sticky Header */}
-          <div className="bg-[#14171d] border border-zinc-200 rounded-2xl p-6 space-y-4">
-            <div className="pb-3 border-b border-zinc-200">
-              <h3 className="text-sm font-bold text-zinc-900 font-bold">Store Logo & Header Layout</h3>
-              <p className="text-xs text-zinc-800 font-semibold mt-0.5">Controls website branding in the header navigation</p>
+          <div className="bg-[#14171d] border border-zinc-800 rounded-2xl p-6 space-y-4">
+            <div className="pb-3 border-b border-zinc-800">
+              <h3 className="text-sm font-bold text-white">Store Logo & Header Layout</h3>
+              <p className="text-xs text-zinc-400 mt-0.5">Controls website branding in the header navigation</p>
             </div>
 
             <div className="grid grid-cols-2 gap-3">
               <div>
-                <label className="block text-xs font-semibold text-zinc-800 font-bold mb-1">
+                <label className="block text-xs font-semibold text-zinc-300 mb-1">
                   Logo Primary Text
                 </label>
                 <input
@@ -527,12 +527,12 @@ export default function AdminHeaderPage() {
                   value={settings.logoText}
                   onChange={(e) => setSettings({ ...settings, logoText: e.target.value })}
                   placeholder="e.g. STRIDE"
-                  className="w-full px-3 py-2 rounded-xl bg-zinc-50 border border-zinc-300 text-xs text-zinc-900 font-bold focus:outline-none focus:border-amber-400"
+                  className="w-full px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-700 text-xs text-white focus:outline-none focus:border-amber-400"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-zinc-800 font-bold mb-1">
+                <label className="block text-xs font-semibold text-zinc-300 mb-1">
                   Logo Subtitle / Tag
                 </label>
                 <input
@@ -540,13 +540,13 @@ export default function AdminHeaderPage() {
                   value={settings.logoSubtitle}
                   onChange={(e) => setSettings({ ...settings, logoSubtitle: e.target.value })}
                   placeholder="e.g. DISTRICT"
-                  className="w-full px-3 py-2 rounded-xl bg-zinc-50 border border-zinc-300 text-xs text-zinc-900 font-bold focus:outline-none focus:border-amber-400"
+                  className="w-full px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-700 text-xs text-white focus:outline-none focus:border-amber-400"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-zinc-800 font-bold mb-1">
+              <label className="block text-xs font-semibold text-zinc-300 mb-1">
                 Custom Logo Image URL (Optional)
               </label>
               <input
@@ -554,14 +554,14 @@ export default function AdminHeaderPage() {
                 value={settings.logoImageUrl}
                 onChange={(e) => setSettings({ ...settings, logoImageUrl: e.target.value })}
                 placeholder="Leave blank to use clean typographic logo"
-                className="w-full px-3 py-2 rounded-xl bg-zinc-50 border border-zinc-300 text-xs text-zinc-900 font-bold placeholder:text-zinc-800 font-semibold font-medium focus:outline-none focus:border-amber-400"
+                className="w-full px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-700 text-xs text-white placeholder:text-zinc-500 focus:outline-none focus:border-amber-400"
               />
             </div>
 
-            <div className="pt-2 flex items-center justify-between border-t border-zinc-200/80">
+            <div className="pt-2 flex items-center justify-between border-t border-zinc-800/80">
               <div>
-                <span className="text-xs font-bold text-zinc-900 font-bold block">Sticky Header on Scroll</span>
-                <span className="text-[11px] text-zinc-800 font-semibold">Keeps header visible as users scroll down pages</span>
+                <span className="text-xs font-bold text-white block">Sticky Header on Scroll</span>
+                <span className="text-[11px] text-zinc-400">Keeps header visible as users scroll down pages</span>
               </div>
               <label className="relative inline-flex items-center cursor-pointer">
                 <input
@@ -570,21 +570,21 @@ export default function AdminHeaderPage() {
                   onChange={(e) => setSettings({ ...settings, stickyHeader: e.target.checked })}
                   className="sr-only peer"
                 />
-                <div className="w-9 h-5 bg-zinc-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-zinc-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-amber-400"></div>
+                <div className="w-9 h-5 bg-zinc-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-zinc-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-amber-400"></div>
               </label>
             </div>
           </div>
 
           {/* Section 3: Icon & Utility Visibility */}
-          <div className="bg-[#14171d] border border-zinc-200 rounded-2xl p-6 space-y-4">
-            <div className="pb-3 border-b border-zinc-200">
-              <h3 className="text-sm font-bold text-zinc-900 font-bold">Header Action Icons & Utilities</h3>
-              <p className="text-xs text-zinc-800 font-semibold mt-0.5">Toggle customer action buttons shown in the header</p>
+          <div className="bg-[#14171d] border border-zinc-800 rounded-2xl p-6 space-y-4">
+            <div className="pb-3 border-b border-zinc-800">
+              <h3 className="text-sm font-bold text-white">Header Action Icons & Utilities</h3>
+              <p className="text-xs text-zinc-400 mt-0.5">Toggle customer action buttons shown in the header</p>
             </div>
 
             <div className="grid grid-cols-2 gap-3 text-xs">
-              <label className="flex items-center justify-between p-2.5 rounded-xl bg-zinc-50 border border-zinc-200">
-                <span className="text-zinc-800 font-bold">Search Bar & ⌘K</span>
+              <label className="flex items-center justify-between p-2.5 rounded-xl bg-zinc-900 border border-zinc-800">
+                <span className="text-zinc-300">Search Bar & ⌘K</span>
                 <input
                   type="checkbox"
                   checked={settings.showSearch}
@@ -593,8 +593,8 @@ export default function AdminHeaderPage() {
                 />
               </label>
 
-              <label className="flex items-center justify-between p-2.5 rounded-xl bg-zinc-50 border border-zinc-200">
-                <span className="text-zinc-800 font-bold">Customer Account</span>
+              <label className="flex items-center justify-between p-2.5 rounded-xl bg-zinc-900 border border-zinc-800">
+                <span className="text-zinc-300">Customer Account</span>
                 <input
                   type="checkbox"
                   checked={settings.showAccount}
@@ -603,8 +603,8 @@ export default function AdminHeaderPage() {
                 />
               </label>
 
-              <label className="flex items-center justify-between p-2.5 rounded-xl bg-zinc-50 border border-zinc-200">
-                <span className="text-zinc-800 font-bold">Wishlist Heart</span>
+              <label className="flex items-center justify-between p-2.5 rounded-xl bg-zinc-900 border border-zinc-800">
+                <span className="text-zinc-300">Wishlist Heart</span>
                 <input
                   type="checkbox"
                   checked={settings.showWishlist}
@@ -613,8 +613,8 @@ export default function AdminHeaderPage() {
                 />
               </label>
 
-              <label className="flex items-center justify-between p-2.5 rounded-xl bg-zinc-50 border border-zinc-200">
-                <span className="text-zinc-800 font-bold">Shopping Cart Bag</span>
+              <label className="flex items-center justify-between p-2.5 rounded-xl bg-zinc-900 border border-zinc-800">
+                <span className="text-zinc-300">Shopping Cart Bag</span>
                 <input
                   type="checkbox"
                   checked={settings.showCart}
@@ -623,8 +623,8 @@ export default function AdminHeaderPage() {
                 />
               </label>
 
-              <label className="flex items-center justify-between p-2.5 rounded-xl bg-zinc-50 border border-zinc-200">
-                <span className="text-zinc-800 font-bold">Currency Selector</span>
+              <label className="flex items-center justify-between p-2.5 rounded-xl bg-zinc-900 border border-zinc-800">
+                <span className="text-zinc-300">Currency Selector</span>
                 <input
                   type="checkbox"
                   checked={settings.showCurrencySelector}
@@ -633,8 +633,8 @@ export default function AdminHeaderPage() {
                 />
               </label>
 
-              <label className="flex items-center justify-between p-2.5 rounded-xl bg-zinc-50 border border-zinc-200">
-                <span className="text-zinc-800 font-bold">Language Selector</span>
+              <label className="flex items-center justify-between p-2.5 rounded-xl bg-zinc-900 border border-zinc-800">
+                <span className="text-zinc-300">Language Selector</span>
                 <input
                   type="checkbox"
                   checked={settings.showLanguageSelector}
@@ -648,17 +648,17 @@ export default function AdminHeaderPage() {
 
         {/* Right Column: Navigation Menus Management */}
         <div className="lg:col-span-6 space-y-6">
-          <div className="bg-[#14171d] border border-zinc-200 rounded-2xl p-6 space-y-4">
-            <div className="flex items-center justify-between pb-3 border-b border-zinc-200">
+          <div className="bg-[#14171d] border border-zinc-800 rounded-2xl p-6 space-y-4">
+            <div className="flex items-center justify-between pb-3 border-b border-zinc-800">
               <div>
-                <h3 className="text-sm font-bold text-zinc-900 font-bold">Main Navigation Menu Links</h3>
-                <p className="text-xs text-zinc-800 font-semibold mt-0.5">
+                <h3 className="text-sm font-bold text-white">Main Navigation Menu Links</h3>
+                <p className="text-xs text-zinc-400 mt-0.5">
                   Controls the primary navigation links shown across the header
                 </p>
               </div>
               <button
                 onClick={handleOpenAddLink}
-                className="px-3 py-1.5 rounded-xl bg-zinc-100 hover:bg-zinc-200 text-zinc-900 font-bold text-xs font-semibold flex items-center gap-1.5 transition-colors border border-zinc-300"
+                className="px-3 py-1.5 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-white text-xs font-semibold flex items-center gap-1.5 transition-colors border border-zinc-700"
               >
                 <Plus className="w-3.5 h-3.5 text-amber-400" />
                 <span>Add Menu Item</span>
@@ -672,8 +672,8 @@ export default function AdminHeaderPage() {
                   key={link.id}
                   className={`p-3 rounded-xl border flex items-center justify-between gap-3 transition-colors ${
                     link.isEnabled
-                      ? 'bg-zinc-50/90 border-zinc-200'
-                      : 'bg-zinc-50/40 border-zinc-850 opacity-60'
+                      ? 'bg-zinc-900/90 border-zinc-800'
+                      : 'bg-zinc-900/40 border-zinc-850 opacity-60'
                   }`}
                 >
                   <div className="flex items-center gap-3 min-w-0">
@@ -682,7 +682,7 @@ export default function AdminHeaderPage() {
                       <button
                         onClick={() => handleMoveLink(index, 'up')}
                         disabled={index === 0}
-                        className="p-1 text-zinc-800 font-semibold font-medium hover:text-zinc-900 font-bold disabled:opacity-20 transition-colors"
+                        className="p-1 text-zinc-500 hover:text-white disabled:opacity-20 transition-colors"
                         title="Move Up"
                       >
                         <ArrowUp className="w-3 h-3" />
@@ -690,7 +690,7 @@ export default function AdminHeaderPage() {
                       <button
                         onClick={() => handleMoveLink(index, 'down')}
                         disabled={index === settings.navLinks.length - 1}
-                        className="p-1 text-zinc-800 font-semibold font-medium hover:text-zinc-900 font-bold disabled:opacity-20 transition-colors"
+                        className="p-1 text-zinc-500 hover:text-white disabled:opacity-20 transition-colors"
                         title="Move Down"
                       >
                         <ArrowDown className="w-3 h-3" />
@@ -699,7 +699,7 @@ export default function AdminHeaderPage() {
 
                     <div className="min-w-0">
                       <div className="flex items-center gap-2">
-                        <span className="text-xs font-bold text-zinc-900 font-bold truncate">{link.label}</span>
+                        <span className="text-xs font-bold text-white truncate">{link.label}</span>
                         {link.isMegaMenu && (
                           <span className="text-[10px] font-mono px-1.5 py-0.2 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
                             Mega Menu
@@ -711,7 +711,7 @@ export default function AdminHeaderPage() {
                           </span>
                         )}
                       </div>
-                      <span className="text-[11px] font-mono text-zinc-800 font-semibold font-medium block truncate mt-0.5">
+                      <span className="text-[11px] font-mono text-zinc-500 block truncate mt-0.5">
                         {link.url}
                       </span>
                     </div>
@@ -725,7 +725,7 @@ export default function AdminHeaderPage() {
                       className={`p-1.5 rounded-lg transition-colors ${
                         link.isEnabled
                           ? 'text-emerald-400 hover:bg-emerald-500/10'
-                          : 'text-zinc-600 hover:bg-zinc-100'
+                          : 'text-zinc-600 hover:bg-zinc-800'
                       }`}
                     >
                       {link.isEnabled ? <Eye className="w-4 h-4" /> : <EyeOff className="w-4 h-4" />}
@@ -733,14 +733,14 @@ export default function AdminHeaderPage() {
                     <button
                       onClick={() => handleOpenEditLink(link)}
                       title="Edit Link"
-                      className="p-1.5 text-zinc-800 font-semibold hover:text-zinc-900 font-bold hover:bg-zinc-100 rounded-lg transition-colors"
+                      className="p-1.5 text-zinc-400 hover:text-white hover:bg-zinc-800 rounded-lg transition-colors"
                     >
                       <Edit2 className="w-4 h-4" />
                     </button>
                     <button
                       onClick={() => setDeleteLinkId(link.id)}
                       title="Delete Link"
-                      className="p-1.5 text-zinc-800 font-semibold font-medium hover:text-rose-400 hover:bg-zinc-100 rounded-lg transition-colors"
+                      className="p-1.5 text-zinc-500 hover:text-rose-400 hover:bg-zinc-800 rounded-lg transition-colors"
                     >
                       <Trash2 className="w-4 h-4" />
                     </button>
@@ -749,8 +749,8 @@ export default function AdminHeaderPage() {
               ))}
             </div>
 
-            <div className="p-3.5 rounded-xl bg-zinc-50 border border-zinc-200 text-xs text-zinc-800 font-semibold space-y-1">
-              <span className="font-semibold text-zinc-900 font-bold block">💡 Non-Technical Store Owner Tip</span>
+            <div className="p-3.5 rounded-xl bg-zinc-900 border border-zinc-800 text-xs text-zinc-400 space-y-1">
+              <span className="font-semibold text-white block">💡 Non-Technical Store Owner Tip</span>
               <p className="text-[11px] leading-relaxed">
                 Reorder links using the arrows on the left. Toggle the eye icon to hide or show any menu item immediately without deleting it.
               </p>
@@ -764,16 +764,16 @@ export default function AdminHeaderPage() {
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-150">
           <form
             onSubmit={handleSaveLink}
-            className="bg-[#16191f] border border-zinc-200 rounded-2xl p-6 max-w-md w-full shadow-2xl space-y-4"
+            className="bg-[#16191f] border border-zinc-800 rounded-2xl p-6 max-w-md w-full shadow-2xl space-y-4"
           >
-            <div className="flex items-center justify-between pb-3 border-b border-zinc-200">
-              <h3 className="text-base font-bold text-zinc-900 font-bold">
+            <div className="flex items-center justify-between pb-3 border-b border-zinc-800">
+              <h3 className="text-base font-bold text-white">
                 {editingLink ? 'Edit Navigation Item' : 'Add New Navigation Item'}
               </h3>
               <button
                 type="button"
                 onClick={() => setIsLinkModalOpen(false)}
-                className="text-zinc-800 font-semibold font-medium hover:text-zinc-900 font-bold"
+                className="text-zinc-500 hover:text-white"
               >
                 ✕
               </button>
@@ -781,7 +781,7 @@ export default function AdminHeaderPage() {
 
             <div className="space-y-3">
               <div>
-                <label className="block text-xs font-semibold text-zinc-800 font-bold mb-1">
+                <label className="block text-xs font-semibold text-zinc-300 mb-1">
                   Menu Item Label *
                 </label>
                 <input
@@ -790,12 +790,12 @@ export default function AdminHeaderPage() {
                   value={linkForm.label}
                   onChange={(e) => setLinkForm({ ...linkForm, label: e.target.value })}
                   placeholder="e.g. Limited Watches"
-                  className="w-full px-3 py-2 rounded-xl bg-zinc-50 border border-zinc-300 text-xs text-zinc-900 font-bold focus:outline-none focus:border-amber-400"
+                  className="w-full px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-700 text-xs text-white focus:outline-none focus:border-amber-400"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-zinc-800 font-bold mb-1">
+                <label className="block text-xs font-semibold text-zinc-300 mb-1">
                   Target Destination URL *
                 </label>
                 <input
@@ -804,12 +804,12 @@ export default function AdminHeaderPage() {
                   value={linkForm.url}
                   onChange={(e) => setLinkForm({ ...linkForm, url: e.target.value })}
                   placeholder="e.g. /shop?category=watches or /about"
-                  className="w-full px-3 py-2 rounded-xl bg-zinc-50 border border-zinc-300 text-xs text-zinc-900 font-bold font-mono focus:outline-none focus:border-amber-400"
+                  className="w-full px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-700 text-xs text-white font-mono focus:outline-none focus:border-amber-400"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-zinc-800 font-bold mb-1">
+                <label className="block text-xs font-semibold text-zinc-300 mb-1">
                   Highlight Badge (Optional)
                 </label>
                 <input
@@ -817,11 +817,11 @@ export default function AdminHeaderPage() {
                   value={linkForm.badge}
                   onChange={(e) => setLinkForm({ ...linkForm, badge: e.target.value })}
                   placeholder="e.g. New, Hot, Sale"
-                  className="w-full px-3 py-2 rounded-xl bg-zinc-50 border border-zinc-300 text-xs text-zinc-900 font-bold focus:outline-none focus:border-amber-400"
+                  className="w-full px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-700 text-xs text-white focus:outline-none focus:border-amber-400"
                 />
               </div>
 
-              <label className="flex items-center gap-2 pt-1 text-xs text-zinc-800 font-bold cursor-pointer">
+              <label className="flex items-center gap-2 pt-1 text-xs text-zinc-300 cursor-pointer">
                 <input
                   type="checkbox"
                   checked={linkForm.isMegaMenu}
@@ -832,11 +832,11 @@ export default function AdminHeaderPage() {
               </label>
             </div>
 
-            <div className="flex items-center justify-end gap-2 pt-3 border-t border-zinc-200">
+            <div className="flex items-center justify-end gap-2 pt-3 border-t border-zinc-800">
               <button
                 type="button"
                 onClick={() => setIsLinkModalOpen(false)}
-                className="px-4 py-2 rounded-xl bg-zinc-100 hover:bg-zinc-200 text-zinc-800 font-bold text-xs font-semibold"
+                className="px-4 py-2 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-zinc-300 text-xs font-semibold"
               >
                 Cancel
               </button>
