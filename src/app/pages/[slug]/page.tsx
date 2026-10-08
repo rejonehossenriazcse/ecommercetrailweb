@@ -67,7 +67,7 @@ export default async function DynamicCMSPage({ params }: PageProps) {
       if (paragraph.startsWith('- ') || paragraph.startsWith('* ')) {
         const items = paragraph.split('\n').filter(Boolean);
         return (
-          <ul key={idx} className="space-y-2 my-4 list-disc list-inside text-sm text-zinc-700 leading-relaxed pl-2">
+          <ul key={idx} className="space-y-2 my-4 list-disc list-inside text-sm text-zinc-800 font-bold leading-relaxed pl-2">
             {items.map((it, i) => (
               <li key={i}>
                 <span dangerouslySetInnerHTML={{
@@ -82,7 +82,7 @@ export default async function DynamicCMSPage({ params }: PageProps) {
       if (/^\d+\.\s/.test(paragraph)) {
         const items = paragraph.split('\n').filter(Boolean);
         return (
-          <ol key={idx} className="space-y-2 my-4 list-decimal list-inside text-sm text-zinc-700 leading-relaxed pl-2">
+          <ol key={idx} className="space-y-2 my-4 list-decimal list-inside text-sm text-zinc-800 font-bold leading-relaxed pl-2">
             {items.map((it, i) => (
               <li key={i}>
                 <span dangerouslySetInnerHTML={{
@@ -98,7 +98,7 @@ export default async function DynamicCMSPage({ params }: PageProps) {
       return (
         <p
           key={idx}
-          className="text-sm sm:text-base text-zinc-700 leading-relaxed my-4"
+          className="text-sm sm:text-base text-zinc-800 font-bold leading-relaxed my-4"
           dangerouslySetInnerHTML={{
             __html: paragraph.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
           }}
@@ -110,13 +110,13 @@ export default async function DynamicCMSPage({ params }: PageProps) {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
       {/* Breadcrumb Navigation */}
-      <nav className="flex items-center gap-2 text-xs font-mono text-zinc-400 mb-8">
+      <nav className="flex items-center gap-2 text-xs font-mono text-zinc-800 font-semibold mb-8">
         <Link href="/" className="hover:text-zinc-900 transition-colors">
           Atelier
         </Link>
-        <ChevronRight className="w-3.5 h-3.5 text-zinc-300" />
-        <span className="uppercase text-zinc-500 font-bold">{page.category}</span>
-        <ChevronRight className="w-3.5 h-3.5 text-zinc-300" />
+        <ChevronRight className="w-3.5 h-3.5 text-zinc-800 font-bold" />
+        <span className="uppercase text-zinc-800 font-semibold font-medium font-bold">{page.category}</span>
+        <ChevronRight className="w-3.5 h-3.5 text-zinc-800 font-bold" />
         <span className="text-zinc-900 font-bold line-clamp-1">{page.title}</span>
       </nav>
 
@@ -132,12 +132,12 @@ export default async function DynamicCMSPage({ params }: PageProps) {
         </h1>
 
         {page.subtitle && (
-          <p className="text-base sm:text-lg text-zinc-600 font-serif italic max-w-2xl">
+          <p className="text-base sm:text-lg text-zinc-800 font-semibold font-serif italic max-w-2xl">
             {page.subtitle}
           </p>
         )}
 
-        <div className="text-[11px] font-mono text-zinc-400 pt-2">
+        <div className="text-[11px] font-mono text-zinc-800 font-semibold pt-2">
           Effective & Verified: {new Date(page.updatedAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} • Stride District Registry
         </div>
       </div>
@@ -148,16 +148,16 @@ export default async function DynamicCMSPage({ params }: PageProps) {
       </article>
 
       {/* Concierge Inquiry Callout */}
-      <div className="mt-14 p-6 sm:p-8 rounded-3xl bg-zinc-900 text-white border border-zinc-800 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+      <div className="mt-14 p-6 sm:p-8 rounded-3xl bg-zinc-50 text-zinc-900 font-bold border border-zinc-200 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
         <div className="space-y-1.5">
-          <div className="flex items-center gap-2 text-xs font-mono text-orange-400 font-bold uppercase tracking-wider">
+          <div className="flex items-center gap-2 text-xs font-mono text-orange-600 font-bold font-bold uppercase tracking-wider">
             <ShieldCheck className="w-4 h-4" />
             <span>Streetwear Concierge</span>
           </div>
-          <h3 className="text-lg font-bold text-white">
+          <h3 className="text-lg font-bold text-zinc-900 font-bold">
             Have questions regarding this protocol or order verification?
           </h3>
-          <p className="text-xs text-zinc-400">
+          <p className="text-xs text-zinc-800 font-semibold">
             Our authenticators and sizing specialists in New York & Tokyo are available for 24/7 concierge dialogue.
           </p>
         </div>
@@ -175,7 +175,7 @@ export default async function DynamicCMSPage({ params }: PageProps) {
       <div className="mt-8 pt-6 border-t border-zinc-200">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 text-xs font-mono font-bold text-zinc-600 hover:text-zinc-950 transition-colors"
+          className="inline-flex items-center gap-2 text-xs font-mono font-bold text-zinc-800 font-semibold hover:text-zinc-950 transition-colors"
         >
           <ArrowLeft className="w-3.5 h-3.5" />
           <span>Return to Storefront</span>

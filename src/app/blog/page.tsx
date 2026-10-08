@@ -37,14 +37,14 @@ export default function BlogListPage() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 space-y-12">
       {/* Editorial Header */}
       <div className="text-center max-w-2xl mx-auto space-y-3">
-        <div className="inline-flex items-center justify-center gap-1.5 text-xs font-mono font-bold uppercase tracking-widest text-zinc-500 bg-zinc-100 px-3 py-1 rounded-full">
+        <div className="inline-flex items-center justify-center gap-1.5 text-xs font-mono font-bold uppercase tracking-widest text-zinc-800 font-semibold font-medium bg-zinc-100 px-3 py-1 rounded-full">
           <BookOpen className="w-3.5 h-3.5 text-zinc-900" />
           <span>Atelier Dispatches & Research</span>
         </div>
         <h1 className="text-4xl sm:text-5xl font-black text-zinc-950 tracking-tight font-serif">
           The AURA Journal
         </h1>
-        <p className="text-sm sm:text-base text-zinc-600 font-serif italic">
+        <p className="text-sm sm:text-base text-zinc-800 font-semibold font-serif italic">
           Acoustic laboratory research, horological metallurgy, technical carry architecture, and ergonomic philosophy.
         </p>
       </div>
@@ -58,7 +58,7 @@ export default function BlogListPage() {
               onClick={() => setSelectedCategory(cat)}
               className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
                 selectedCategory === cat
-                  ? 'bg-zinc-900 text-white shadow-sm'
+                  ? 'bg-zinc-50 text-white shadow-sm'
                   : 'bg-zinc-100 text-zinc-600 hover:text-zinc-900 hover:bg-zinc-200'
               }`}
             >
@@ -68,24 +68,24 @@ export default function BlogListPage() {
         </div>
 
         <div className="relative w-full sm:w-64">
-          <Search className="w-4 h-4 text-zinc-400 absolute left-3 top-1/2 -translate-y-1/2" />
+          <Search className="w-4 h-4 text-zinc-800 font-semibold absolute left-3 top-1/2 -translate-y-1/2" />
           <input
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search dispatches & tags..."
-            className="w-full pl-9 pr-4 py-2 rounded-xl bg-zinc-100 border border-zinc-200 text-xs text-zinc-900 focus:outline-none focus:border-zinc-900"
+            className="w-full pl-9 pr-4 py-2 rounded-xl bg-zinc-100 border border-zinc-200 text-xs text-zinc-900 focus:outline-none focus:border-zinc-200"
           />
         </div>
       </div>
 
       {/* Articles Grid */}
       {loading ? (
-        <div className="py-20 text-center text-xs font-mono text-zinc-400">
+        <div className="py-20 text-center text-xs font-mono text-zinc-800 font-semibold">
           Loading atelier dispatches...
         </div>
       ) : filtered.length === 0 ? (
-        <div className="py-16 text-center text-xs font-mono text-zinc-400">
+        <div className="py-16 text-center text-xs font-mono text-zinc-800 font-semibold">
           No dispatches found matching criteria.
         </div>
       ) : (
@@ -104,12 +104,12 @@ export default function BlogListPage() {
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-zinc-950/80 backdrop-blur text-white text-[10px] font-mono font-bold uppercase tracking-wider">
+                  <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-white/80 backdrop-blur text-white text-[10px] font-mono font-bold uppercase tracking-wider">
                     {post.category}
                   </span>
                 </div>
 
-                <div className="flex items-center gap-3 text-xs text-zinc-400 mb-2 font-mono">
+                <div className="flex items-center gap-3 text-xs text-zinc-800 font-semibold mb-2 font-mono">
                   <span>{post.publishedAt}</span>
                   <span>•</span>
                   <span className="flex items-center gap-1">
@@ -121,7 +121,7 @@ export default function BlogListPage() {
                 <h2 className="text-base sm:text-lg font-bold text-zinc-900 group-hover:text-black line-clamp-2 leading-snug font-serif">
                   {post.title}
                 </h2>
-                <p className="text-xs text-zinc-500 mt-2 line-clamp-3 leading-relaxed">
+                <p className="text-xs text-zinc-800 font-semibold font-medium mt-2 line-clamp-3 leading-relaxed">
                   {post.excerpt}
                 </p>
               </div>
@@ -131,7 +131,7 @@ export default function BlogListPage() {
                   <div className="relative w-6 h-6 rounded-full overflow-hidden bg-zinc-200 shrink-0">
                     <Image src={post.author.avatar} alt={post.author.name} fill className="object-cover" />
                   </div>
-                  <span className="text-[11px] font-bold text-zinc-700">{post.author.name}</span>
+                  <span className="text-[11px] font-bold text-zinc-800 font-bold">{post.author.name}</span>
                 </div>
 
                 <span className="inline-flex items-center gap-1 text-xs font-bold text-zinc-900 group-hover:translate-x-1 transition-transform">

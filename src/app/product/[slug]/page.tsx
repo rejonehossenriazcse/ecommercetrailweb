@@ -108,10 +108,10 @@ export default function ProductDetailPage() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-zinc-950 text-white">
+      <div className="min-h-screen flex items-center justify-center bg-white text-zinc-900 font-bold">
         <div className="flex flex-col items-center gap-4">
           <div className="animate-spin w-10 h-10 border-4 border-orange-500 border-t-transparent rounded-full"></div>
-          <p className="text-xs font-mono font-bold uppercase tracking-widest text-zinc-400">Authenticating Drop...</p>
+          <p className="text-xs font-mono font-bold uppercase tracking-widest text-zinc-800 font-semibold">Authenticating Drop...</p>
         </div>
       </div>
     );
@@ -119,10 +119,10 @@ export default function ProductDetailPage() {
 
   if (!product) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-zinc-950 text-white">
+      <div className="min-h-screen flex items-center justify-center bg-white text-zinc-900 font-bold">
         <div className="text-center">
-          <h2 className="text-2xl font-black text-white mb-2 uppercase">Grail Not Found</h2>
-          <p className="text-sm text-zinc-400 mb-6">The requested drop could not be located in the District Vault.</p>
+          <h2 className="text-2xl font-black text-zinc-900 font-bold mb-2 uppercase">Grail Not Found</h2>
+          <p className="text-sm text-zinc-800 font-semibold mb-6">The requested drop could not be located in the District Vault.</p>
           <Link href="/shop" className="inline-flex items-center justify-center px-6 py-3 bg-orange-500 text-white rounded-xl text-xs font-bold uppercase tracking-wider hover:bg-orange-600 transition-colors">
             Return to Drops
           </Link>
@@ -176,27 +176,27 @@ export default function ProductDetailPage() {
   };
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-white">
+    <div className="min-h-screen bg-white text-zinc-900 font-bold">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         
         {/* Breadcrumb Navigation */}
-        <nav className="text-xs font-mono text-zinc-400 mb-8 flex items-center gap-2">
-          <Link href="/" className="hover:text-orange-400 transition-colors">
+        <nav className="text-xs font-mono text-zinc-800 font-semibold mb-8 flex items-center gap-2">
+          <Link href="/" className="hover:text-orange-600 font-bold transition-colors">
             Home
           </Link>
           <span>/</span>
-          <Link href="/shop" className="hover:text-orange-400 transition-colors">
+          <Link href="/shop" className="hover:text-orange-600 font-bold transition-colors">
             Drops
           </Link>
           <span>/</span>
           <Link
             href={`/shop?category=${product.categorySlug}`}
-            className="hover:text-orange-400 transition-colors"
+            className="hover:text-orange-600 font-bold transition-colors"
           >
             {product.category}
           </Link>
           <span>/</span>
-          <span className="text-white font-bold truncate max-w-xs">{product.name}</span>
+          <span className="text-zinc-900 font-bold font-bold truncate max-w-xs">{product.name}</span>
         </nav>
 
         {/* Main PDP Grid */}
@@ -219,14 +219,14 @@ export default function ProductDetailPage() {
               <div className="flex items-center justify-between">
                 <Link
                   href={`/shop?brand=${encodeURIComponent(product.brand)}`}
-                  className="text-xs font-mono font-bold uppercase tracking-widest text-orange-400 hover:text-orange-300 transition-colors"
+                  className="text-xs font-mono font-bold uppercase tracking-widest text-orange-600 font-bold hover:text-orange-300 transition-colors"
                 >
                   {product.brand}
                 </Link>
-                <span className="text-[11px] font-mono text-zinc-500">SKU: {currentVariant?.sku || product.sku}</span>
+                <span className="text-[11px] font-mono text-zinc-800 font-semibold font-medium">SKU: {currentVariant?.sku || product.sku}</span>
               </div>
 
-              <h1 className="text-2xl sm:text-4xl font-black text-white tracking-tight leading-tight uppercase">
+              <h1 className="text-2xl sm:text-4xl font-black text-zinc-900 font-bold tracking-tight leading-tight uppercase">
                 {product.name}
               </h1>
 
@@ -242,10 +242,10 @@ export default function ProductDetailPage() {
                     />
                   ))}
                 </div>
-                <span className="text-xs font-bold text-white">{product.rating.toFixed(1)}</span>
+                <span className="text-xs font-bold text-zinc-900 font-bold">{product.rating.toFixed(1)}</span>
                 <button
                   onClick={() => setActiveTab('reviews')}
-                  className="text-xs text-zinc-400 hover:text-orange-400 underline underline-offset-4 cursor-pointer"
+                  className="text-xs text-zinc-800 font-semibold hover:text-orange-600 font-bold underline underline-offset-4 cursor-pointer"
                 >
                   ({product.reviewCount} customer reviews)
                 </button>
@@ -253,13 +253,13 @@ export default function ProductDetailPage() {
             </div>
 
             {/* Pricing Box */}
-            <div className="p-4 rounded-2xl bg-zinc-900 border border-zinc-800 space-y-2">
+            <div className="p-4 rounded-2xl bg-zinc-50 border border-zinc-200 space-y-2">
               <div className="flex items-baseline gap-3">
-                <span className="text-3xl font-black text-white">
+                <span className="text-3xl font-black text-zinc-900 font-bold">
                   {formatPrice(activePrice)}
                 </span>
                 {activeCompareAt && (
-                  <span className="text-base text-zinc-500 line-through">
+                  <span className="text-base text-zinc-800 font-semibold font-medium line-through">
                     {formatPrice(activeCompareAt)}
                   </span>
                 )}
@@ -280,14 +280,14 @@ export default function ProductDetailPage() {
                   <span className="text-rose-400 font-semibold">Sold Out — Next Drop Pending</span>
                 )}
                 {activeStock <= 8 && activeStock > 0 && (
-                  <span className="text-orange-400 font-bold bg-orange-500/10 border border-orange-500/30 px-2 py-0.5 rounded-md text-[10px]">
+                  <span className="text-orange-600 font-bold font-bold bg-orange-500/10 border border-orange-500/30 px-2 py-0.5 rounded-md text-[10px]">
                     Only {activeStock} pairs remaining
                   </span>
                 )}
               </div>
             </div>
 
-            <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
+            <p className="text-xs sm:text-sm text-zinc-800 font-bold leading-relaxed">
               {product.shortDescription}
             </p>
 
@@ -296,16 +296,16 @@ export default function ProductDetailPage() {
               {product.options.map((opt) => (
                 <div key={opt.name} className="space-y-2">
                   <div className="flex items-center justify-between text-xs">
-                    <span className="font-bold text-zinc-300 uppercase tracking-wider">
-                      Select {opt.name}: <span className="font-mono text-orange-400 font-bold">{selectedOptions[opt.name]}</span>
+                    <span className="font-bold text-zinc-800 font-bold uppercase tracking-wider">
+                      Select {opt.name}: <span className="font-mono text-orange-600 font-bold font-bold">{selectedOptions[opt.name]}</span>
                     </span>
 
                     {(opt.name === 'Size') && (
                       <button
                         onClick={() => setIsSizeGuideOpen(true)}
-                        className="flex items-center gap-1 text-[11px] font-semibold text-zinc-400 hover:text-white underline cursor-pointer"
+                        className="flex items-center gap-1 text-[11px] font-semibold text-zinc-800 font-semibold hover:text-zinc-900 font-bold underline cursor-pointer"
                       >
-                        <Ruler className="w-3 h-3 text-orange-400" />
+                        <Ruler className="w-3 h-3 text-orange-600 font-bold" />
                         <span>Sizing Guide</span>
                       </button>
                     )}
@@ -322,7 +322,7 @@ export default function ProductDetailPage() {
                           className={`px-4 py-2.5 rounded-xl text-xs font-bold font-mono transition-all cursor-pointer ${
                             isSelected
                               ? 'bg-orange-500 text-white shadow-[0_0_15px_rgba(249,115,22,0.5)]'
-                              : 'bg-zinc-900 text-zinc-300 border border-zinc-800 hover:border-zinc-700 hover:text-white'
+                              : 'bg-zinc-50 text-zinc-700 border border-zinc-200 hover:border-zinc-300 hover:text-white'
                           }`}
                         >
                           {val}
@@ -338,20 +338,20 @@ export default function ProductDetailPage() {
             <div className="pt-4 space-y-3">
               <div className="flex items-center gap-3">
                 {/* Stepper */}
-                <div className="flex items-center border border-zinc-800 rounded-xl bg-zinc-900 p-1">
+                <div className="flex items-center border border-zinc-200 rounded-xl bg-zinc-50 p-1">
                   <button
                     onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                    className="w-10 h-10 flex items-center justify-center font-bold text-zinc-400 hover:text-white rounded-lg transition-colors cursor-pointer text-sm"
+                    className="w-10 h-10 flex items-center justify-center font-bold text-zinc-800 font-semibold hover:text-zinc-900 font-bold rounded-lg transition-colors cursor-pointer text-sm"
                   >
                     -
                   </button>
-                  <span className="w-10 text-center text-sm font-bold text-white font-mono">
+                  <span className="w-10 text-center text-sm font-bold text-zinc-900 font-bold font-mono">
                     {quantity}
                   </span>
                   <button
                     onClick={() => setQuantity(Math.min(activeStock, quantity + 1))}
                     disabled={quantity >= activeStock}
-                    className="w-10 h-10 flex items-center justify-center font-bold text-zinc-400 hover:text-white rounded-lg transition-colors cursor-pointer text-sm disabled:opacity-30"
+                    className="w-10 h-10 flex items-center justify-center font-bold text-zinc-800 font-semibold hover:text-zinc-900 font-bold rounded-lg transition-colors cursor-pointer text-sm disabled:opacity-30"
                   >
                     +
                   </button>
@@ -373,7 +373,7 @@ export default function ProductDetailPage() {
                   className={`p-4 rounded-xl border transition-all cursor-pointer ${
                     isWishlisted
                       ? 'bg-rose-500/20 border-rose-500/50 text-rose-400'
-                      : 'bg-zinc-900 border-zinc-800 text-zinc-400 hover:text-white'
+                      : 'bg-zinc-50 border-zinc-200 text-zinc-600 hover:text-white'
                   }`}
                   title={isWishlisted ? 'Remove from wishlist' : 'Add to wishlist'}
                 >
@@ -385,18 +385,18 @@ export default function ProductDetailPage() {
               <button
                 onClick={handleBuyNow}
                 disabled={activeStock === 0}
-                className="w-full py-4 px-6 rounded-xl bg-zinc-900 border border-zinc-700 hover:border-orange-500 text-white text-xs font-black uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+                className="w-full py-4 px-6 rounded-xl bg-zinc-50 border border-zinc-300 hover:border-orange-500 text-zinc-900 font-bold text-xs font-black uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
               >
-                <Zap className="w-4 h-4 text-orange-400 fill-current" />
+                <Zap className="w-4 h-4 text-orange-600 font-bold fill-current" />
                 <span>Instant Express Checkout</span>
               </button>
             </div>
 
             {/* Delivery Schedule Estimator */}
-            <div className="p-4 rounded-2xl bg-zinc-900/60 border border-zinc-800 space-y-3">
+            <div className="p-4 rounded-2xl bg-zinc-50/60 border border-zinc-200 space-y-3">
               <div className="flex items-center justify-between text-xs">
-                <span className="font-bold text-white flex items-center gap-1.5">
-                  <Truck className="w-4 h-4 text-orange-400" />
+                <span className="font-bold text-zinc-900 font-bold flex items-center gap-1.5">
+                  <Truck className="w-4 h-4 text-orange-600 font-bold" />
                   <span>Insured Express Shipping</span>
                 </span>
                 <span className="font-mono text-emerald-400 font-semibold">Tracked Courier</span>
@@ -408,37 +408,37 @@ export default function ProductDetailPage() {
                   value={deliveryZip}
                   onChange={(e) => setDeliveryZip(e.target.value)}
                   placeholder="Enter Postal Code"
-                  className="flex-1 px-3 py-2 text-xs rounded-xl bg-zinc-900 border border-zinc-800 text-white focus:outline-none focus:border-orange-500"
+                  className="flex-1 px-3 py-2 text-xs rounded-xl bg-zinc-50 border border-zinc-200 text-zinc-900 font-bold focus:outline-none focus:border-orange-500"
                 />
                 <button
                   type="submit"
-                  className="px-4 py-2 bg-zinc-800 hover:bg-zinc-700 text-white rounded-xl text-xs font-bold transition-colors cursor-pointer"
+                  className="px-4 py-2 bg-zinc-100 hover:bg-zinc-200 text-zinc-900 font-bold rounded-xl text-xs font-bold transition-colors cursor-pointer"
                 >
                   Estimate
                 </button>
               </form>
 
-              <div className="flex items-center gap-2 text-xs text-zinc-400 font-mono">
-                <Clock className="w-3.5 h-3.5 text-zinc-500" />
-                <span>Arrival: <strong className="text-white">{estimatedDeliveryDate}</strong></span>
+              <div className="flex items-center gap-2 text-xs text-zinc-800 font-semibold font-mono">
+                <Clock className="w-3.5 h-3.5 text-zinc-800 font-semibold font-medium" />
+                <span>Arrival: <strong className="text-zinc-900 font-bold">{estimatedDeliveryDate}</strong></span>
               </div>
             </div>
 
             {/* Share and Authenticity Badges */}
-            <div className="pt-2 flex items-center justify-between text-xs text-zinc-400 border-t border-zinc-800/80">
+            <div className="pt-2 flex items-center justify-between text-xs text-zinc-800 font-semibold border-t border-zinc-200/80">
               <div className="flex items-center gap-2">
-                <Share2 className="w-4 h-4 text-zinc-500" />
+                <Share2 className="w-4 h-4 text-zinc-800 font-semibold font-medium" />
                 <span>Share:</span>
                 <button
                   onClick={handleCopyLink}
-                  className="hover:text-orange-400 font-semibold underline cursor-pointer ml-1"
+                  className="hover:text-orange-600 font-bold font-semibold underline cursor-pointer ml-1"
                 >
                   {isShareCopied ? 'Link Copied!' : 'Copy Link'}
                 </button>
               </div>
 
-              <div className="flex items-center gap-1.5 text-zinc-300">
-                <ShieldCheck className="w-4 h-4 text-orange-400" />
+              <div className="flex items-center gap-1.5 text-zinc-800 font-bold">
+                <ShieldCheck className="w-4 h-4 text-orange-600 font-bold" />
                 <span>100% Legit Check Guarantee</span>
               </div>
             </div>
@@ -447,8 +447,8 @@ export default function ProductDetailPage() {
         </div>
 
         {/* Tabbed Information Section */}
-        <div className="mt-16 pt-12 border-t border-zinc-800">
-          <div className="flex gap-2 sm:gap-4 overflow-x-auto border-b border-zinc-800 pb-3">
+        <div className="mt-16 pt-12 border-t border-zinc-200">
+          <div className="flex gap-2 sm:gap-4 overflow-x-auto border-b border-zinc-200 pb-3">
             {[
               { id: 'desc', label: 'Story & Drop Details' },
               { id: 'specs', label: 'Tech Specifications' },
@@ -462,7 +462,7 @@ export default function ProductDetailPage() {
                 className={`px-4 py-2 rounded-xl text-xs font-black uppercase tracking-wider transition-all whitespace-nowrap cursor-pointer ${
                   activeTab === tab.id
                     ? 'bg-orange-500 text-white shadow-md'
-                    : 'text-zinc-400 hover:text-white hover:bg-zinc-900'
+                    : 'text-zinc-600 hover:text-white hover:bg-zinc-50'
                 }`}
               >
                 {tab.label}
@@ -472,14 +472,14 @@ export default function ProductDetailPage() {
 
           <div className="py-8">
             {activeTab === 'desc' && (
-              <div className="max-w-3xl space-y-4 text-sm text-zinc-300 leading-relaxed">
-                <h3 className="text-xl font-black uppercase text-white tracking-tight">
+              <div className="max-w-3xl space-y-4 text-sm text-zinc-800 font-bold leading-relaxed">
+                <h3 className="text-xl font-black uppercase text-zinc-900 font-bold tracking-tight">
                   Design Narrative & Cultural Roots
                 </h3>
                 <p>{product.description}</p>
-                <div className="p-4 rounded-2xl bg-zinc-900 border border-zinc-800 text-xs space-y-1.5">
-                  <span className="font-bold text-white uppercase font-mono">District Highlights:</span>
-                  <ul className="list-disc list-inside space-y-1 text-zinc-400">
+                <div className="p-4 rounded-2xl bg-zinc-50 border border-zinc-200 text-xs space-y-1.5">
+                  <span className="font-bold text-zinc-900 font-bold uppercase font-mono">District Highlights:</span>
+                  <ul className="list-disc list-inside space-y-1 text-zinc-800 font-semibold">
                     <li>Individually verified and authenticated by District Vault specialists.</li>
                     <li>Ships in original factory packaging with verified RFID hangtag.</li>
                     <li>Climate-controlled storage preserves rubber sole longevity and leather suppleness.</li>
@@ -490,14 +490,14 @@ export default function ProductDetailPage() {
 
             {activeTab === 'specs' && (
               <div className="max-w-3xl">
-                <h3 className="text-xl font-black uppercase text-white tracking-tight mb-4">
+                <h3 className="text-xl font-black uppercase text-zinc-900 font-bold tracking-tight mb-4">
                   Drop Specifications
                 </h3>
-                <div className="rounded-2xl border border-zinc-800 overflow-hidden divide-y divide-zinc-800 text-xs bg-zinc-900">
+                <div className="rounded-2xl border border-zinc-200 overflow-hidden divide-y divide-zinc-200 text-xs bg-zinc-50">
                   {product.specifications?.map((spec, i) => (
                     <div key={i} className="grid grid-cols-3 p-3.5 hover:bg-zinc-850">
-                      <span className="font-bold text-zinc-400">{spec.label}</span>
-                      <span className="col-span-2 text-white font-mono">{spec.value}</span>
+                      <span className="font-bold text-zinc-800 font-semibold">{spec.label}</span>
+                      <span className="col-span-2 text-zinc-900 font-bold font-mono">{spec.value}</span>
                     </div>
                   ))}
                 </div>
@@ -505,34 +505,34 @@ export default function ProductDetailPage() {
             )}
 
             {activeTab === 'materials' && (
-              <div className="max-w-3xl space-y-4 text-xs text-zinc-300 leading-relaxed">
-                <h3 className="text-xl font-black uppercase text-white tracking-tight mb-2">
+              <div className="max-w-3xl space-y-4 text-xs text-zinc-800 font-bold leading-relaxed">
+                <h3 className="text-xl font-black uppercase text-zinc-900 font-bold tracking-tight mb-2">
                   Legit Check & Quality Standards
                 </h3>
                 <p>
                   Every single item at Stride District undergoes a strict multi-point authentication inspection by sneaker veterans. We inspect stitching density, UV-light tags, box labels, font spacing, and material smell before any item leaves our vault.
                 </p>
-                <div className="p-4 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center gap-3">
+                <div className="p-4 rounded-2xl bg-zinc-50 border border-zinc-200 flex items-center gap-3">
                   <ShieldCheck className="w-8 h-8 text-orange-500 shrink-0" />
                   <div>
-                    <h4 className="text-xs font-bold text-white uppercase">100% Authentic or 200% Money Back</h4>
-                    <p className="text-[11px] text-zinc-400">Never worry about fakes. Guaranteed original or full double refund.</p>
+                    <h4 className="text-xs font-bold text-zinc-900 font-bold uppercase">100% Authentic or 200% Money Back</h4>
+                    <p className="text-[11px] text-zinc-800 font-semibold">Never worry about fakes. Guaranteed original or full double refund.</p>
                   </div>
                 </div>
               </div>
             )}
 
             {activeTab === 'warranty' && (
-              <div className="max-w-3xl space-y-4 text-xs text-zinc-300 leading-relaxed">
-                <h3 className="text-xl font-black uppercase text-white tracking-tight">
+              <div className="max-w-3xl space-y-4 text-xs text-zinc-800 font-bold leading-relaxed">
+                <h3 className="text-xl font-black uppercase text-zinc-900 font-bold tracking-tight">
                   Shipping & Return Policy
                 </h3>
-                <div className="p-5 rounded-2xl bg-zinc-900 border border-zinc-800 space-y-2">
-                  <h4 className="text-sm font-bold text-white uppercase">Complimentary Insured Shipping</h4>
+                <div className="p-5 rounded-2xl bg-zinc-50 border border-zinc-200 space-y-2">
+                  <h4 className="text-sm font-bold text-zinc-900 font-bold uppercase">Complimentary Insured Shipping</h4>
                   <p>All orders over $150 qualify for free tracked express transit. Signature required upon delivery.</p>
                 </div>
-                <div className="p-5 rounded-2xl bg-zinc-900 border border-zinc-800 space-y-2">
-                  <h4 className="text-sm font-bold text-white uppercase">14-Day Hassle-Free Returns</h4>
+                <div className="p-5 rounded-2xl bg-zinc-50 border border-zinc-200 space-y-2">
+                  <h4 className="text-sm font-bold text-zinc-900 font-bold uppercase">14-Day Hassle-Free Returns</h4>
                   <p>Unworn items with original tags and packaging intact may be returned within 14 calendar days of receipt.</p>
                 </div>
               </div>
@@ -546,19 +546,19 @@ export default function ProductDetailPage() {
 
         {/* Related Products Grid */}
         {relatedProducts.length > 0 && (
-          <div className="mt-20 pt-16 border-t border-zinc-800">
+          <div className="mt-20 pt-16 border-t border-zinc-200">
             <div className="flex items-center justify-between mb-8">
               <div>
-                <span className="text-xs font-mono font-bold uppercase tracking-wider text-orange-400">
+                <span className="text-xs font-mono font-bold uppercase tracking-wider text-orange-600 font-bold">
                   You May Also Like
                 </span>
-                <h3 className="text-2xl font-black text-white tracking-tight mt-1 uppercase">
+                <h3 className="text-2xl font-black text-zinc-900 font-bold tracking-tight mt-1 uppercase">
                   More in {product.category}
                 </h3>
               </div>
               <Link
                 href={`/shop?category=${product.categorySlug}`}
-                className="text-xs font-bold uppercase tracking-wider text-zinc-400 hover:text-white flex items-center gap-1.5"
+                className="text-xs font-bold uppercase tracking-wider text-zinc-800 font-semibold hover:text-zinc-900 font-bold flex items-center gap-1.5"
               >
                 <span>View All</span>
                 <ArrowRight className="w-3.5 h-3.5" />

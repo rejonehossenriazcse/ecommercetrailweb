@@ -177,32 +177,32 @@ function ShopContent() {
     categories.find((c) => c.slug === filters.category)?.name || 'Complete Streetwear Vault';
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-white">
+    <div className="min-h-screen bg-white text-zinc-900 font-bold">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         
         {/* Top Header Banner */}
-        <div className="mb-8 pb-6 border-b border-zinc-800">
-          <div className="text-[11px] font-mono uppercase tracking-widest text-orange-400 font-bold mb-2 flex items-center gap-2">
+        <div className="mb-8 pb-6 border-b border-zinc-200">
+          <div className="text-[11px] font-mono uppercase tracking-widest text-orange-600 font-bold font-bold mb-2 flex items-center gap-2">
             <Flame className="w-3.5 h-3.5" />
             <span>THE DISTRICT RELEASES / {filters.category ? currentCategoryName : 'ALL DROPS'}</span>
           </div>
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
             <div>
-              <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight uppercase">
+              <h1 className="text-3xl sm:text-5xl font-black text-zinc-900 font-bold tracking-tight uppercase">
                 {currentCategoryName}
               </h1>
-              <p className="text-xs text-zinc-400 mt-1 max-w-lg">
+              <p className="text-xs text-zinc-800 font-semibold mt-1 max-w-lg">
                 Verified authentic grails, limited retro kicks, and heavyweight cut-and-sew streetwear.
               </p>
             </div>
-            <div className="text-xs text-zinc-400 font-mono">
-              Displaying <strong className="text-orange-400">{filteredProducts.length}</strong> authenticated items
+            <div className="text-xs text-zinc-800 font-semibold font-mono">
+              Displaying <strong className="text-orange-600 font-bold">{filteredProducts.length}</strong> authenticated items
             </div>
           </div>
         </div>
 
         {/* Control Bar: Filter triggers, Search, Active chips, Sort, View mode */}
-        <div className="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-zinc-800/80">
+        <div className="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-zinc-200/80">
           
           {/* Mobile Filter Button */}
           <button
@@ -223,19 +223,19 @@ function ShopContent() {
                 setCurrentPage(1);
               }}
               placeholder="Filter by name, brand, SKU..."
-              className="w-full bg-zinc-900 border border-zinc-800 rounded-xl text-xs pl-8 pr-3 py-2 text-white placeholder:text-zinc-500 focus:outline-none focus:border-orange-500"
+              className="w-full bg-zinc-50 border border-zinc-200 rounded-xl text-xs pl-8 pr-3 py-2 text-zinc-900 font-bold placeholder:text-zinc-800 font-semibold font-medium focus:outline-none focus:border-orange-500"
             />
-            <Search className="w-3.5 h-3.5 text-zinc-400 absolute left-2.5 top-2.5 pointer-events-none" />
+            <Search className="w-3.5 h-3.5 text-zinc-800 font-semibold absolute left-2.5 top-2.5 pointer-events-none" />
           </div>
 
           {/* Active Filter Chips */}
           <div className="hidden lg:flex flex-wrap items-center gap-2">
             {filters.category && (
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-700 text-orange-400 text-xs font-semibold">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-zinc-50 border border-zinc-300 text-orange-600 font-bold text-xs font-semibold">
                 Category: {filters.category}
                 <button
                   onClick={() => setFilters({ ...filters, category: '' })}
-                  className="hover:text-white cursor-pointer"
+                  className="hover:text-zinc-900 font-bold cursor-pointer"
                 >
                   <X className="w-3.5 h-3.5" />
                 </button>
@@ -243,11 +243,11 @@ function ShopContent() {
             )}
 
             {filters.searchQuery && (
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-700 text-orange-400 text-xs font-semibold">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-zinc-50 border border-zinc-300 text-orange-600 font-bold text-xs font-semibold">
                 Search: "{filters.searchQuery}"
                 <button
                   onClick={() => setFilters({ ...filters, searchQuery: '' })}
-                  className="hover:text-white cursor-pointer"
+                  className="hover:text-zinc-900 font-bold cursor-pointer"
                 >
                   <X className="w-3.5 h-3.5" />
                 </button>
@@ -257,14 +257,14 @@ function ShopContent() {
             {filters.brands.map((b) => (
               <span
                 key={b}
-                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-700 text-orange-400 text-xs font-semibold"
+                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-zinc-50 border border-zinc-300 text-orange-600 font-bold text-xs font-semibold"
               >
                 Brand: {b}
                 <button
                   onClick={() =>
                     setFilters({ ...filters, brands: filters.brands.filter((item) => item !== b) })
                   }
-                  className="hover:text-white cursor-pointer"
+                  className="hover:text-zinc-900 font-bold cursor-pointer"
                 >
                   <X className="w-3.5 h-3.5" />
                 </button>
@@ -291,7 +291,7 @@ function ShopContent() {
                   setFilters({ ...filters, sortBy: e.target.value as FilterState['sortBy'] })
                 }
                 aria-label="Sort products by"
-                className="appearance-none bg-zinc-900 border border-zinc-800 text-white rounded-xl px-4 py-2 pr-8 text-xs font-bold uppercase tracking-wider focus:outline-none focus:border-orange-500 cursor-pointer"
+                className="appearance-none bg-zinc-50 border border-zinc-200 text-zinc-900 font-bold rounded-xl px-4 py-2 pr-8 text-xs font-bold uppercase tracking-wider focus:outline-none focus:border-orange-500 cursor-pointer"
               >
                 <option value="featured">Featured Drops</option>
                 <option value="newest">Newest Arrivals</option>
@@ -300,11 +300,11 @@ function ShopContent() {
                 <option value="rating">Highest Rated</option>
                 <option value="discount">Biggest Discount</option>
               </select>
-              <ChevronDown className="w-3.5 h-3.5 text-zinc-400 absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+              <ChevronDown className="w-3.5 h-3.5 text-zinc-800 font-semibold absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none" />
             </div>
 
             {/* Grid / List View Toggle */}
-            <div className="hidden sm:flex items-center p-1 bg-zinc-900 rounded-xl border border-zinc-800">
+            <div className="hidden sm:flex items-center p-1 bg-zinc-50 rounded-xl border border-zinc-200">
               <button
                 onClick={() => setViewMode('grid')}
                 className={`p-1.5 rounded-lg transition-colors cursor-pointer ${
@@ -348,17 +348,17 @@ function ShopContent() {
           {/* Product Cards Grid */}
           <main className="col-span-1 lg:col-span-9">
             {isLoadingData ? (
-              <div className="py-24 text-center bg-zinc-900/50 rounded-3xl border border-zinc-800 p-8">
+              <div className="py-24 text-center bg-zinc-50/50 rounded-3xl border border-zinc-200 p-8">
                 <div className="animate-spin w-8 h-8 border-2 border-orange-500 border-t-transparent rounded-full mx-auto mb-4"></div>
-                <h3 className="text-base font-bold text-white">Authenticating District Vault inventory...</h3>
+                <h3 className="text-base font-bold text-zinc-900 font-bold">Authenticating District Vault inventory...</h3>
               </div>
             ) : paginatedProducts.length === 0 ? (
-              <div className="py-24 text-center bg-zinc-900/50 rounded-3xl border border-zinc-800 p-8">
-                <Sparkles className="w-10 h-10 text-orange-400 mx-auto mb-3" />
-                <h3 className="text-lg font-bold text-white">
+              <div className="py-24 text-center bg-zinc-50/50 rounded-3xl border border-zinc-200 p-8">
+                <Sparkles className="w-10 h-10 text-orange-600 font-bold mx-auto mb-3" />
+                <h3 className="text-lg font-bold text-zinc-900 font-bold">
                   No matching drops found
                 </h3>
-                <p className="text-xs text-zinc-400 mt-2 max-w-sm mx-auto">
+                <p className="text-xs text-zinc-800 font-semibold mt-2 max-w-sm mx-auto">
                   Try widening your price range, clearing brand filters, or searching for other streetwear keywords.
                 </p>
                 <button
@@ -384,11 +384,11 @@ function ShopContent() {
 
             {/* Pagination Controls */}
             {totalPages > 1 && (
-              <div className="mt-12 pt-8 border-t border-zinc-800 flex items-center justify-between text-xs font-semibold">
+              <div className="mt-12 pt-8 border-t border-zinc-200 flex items-center justify-between text-xs font-semibold">
                 <button
                   onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
                   disabled={currentPage === 1}
-                  className="px-4 py-2 rounded-xl border border-zinc-800 bg-zinc-900 text-zinc-300 hover:text-white disabled:opacity-30 transition-colors cursor-pointer"
+                  className="px-4 py-2 rounded-xl border border-zinc-200 bg-zinc-50 text-zinc-800 font-bold hover:text-zinc-900 font-bold disabled:opacity-30 transition-colors cursor-pointer"
                 >
                   Previous
                 </button>
@@ -403,7 +403,7 @@ function ShopContent() {
                         className={`w-8 h-8 rounded-lg flex items-center justify-center transition-colors cursor-pointer ${
                           currentPage === pageNum
                             ? 'bg-orange-500 text-white font-bold'
-                            : 'bg-zinc-900 text-zinc-400 hover:text-white border border-zinc-800'
+                            : 'bg-zinc-50 text-zinc-600 hover:text-white border border-zinc-200'
                         }`}
                       >
                         {pageNum}
@@ -415,7 +415,7 @@ function ShopContent() {
                 <button
                   onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
                   disabled={currentPage === totalPages}
-                  className="px-4 py-2 rounded-xl border border-zinc-800 bg-zinc-900 text-zinc-300 hover:text-white disabled:opacity-30 transition-colors cursor-pointer"
+                  className="px-4 py-2 rounded-xl border border-zinc-200 bg-zinc-50 text-zinc-800 font-bold hover:text-zinc-900 font-bold disabled:opacity-30 transition-colors cursor-pointer"
                 >
                   Next
                 </button>
@@ -432,12 +432,12 @@ function ShopContent() {
               className="fixed inset-0 bg-black/80 backdrop-blur-sm"
               onClick={() => setIsMobileFilterOpen(false)}
             />
-            <div className="relative w-4/5 max-w-sm ml-auto bg-zinc-950 border-l border-zinc-800 h-full shadow-2xl flex flex-col z-10 p-6 overflow-y-auto animate-in slide-in-from-right duration-300 text-white">
-              <div className="flex items-center justify-between pb-4 border-b border-zinc-800 mb-6">
-                <h3 className="text-base font-black uppercase text-white">Refine Drops</h3>
+            <div className="relative w-4/5 max-w-sm ml-auto bg-white border-l border-zinc-200 h-full shadow-2xl flex flex-col z-10 p-6 overflow-y-auto animate-in slide-in-from-right duration-300 text-zinc-900 font-bold">
+              <div className="flex items-center justify-between pb-4 border-b border-zinc-200 mb-6">
+                <h3 className="text-base font-black uppercase text-zinc-900 font-bold">Refine Drops</h3>
                 <button
                   onClick={() => setIsMobileFilterOpen(false)}
-                  className="p-1 rounded-lg text-zinc-400 hover:text-white"
+                  className="p-1 rounded-lg text-zinc-800 font-semibold hover:text-zinc-900 font-bold"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -452,7 +452,7 @@ function ShopContent() {
                 brands={BRANDS}
               />
 
-              <div className="pt-6 mt-6 border-t border-zinc-800">
+              <div className="pt-6 mt-6 border-t border-zinc-200">
                 <button
                   onClick={() => setIsMobileFilterOpen(false)}
                   className="w-full py-3.5 rounded-xl bg-orange-500 text-white text-xs font-black uppercase tracking-wider shadow-md hover:bg-orange-600 transition-colors"
@@ -471,7 +471,7 @@ function ShopContent() {
 
 export default function ShopPage() {
   return (
-    <Suspense fallback={<div className="p-12 text-center text-xs font-mono text-zinc-400">Loading District Vault Catalog...</div>}>
+    <Suspense fallback={<div className="p-12 text-center text-xs font-mono text-zinc-800 font-semibold">Loading District Vault Catalog...</div>}>
       <ShopContent />
     </Suspense>
   );

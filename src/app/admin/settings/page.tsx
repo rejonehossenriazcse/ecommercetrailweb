@@ -132,8 +132,8 @@ export default function AdminSettingsPage() {
               <ShieldCheck className="w-6 h-6" />
             </div>
             <div>
-              <h2 className="text-base font-bold text-white">Super Admin Account & Ownership</h2>
-              <p className="text-xs text-zinc-400 mt-0.5">
+              <h2 className="text-base font-bold text-zinc-900 font-bold">Super Admin Account & Ownership</h2>
+              <p className="text-xs text-zinc-800 font-semibold mt-0.5">
                 Set your personal email address and update your root authentication password at any time.
               </p>
             </div>
@@ -147,51 +147,51 @@ export default function AdminSettingsPage() {
         <form onSubmit={handleUpdateSuperAdmin} className="space-y-4 text-xs">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div>
-              <label className="font-bold text-zinc-300 block mb-1">Super Admin Email Address</label>
+              <label className="font-bold text-zinc-800 font-bold block mb-1">Super Admin Email Address</label>
               <div className="relative">
-                <Mail className="w-4 h-4 text-zinc-500 absolute left-3 top-1/2 -translate-y-1/2" />
+                <Mail className="w-4 h-4 text-zinc-800 font-semibold font-medium absolute left-3 top-1/2 -translate-y-1/2" />
                 <input
                   type="email"
                   value={adminEmail}
                   onChange={(e) => setAdminEmail(e.target.value)}
                   placeholder="your-personal-email@domain.com"
-                  className="w-full pl-9 pr-4 py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-white font-mono focus:outline-none focus:ring-1 focus:ring-amber-400"
+                  className="w-full pl-9 pr-4 py-2.5 rounded-xl bg-zinc-50 border border-zinc-200 text-zinc-900 font-bold font-mono focus:outline-none focus:ring-1 focus:ring-amber-400"
                   required
                 />
               </div>
             </div>
 
             <div>
-              <label className="font-bold text-zinc-300 block mb-1">New Root Password</label>
+              <label className="font-bold text-zinc-800 font-bold block mb-1">New Root Password</label>
               <div className="relative">
-                <Key className="w-4 h-4 text-zinc-500 absolute left-3 top-1/2 -translate-y-1/2" />
+                <Key className="w-4 h-4 text-zinc-800 font-semibold font-medium absolute left-3 top-1/2 -translate-y-1/2" />
                 <input
                   type="password"
                   value={newPassword}
                   onChange={(e) => setNewPassword(e.target.value)}
                   placeholder="Leave blank to keep unchanged"
-                  className="w-full pl-9 pr-4 py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-white font-mono focus:outline-none focus:ring-1 focus:ring-amber-400"
+                  className="w-full pl-9 pr-4 py-2.5 rounded-xl bg-zinc-50 border border-zinc-200 text-zinc-900 font-bold font-mono focus:outline-none focus:ring-1 focus:ring-amber-400"
                 />
               </div>
             </div>
 
             <div>
-              <label className="font-bold text-zinc-300 block mb-1">Confirm New Password</label>
+              <label className="font-bold text-zinc-800 font-bold block mb-1">Confirm New Password</label>
               <div className="relative">
-                <Lock className="w-4 h-4 text-zinc-500 absolute left-3 top-1/2 -translate-y-1/2" />
+                <Lock className="w-4 h-4 text-zinc-800 font-semibold font-medium absolute left-3 top-1/2 -translate-y-1/2" />
                 <input
                   type="password"
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   placeholder="Repeat new password"
-                  className="w-full pl-9 pr-4 py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-white font-mono focus:outline-none focus:ring-1 focus:ring-amber-400"
+                  className="w-full pl-9 pr-4 py-2.5 rounded-xl bg-zinc-50 border border-zinc-200 text-zinc-900 font-bold font-mono focus:outline-none focus:ring-1 focus:ring-amber-400"
                 />
               </div>
             </div>
           </div>
 
           <div className="flex items-center justify-between pt-2">
-            <span className="text-[11px] text-zinc-400 font-mono">
+            <span className="text-[11px] text-zinc-800 font-semibold font-mono">
               Role: SUPER_ADMIN • Granular Root Authorization Enabled
             </span>
             <button
@@ -205,19 +205,19 @@ export default function AdminSettingsPage() {
       </div>
 
       {/* 2. Payment Gateways & Tax Rules */}
-      <div className="p-6 rounded-3xl bg-[#14181f] border border-zinc-800/80 space-y-6">
+      <div className="p-6 rounded-3xl bg-[#14181f] border border-zinc-200/80 space-y-6">
         <div className="flex items-center gap-2">
           <CreditCard className="w-5 h-5 text-emerald-400" />
-          <h2 className="text-base font-bold text-white">Payment Gateways & Currencies</h2>
+          <h2 className="text-base font-bold text-zinc-900 font-bold">Payment Gateways & Currencies</h2>
         </div>
 
         <form onSubmit={handleSavePlatformSettings} className="space-y-6 text-xs">
           {/* Stripe Config */}
-          <div className="p-4 rounded-2xl bg-zinc-900 border border-zinc-800 space-y-3">
+          <div className="p-4 rounded-2xl bg-zinc-50 border border-zinc-200 space-y-3">
             <div className="flex items-center justify-between">
-              <span className="font-bold text-white text-sm">Stripe Payment Gateway</span>
+              <span className="font-bold text-zinc-900 font-bold text-sm">Stripe Payment Gateway</span>
               <label className="flex items-center gap-2 cursor-pointer">
-                <span className="text-xs text-zinc-400">Enable Card Tokenization</span>
+                <span className="text-xs text-zinc-800 font-semibold">Enable Card Tokenization</span>
                 <input
                   type="checkbox"
                   checked={payments.stripeEnabled}
@@ -229,21 +229,21 @@ export default function AdminSettingsPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <label className="font-bold text-zinc-400 block mb-1">Publishable Key</label>
+                <label className="font-bold text-zinc-800 font-semibold block mb-1">Publishable Key</label>
                 <input
                   type="text"
                   value={payments.stripePublishableKey}
                   onChange={(e) => setPayments({ ...payments, stripePublishableKey: e.target.value })}
-                  className="w-full px-3 py-2 rounded-xl bg-zinc-950 border border-zinc-800 text-white font-mono"
+                  className="w-full px-3 py-2 rounded-xl bg-white border border-zinc-200 text-zinc-900 font-bold font-mono"
                 />
               </div>
               <div>
-                <label className="font-bold text-zinc-400 block mb-1">Secret Key (Encrypted in Vault)</label>
+                <label className="font-bold text-zinc-800 font-semibold block mb-1">Secret Key (Encrypted in Vault)</label>
                 <input
                   type="password"
                   value={payments.stripeSecretKey}
                   onChange={(e) => setPayments({ ...payments, stripeSecretKey: e.target.value })}
-                  className="w-full px-3 py-2 rounded-xl bg-zinc-950 border border-zinc-800 text-white font-mono"
+                  className="w-full px-3 py-2 rounded-xl bg-white border border-zinc-200 text-zinc-900 font-bold font-mono"
                 />
               </div>
             </div>
@@ -251,8 +251,8 @@ export default function AdminSettingsPage() {
 
           {/* PayPal & Digital Wallets */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <div className="p-4 rounded-2xl bg-zinc-900 border border-zinc-800 space-y-2">
-              <span className="font-bold text-white block">Apple Pay</span>
+            <div className="p-4 rounded-2xl bg-zinc-50 border border-zinc-200 space-y-2">
+              <span className="font-bold text-zinc-900 font-bold block">Apple Pay</span>
               <label className="flex items-center gap-2 cursor-pointer pt-1">
                 <input
                   type="checkbox"
@@ -260,12 +260,12 @@ export default function AdminSettingsPage() {
                   onChange={(e) => setPayments({ ...payments, applePayEnabled: e.target.checked })}
                   className="w-4 h-4 rounded accent-amber-400"
                 />
-                <span className="text-zinc-300">Biometric 1-Touch Checkout</span>
+                <span className="text-zinc-800 font-bold">Biometric 1-Touch Checkout</span>
               </label>
             </div>
 
-            <div className="p-4 rounded-2xl bg-zinc-900 border border-zinc-800 space-y-2">
-              <span className="font-bold text-white block">Google Pay</span>
+            <div className="p-4 rounded-2xl bg-zinc-50 border border-zinc-200 space-y-2">
+              <span className="font-bold text-zinc-900 font-bold block">Google Pay</span>
               <label className="flex items-center gap-2 cursor-pointer pt-1">
                 <input
                   type="checkbox"
@@ -273,12 +273,12 @@ export default function AdminSettingsPage() {
                   onChange={(e) => setPayments({ ...payments, googlePayEnabled: e.target.checked })}
                   className="w-4 h-4 rounded accent-amber-400"
                 />
-                <span className="text-zinc-300">Android Quick Payment</span>
+                <span className="text-zinc-800 font-bold">Android Quick Payment</span>
               </label>
             </div>
 
-            <div className="p-4 rounded-2xl bg-zinc-900 border border-zinc-800 space-y-2">
-              <span className="font-bold text-white block">PayPal Express</span>
+            <div className="p-4 rounded-2xl bg-zinc-50 border border-zinc-200 space-y-2">
+              <span className="font-bold text-zinc-900 font-bold block">PayPal Express</span>
               <label className="flex items-center gap-2 cursor-pointer pt-1">
                 <input
                   type="checkbox"
@@ -286,7 +286,7 @@ export default function AdminSettingsPage() {
                   onChange={(e) => setPayments({ ...payments, paypalEnabled: e.target.checked })}
                   className="w-4 h-4 rounded accent-amber-400"
                 />
-                <span className="text-zinc-300">One-Click Wallet</span>
+                <span className="text-zinc-800 font-bold">One-Click Wallet</span>
               </label>
             </div>
           </div>
@@ -294,21 +294,21 @@ export default function AdminSettingsPage() {
           {/* Tax & Free Shipping */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="font-bold text-zinc-300 block mb-1">Standard Sales Tax Rate (%)</label>
+              <label className="font-bold text-zinc-800 font-bold block mb-1">Standard Sales Tax Rate (%)</label>
               <input
                 type="number"
                 value={general.taxRatePercent}
                 onChange={(e) => setGeneral({ ...general, taxRatePercent: Number(e.target.value) })}
-                className="w-full px-3.5 py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-white font-mono"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-zinc-50 border border-zinc-200 text-zinc-900 font-bold font-mono"
               />
             </div>
             <div>
-              <label className="font-bold text-zinc-300 block mb-1">Free Shipping Threshold ($ USD)</label>
+              <label className="font-bold text-zinc-800 font-bold block mb-1">Free Shipping Threshold ($ USD)</label>
               <input
                 type="number"
                 value={general.freeShippingThreshold}
                 onChange={(e) => setGeneral({ ...general, freeShippingThreshold: Number(e.target.value) })}
-                className="w-full px-3.5 py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-white font-mono"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-zinc-50 border border-zinc-200 text-zinc-900 font-bold font-mono"
               />
             </div>
           </div>
@@ -325,20 +325,20 @@ export default function AdminSettingsPage() {
       </div>
 
       {/* 3. Security Audit Logs Trail */}
-      <div className="p-6 rounded-3xl bg-[#14181f] border border-zinc-800/80 space-y-4">
+      <div className="p-6 rounded-3xl bg-[#14181f] border border-zinc-200/80 space-y-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <FileText className="w-5 h-5 text-amber-400" />
-            <h2 className="text-base font-bold text-white">Chronological Security Audit Log</h2>
+            <h2 className="text-base font-bold text-zinc-900 font-bold">Chronological Security Audit Log</h2>
           </div>
-          <span className="text-[11px] font-mono text-zinc-500">
+          <span className="text-[11px] font-mono text-zinc-800 font-semibold font-medium">
             Immutable Audit Trail • {auditLogs.length} Entries Recorded
           </span>
         </div>
 
-        <div className="overflow-x-auto rounded-2xl border border-zinc-800">
+        <div className="overflow-x-auto rounded-2xl border border-zinc-200">
           <table className="w-full text-left text-xs">
-            <thead className="bg-[#0f1217] border-b border-zinc-800 text-zinc-400 font-bold uppercase tracking-wider">
+            <thead className="bg-[#0f1217] border-b border-zinc-200 text-zinc-800 font-semibold font-bold uppercase tracking-wider">
               <tr>
                 <th className="p-3">Timestamp</th>
                 <th className="p-3">User & Role</th>
@@ -348,28 +348,28 @@ export default function AdminSettingsPage() {
                 <th className="p-3 font-mono">IP Address</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-zinc-800 text-zinc-300">
+            <tbody className="divide-y divide-zinc-200 text-zinc-800 font-bold">
               {auditLogs.map((log) => (
-                <tr key={log.id} className="hover:bg-zinc-800/30">
-                  <td className="p-3 font-mono text-[11px] text-zinc-500 whitespace-nowrap">
+                <tr key={log.id} className="hover:bg-zinc-100/30">
+                  <td className="p-3 font-mono text-[11px] text-zinc-800 font-semibold font-medium whitespace-nowrap">
                     {new Date(log.timestamp).toLocaleString()}
                   </td>
                   <td className="p-3 whitespace-nowrap">
-                    <span className="font-bold text-white">{log.userName}</span>
-                    <span className="text-[10px] text-zinc-500 font-mono block uppercase">
+                    <span className="font-bold text-zinc-900 font-bold">{log.userName}</span>
+                    <span className="text-[10px] text-zinc-800 font-semibold font-medium font-mono block uppercase">
                       {log.role}
                     </span>
                   </td>
                   <td className="p-3 font-mono font-semibold text-amber-400 whitespace-nowrap">
                     {log.action}
                   </td>
-                  <td className="p-3 whitespace-nowrap font-medium text-zinc-300">
+                  <td className="p-3 whitespace-nowrap font-medium text-zinc-800 font-bold">
                     {log.entity}
                   </td>
-                  <td className="p-3 text-zinc-400 max-w-sm">
+                  <td className="p-3 text-zinc-800 font-semibold max-w-sm">
                     {log.details}
                   </td>
-                  <td className="p-3 font-mono text-[11px] text-zinc-500 whitespace-nowrap">
+                  <td className="p-3 font-mono text-[11px] text-zinc-800 font-semibold font-medium whitespace-nowrap">
                     {log.ipAddress || '127.0.0.1'}
                   </td>
                 </tr>

@@ -61,30 +61,30 @@ export default function CookieConsent() {
     <>
       {/* Banner */}
       <div className="fixed bottom-4 sm:bottom-6 left-4 right-4 sm:left-6 sm:right-auto sm:max-w-md z-50 animate-in fade-in slide-in-from-bottom-5 duration-300">
-        <div className="p-5 sm:p-6 rounded-3xl bg-zinc-950/95 text-white border border-zinc-800 shadow-2xl backdrop-blur-xl space-y-4">
+        <div className="p-5 sm:p-6 rounded-3xl bg-white/95 text-zinc-900 font-bold border border-zinc-200 shadow-2xl backdrop-blur-xl space-y-4">
           <div className="flex items-start justify-between gap-3">
             <div className="flex items-center gap-2.5">
               <div className="w-8 h-8 rounded-xl bg-amber-400/10 text-amber-400 flex items-center justify-center border border-amber-400/20 shrink-0">
                 <Cookie className="w-4 h-4" />
               </div>
               <div>
-                <h4 className="text-xs font-bold font-mono uppercase tracking-wider text-white">
+                <h4 className="text-xs font-bold font-mono uppercase tracking-wider text-zinc-900 font-bold">
                   Patron Privacy & Telemetry
                 </h4>
-                <div className="text-[10px] text-zinc-400 font-mono">GDPR & CCPA Compliant</div>
+                <div className="text-[10px] text-zinc-800 font-semibold font-mono">GDPR & CCPA Compliant</div>
               </div>
             </div>
 
             <button
               onClick={handleRejectNonEssential}
-              className="text-zinc-500 hover:text-white p-1 rounded-lg"
+              className="text-zinc-800 font-semibold font-medium hover:text-zinc-900 font-bold p-1 rounded-lg"
               title="Close"
             >
               <X className="w-4 h-4" />
             </button>
           </div>
 
-          <p className="text-xs text-zinc-400 leading-relaxed">
+          <p className="text-xs text-zinc-800 font-semibold leading-relaxed">
             We use strictly essential cryptographic tokens for bag and vault security, and optional privacy-preserving telemetry to refine our spatial acoustics and horology dispatches.{' '}
             <Link href="/privacy" className="text-amber-400 hover:underline">
               Review Privacy Charter
@@ -100,13 +100,13 @@ export default function CookieConsent() {
             </button>
             <button
               onClick={handleRejectNonEssential}
-              className="py-2 px-3 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-zinc-300 font-semibold text-xs transition-colors cursor-pointer border border-zinc-800"
+              className="py-2 px-3 rounded-xl bg-zinc-50 hover:bg-zinc-100 text-zinc-800 font-bold font-semibold text-xs transition-colors cursor-pointer border border-zinc-200"
             >
               Reject Non-Essential
             </button>
             <button
               onClick={() => setIsPreferencesOpen(true)}
-              className="p-2 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-zinc-400 hover:text-white transition-colors cursor-pointer border border-zinc-800 flex items-center justify-center"
+              className="p-2 rounded-xl bg-zinc-50 hover:bg-zinc-100 text-zinc-800 font-semibold hover:text-zinc-900 font-bold transition-colors cursor-pointer border border-zinc-200 flex items-center justify-center"
               title="Configure Preferences"
             >
               <Settings className="w-3.5 h-3.5" />
@@ -118,17 +118,17 @@ export default function CookieConsent() {
       {/* Preferences Modal */}
       {isPreferencesOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-200">
-          <div className="w-full max-w-md bg-[#14181f] text-white rounded-3xl p-6 sm:p-7 border border-zinc-800 shadow-2xl space-y-5">
-            <div className="flex items-center justify-between pb-3 border-b border-zinc-800">
+          <div className="w-full max-w-md bg-[#14181f] text-zinc-900 font-bold rounded-3xl p-6 sm:p-7 border border-zinc-200 shadow-2xl space-y-5">
+            <div className="flex items-center justify-between pb-3 border-b border-zinc-200">
               <div className="flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-emerald-400" />
-                <h3 className="text-sm font-bold text-white uppercase font-mono tracking-wider">
+                <h3 className="text-sm font-bold text-zinc-900 font-bold uppercase font-mono tracking-wider">
                   Cookie & Telemetry Preferences
                 </h3>
               </div>
               <button
                 onClick={() => setIsPreferencesOpen(false)}
-                className="text-zinc-400 hover:text-white"
+                className="text-zinc-800 font-semibold hover:text-zinc-900 font-bold"
               >
                 <X className="w-4 h-4" />
               </button>
@@ -136,23 +136,23 @@ export default function CookieConsent() {
 
             <div className="space-y-4 text-xs">
               {/* Essential */}
-              <div className="p-3.5 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-between">
+              <div className="p-3.5 rounded-2xl bg-zinc-50 border border-zinc-200 flex items-center justify-between">
                 <div>
-                  <div className="font-bold text-white">Strictly Essential & Security</div>
-                  <div className="text-[11px] text-zinc-400 mt-0.5">
+                  <div className="font-bold text-zinc-900 font-bold">Strictly Essential & Security</div>
+                  <div className="text-[11px] text-zinc-800 font-semibold mt-0.5">
                     Cart session, CSRF tokens, checkout encryption.
                   </div>
                 </div>
-                <span className="px-2 py-0.5 rounded bg-zinc-800 text-zinc-400 font-mono text-[10px] uppercase font-bold">
+                <span className="px-2 py-0.5 rounded bg-zinc-100 text-zinc-800 font-semibold font-mono text-[10px] uppercase font-bold">
                   Always Active
                 </span>
               </div>
 
               {/* Analytics */}
-              <div className="p-3.5 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-between">
+              <div className="p-3.5 rounded-2xl bg-zinc-50 border border-zinc-200 flex items-center justify-between">
                 <div>
-                  <div className="font-bold text-white">Analytics & Performance</div>
-                  <div className="text-[11px] text-zinc-400 mt-0.5">
+                  <div className="font-bold text-zinc-900 font-bold">Analytics & Performance</div>
+                  <div className="text-[11px] text-zinc-800 font-semibold mt-0.5">
                     Anonymous Core Web Vitals and navigation flows.
                   </div>
                 </div>
@@ -160,15 +160,15 @@ export default function CookieConsent() {
                   type="checkbox"
                   checked={preferences.analytics}
                   onChange={(e) => setPreferences({ ...preferences, analytics: e.target.checked })}
-                  className="rounded border-zinc-700 bg-zinc-800 text-amber-400 focus:ring-0 cursor-pointer"
+                  className="rounded border-zinc-300 bg-zinc-100 text-amber-400 focus:ring-0 cursor-pointer"
                 />
               </div>
 
               {/* Marketing */}
-              <div className="p-3.5 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-between">
+              <div className="p-3.5 rounded-2xl bg-zinc-50 border border-zinc-200 flex items-center justify-between">
                 <div>
-                  <div className="font-bold text-white">Marketing & Pixel Attribution</div>
-                  <div className="text-[11px] text-zinc-400 mt-0.5">
+                  <div className="font-bold text-zinc-900 font-bold">Marketing & Pixel Attribution</div>
+                  <div className="text-[11px] text-zinc-800 font-semibold mt-0.5">
                     Meta Pixel and Conversions API deduplication.
                   </div>
                 </div>
@@ -176,7 +176,7 @@ export default function CookieConsent() {
                   type="checkbox"
                   checked={preferences.marketing}
                   onChange={(e) => setPreferences({ ...preferences, marketing: e.target.checked })}
-                  className="rounded border-zinc-700 bg-zinc-800 text-amber-400 focus:ring-0 cursor-pointer"
+                  className="rounded border-zinc-300 bg-zinc-100 text-amber-400 focus:ring-0 cursor-pointer"
                 />
               </div>
             </div>
@@ -185,7 +185,7 @@ export default function CookieConsent() {
               <button
                 type="button"
                 onClick={() => setIsPreferencesOpen(false)}
-                className="px-4 py-2 rounded-xl text-zinc-400 hover:text-white"
+                className="px-4 py-2 rounded-xl text-zinc-800 font-semibold hover:text-zinc-900 font-bold"
               >
                 Cancel
               </button>

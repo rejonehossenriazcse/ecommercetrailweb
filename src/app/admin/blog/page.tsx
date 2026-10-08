@@ -230,39 +230,39 @@ export default function AdminBlogPage() {
       />
 
       {/* Main Articles Container */}
-      <div className="bg-[#14171d] border border-zinc-800 rounded-2xl p-6 space-y-4">
+      <div className="bg-[#14171d] border border-zinc-200 rounded-2xl p-6 space-y-4">
         {/* Search Bar */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-zinc-800">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-zinc-200">
           <div className="relative flex-1 max-w-sm">
-            <Search className="w-4 h-4 text-zinc-500 absolute left-3 top-1/2 -translate-y-1/2" />
+            <Search className="w-4 h-4 text-zinc-800 font-semibold font-medium absolute left-3 top-1/2 -translate-y-1/2" />
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search articles by title or category..."
-              className="w-full pl-9 pr-4 py-2 rounded-xl bg-zinc-900 border border-zinc-750 text-xs text-white placeholder:text-zinc-500 focus:outline-none focus:border-amber-400"
+              className="w-full pl-9 pr-4 py-2 rounded-xl bg-zinc-50 border border-zinc-300 text-xs text-zinc-900 font-bold placeholder:text-zinc-800 font-semibold font-medium focus:outline-none focus:border-amber-400"
             />
           </div>
-          <span className="text-xs font-mono text-zinc-500">
+          <span className="text-xs font-mono text-zinc-800 font-semibold font-medium">
             {filteredBlogs.length} Articles Published
           </span>
         </div>
 
         {loading ? (
-          <div className="py-12 text-center text-xs font-mono text-zinc-500">
+          <div className="py-12 text-center text-xs font-mono text-zinc-800 font-semibold font-medium">
             Loading articles archive...
           </div>
         ) : filteredBlogs.length === 0 ? (
-          <div className="py-12 text-center text-zinc-400 space-y-2">
+          <div className="py-12 text-center text-zinc-800 font-semibold space-y-2">
             <p className="text-sm font-semibold">No articles match your query.</p>
-            <p className="text-xs text-zinc-500">Click &ldquo;Write New Article&rdquo; above to publish your first story.</p>
+            <p className="text-xs text-zinc-800 font-semibold font-medium">Click &ldquo;Write New Article&rdquo; above to publish your first story.</p>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {filteredBlogs.map((blog) => (
               <div
                 key={blog.id}
-                className="rounded-2xl border border-zinc-800 bg-zinc-900/80 overflow-hidden flex flex-col justify-between hover:border-zinc-700 transition-all group"
+                className="rounded-2xl border border-zinc-200 bg-zinc-50/80 overflow-hidden flex flex-col justify-between hover:border-zinc-300 transition-all group"
               >
                 <div>
                   {/* Cover Image */}
@@ -281,7 +281,7 @@ export default function AdminBlogPage() {
 
                   {/* Body */}
                   <div className="p-4 space-y-2">
-                    <div className="flex items-center gap-3 text-[11px] font-mono text-zinc-400">
+                    <div className="flex items-center gap-3 text-[11px] font-mono text-zinc-800 font-semibold">
                       <span className="flex items-center gap-1">
                         <Clock className="w-3 h-3 text-amber-400" />
                         {blog.readTimeMinutes} min read
@@ -290,22 +290,22 @@ export default function AdminBlogPage() {
                       <span>{blog.publishedAt}</span>
                     </div>
 
-                    <h4 className="text-sm font-bold text-white line-clamp-2 group-hover:text-amber-300 transition-colors">
+                    <h4 className="text-sm font-bold text-zinc-900 font-bold line-clamp-2 group-hover:text-amber-300 transition-colors">
                       {blog.title}
                     </h4>
 
-                    <p className="text-xs text-zinc-400 line-clamp-2 leading-relaxed">
+                    <p className="text-xs text-zinc-800 font-semibold line-clamp-2 leading-relaxed">
                       {blog.excerpt}
                     </p>
                   </div>
                 </div>
 
                 {/* Footer Actions */}
-                <div className="p-4 pt-2 border-t border-zinc-800/80 flex items-center justify-between">
+                <div className="p-4 pt-2 border-t border-zinc-200/80 flex items-center justify-between">
                   <Link
                     href={`/blog/${blog.slug}`}
                     target="_blank"
-                    className="text-xs font-semibold text-zinc-400 hover:text-white flex items-center gap-1 transition-colors"
+                    className="text-xs font-semibold text-zinc-800 font-semibold hover:text-zinc-900 font-bold flex items-center gap-1 transition-colors"
                   >
                     <span>Read Live</span>
                     <ExternalLink className="w-3 h-3 text-amber-400" />
@@ -314,14 +314,14 @@ export default function AdminBlogPage() {
                   <div className="flex items-center gap-1">
                     <button
                       onClick={() => handleOpenEdit(blog)}
-                      className="p-1.5 text-zinc-400 hover:text-white hover:bg-zinc-800 rounded-lg transition-colors"
+                      className="p-1.5 text-zinc-800 font-semibold hover:text-zinc-900 font-bold hover:bg-zinc-100 rounded-lg transition-colors"
                       title="Edit article"
                     >
                       <Edit2 className="w-3.5 h-3.5" />
                     </button>
                     <button
                       onClick={() => setDeleteSlug(blog.slug)}
-                      className="p-1.5 text-zinc-500 hover:text-rose-400 hover:bg-zinc-800 rounded-lg transition-colors"
+                      className="p-1.5 text-zinc-800 font-semibold font-medium hover:text-rose-400 hover:bg-zinc-100 rounded-lg transition-colors"
                       title="Delete article"
                     >
                       <Trash2 className="w-3.5 h-3.5" />
@@ -339,16 +339,16 @@ export default function AdminBlogPage() {
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-150">
           <form
             onSubmit={handleSaveBlog}
-            className="bg-[#16191f] border border-zinc-800 rounded-2xl p-6 max-w-2xl w-full shadow-2xl space-y-4 max-h-[90vh] overflow-y-auto"
+            className="bg-[#16191f] border border-zinc-200 rounded-2xl p-6 max-w-2xl w-full shadow-2xl space-y-4 max-h-[90vh] overflow-y-auto"
           >
-            <div className="flex items-center justify-between pb-3 border-b border-zinc-800">
-              <h3 className="text-base font-bold text-white">
+            <div className="flex items-center justify-between pb-3 border-b border-zinc-200">
+              <h3 className="text-base font-bold text-zinc-900 font-bold">
                 {editingBlog ? `Edit Article: ${editingBlog.title}` : 'Write New Journal Article'}
               </h3>
               <button
                 type="button"
                 onClick={() => setIsModalOpen(false)}
-                className="text-zinc-500 hover:text-white"
+                className="text-zinc-800 font-semibold font-medium hover:text-zinc-900 font-bold"
               >
                 ✕
               </button>
@@ -356,7 +356,7 @@ export default function AdminBlogPage() {
 
             <div className="space-y-3">
               <div>
-                <label className="block text-xs font-semibold text-zinc-300 mb-1">
+                <label className="block text-xs font-semibold text-zinc-800 font-bold mb-1">
                   Article Title *
                 </label>
                 <input
@@ -372,13 +372,13 @@ export default function AdminBlogPage() {
                     });
                   }}
                   placeholder="e.g. The Acoustic Physics of Beryllium Transducers"
-                  className="w-full px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-700 text-xs text-white focus:outline-none focus:border-amber-400"
+                  className="w-full px-3 py-2 rounded-xl bg-zinc-50 border border-zinc-300 text-xs text-zinc-900 font-bold focus:outline-none focus:border-amber-400"
                 />
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs font-semibold text-zinc-300 mb-1">
+                  <label className="block text-xs font-semibold text-zinc-800 font-bold mb-1">
                     URL Slug *
                   </label>
                   <input
@@ -387,12 +387,12 @@ export default function AdminBlogPage() {
                     value={blogForm.slug}
                     onChange={(e) => setBlogForm({ ...blogForm, slug: e.target.value })}
                     placeholder="e.g. air-jordan-1-legit-check-guide"
-                    className="w-full px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-700 text-xs text-white font-mono focus:outline-none focus:border-amber-400"
+                    className="w-full px-3 py-2 rounded-xl bg-zinc-50 border border-zinc-300 text-xs text-zinc-900 font-bold font-mono focus:outline-none focus:border-amber-400"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-zinc-300 mb-1">
+                  <label className="block text-xs font-semibold text-zinc-800 font-bold mb-1">
                     Category
                   </label>
                   <input
@@ -400,13 +400,13 @@ export default function AdminBlogPage() {
                     value={blogForm.category}
                     onChange={(e) => setBlogForm({ ...blogForm, category: e.target.value })}
                     placeholder="e.g. Culture & Grails, Authentication Lab, Style & Guides"
-                    className="w-full px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-700 text-xs text-white focus:outline-none focus:border-amber-400"
+                    className="w-full px-3 py-2 rounded-xl bg-zinc-50 border border-zinc-300 text-xs text-zinc-900 font-bold focus:outline-none focus:border-amber-400"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-zinc-300 mb-1">
+                <label className="block text-xs font-semibold text-zinc-800 font-bold mb-1">
                   Cover Image URL
                 </label>
                 <input
@@ -414,12 +414,12 @@ export default function AdminBlogPage() {
                   value={blogForm.coverImage}
                   onChange={(e) => setBlogForm({ ...blogForm, coverImage: e.target.value })}
                   placeholder="https://images.unsplash.com/..."
-                  className="w-full px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-700 text-xs text-white focus:outline-none focus:border-amber-400"
+                  className="w-full px-3 py-2 rounded-xl bg-zinc-50 border border-zinc-300 text-xs text-zinc-900 font-bold focus:outline-none focus:border-amber-400"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-zinc-300 mb-1">
+                <label className="block text-xs font-semibold text-zinc-800 font-bold mb-1">
                   Excerpt / Short Summary
                 </label>
                 <textarea
@@ -427,12 +427,12 @@ export default function AdminBlogPage() {
                   value={blogForm.excerpt}
                   onChange={(e) => setBlogForm({ ...blogForm, excerpt: e.target.value })}
                   placeholder="One or two sentences summarizing the article..."
-                  className="w-full px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-700 text-xs text-white focus:outline-none focus:border-amber-400"
+                  className="w-full px-3 py-2 rounded-xl bg-zinc-50 border border-zinc-300 text-xs text-zinc-900 font-bold focus:outline-none focus:border-amber-400"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-zinc-300 mb-1">
+                <label className="block text-xs font-semibold text-zinc-800 font-bold mb-1">
                   Full Article Body (Markdown supported) *
                 </label>
                 <textarea
@@ -441,13 +441,13 @@ export default function AdminBlogPage() {
                   value={blogForm.content}
                   onChange={(e) => setBlogForm({ ...blogForm, content: e.target.value })}
                   placeholder="Write the full narrative or whitepaper content here..."
-                  className="w-full px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-700 text-xs text-white font-mono focus:outline-none focus:border-amber-400"
+                  className="w-full px-3 py-2 rounded-xl bg-zinc-50 border border-zinc-300 text-xs text-zinc-900 font-bold font-mono focus:outline-none focus:border-amber-400"
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs font-semibold text-zinc-300 mb-1">
+                  <label className="block text-xs font-semibold text-zinc-800 font-bold mb-1">
                     Read Time (Minutes)
                   </label>
                   <input
@@ -456,12 +456,12 @@ export default function AdminBlogPage() {
                     max={60}
                     value={blogForm.readTimeMinutes}
                     onChange={(e) => setBlogForm({ ...blogForm, readTimeMinutes: Number(e.target.value) })}
-                    className="w-full px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-700 text-xs text-white focus:outline-none focus:border-amber-400"
+                    className="w-full px-3 py-2 rounded-xl bg-zinc-50 border border-zinc-300 text-xs text-zinc-900 font-bold focus:outline-none focus:border-amber-400"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-zinc-300 mb-1">
+                  <label className="block text-xs font-semibold text-zinc-800 font-bold mb-1">
                     Tags (comma separated)
                   </label>
                   <input
@@ -469,17 +469,17 @@ export default function AdminBlogPage() {
                     value={blogForm.tagsString}
                     onChange={(e) => setBlogForm({ ...blogForm, tagsString: e.target.value })}
                     placeholder="e.g. Sneakers, Air Jordan, Streetwear, Supreme"
-                    className="w-full px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-700 text-xs text-white focus:outline-none focus:border-amber-400"
+                    className="w-full px-3 py-2 rounded-xl bg-zinc-50 border border-zinc-300 text-xs text-zinc-900 font-bold focus:outline-none focus:border-amber-400"
                   />
                 </div>
               </div>
             </div>
 
-            <div className="flex items-center justify-end gap-2 pt-3 border-t border-zinc-800">
+            <div className="flex items-center justify-end gap-2 pt-3 border-t border-zinc-200">
               <button
                 type="button"
                 onClick={() => setIsModalOpen(false)}
-                className="px-4 py-2 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-zinc-300 text-xs font-semibold"
+                className="px-4 py-2 rounded-xl bg-zinc-100 hover:bg-zinc-200 text-zinc-800 font-bold text-xs font-semibold"
               >
                 Cancel
               </button>

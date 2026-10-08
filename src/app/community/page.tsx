@@ -11,20 +11,20 @@ export default function CommunityPage() {
     <div className="min-h-screen bg-black text-white py-16 px-4">
       <div className="max-w-7xl mx-auto space-y-10">
         <div className="text-center max-w-2xl mx-auto space-y-4">
-          <h1 className="text-4xl font-black text-white tracking-tight uppercase">
+          <h1 className="text-4xl font-black text-zinc-900 font-bold tracking-tight uppercase">
             The District Community
           </h1>
-          <p className="text-zinc-400 text-sm">
+          <p className="text-zinc-800 font-semibold text-sm">
             Join the culture. Share your fits, discover new trends, and connect with other streetwear enthusiasts worldwide. Tag #StrideDistrict to be featured.
           </p>
         </div>
 
         <SocialGallery />
 
-        <div className="flex items-center justify-center pt-10 border-t border-zinc-900 gap-4">
+        <div className="flex items-center justify-center pt-10 border-t border-zinc-200 gap-4">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-zinc-900 hover:bg-zinc-800 text-white text-xs font-bold uppercase tracking-wider transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-zinc-50 hover:bg-zinc-100 text-zinc-900 font-bold text-xs font-bold uppercase tracking-wider transition-colors"
           >
             <Home className="w-4 h-4" />
             <span>Return Home</span>

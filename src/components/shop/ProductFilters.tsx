@@ -64,17 +64,17 @@ export default function ProductFilters({
   };
 
   return (
-    <div className="bg-zinc-900/90 border border-zinc-800 rounded-2xl p-5 space-y-7 text-xs text-zinc-300">
+    <div className="bg-zinc-50/90 border border-zinc-200 rounded-2xl p-5 space-y-7 text-xs text-zinc-800 font-bold">
       
       {/* Filter Header & Reset */}
-      <div className="flex items-center justify-between pb-3 border-b border-zinc-800">
-        <span className="font-black uppercase tracking-wider text-white text-xs flex items-center gap-1.5">
+      <div className="flex items-center justify-between pb-3 border-b border-zinc-200">
+        <span className="font-black uppercase tracking-wider text-zinc-900 font-bold text-xs flex items-center gap-1.5">
           <Flame className="w-3.5 h-3.5 text-orange-500" />
           Filter Grails
         </span>
         <button
           onClick={onReset}
-          className="flex items-center gap-1 text-[11px] font-semibold text-zinc-400 hover:text-orange-400 transition-colors cursor-pointer"
+          className="flex items-center gap-1 text-[11px] font-semibold text-zinc-800 font-semibold hover:text-orange-600 font-bold transition-colors cursor-pointer"
         >
           <RotateCcw className="w-3 h-3" />
           <span>Reset</span>
@@ -83,7 +83,7 @@ export default function ProductFilters({
 
       {/* Categories */}
       <div>
-        <h4 className="font-black uppercase tracking-wider text-white mb-3 text-[11px]">
+        <h4 className="font-black uppercase tracking-wider text-zinc-900 font-bold mb-3 text-[11px]">
           Categories
         </h4>
         <div className="space-y-1.5">
@@ -92,7 +92,7 @@ export default function ProductFilters({
             className={`w-full text-left py-2 px-3 rounded-xl transition-all cursor-pointer flex items-center justify-between ${
               filters.category === ''
                 ? 'bg-orange-500 text-white font-bold shadow-md'
-                : 'text-zinc-400 hover:bg-zinc-800 hover:text-white'
+                : 'text-zinc-600 hover:bg-zinc-100 hover:text-white'
             }`}
           >
             <span>All Categories</span>
@@ -104,13 +104,13 @@ export default function ProductFilters({
               className={`w-full text-left py-2 px-3 rounded-xl transition-all cursor-pointer flex items-center justify-between ${
                 filters.category === cat.slug
                   ? 'bg-orange-500 text-white font-bold shadow-md'
-                  : 'text-zinc-400 hover:bg-zinc-800 hover:text-white'
+                  : 'text-zinc-600 hover:bg-zinc-100 hover:text-white'
               }`}
             >
               <span>{cat.name}</span>
               {cat.itemCount !== undefined && (
                 <span className={`text-[10px] font-mono px-1.5 py-0.5 rounded ${
-                  filters.category === cat.slug ? 'bg-orange-600 text-white' : 'bg-zinc-800 text-zinc-500'
+                  filters.category === cat.slug ? 'bg-orange-600 text-white' : 'bg-zinc-100 text-zinc-500'
                 }`}>
                   {cat.itemCount}
                 </span>
@@ -122,7 +122,7 @@ export default function ProductFilters({
 
       {/* Brands Multi-Select */}
       <div>
-        <h4 className="font-black uppercase tracking-wider text-white mb-3 text-[11px]">
+        <h4 className="font-black uppercase tracking-wider text-zinc-900 font-bold mb-3 text-[11px]">
           Streetwear Brands
         </h4>
         <div className="flex flex-wrap gap-1.5">
@@ -135,7 +135,7 @@ export default function ProductFilters({
                 className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
                   isSelected
                     ? 'bg-orange-500 text-white font-bold shadow-sm'
-                    : 'bg-zinc-800 hover:bg-zinc-700 text-zinc-400 hover:text-white border border-zinc-750'
+                    : 'bg-zinc-100 hover:bg-zinc-200 text-zinc-600 hover:text-white border border-zinc-750'
                 }`}
               >
                 {b.name}
@@ -147,7 +147,7 @@ export default function ProductFilters({
 
       {/* Sizes Multi-Select */}
       <div>
-        <h4 className="font-black uppercase tracking-wider text-white mb-3 text-[11px]">
+        <h4 className="font-black uppercase tracking-wider text-zinc-900 font-bold mb-3 text-[11px]">
           Sizes
         </h4>
         <div className="grid grid-cols-4 gap-1.5">
@@ -160,7 +160,7 @@ export default function ProductFilters({
                 className={`py-1.5 rounded-lg text-xs font-mono font-bold transition-all cursor-pointer text-center ${
                   isSelected
                     ? 'bg-orange-500 text-white shadow-sm'
-                    : 'bg-zinc-800 hover:bg-zinc-700 text-zinc-400 hover:text-white border border-zinc-750'
+                    : 'bg-zinc-100 hover:bg-zinc-200 text-zinc-600 hover:text-white border border-zinc-750'
                 }`}
               >
                 {size}
@@ -173,10 +173,10 @@ export default function ProductFilters({
       {/* Price Range Slider */}
       <div>
         <div className="flex justify-between items-center mb-2">
-          <h4 className="font-black uppercase tracking-wider text-white text-[11px]">
+          <h4 className="font-black uppercase tracking-wider text-zinc-900 font-bold text-[11px]">
             Max Price
           </h4>
-          <span className="font-mono font-bold text-orange-400">
+          <span className="font-mono font-bold text-orange-600 font-bold">
             {formatPrice(filters.maxPrice)}
           </span>
         </div>
@@ -192,18 +192,18 @@ export default function ProductFilters({
               maxPrice: Number(e.target.value),
             })
           }
-          className="w-full accent-orange-500 bg-zinc-800 cursor-pointer h-1.5 rounded-lg"
+          className="w-full accent-orange-500 bg-zinc-100 cursor-pointer h-1.5 rounded-lg"
         />
-        <div className="flex justify-between text-[10px] text-zinc-500 font-mono mt-1">
+        <div className="flex justify-between text-[10px] text-zinc-800 font-semibold font-medium font-mono mt-1">
           <span>$50</span>
           <span>$500+</span>
         </div>
       </div>
 
       {/* In Stock Only Toggle */}
-      <div className="pt-2 border-t border-zinc-800">
+      <div className="pt-2 border-t border-zinc-200">
         <label className="flex items-center justify-between cursor-pointer group">
-          <span className="text-xs font-bold text-zinc-300 group-hover:text-white">
+          <span className="text-xs font-bold text-zinc-800 font-bold group-hover:text-zinc-900 font-bold">
             In Stock Only
           </span>
           <input
@@ -215,7 +215,7 @@ export default function ProductFilters({
                 inStockOnly: e.target.checked,
               })
             }
-            className="w-4 h-4 rounded bg-zinc-800 border-zinc-700 text-orange-500 focus:ring-orange-500 accent-orange-500 cursor-pointer"
+            className="w-4 h-4 rounded bg-zinc-100 border-zinc-300 text-orange-500 focus:ring-orange-500 accent-orange-500 cursor-pointer"
           />
         </label>
       </div>

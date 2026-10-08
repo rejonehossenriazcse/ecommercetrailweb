@@ -230,7 +230,7 @@ export default function AdminFooterPage() {
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
-        <div className="flex flex-col items-center gap-3 text-zinc-400">
+        <div className="flex flex-col items-center gap-3 text-zinc-800 font-semibold">
           <div className="w-6 h-6 border-2 border-amber-400 border-t-transparent rounded-full animate-spin" />
           <span className="text-xs font-mono">Loading Footer Configuration...</span>
         </div>
@@ -293,57 +293,57 @@ export default function AdminFooterPage() {
       />
 
       {/* Live Interactive Footer Preview Card */}
-      <div className="bg-[#14171d] border border-zinc-800 rounded-2xl overflow-hidden shadow-lg">
-        <div className="px-5 py-3 border-b border-zinc-800 bg-[#0f1115] flex items-center justify-between">
-          <div className="flex items-center gap-2 text-xs font-mono text-zinc-400">
+      <div className="bg-[#14171d] border border-zinc-200 rounded-2xl overflow-hidden shadow-lg">
+        <div className="px-5 py-3 border-b border-zinc-200 bg-[#0f1115] flex items-center justify-between">
+          <div className="flex items-center gap-2 text-xs font-mono text-zinc-800 font-semibold">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
             <span>Interactive Live Footer Preview</span>
           </div>
-          <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest">
+          <span className="text-[10px] font-mono text-zinc-800 font-semibold font-medium uppercase tracking-widest">
             {settings.columns.length} Active Columns
           </span>
         </div>
 
-        <div className="w-full bg-[#0a0a0a] text-white border-t-[4px] border-orange-500 p-6 sm:p-8 space-y-8 overflow-x-auto select-none">
+        <div className="w-full bg-[#0a0a0a] text-zinc-900 font-bold border-t-[4px] border-orange-500 p-6 sm:p-8 space-y-8 overflow-x-auto select-none">
           {/* 1. Feature / Trust Bar Preview */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pb-8 border-b border-zinc-800">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pb-8 border-b border-zinc-200">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-orange-400 shrink-0">
+              <div className="w-9 h-9 rounded-xl bg-zinc-50 border border-zinc-200 flex items-center justify-center text-orange-600 font-bold shrink-0">
                 <ShieldCheck className="w-4 h-4" />
               </div>
               <div>
-                <h4 className="text-[11px] font-black uppercase tracking-wider text-white">100% Authentic</h4>
-                <p className="text-[10px] text-zinc-400">Inspected by District Vault</p>
+                <h4 className="text-[11px] font-black uppercase tracking-wider text-zinc-900 font-bold">100% Authentic</h4>
+                <p className="text-[10px] text-zinc-800 font-semibold">Inspected by District Vault</p>
               </div>
             </div>
 
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-orange-400 shrink-0">
+              <div className="w-9 h-9 rounded-xl bg-zinc-50 border border-zinc-200 flex items-center justify-center text-orange-600 font-bold shrink-0">
                 <Truck className="w-4 h-4" />
               </div>
               <div>
-                <h4 className="text-[11px] font-black uppercase tracking-wider text-white">Worldwide Transit</h4>
-                <p className="text-[10px] text-zinc-400">Free over $150 with tracking</p>
+                <h4 className="text-[11px] font-black uppercase tracking-wider text-zinc-900 font-bold">Worldwide Transit</h4>
+                <p className="text-[10px] text-zinc-800 font-semibold">Free over $150 with tracking</p>
               </div>
             </div>
 
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-orange-400 shrink-0">
+              <div className="w-9 h-9 rounded-xl bg-zinc-50 border border-zinc-200 flex items-center justify-center text-orange-600 font-bold shrink-0">
                 <RotateCcw className="w-4 h-4" />
               </div>
               <div>
-                <h4 className="text-[11px] font-black uppercase tracking-wider text-white">14-Day Returns</h4>
-                <p className="text-[10px] text-zinc-400">Hassle-free exchanges</p>
+                <h4 className="text-[11px] font-black uppercase tracking-wider text-zinc-900 font-bold">14-Day Returns</h4>
+                <p className="text-[10px] text-zinc-800 font-semibold">Hassle-free exchanges</p>
               </div>
             </div>
 
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-orange-400 shrink-0">
+              <div className="w-9 h-9 rounded-xl bg-zinc-50 border border-zinc-200 flex items-center justify-center text-orange-600 font-bold shrink-0">
                 <Lock className="w-4 h-4" />
               </div>
               <div>
-                <h4 className="text-[11px] font-black uppercase tracking-wider text-white">Encrypted Checkout</h4>
-                <p className="text-[10px] text-zinc-400">256-Bit SSL Protection</p>
+                <h4 className="text-[11px] font-black uppercase tracking-wider text-zinc-900 font-bold">Encrypted Checkout</h4>
+                <p className="text-[10px] text-zinc-800 font-semibold">256-Bit SSL Protection</p>
               </div>
             </div>
           </div>
@@ -356,7 +356,7 @@ export default function AdminFooterPage() {
                 <div className="w-8 h-8 rounded-lg bg-orange-500 flex items-center justify-center font-black text-black text-lg italic shadow-[0_0_15px_rgba(249,115,22,0.5)]">
                   S
                 </div>
-                <span className="font-black text-xl tracking-tighter text-white uppercase">
+                <span className="font-black text-xl tracking-tighter text-zinc-900 font-bold uppercase">
                   {settings.brandName?.includes(' ') ? (
                     <>
                       {settings.brandName.split(' ')[0]}
@@ -370,14 +370,14 @@ export default function AdminFooterPage() {
                 </span>
               </div>
 
-              <p className="text-zinc-400 text-xs leading-relaxed max-w-sm">
+              <p className="text-zinc-800 font-semibold text-xs leading-relaxed max-w-sm">
                 {settings.brandDescription ||
                   'Exclusive kicks, grails, and heavyweight streetwear curated for the culture. Built for movement. 100% verified authentic.'}
               </p>
 
               {settings.newsletterEnabled && (
                 <div className="pt-2">
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-orange-400 font-bold block mb-2">
+                  <span className="text-[10px] font-mono uppercase tracking-widest text-orange-600 font-bold font-bold block mb-2">
                     {settings.newsletterTitle || 'JOIN THE DISTRICT • GET 10% OFF'}
                   </span>
                   <div className="flex gap-2 max-w-sm">
@@ -385,7 +385,7 @@ export default function AdminFooterPage() {
                       type="email"
                       readOnly
                       placeholder="Enter your email address"
-                      className="flex-1 bg-zinc-900 border border-zinc-800 text-white placeholder:text-zinc-500 text-xs px-4 py-2.5 rounded-xl focus:outline-none"
+                      className="flex-1 bg-zinc-50 border border-zinc-200 text-zinc-900 font-bold placeholder:text-zinc-800 font-semibold font-medium text-xs px-4 py-2.5 rounded-xl focus:outline-none"
                     />
                     <div className="px-5 py-2.5 bg-orange-500 text-white rounded-xl text-xs font-bold uppercase tracking-wider shrink-0 cursor-pointer">
                       Join
@@ -398,10 +398,10 @@ export default function AdminFooterPage() {
             {/* Dynamic Columns */}
             {settings.columns.map((col, idx) => (
               <div key={idx} className="lg:col-span-2 space-y-2.5">
-                <h4 className="text-xs font-bold uppercase tracking-wider text-white">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-zinc-900 font-bold">
                   {col.title}
                 </h4>
-                <ul className="space-y-1.5 text-xs text-zinc-400">
+                <ul className="space-y-1.5 text-xs text-zinc-800 font-semibold">
                   {col.links.slice(0, 6).map((link, lIdx) => (
                     <li
                       key={lIdx}
@@ -418,13 +418,13 @@ export default function AdminFooterPage() {
           </div>
 
           {/* 3. Bottom Copyright & Payment Methods Preview */}
-          <div className="pt-6 border-t border-zinc-800/80 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
+          <div className="pt-6 border-t border-zinc-200/80 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-zinc-800 font-semibold font-medium">
             <p>{settings.copyrightText || '© 2026 STRIDE DISTRICT INC. ALL RIGHTS RESERVED. FOR THE CULTURE.'}</p>
             <div className="flex flex-wrap items-center gap-1.5">
               {settings.paymentBadges.map((badge) => (
                 <span
                   key={badge}
-                  className="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-[10px] font-mono text-zinc-400 font-semibold"
+                  className="px-2.5 py-1 rounded bg-zinc-50 border border-zinc-200 text-[10px] font-mono text-zinc-800 font-semibold font-semibold"
                 >
                   {badge}
                 </span>
@@ -438,11 +438,11 @@ export default function AdminFooterPage() {
         {/* Left Column: Brand Statement & Contact */}
         <div className="lg:col-span-6 space-y-6">
           {/* Section 1: Newsletter */}
-          <div className="bg-[#14171d] border border-zinc-800 rounded-2xl p-6 space-y-4">
-            <div className="flex items-center justify-between pb-3 border-b border-zinc-800">
+          <div className="bg-[#14171d] border border-zinc-200 rounded-2xl p-6 space-y-4">
+            <div className="flex items-center justify-between pb-3 border-b border-zinc-200">
               <div>
-                <h3 className="text-sm font-bold text-white">Newsletter Subscription Bar</h3>
-                <p className="text-xs text-zinc-400 mt-0.5">Controls the newsletter lead capture at top of footer</p>
+                <h3 className="text-sm font-bold text-zinc-900 font-bold">Newsletter Subscription Bar</h3>
+                <p className="text-xs text-zinc-800 font-semibold mt-0.5">Controls the newsletter lead capture at top of footer</p>
               </div>
               <label className="relative inline-flex items-center cursor-pointer">
                 <input
@@ -451,47 +451,47 @@ export default function AdminFooterPage() {
                   onChange={(e) => setSettings({ ...settings, newsletterEnabled: e.target.checked })}
                   className="sr-only peer"
                 />
-                <div className="w-9 h-5 bg-zinc-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-zinc-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-amber-400"></div>
+                <div className="w-9 h-5 bg-zinc-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-zinc-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-amber-400"></div>
               </label>
             </div>
 
             <div className="space-y-3">
               <div>
-                <label className="block text-xs font-semibold text-zinc-300 mb-1">
+                <label className="block text-xs font-semibold text-zinc-800 font-bold mb-1">
                   Newsletter Headline
                 </label>
                 <input
                   type="text"
                   value={settings.newsletterTitle}
                   onChange={(e) => setSettings({ ...settings, newsletterTitle: e.target.value })}
-                  className="w-full px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-700 text-xs text-white focus:outline-none focus:border-amber-400"
+                  className="w-full px-3 py-2 rounded-xl bg-zinc-50 border border-zinc-300 text-xs text-zinc-900 font-bold focus:outline-none focus:border-amber-400"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-zinc-300 mb-1">
+                <label className="block text-xs font-semibold text-zinc-800 font-bold mb-1">
                   Newsletter Subtitle / Description
                 </label>
                 <textarea
                   rows={2}
                   value={settings.newsletterSubtitle}
                   onChange={(e) => setSettings({ ...settings, newsletterSubtitle: e.target.value })}
-                  className="w-full px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-700 text-xs text-white focus:outline-none focus:border-amber-400"
+                  className="w-full px-3 py-2 rounded-xl bg-zinc-50 border border-zinc-300 text-xs text-zinc-900 font-bold focus:outline-none focus:border-amber-400"
                 />
               </div>
             </div>
           </div>
 
           {/* Section 2: Contact Information */}
-          <div className="bg-[#14171d] border border-zinc-800 rounded-2xl p-6 space-y-4">
-            <div className="pb-3 border-b border-zinc-800">
-              <h3 className="text-sm font-bold text-white">Store Contact Details</h3>
-              <p className="text-xs text-zinc-400 mt-0.5">Shown in customer support & concierge footer areas</p>
+          <div className="bg-[#14171d] border border-zinc-200 rounded-2xl p-6 space-y-4">
+            <div className="pb-3 border-b border-zinc-200">
+              <h3 className="text-sm font-bold text-zinc-900 font-bold">Store Contact Details</h3>
+              <p className="text-xs text-zinc-800 font-semibold mt-0.5">Shown in customer support & concierge footer areas</p>
             </div>
 
             <div className="space-y-3">
               <div>
-                <label className="block text-xs font-semibold text-zinc-300 mb-1 flex items-center gap-1.5">
+                <label className="block text-xs font-semibold text-zinc-800 font-bold mb-1 flex items-center gap-1.5">
                   <Mail className="w-3.5 h-3.5 text-amber-400" />
                   <span>Support Email Address</span>
                 </label>
@@ -499,12 +499,12 @@ export default function AdminFooterPage() {
                   type="email"
                   value={settings.contactEmail}
                   onChange={(e) => setSettings({ ...settings, contactEmail: e.target.value })}
-                  className="w-full px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-700 text-xs text-white focus:outline-none focus:border-amber-400"
+                  className="w-full px-3 py-2 rounded-xl bg-zinc-50 border border-zinc-300 text-xs text-zinc-900 font-bold focus:outline-none focus:border-amber-400"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-zinc-300 mb-1 flex items-center gap-1.5">
+                <label className="block text-xs font-semibold text-zinc-800 font-bold mb-1 flex items-center gap-1.5">
                   <Phone className="w-3.5 h-3.5 text-amber-400" />
                   <span>Direct Concierge Phone</span>
                 </label>
@@ -512,12 +512,12 @@ export default function AdminFooterPage() {
                   type="text"
                   value={settings.contactPhone}
                   onChange={(e) => setSettings({ ...settings, contactPhone: e.target.value })}
-                  className="w-full px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-700 text-xs text-white focus:outline-none focus:border-amber-400"
+                  className="w-full px-3 py-2 rounded-xl bg-zinc-50 border border-zinc-300 text-xs text-zinc-900 font-bold focus:outline-none focus:border-amber-400"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-zinc-300 mb-1 flex items-center gap-1.5">
+                <label className="block text-xs font-semibold text-zinc-800 font-bold mb-1 flex items-center gap-1.5">
                   <MapPin className="w-3.5 h-3.5 text-amber-400" />
                   <span>SoHo Flagship Vault Address</span>
                 </label>
@@ -525,17 +525,17 @@ export default function AdminFooterPage() {
                   type="text"
                   value={settings.contactAddress}
                   onChange={(e) => setSettings({ ...settings, contactAddress: e.target.value })}
-                  className="w-full px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-700 text-xs text-white focus:outline-none focus:border-amber-400"
+                  className="w-full px-3 py-2 rounded-xl bg-zinc-50 border border-zinc-300 text-xs text-zinc-900 font-bold focus:outline-none focus:border-amber-400"
                 />
               </div>
             </div>
           </div>
 
           {/* Section 3: Payment Badges & Copyright */}
-          <div className="bg-[#14171d] border border-zinc-800 rounded-2xl p-6 space-y-4">
-            <div className="pb-3 border-b border-zinc-800">
-              <h3 className="text-sm font-bold text-white">Payment Method Trust Badges</h3>
-              <p className="text-xs text-zinc-400 mt-0.5">Select accepted payment logos displayed at the bottom</p>
+          <div className="bg-[#14171d] border border-zinc-200 rounded-2xl p-6 space-y-4">
+            <div className="pb-3 border-b border-zinc-200">
+              <h3 className="text-sm font-bold text-zinc-900 font-bold">Payment Method Trust Badges</h3>
+              <p className="text-xs text-zinc-800 font-semibold mt-0.5">Select accepted payment logos displayed at the bottom</p>
             </div>
 
             <div className="flex flex-wrap gap-2">
@@ -549,7 +549,7 @@ export default function AdminFooterPage() {
                     className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition-all border ${
                       isSelected
                         ? 'bg-amber-400/20 text-amber-300 border-amber-400/40 shadow-sm'
-                        : 'bg-zinc-900 text-zinc-400 border-zinc-800 hover:text-zinc-200'
+                        : 'bg-zinc-50 text-zinc-600 border-zinc-200 hover:text-zinc-800'
                     }`}
                   >
                     {isSelected ? '✓ ' : '+ '}
@@ -560,14 +560,14 @@ export default function AdminFooterPage() {
             </div>
 
             <div className="pt-2">
-              <label className="block text-xs font-semibold text-zinc-300 mb-1">
+              <label className="block text-xs font-semibold text-zinc-800 font-bold mb-1">
                 Copyright Notice
               </label>
               <input
                 type="text"
                 value={settings.copyrightText}
                 onChange={(e) => setSettings({ ...settings, copyrightText: e.target.value })}
-                className="w-full px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-700 text-xs text-white focus:outline-none focus:border-amber-400"
+                className="w-full px-3 py-2 rounded-xl bg-zinc-50 border border-zinc-300 text-xs text-zinc-900 font-bold focus:outline-none focus:border-amber-400"
               />
             </div>
           </div>
@@ -575,17 +575,17 @@ export default function AdminFooterPage() {
 
         {/* Right Column: Footer Navigation Columns */}
         <div className="lg:col-span-6 space-y-6">
-          <div className="bg-[#14171d] border border-zinc-800 rounded-2xl p-6 space-y-4">
-            <div className="pb-3 border-b border-zinc-800">
-              <h3 className="text-sm font-bold text-white">Footer Navigation Columns</h3>
-              <p className="text-xs text-zinc-400 mt-0.5">
+          <div className="bg-[#14171d] border border-zinc-200 rounded-2xl p-6 space-y-4">
+            <div className="pb-3 border-b border-zinc-200">
+              <h3 className="text-sm font-bold text-zinc-900 font-bold">Footer Navigation Columns</h3>
+              <p className="text-xs text-zinc-800 font-semibold mt-0.5">
                 Manage link categories and shortcuts shown across the footer
               </p>
             </div>
 
             <div className="space-y-4">
               {settings.columns.map((column, colIdx) => (
-                <div key={colIdx} className="p-4 rounded-xl bg-zinc-900/90 border border-zinc-800 space-y-3">
+                <div key={colIdx} className="p-4 rounded-xl bg-zinc-50/90 border border-zinc-200 space-y-3">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
                       <span className="w-5 h-5 rounded-md bg-amber-400/10 text-amber-400 font-mono text-[11px] font-bold flex items-center justify-center">
@@ -599,12 +599,12 @@ export default function AdminFooterPage() {
                           updated[colIdx].title = e.target.value;
                           setSettings({ ...settings, columns: updated });
                         }}
-                        className="bg-transparent font-bold text-sm text-white focus:outline-none border-b border-transparent focus:border-amber-400 px-1"
+                        className="bg-transparent font-bold text-sm text-zinc-900 font-bold focus:outline-none border-b border-transparent focus:border-amber-400 px-1"
                       />
                     </div>
                     <button
                       onClick={() => handleOpenAddLink(colIdx)}
-                      className="px-2.5 py-1 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-zinc-300 hover:text-white text-xs font-semibold flex items-center gap-1 transition-colors"
+                      className="px-2.5 py-1 rounded-lg bg-zinc-100 hover:bg-zinc-200 text-zinc-800 font-bold hover:text-zinc-900 font-bold text-xs font-semibold flex items-center gap-1 transition-colors"
                     >
                       <Plus className="w-3 h-3 text-amber-400" />
                       <span>Add Link</span>
@@ -614,16 +614,16 @@ export default function AdminFooterPage() {
                   {/* Links in this column */}
                   <div className="space-y-1.5 pt-1">
                     {column.links.length === 0 ? (
-                      <p className="text-xs text-zinc-500 italic py-1">No links added yet in this column.</p>
+                      <p className="text-xs text-zinc-800 font-semibold font-medium italic py-1">No links added yet in this column.</p>
                     ) : (
                       column.links.map((link, lIdx) => (
                         <div
                           key={lIdx}
-                          className="px-3 py-2 rounded-lg bg-zinc-850 border border-zinc-750 flex items-center justify-between text-xs"
+                          className="px-3 py-2 rounded-lg bg-zinc-850 border border-zinc-300 flex items-center justify-between text-xs"
                         >
                           <div className="flex items-center gap-2 min-w-0">
-                            <span className="font-medium text-white truncate">{link.label}</span>
-                            <span className="text-[10px] font-mono text-zinc-500 truncate">{link.url}</span>
+                            <span className="font-medium text-zinc-900 font-bold truncate">{link.label}</span>
+                            <span className="text-[10px] font-mono text-zinc-800 font-semibold font-medium truncate">{link.url}</span>
                             {link.badge && (
                               <span className="text-[9px] px-1.5 py-0.2 rounded bg-amber-400/10 text-amber-300 border border-amber-400/20 font-bold">
                                 {link.badge}
@@ -633,14 +633,14 @@ export default function AdminFooterPage() {
                           <div className="flex items-center gap-1 shrink-0">
                             <button
                               onClick={() => handleOpenEditLink(colIdx, lIdx)}
-                              className="p-1 text-zinc-400 hover:text-white transition-colors"
+                              className="p-1 text-zinc-800 font-semibold hover:text-zinc-900 font-bold transition-colors"
                               title="Edit link"
                             >
                               <Edit2 className="w-3.5 h-3.5" />
                             </button>
                             <button
                               onClick={() => setConfirmDelete({ colIndex: colIdx, linkIndex: lIdx })}
-                              className="p-1 text-zinc-500 hover:text-rose-400 transition-colors"
+                              className="p-1 text-zinc-800 font-semibold font-medium hover:text-rose-400 transition-colors"
                               title="Delete link"
                             >
                               <Trash2 className="w-3.5 h-3.5" />
@@ -662,16 +662,16 @@ export default function AdminFooterPage() {
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-150">
           <form
             onSubmit={handleSaveLink}
-            className="bg-[#16191f] border border-zinc-800 rounded-2xl p-6 max-w-md w-full shadow-2xl space-y-4"
+            className="bg-[#16191f] border border-zinc-200 rounded-2xl p-6 max-w-md w-full shadow-2xl space-y-4"
           >
-            <div className="flex items-center justify-between pb-3 border-b border-zinc-800">
-              <h3 className="text-base font-bold text-white">
+            <div className="flex items-center justify-between pb-3 border-b border-zinc-200">
+              <h3 className="text-base font-bold text-zinc-900 font-bold">
                 {editingLinkIndex !== null ? 'Edit Footer Link' : 'Add Footer Link'}
               </h3>
               <button
                 type="button"
                 onClick={() => setIsLinkModalOpen(false)}
-                className="text-zinc-500 hover:text-white"
+                className="text-zinc-800 font-semibold font-medium hover:text-zinc-900 font-bold"
               >
                 ✕
               </button>
@@ -679,7 +679,7 @@ export default function AdminFooterPage() {
 
             <div className="space-y-3">
               <div>
-                <label className="block text-xs font-semibold text-zinc-300 mb-1">
+                <label className="block text-xs font-semibold text-zinc-800 font-bold mb-1">
                   Link Label *
                 </label>
                 <input
@@ -688,12 +688,12 @@ export default function AdminFooterPage() {
                   value={linkForm.label}
                   onChange={(e) => setLinkForm({ ...linkForm, label: e.target.value })}
                   placeholder="e.g. Terms of Service or Acoustic Studio"
-                  className="w-full px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-700 text-xs text-white focus:outline-none focus:border-amber-400"
+                  className="w-full px-3 py-2 rounded-xl bg-zinc-50 border border-zinc-300 text-xs text-zinc-900 font-bold focus:outline-none focus:border-amber-400"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-zinc-300 mb-1">
+                <label className="block text-xs font-semibold text-zinc-800 font-bold mb-1">
                   Destination URL *
                 </label>
                 <input
@@ -702,12 +702,12 @@ export default function AdminFooterPage() {
                   value={linkForm.url}
                   onChange={(e) => setLinkForm({ ...linkForm, url: e.target.value })}
                   placeholder="e.g. /terms or /shop?category=audio"
-                  className="w-full px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-700 text-xs text-white font-mono focus:outline-none focus:border-amber-400"
+                  className="w-full px-3 py-2 rounded-xl bg-zinc-50 border border-zinc-300 text-xs text-zinc-900 font-bold font-mono focus:outline-none focus:border-amber-400"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-zinc-300 mb-1">
+                <label className="block text-xs font-semibold text-zinc-800 font-bold mb-1">
                   Highlight Badge (Optional)
                 </label>
                 <input
@@ -715,16 +715,16 @@ export default function AdminFooterPage() {
                   value={linkForm.badge}
                   onChange={(e) => setLinkForm({ ...linkForm, badge: e.target.value })}
                   placeholder="e.g. Sale, New, Updated"
-                  className="w-full px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-700 text-xs text-white focus:outline-none focus:border-amber-400"
+                  className="w-full px-3 py-2 rounded-xl bg-zinc-50 border border-zinc-300 text-xs text-zinc-900 font-bold focus:outline-none focus:border-amber-400"
                 />
               </div>
             </div>
 
-            <div className="flex items-center justify-end gap-2 pt-3 border-t border-zinc-800">
+            <div className="flex items-center justify-end gap-2 pt-3 border-t border-zinc-200">
               <button
                 type="button"
                 onClick={() => setIsLinkModalOpen(false)}
-                className="px-4 py-2 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-zinc-300 text-xs font-semibold"
+                className="px-4 py-2 rounded-xl bg-zinc-100 hover:bg-zinc-200 text-zinc-800 font-bold text-xs font-semibold"
               >
                 Cancel
               </button>

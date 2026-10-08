@@ -20,7 +20,7 @@ export default function MobileNav() {
 
   return (
     <nav
-      className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-zinc-950/95 backdrop-blur-xl border-t border-zinc-800 px-3 pt-2 pb-3 flex items-center justify-around shadow-[0_-8px_30px_rgba(0,0,0,0.8)]"
+      className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-xl border-t border-zinc-200 px-3 pt-2 pb-3 flex items-center justify-around shadow-[0_-8px_30px_rgba(0,0,0,0.8)]"
       aria-label="Mobile Navigation"
     >
       {/* Home */}
@@ -28,8 +28,8 @@ export default function MobileNav() {
         href="/"
         className={`flex flex-col items-center gap-1 py-1 px-3 rounded-xl transition-all active:scale-90 ${
           isHome
-            ? 'text-orange-400 font-bold bg-zinc-900'
-            : 'text-zinc-400 hover:text-white'
+            ? 'text-orange-400 font-bold bg-zinc-50'
+            : 'text-zinc-600 hover:text-white'
         }`}
       >
         <Home className="w-5 h-5" />
@@ -41,8 +41,8 @@ export default function MobileNav() {
         href="/shop"
         className={`flex flex-col items-center gap-1 py-1 px-3 rounded-xl transition-all active:scale-90 ${
           isShop
-            ? 'text-orange-400 font-bold bg-zinc-900'
-            : 'text-zinc-400 hover:text-white'
+            ? 'text-orange-400 font-bold bg-zinc-50'
+            : 'text-zinc-600 hover:text-white'
         }`}
       >
         <Compass className="w-5 h-5" />
@@ -52,7 +52,7 @@ export default function MobileNav() {
       {/* Search Trigger */}
       <button
         onClick={() => setIsSearchModalOpen(true)}
-        className="flex flex-col items-center gap-1 py-1 px-3 rounded-xl text-zinc-400 hover:text-white transition-all cursor-pointer active:scale-90"
+        className="flex flex-col items-center gap-1 py-1 px-3 rounded-xl text-zinc-800 font-semibold hover:text-zinc-900 font-bold transition-all cursor-pointer active:scale-90"
         aria-label="Search"
       >
         <Search className="w-5 h-5" />
@@ -64,8 +64,8 @@ export default function MobileNav() {
         href="/wishlist"
         className={`relative flex flex-col items-center gap-1 py-1 px-3 rounded-xl transition-all active:scale-90 ${
           isWishlist
-            ? 'text-orange-400 font-bold bg-zinc-900'
-            : 'text-zinc-400 hover:text-white'
+            ? 'text-orange-400 font-bold bg-zinc-50'
+            : 'text-zinc-600 hover:text-white'
         }`}
       >
         <div className="relative">
@@ -82,7 +82,7 @@ export default function MobileNav() {
       {/* Cart Drawer */}
       <button
         onClick={() => setIsCartDrawerOpen(true)}
-        className="relative flex flex-col items-center gap-1 py-1 px-3 rounded-xl text-zinc-400 hover:text-white transition-all cursor-pointer active:scale-90"
+        className="relative flex flex-col items-center gap-1 py-1 px-3 rounded-xl text-zinc-800 font-semibold hover:text-zinc-900 font-bold transition-all cursor-pointer active:scale-90"
         aria-label="Shopping Bag"
       >
         <div className="relative">

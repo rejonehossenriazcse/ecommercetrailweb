@@ -58,7 +58,7 @@ export default function BlogPostPage() {
 
   if (loading) {
     return (
-      <div className="max-w-4xl mx-auto px-4 py-24 text-center text-xs font-mono text-zinc-400">
+      <div className="max-w-4xl mx-auto px-4 py-24 text-center text-xs font-mono text-zinc-800 font-semibold">
         Retrieving atelier research dossier...
       </div>
     );
@@ -95,7 +95,7 @@ export default function BlogPostPage() {
       if (paragraph.startsWith('- ') || paragraph.startsWith('* ')) {
         const items = paragraph.split('\n').filter(Boolean);
         return (
-          <ul key={idx} className="space-y-2 my-4 list-disc list-inside text-sm text-zinc-700 leading-relaxed pl-2">
+          <ul key={idx} className="space-y-2 my-4 list-disc list-inside text-sm text-zinc-800 font-bold leading-relaxed pl-2">
             {items.map((it, i) => (
               <li key={i}>
                 <span dangerouslySetInnerHTML={{
@@ -109,7 +109,7 @@ export default function BlogPostPage() {
       if (/^\d+\.\s/.test(paragraph)) {
         const items = paragraph.split('\n').filter(Boolean);
         return (
-          <ol key={idx} className="space-y-2 my-4 list-decimal list-inside text-sm text-zinc-700 leading-relaxed pl-2">
+          <ol key={idx} className="space-y-2 my-4 list-decimal list-inside text-sm text-zinc-800 font-bold leading-relaxed pl-2">
             {items.map((it, i) => (
               <li key={i}>
                 <span dangerouslySetInnerHTML={{
@@ -124,7 +124,7 @@ export default function BlogPostPage() {
       return (
         <p
           key={idx}
-          className="text-sm sm:text-base text-zinc-700 leading-relaxed my-4"
+          className="text-sm sm:text-base text-zinc-800 font-bold leading-relaxed my-4"
           dangerouslySetInnerHTML={{
             __html: paragraph.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
           }}
@@ -138,7 +138,7 @@ export default function BlogPostPage() {
       {/* Back Link */}
       <Link
         href="/blog"
-        className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-zinc-500 hover:text-black mb-8 group"
+        className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-zinc-800 font-semibold font-medium hover:text-black mb-8 group"
       >
         <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
         <span>Return to Journal</span>
@@ -161,11 +161,11 @@ export default function BlogPostPage() {
             </div>
             <div>
               <div className="font-bold text-zinc-900">{post.author.name}</div>
-              <div className="text-zinc-500 text-[11px]">{post.author.role}</div>
+              <div className="text-zinc-800 font-semibold font-medium text-[11px]">{post.author.role}</div>
             </div>
           </div>
 
-          <div className="flex items-center gap-4 text-zinc-500 font-mono text-[11px]">
+          <div className="flex items-center gap-4 text-zinc-800 font-semibold font-medium font-mono text-[11px]">
             <span>{post.publishedAt}</span>
             <span>•</span>
             <span className="flex items-center gap-1">
@@ -197,13 +197,13 @@ export default function BlogPostPage() {
       {/* Tags Ribbon */}
       {post.tags && post.tags.length > 0 && (
         <div className="pt-8 mt-10 border-t border-zinc-200 flex flex-wrap items-center gap-2">
-          <span className="text-xs font-mono text-zinc-400 uppercase font-bold mr-1">Filed Under:</span>
+          <span className="text-xs font-mono text-zinc-800 font-semibold uppercase font-bold mr-1">Filed Under:</span>
           {post.tags.map((tag) => (
             <span
               key={tag}
-              className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-zinc-100 text-zinc-700 text-xs font-mono"
+              className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-zinc-100 text-zinc-800 font-bold text-xs font-mono"
             >
-              <Tag className="w-3 h-3 text-zinc-400" />
+              <Tag className="w-3 h-3 text-zinc-800 font-semibold" />
               <span>{tag}</span>
             </span>
           ))}
@@ -211,15 +211,15 @@ export default function BlogPostPage() {
       )}
 
       {/* Curated Acquisition Footer */}
-      <div className="mt-12 p-8 rounded-3xl bg-zinc-900 text-white border border-zinc-800 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div className="mt-12 p-8 rounded-3xl bg-zinc-50 text-zinc-900 font-bold border border-zinc-200 flex flex-col sm:flex-row items-center justify-between gap-6">
         <div className="space-y-1 text-center sm:text-left">
           <div className="text-xs font-mono text-amber-400 font-bold uppercase tracking-wider">
             AURA Atelier Collection
           </div>
-          <h3 className="text-lg font-bold font-serif text-white">
+          <h3 className="text-lg font-bold font-serif text-zinc-900 font-bold">
             Experience the Precision Described in this Dispatch
           </h3>
-          <p className="text-xs text-zinc-400">
+          <p className="text-xs text-zinc-800 font-semibold">
             Explore our curated catalog of numbered horology timepieces and acoustic instruments.
           </p>
         </div>

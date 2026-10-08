@@ -163,8 +163,8 @@ export default function AccountPage() {
     return (
       <div className="min-h-[60vh] flex items-center justify-center">
         <div className="text-center space-y-3">
-          <div className="w-10 h-10 border-2 border-zinc-900 border-t-transparent rounded-full animate-spin mx-auto" />
-          <p className="text-xs font-mono text-zinc-500">Authenticating Patron Session...</p>
+          <div className="w-10 h-10 border-2 border-zinc-200 border-t-transparent rounded-full animate-spin mx-auto" />
+          <p className="text-xs font-mono text-zinc-800 font-semibold font-medium">Authenticating Patron Session...</p>
         </div>
       </div>
     );
@@ -206,7 +206,7 @@ export default function AccountPage() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
       {/* Top Patron Dossier Header */}
-      <div className="bg-zinc-900 text-white rounded-3xl p-6 sm:p-8 mb-8 flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-xl relative overflow-hidden">
+      <div className="bg-zinc-50 text-zinc-900 font-bold rounded-3xl p-6 sm:p-8 mb-8 flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-xl relative overflow-hidden">
         {/* Background ambient radial */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
 
@@ -221,7 +221,7 @@ export default function AccountPage() {
                 {customer.tier} Patron
               </span>
             </div>
-            <div className="text-xs text-zinc-400 font-mono mt-1 flex items-center gap-3">
+            <div className="text-xs text-zinc-800 font-semibold font-mono mt-1 flex items-center gap-3">
               <span>{customer.email}</span>
               <span>•</span>
               <span>Member since {new Date(customer.createdAt).getFullYear()}</span>
@@ -231,13 +231,13 @@ export default function AccountPage() {
 
         {/* Quick Stats Ribbon */}
         <div className="flex items-center gap-4 relative z-10 self-start md:self-center">
-          <div className="px-4 py-2 rounded-2xl bg-zinc-800/80 border border-zinc-700/60 text-right">
-            <div className="text-[10px] font-mono text-zinc-400 uppercase">Loyalty Balance</div>
+          <div className="px-4 py-2 rounded-2xl bg-zinc-100/80 border border-zinc-300/60 text-right">
+            <div className="text-[10px] font-mono text-zinc-800 font-semibold uppercase">Loyalty Balance</div>
             <div className="text-base font-bold text-amber-400 font-mono">{customer.loyaltyPoints} pts</div>
           </div>
 
-          <div className="px-4 py-2 rounded-2xl bg-zinc-800/80 border border-zinc-700/60 text-right">
-            <div className="text-[10px] font-mono text-zinc-400 uppercase">Store Credit</div>
+          <div className="px-4 py-2 rounded-2xl bg-zinc-100/80 border border-zinc-300/60 text-right">
+            <div className="text-[10px] font-mono text-zinc-800 font-semibold uppercase">Store Credit</div>
             <div className="text-base font-bold text-emerald-400 font-mono">${customer.storeCredit.toFixed(2)}</div>
           </div>
 
@@ -247,7 +247,7 @@ export default function AccountPage() {
               router.push('/login');
             }}
             title="Sign out"
-            className="p-3 rounded-2xl bg-zinc-800/80 hover:bg-rose-500/20 hover:text-rose-400 text-zinc-400 border border-zinc-700/60 transition-colors"
+            className="p-3 rounded-2xl bg-zinc-100/80 hover:bg-rose-500/20 hover:text-rose-400 text-zinc-800 font-semibold border border-zinc-300/60 transition-colors"
           >
             <LogOut className="w-4 h-4" />
           </button>
@@ -262,7 +262,7 @@ export default function AccountPage() {
             onClick={() => setActiveTab('overview')}
             className={`w-full flex items-center justify-between px-4 py-3 rounded-2xl font-semibold text-xs transition-colors cursor-pointer ${
               activeTab === 'overview'
-                ? 'bg-zinc-900 text-white shadow-sm'
+                ? 'bg-zinc-50 text-white shadow-sm'
                 : 'text-zinc-600 hover:bg-zinc-100 hover:text-zinc-950'
             }`}
           >
@@ -277,7 +277,7 @@ export default function AccountPage() {
             onClick={() => setActiveTab('orders')}
             className={`w-full flex items-center justify-between px-4 py-3 rounded-2xl font-semibold text-xs transition-colors cursor-pointer ${
               activeTab === 'orders'
-                ? 'bg-zinc-900 text-white shadow-sm'
+                ? 'bg-zinc-50 text-white shadow-sm'
                 : 'text-zinc-600 hover:bg-zinc-100 hover:text-zinc-950'
             }`}
           >
@@ -285,7 +285,7 @@ export default function AccountPage() {
               <Package className="w-4 h-4" />
               <span>Orders & Tracking</span>
             </div>
-            <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-zinc-800 text-zinc-300">
+            <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-zinc-100 text-zinc-800 font-bold">
               {orders.length}
             </span>
           </button>
@@ -294,7 +294,7 @@ export default function AccountPage() {
             onClick={() => setActiveTab('addresses')}
             className={`w-full flex items-center justify-between px-4 py-3 rounded-2xl font-semibold text-xs transition-colors cursor-pointer ${
               activeTab === 'addresses'
-                ? 'bg-zinc-900 text-white shadow-sm'
+                ? 'bg-zinc-50 text-white shadow-sm'
                 : 'text-zinc-600 hover:bg-zinc-100 hover:text-zinc-950'
             }`}
           >
@@ -302,7 +302,7 @@ export default function AccountPage() {
               <MapPin className="w-4 h-4" />
               <span>Address Book</span>
             </div>
-            <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-zinc-800 text-zinc-300">
+            <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-zinc-100 text-zinc-800 font-bold">
               {customer.addresses?.length || 0}
             </span>
           </button>
@@ -311,7 +311,7 @@ export default function AccountPage() {
             onClick={() => setActiveTab('rewards')}
             className={`w-full flex items-center justify-between px-4 py-3 rounded-2xl font-semibold text-xs transition-colors cursor-pointer ${
               activeTab === 'rewards'
-                ? 'bg-zinc-900 text-white shadow-sm'
+                ? 'bg-zinc-50 text-white shadow-sm'
                 : 'text-zinc-600 hover:bg-zinc-100 hover:text-zinc-950'
             }`}
           >
@@ -326,7 +326,7 @@ export default function AccountPage() {
             onClick={() => setActiveTab('profile')}
             className={`w-full flex items-center justify-between px-4 py-3 rounded-2xl font-semibold text-xs transition-colors cursor-pointer ${
               activeTab === 'profile'
-                ? 'bg-zinc-900 text-white shadow-sm'
+                ? 'bg-zinc-50 text-white shadow-sm'
                 : 'text-zinc-600 hover:bg-zinc-100 hover:text-zinc-950'
             }`}
           >
@@ -346,7 +346,7 @@ export default function AccountPage() {
               {/* Metric Cards */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div className="p-5 rounded-3xl bg-zinc-50 border border-zinc-200/80">
-                  <div className="text-[10px] font-mono uppercase text-zinc-500 mb-1">Lifetime Spend</div>
+                  <div className="text-[10px] font-mono uppercase text-zinc-800 font-semibold font-medium mb-1">Lifetime Spend</div>
                   <div className="text-2xl font-black text-zinc-900 font-mono">
                     ${customer.totalSpent.toFixed(2)}
                   </div>
@@ -356,21 +356,21 @@ export default function AccountPage() {
                 </div>
 
                 <div className="p-5 rounded-3xl bg-zinc-50 border border-zinc-200/80">
-                  <div className="text-[10px] font-mono uppercase text-zinc-500 mb-1">Loyalty Rewards</div>
+                  <div className="text-[10px] font-mono uppercase text-zinc-800 font-semibold font-medium mb-1">Loyalty Rewards</div>
                   <div className="text-2xl font-black text-amber-600 font-mono">
                     {customer.loyaltyPoints} pts
                   </div>
-                  <div className="text-[11px] text-zinc-500 mt-1">
+                  <div className="text-[11px] text-zinc-800 font-semibold font-medium mt-1">
                     Equivalent to ${((customer.loyaltyPoints / 100) * 5).toFixed(2)} store credit
                   </div>
                 </div>
 
                 <div className="p-5 rounded-3xl bg-zinc-50 border border-zinc-200/80">
-                  <div className="text-[10px] font-mono uppercase text-zinc-500 mb-1">Available Store Credit</div>
+                  <div className="text-[10px] font-mono uppercase text-zinc-800 font-semibold font-medium mb-1">Available Store Credit</div>
                   <div className="text-2xl font-black text-emerald-600 font-mono">
                     ${customer.storeCredit.toFixed(2)}
                   </div>
-                  <div className="text-[11px] text-zinc-500 mt-1">Auto-applied at checkout</div>
+                  <div className="text-[11px] text-zinc-800 font-semibold font-medium mt-1">Auto-applied at checkout</div>
                 </div>
               </div>
 
@@ -382,7 +382,7 @@ export default function AccountPage() {
                     <span>Patron Referral Invitation</span>
                   </div>
                   <h3 className="text-base font-bold text-zinc-900 mt-1">Give $50, Get 500 Loyalty Points</h3>
-                  <p className="text-xs text-zinc-600 mt-0.5">
+                  <p className="text-xs text-zinc-800 font-semibold mt-0.5">
                     Share your unique invitation code with colleagues and fellow design collectors.
                   </p>
                 </div>
@@ -393,7 +393,7 @@ export default function AccountPage() {
                   </div>
                   <button
                     onClick={handleCopyReferral}
-                    className="p-2.5 rounded-xl bg-zinc-900 hover:bg-black text-white text-xs font-semibold transition-colors flex items-center gap-1.5 cursor-pointer"
+                    className="p-2.5 rounded-xl bg-zinc-50 hover:bg-black text-white text-xs font-semibold transition-colors flex items-center gap-1.5 cursor-pointer"
                   >
                     {copiedCode ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
                     <span>{copiedCode ? 'Copied' : 'Copy'}</span>
@@ -414,7 +414,7 @@ export default function AccountPage() {
                 </div>
 
                 {orders.length === 0 ? (
-                  <p className="text-xs text-zinc-400 py-6 text-center">No orders registered yet.</p>
+                  <p className="text-xs text-zinc-800 font-semibold py-6 text-center">No orders registered yet.</p>
                 ) : (
                   <div className="space-y-3">
                     {orders.slice(0, 2).map((ord) => (
@@ -423,12 +423,12 @@ export default function AccountPage() {
                         className="p-4 rounded-2xl bg-zinc-50 border border-zinc-200/60 flex flex-col sm:flex-row sm:items-center justify-between gap-4"
                       >
                         <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 rounded-xl bg-zinc-900 text-white flex items-center justify-center font-mono text-xs font-bold shrink-0">
+                          <div className="w-10 h-10 rounded-xl bg-zinc-50 text-zinc-900 font-bold flex items-center justify-center font-mono text-xs font-bold shrink-0">
                             AUR
                           </div>
                           <div>
                             <div className="font-bold text-xs text-zinc-900">{ord.orderNumber}</div>
-                            <div className="text-[11px] text-zinc-500 font-mono">
+                            <div className="text-[11px] text-zinc-800 font-semibold font-medium font-mono">
                               {new Date(ord.createdAt).toLocaleDateString()} • {ord.items.length} item(s) •{' '}
                               <span className="font-bold text-zinc-800">${ord.total.toFixed(2)}</span>
                             </div>
@@ -468,24 +468,24 @@ export default function AccountPage() {
               <div className="flex items-center justify-between">
                 <div>
                   <h2 className="text-lg font-bold text-zinc-900">Your Acquisition History</h2>
-                  <p className="text-xs text-zinc-500">
+                  <p className="text-xs text-zinc-800 font-semibold font-medium">
                     Real-time carrier tracking, 1-click reorder, printable tax invoices, and RMA returns.
                   </p>
                 </div>
               </div>
 
               {loadingOrders ? (
-                <div className="py-12 text-center text-xs font-mono text-zinc-400">Loading order timeline...</div>
+                <div className="py-12 text-center text-xs font-mono text-zinc-800 font-semibold">Loading order timeline...</div>
               ) : orders.length === 0 ? (
                 <div className="py-16 text-center bg-zinc-50 rounded-3xl border border-zinc-200/80 p-8 space-y-4">
-                  <Package className="w-10 h-10 text-zinc-300 mx-auto" />
+                  <Package className="w-10 h-10 text-zinc-800 font-bold mx-auto" />
                   <h3 className="text-sm font-bold text-zinc-900">No Orders Yet</h3>
-                  <p className="text-xs text-zinc-500 max-w-sm mx-auto">
+                  <p className="text-xs text-zinc-800 font-semibold font-medium max-w-sm mx-auto">
                     Explore our curated collection of industrial design pieces and place your first acquisition.
                   </p>
                   <Link
                     href="/shop"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-zinc-900 text-white font-bold text-xs"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-zinc-50 text-zinc-900 font-bold font-bold text-xs"
                   >
                     <span>Browse Collection</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -515,7 +515,7 @@ export default function AccountPage() {
                               {ord.status}
                             </span>
                           </div>
-                          <div className="text-[11px] text-zinc-400 font-mono mt-0.5">
+                          <div className="text-[11px] text-zinc-800 font-semibold font-mono mt-0.5">
                             Acquired on {new Date(ord.createdAt).toLocaleDateString()} • Paid via {ord.paymentMethod}
                           </div>
                         </div>
@@ -543,7 +543,7 @@ export default function AccountPage() {
                               setRmaOrder(ord);
                               setRmaSuccess('');
                             }}
-                            className="px-3 py-1.5 rounded-xl bg-zinc-100 hover:bg-zinc-200 text-zinc-700 text-xs font-semibold transition-colors"
+                            className="px-3 py-1.5 rounded-xl bg-zinc-100 hover:bg-zinc-200 text-zinc-800 font-bold text-xs font-semibold transition-colors"
                           >
                             Return / Exchange
                           </button>
@@ -557,7 +557,7 @@ export default function AccountPage() {
                             <div className="flex items-center gap-2">
                               <Truck className="w-4 h-4 text-zinc-900" />
                               <span className="font-bold text-zinc-900">{ord.carrier}</span>
-                              <span className="font-mono text-zinc-500">#{ord.trackingNumber}</span>
+                              <span className="font-mono text-zinc-800 font-semibold font-medium">#{ord.trackingNumber}</span>
                             </div>
                             <span className="font-mono text-[11px] text-emerald-600 font-bold">
                               {ord.status === 'delivered' ? '✓ Delivered to Destination' : 'In Transit'}
@@ -568,19 +568,19 @@ export default function AccountPage() {
                           <div className="grid grid-cols-4 gap-2 pt-1 text-center">
                             <div>
                               <div className="h-1.5 rounded-full bg-emerald-500 mb-1" />
-                              <span className="text-[10px] font-mono text-zinc-500">Confirmed</span>
+                              <span className="text-[10px] font-mono text-zinc-800 font-semibold font-medium">Confirmed</span>
                             </div>
                             <div>
                               <div className="h-1.5 rounded-full bg-emerald-500 mb-1" />
-                              <span className="text-[10px] font-mono text-zinc-500">Vault Packed</span>
+                              <span className="text-[10px] font-mono text-zinc-800 font-semibold font-medium">Vault Packed</span>
                             </div>
                             <div>
                               <div className={`h-1.5 rounded-full mb-1 ${ord.status === 'shipped' || ord.status === 'delivered' ? 'bg-emerald-500' : 'bg-zinc-200'}`} />
-                              <span className="text-[10px] font-mono text-zinc-500">Dispatched</span>
+                              <span className="text-[10px] font-mono text-zinc-800 font-semibold font-medium">Dispatched</span>
                             </div>
                             <div>
                               <div className={`h-1.5 rounded-full mb-1 ${ord.status === 'delivered' ? 'bg-emerald-500' : 'bg-zinc-200'}`} />
-                              <span className="text-[10px] font-mono text-zinc-500">Delivered</span>
+                              <span className="text-[10px] font-mono text-zinc-800 font-semibold font-medium">Delivered</span>
                             </div>
                           </div>
                         </div>
@@ -604,11 +604,11 @@ export default function AccountPage() {
                               </div>
                               <div>
                                 <h4 className="text-xs font-bold text-zinc-900">{item.name}</h4>
-                                <div className="text-[11px] text-zinc-500 font-mono">
+                                <div className="text-[11px] text-zinc-800 font-semibold font-medium font-mono">
                                   SKU: {item.sku} • Qty: {item.quantity}
                                 </div>
                                 {item.selectedOptions && (
-                                  <div className="text-[10px] text-zinc-400 font-mono">
+                                  <div className="text-[10px] text-zinc-800 font-semibold font-mono">
                                     {Object.entries(item.selectedOptions).map(([k, v]) => `${k}: ${v}`).join(' | ')}
                                   </div>
                                 )}
@@ -619,7 +619,7 @@ export default function AccountPage() {
                               <div className="text-xs font-bold text-zinc-900 font-mono">
                                 ${(item.price * item.quantity).toFixed(2)}
                               </div>
-                              <div className="text-[10px] text-zinc-400 font-mono">
+                              <div className="text-[10px] text-zinc-800 font-semibold font-mono">
                                 ${item.price.toFixed(2)} each
                               </div>
                             </div>
@@ -628,7 +628,7 @@ export default function AccountPage() {
                       </div>
 
                       {/* Financial Footnote */}
-                      <div className="pt-3 border-t border-zinc-100 flex items-center justify-between text-xs text-zinc-500 font-mono">
+                      <div className="pt-3 border-t border-zinc-100 flex items-center justify-between text-xs text-zinc-800 font-semibold font-medium font-mono">
                         <div>
                           Dispatching to: <span className="text-zinc-800">{ord.shippingAddress.city}, {ord.shippingAddress.country}</span>
                         </div>
@@ -649,13 +649,13 @@ export default function AccountPage() {
               <div className="flex items-center justify-between">
                 <div>
                   <h2 className="text-lg font-bold text-zinc-900">Saved Shipping Destinations</h2>
-                  <p className="text-xs text-zinc-500">
+                  <p className="text-xs text-zinc-800 font-semibold font-medium">
                     Manage multiple dispatch residences, ateliers, and corporate suites.
                   </p>
                 </div>
                 <button
                   onClick={() => setIsAddressModalOpen(true)}
-                  className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-zinc-900 hover:bg-black text-white text-xs font-bold transition-colors cursor-pointer"
+                  className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-zinc-50 hover:bg-black text-white text-xs font-bold transition-colors cursor-pointer"
                 >
                   <Plus className="w-3.5 h-3.5" />
                   <span>Add Destination</span>
@@ -678,14 +678,14 @@ export default function AccountPage() {
                         )}
                       </div>
                       <div className="text-xs font-semibold text-zinc-800">{addr.recipientName}</div>
-                      <p className="text-xs text-zinc-500 mt-1 leading-relaxed">
+                      <p className="text-xs text-zinc-800 font-semibold font-medium mt-1 leading-relaxed">
                         {addr.street}
                         <br />
                         {addr.city}, {addr.state} {addr.zip}
                         <br />
                         {addr.country}
                       </p>
-                      <div className="text-[11px] text-zinc-400 font-mono mt-2">Tel: {addr.phone}</div>
+                      <div className="text-[11px] text-zinc-800 font-semibold font-mono mt-2">Tel: {addr.phone}</div>
                     </div>
 
                     <div className="pt-3 border-t border-zinc-100 flex items-center justify-between">
@@ -698,7 +698,7 @@ export default function AccountPage() {
                       </button>
                       <button
                         onClick={() => deleteCustomerAddress(addr.id)}
-                        className="p-1.5 text-zinc-400 hover:text-rose-500 transition-colors"
+                        className="p-1.5 text-zinc-800 font-semibold hover:text-rose-500 transition-colors"
                         title="Delete Address"
                       >
                         <Trash2 className="w-3.5 h-3.5" />
@@ -715,13 +715,13 @@ export default function AccountPage() {
             <div className="space-y-6">
               <div>
                 <h2 className="text-lg font-bold text-zinc-900">Concierge Collector Rewards</h2>
-                <p className="text-xs text-zinc-500">
+                <p className="text-xs text-zinc-800 font-semibold font-medium">
                   Earn points on every acquisition, unlock higher tiers, and redeem exclusive perks.
                 </p>
               </div>
 
               {/* Tier Progress Bar */}
-              <div className="p-6 rounded-3xl bg-zinc-900 text-white space-y-4">
+              <div className="p-6 rounded-3xl bg-zinc-50 text-zinc-900 font-bold space-y-4">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <Award className="w-5 h-5 text-amber-400" />
@@ -730,7 +730,7 @@ export default function AccountPage() {
                   <span className="text-xs font-mono text-amber-400 font-bold">{customer.loyaltyPoints} Points</span>
                 </div>
 
-                <div className="w-full bg-zinc-800 h-2 rounded-full overflow-hidden">
+                <div className="w-full bg-zinc-100 h-2 rounded-full overflow-hidden">
                   <div
                     className="h-full bg-gradient-to-r from-amber-400 to-amber-500"
                     style={{
@@ -746,7 +746,7 @@ export default function AccountPage() {
                   />
                 </div>
 
-                <div className="grid grid-cols-4 text-center text-[10px] font-mono text-zinc-400 pt-1">
+                <div className="grid grid-cols-4 text-center text-[10px] font-mono text-zinc-800 font-semibold pt-1">
                   <div>Bronze ($0)</div>
                   <div>Silver ($500)</div>
                   <div>Gold ($1,500)</div>
@@ -759,11 +759,11 @@ export default function AccountPage() {
                 <div className="p-5 rounded-3xl bg-white border border-zinc-200/80 flex flex-col justify-between space-y-3">
                   <div>
                     <div className="text-xs font-bold text-zinc-900">$25 Atelier Voucher</div>
-                    <div className="text-[11px] text-zinc-500 mt-1">Requires 500 Loyalty Points</div>
+                    <div className="text-[11px] text-zinc-800 font-semibold font-medium mt-1">Requires 500 Loyalty Points</div>
                   </div>
                   <button
                     onClick={() => addToast('Voucher voucher code generated: REWARD25', 'success')}
-                    className="w-full py-2 rounded-xl bg-zinc-900 text-white text-xs font-bold hover:bg-black transition-colors"
+                    className="w-full py-2 rounded-xl bg-zinc-50 text-white text-xs font-bold hover:bg-black transition-colors"
                   >
                     Redeem (500 pts)
                   </button>
@@ -772,11 +772,11 @@ export default function AccountPage() {
                 <div className="p-5 rounded-3xl bg-white border border-zinc-200/80 flex flex-col justify-between space-y-3">
                   <div>
                     <div className="text-xs font-bold text-zinc-900">$60 Vault Voucher</div>
-                    <div className="text-[11px] text-zinc-500 mt-1">Requires 1,000 Loyalty Points</div>
+                    <div className="text-[11px] text-zinc-800 font-semibold font-medium mt-1">Requires 1,000 Loyalty Points</div>
                   </div>
                   <button
                     onClick={() => addToast('Voucher voucher code generated: REWARD60', 'success')}
-                    className="w-full py-2 rounded-xl bg-zinc-900 text-white text-xs font-bold hover:bg-black transition-colors"
+                    className="w-full py-2 rounded-xl bg-zinc-50 text-white text-xs font-bold hover:bg-black transition-colors"
                   >
                     Redeem (1,000 pts)
                   </button>
@@ -785,11 +785,11 @@ export default function AccountPage() {
                 <div className="p-5 rounded-3xl bg-white border border-zinc-200/80 flex flex-col justify-between space-y-3">
                   <div>
                     <div className="text-xs font-bold text-zinc-900">Free Express Air Freight</div>
-                    <div className="text-[11px] text-zinc-500 mt-1">Requires 250 Loyalty Points</div>
+                    <div className="text-[11px] text-zinc-800 font-semibold font-medium mt-1">Requires 250 Loyalty Points</div>
                   </div>
                   <button
                     onClick={() => addToast('Free express shipping applied to your bag', 'success')}
-                    className="w-full py-2 rounded-xl bg-zinc-900 text-white text-xs font-bold hover:bg-black transition-colors"
+                    className="w-full py-2 rounded-xl bg-zinc-50 text-white text-xs font-bold hover:bg-black transition-colors"
                   >
                     Redeem (250 pts)
                   </button>
@@ -803,37 +803,37 @@ export default function AccountPage() {
             <div className="bg-white border border-zinc-200/80 rounded-3xl p-6 sm:p-8 space-y-6">
               <div>
                 <h2 className="text-lg font-bold text-zinc-900">Personal Details & Security</h2>
-                <p className="text-xs text-zinc-500">Update your account credentials and contact communications.</p>
+                <p className="text-xs text-zinc-800 font-semibold font-medium">Update your account credentials and contact communications.</p>
               </div>
 
               <div className="space-y-4 max-w-lg">
                 <div>
-                  <label className="block text-xs font-mono text-zinc-600 mb-1">Full Name</label>
+                  <label className="block text-xs font-mono text-zinc-800 font-semibold mb-1">Full Name</label>
                   <input
                     type="text"
                     defaultValue={customer.name}
                     id="prof-name"
-                    className="w-full px-4 py-2.5 rounded-xl bg-zinc-50 border border-zinc-200 text-xs text-zinc-900 focus:outline-none focus:border-zinc-900"
+                    className="w-full px-4 py-2.5 rounded-xl bg-zinc-50 border border-zinc-200 text-xs text-zinc-900 focus:outline-none focus:border-zinc-200"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono text-zinc-600 mb-1">Email Address</label>
+                  <label className="block text-xs font-mono text-zinc-800 font-semibold mb-1">Email Address</label>
                   <input
                     type="email"
                     defaultValue={customer.email}
                     id="prof-email"
-                    className="w-full px-4 py-2.5 rounded-xl bg-zinc-50 border border-zinc-200 text-xs text-zinc-900 focus:outline-none focus:border-zinc-900"
+                    className="w-full px-4 py-2.5 rounded-xl bg-zinc-50 border border-zinc-200 text-xs text-zinc-900 focus:outline-none focus:border-zinc-200"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono text-zinc-600 mb-1">Telephone</label>
+                  <label className="block text-xs font-mono text-zinc-800 font-semibold mb-1">Telephone</label>
                   <input
                     type="tel"
                     defaultValue={customer.phone}
                     id="prof-phone"
-                    className="w-full px-4 py-2.5 rounded-xl bg-zinc-50 border border-zinc-200 text-xs text-zinc-900 focus:outline-none focus:border-zinc-900"
+                    className="w-full px-4 py-2.5 rounded-xl bg-zinc-50 border border-zinc-200 text-xs text-zinc-900 focus:outline-none focus:border-zinc-200"
                   />
                 </div>
 
@@ -845,7 +845,7 @@ export default function AccountPage() {
                     const phone = (document.getElementById('prof-phone') as HTMLInputElement)?.value;
                     updateCustomerProfile({ name, email, phone });
                   }}
-                  className="px-5 py-2.5 rounded-xl bg-zinc-900 hover:bg-black text-white text-xs font-bold transition-colors cursor-pointer"
+                  className="px-5 py-2.5 rounded-xl bg-zinc-50 hover:bg-black text-white text-xs font-bold transition-colors cursor-pointer"
                 >
                   Save Profile Changes
                 </button>
@@ -859,7 +859,7 @@ export default function AccountPage() {
                     Data Sovereignty & Legal Privacy Rights (GDPR / CCPA)
                   </h3>
                 </div>
-                <p className="text-xs text-zinc-500 leading-relaxed max-w-xl">
+                <p className="text-xs text-zinc-800 font-semibold font-medium leading-relaxed max-w-xl">
                   In compliance with European GDPR (Articles 15–20) and California CCPA (§ 1798.100–105), you have full legal ownership over your transaction telemetry and profile information.
                 </p>
 
@@ -870,7 +870,7 @@ export default function AccountPage() {
                     disabled={isExportingData}
                     className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-zinc-100 hover:bg-zinc-200 text-zinc-800 text-xs font-bold transition-colors cursor-pointer disabled:opacity-50"
                   >
-                    <Download className="w-3.5 h-3.5 text-zinc-600" />
+                    <Download className="w-3.5 h-3.5 text-zinc-800 font-semibold" />
                     <span>{isExportingData ? 'Generating Dossier...' : 'Export Complete Data Dossier (.JSON)'}</span>
                   </button>
 
@@ -909,13 +909,13 @@ export default function AccountPage() {
                 setRmaOrder(null);
                 setRmaSuccess('');
               }}
-              className="absolute top-6 right-6 p-2 rounded-xl bg-zinc-100 hover:bg-zinc-200 text-zinc-600 transition-colors"
+              className="absolute top-6 right-6 p-2 rounded-xl bg-zinc-100 hover:bg-zinc-200 text-zinc-800 font-semibold transition-colors"
             >
               <X className="w-5 h-5" />
             </button>
 
             <h3 className="text-lg font-bold text-zinc-900 mb-1">Initiate 30-Day Risk-Free Return</h3>
-            <p className="text-xs text-zinc-500 mb-6 font-mono">
+            <p className="text-xs text-zinc-800 font-semibold font-medium mb-6 font-mono">
               Order: {rmaOrder.orderNumber} • Prepaid DHL air return label
             </p>
 
@@ -933,11 +933,11 @@ export default function AccountPage() {
             ) : (
               <form onSubmit={handleRmaSubmit} className="space-y-4">
                 <div>
-                  <label className="block text-xs font-mono text-zinc-600 mb-1">Select Return Reason</label>
+                  <label className="block text-xs font-mono text-zinc-800 font-semibold mb-1">Select Return Reason</label>
                   <select
                     value={rmaReason}
                     onChange={(e) => setRmaReason(e.target.value)}
-                    className="w-full px-4 py-2.5 rounded-xl bg-zinc-50 border border-zinc-200 text-xs text-zinc-900 focus:outline-none focus:border-zinc-900"
+                    className="w-full px-4 py-2.5 rounded-xl bg-zinc-50 border border-zinc-200 text-xs text-zinc-900 focus:outline-none focus:border-zinc-200"
                   >
                     <option value="Change of preference">Change of preference / aesthetic adjustment</option>
                     <option value="Size or fit mismatch">Size or fit mismatch</option>
@@ -947,17 +947,17 @@ export default function AccountPage() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono text-zinc-600 mb-1">Additional Observations</label>
+                  <label className="block text-xs font-mono text-zinc-800 font-semibold mb-1">Additional Observations</label>
                   <textarea
                     rows={3}
                     placeholder="Provide any feedback for our quality inspection team..."
-                    className="w-full px-4 py-2 rounded-xl bg-zinc-50 border border-zinc-200 text-xs text-zinc-900 focus:outline-none focus:border-zinc-900"
+                    className="w-full px-4 py-2 rounded-xl bg-zinc-50 border border-zinc-200 text-xs text-zinc-900 focus:outline-none focus:border-zinc-200"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full py-3 rounded-xl bg-zinc-900 hover:bg-black text-white font-bold text-xs uppercase tracking-wider transition-colors cursor-pointer"
+                  className="w-full py-3 rounded-xl bg-zinc-50 hover:bg-black text-white font-bold text-xs uppercase tracking-wider transition-colors cursor-pointer"
                 >
                   Generate Prepaid Return Label
                 </button>
@@ -973,103 +973,103 @@ export default function AccountPage() {
           <div className="bg-white rounded-3xl w-full max-w-lg p-8 shadow-2xl relative">
             <button
               onClick={() => setIsAddressModalOpen(false)}
-              className="absolute top-6 right-6 p-2 rounded-xl bg-zinc-100 hover:bg-zinc-200 text-zinc-600 transition-colors"
+              className="absolute top-6 right-6 p-2 rounded-xl bg-zinc-100 hover:bg-zinc-200 text-zinc-800 font-semibold transition-colors"
             >
               <X className="w-5 h-5" />
             </button>
 
             <h3 className="text-lg font-bold text-zinc-900 mb-1">Add New Shipping Destination</h3>
-            <p className="text-xs text-zinc-500 mb-6 font-mono">
+            <p className="text-xs text-zinc-800 font-semibold font-medium mb-6 font-mono">
               Save a new residence, studio, or corporate suite for fast 1-click checkout.
             </p>
 
             <form onSubmit={handleAddAddressSubmit} className="space-y-4">
               <div>
-                <label className="block text-xs font-mono text-zinc-600 mb-1">Label / Title</label>
+                <label className="block text-xs font-mono text-zinc-800 font-semibold mb-1">Label / Title</label>
                 <input
                   type="text"
                   required
                   placeholder="e.g. Design Studio or Weekend House"
                   value={newAddress.title}
                   onChange={(e) => setNewAddress({ ...newAddress, title: e.target.value })}
-                  className="w-full px-4 py-2 rounded-xl bg-zinc-50 border border-zinc-200 text-xs text-zinc-900 focus:outline-none focus:border-zinc-900"
+                  className="w-full px-4 py-2 rounded-xl bg-zinc-50 border border-zinc-200 text-xs text-zinc-900 focus:outline-none focus:border-zinc-200"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-mono text-zinc-600 mb-1">Recipient Full Name</label>
+                <label className="block text-xs font-mono text-zinc-800 font-semibold mb-1">Recipient Full Name</label>
                 <input
                   type="text"
                   required
                   value={newAddress.recipientName}
                   onChange={(e) => setNewAddress({ ...newAddress, recipientName: e.target.value })}
-                  className="w-full px-4 py-2 rounded-xl bg-zinc-50 border border-zinc-200 text-xs text-zinc-900 focus:outline-none focus:border-zinc-900"
+                  className="w-full px-4 py-2 rounded-xl bg-zinc-50 border border-zinc-200 text-xs text-zinc-900 focus:outline-none focus:border-zinc-200"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-mono text-zinc-600 mb-1">Street Address</label>
+                <label className="block text-xs font-mono text-zinc-800 font-semibold mb-1">Street Address</label>
                 <input
                   type="text"
                   required
                   placeholder="742 Montgomery Street, Suite 400"
                   value={newAddress.street}
                   onChange={(e) => setNewAddress({ ...newAddress, street: e.target.value })}
-                  className="w-full px-4 py-2 rounded-xl bg-zinc-50 border border-zinc-200 text-xs text-zinc-900 focus:outline-none focus:border-zinc-900"
+                  className="w-full px-4 py-2 rounded-xl bg-zinc-50 border border-zinc-200 text-xs text-zinc-900 focus:outline-none focus:border-zinc-200"
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-mono text-zinc-600 mb-1">City</label>
+                  <label className="block text-xs font-mono text-zinc-800 font-semibold mb-1">City</label>
                   <input
                     type="text"
                     required
                     placeholder="San Francisco"
                     value={newAddress.city}
                     onChange={(e) => setNewAddress({ ...newAddress, city: e.target.value })}
-                    className="w-full px-4 py-2 rounded-xl bg-zinc-50 border border-zinc-200 text-xs text-zinc-900 focus:outline-none focus:border-zinc-900"
+                    className="w-full px-4 py-2 rounded-xl bg-zinc-50 border border-zinc-200 text-xs text-zinc-900 focus:outline-none focus:border-zinc-200"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-mono text-zinc-600 mb-1">State / Province</label>
+                  <label className="block text-xs font-mono text-zinc-800 font-semibold mb-1">State / Province</label>
                   <input
                     type="text"
                     required
                     placeholder="CA"
                     value={newAddress.state}
                     onChange={(e) => setNewAddress({ ...newAddress, state: e.target.value })}
-                    className="w-full px-4 py-2 rounded-xl bg-zinc-50 border border-zinc-200 text-xs text-zinc-900 focus:outline-none focus:border-zinc-900"
+                    className="w-full px-4 py-2 rounded-xl bg-zinc-50 border border-zinc-200 text-xs text-zinc-900 focus:outline-none focus:border-zinc-200"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-mono text-zinc-600 mb-1">Postal / ZIP Code</label>
+                  <label className="block text-xs font-mono text-zinc-800 font-semibold mb-1">Postal / ZIP Code</label>
                   <input
                     type="text"
                     required
                     placeholder="94111"
                     value={newAddress.zip}
                     onChange={(e) => setNewAddress({ ...newAddress, zip: e.target.value })}
-                    className="w-full px-4 py-2 rounded-xl bg-zinc-50 border border-zinc-200 text-xs text-zinc-900 focus:outline-none focus:border-zinc-900"
+                    className="w-full px-4 py-2 rounded-xl bg-zinc-50 border border-zinc-200 text-xs text-zinc-900 focus:outline-none focus:border-zinc-200"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-mono text-zinc-600 mb-1">Country</label>
+                  <label className="block text-xs font-mono text-zinc-800 font-semibold mb-1">Country</label>
                   <input
                     type="text"
                     required
                     value={newAddress.country}
                     onChange={(e) => setNewAddress({ ...newAddress, country: e.target.value })}
-                    className="w-full px-4 py-2 rounded-xl bg-zinc-50 border border-zinc-200 text-xs text-zinc-900 focus:outline-none focus:border-zinc-900"
+                    className="w-full px-4 py-2 rounded-xl bg-zinc-50 border border-zinc-200 text-xs text-zinc-900 focus:outline-none focus:border-zinc-200"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="flex items-center gap-2 text-xs text-zinc-700 cursor-pointer pt-2">
+                <label className="flex items-center gap-2 text-xs text-zinc-800 font-bold cursor-pointer pt-2">
                   <input
                     type="checkbox"
                     checked={newAddress.isDefaultShipping}
@@ -1082,7 +1082,7 @@ export default function AccountPage() {
 
               <button
                 type="submit"
-                className="w-full py-3 rounded-xl bg-zinc-900 hover:bg-black text-white font-bold text-xs uppercase tracking-wider transition-colors cursor-pointer mt-2"
+                className="w-full py-3 rounded-xl bg-zinc-50 hover:bg-black text-white font-bold text-xs uppercase tracking-wider transition-colors cursor-pointer mt-2"
               >
                 Save Destination to Address Book
               </button>
@@ -1097,7 +1097,7 @@ export default function AccountPage() {
           <div className="bg-white rounded-3xl w-full max-w-md p-6 sm:p-8 shadow-2xl relative border border-rose-200">
             <button
               onClick={() => setIsErasureModalOpen(false)}
-              className="absolute top-6 right-6 p-2 rounded-xl bg-zinc-100 hover:bg-zinc-200 text-zinc-600 transition-colors"
+              className="absolute top-6 right-6 p-2 rounded-xl bg-zinc-100 hover:bg-zinc-200 text-zinc-800 font-semibold transition-colors"
             >
               <X className="w-5 h-5" />
             </button>
@@ -1107,7 +1107,7 @@ export default function AccountPage() {
               <h3 className="text-lg font-bold text-zinc-900">Right to Be Forgotten</h3>
             </div>
 
-            <p className="text-xs text-zinc-600 leading-relaxed mb-4">
+            <p className="text-xs text-zinc-800 font-semibold leading-relaxed mb-4">
               Under GDPR Article 17 and CCPA § 1798.105, submitting this request will permanently and cryptographically erase your account, contact details, addresses, and saved wishlists from active storage.
             </p>
 
@@ -1117,7 +1117,7 @@ export default function AccountPage() {
             </div>
 
             <div className="space-y-3">
-              <label className="block text-xs font-mono text-zinc-700">
+              <label className="block text-xs font-mono text-zinc-800 font-bold">
                 To confirm permanent erasure, type <span className="font-bold text-rose-600 select-all">ERASE_MY_DATA</span> below:
               </label>
               <input
@@ -1132,7 +1132,7 @@ export default function AccountPage() {
                 <button
                   type="button"
                   onClick={() => setIsErasureModalOpen(false)}
-                  className="w-1/2 py-2.5 rounded-xl bg-zinc-100 hover:bg-zinc-200 text-zinc-700 font-bold text-xs transition-colors cursor-pointer"
+                  className="w-1/2 py-2.5 rounded-xl bg-zinc-100 hover:bg-zinc-200 text-zinc-800 font-bold font-bold text-xs transition-colors cursor-pointer"
                 >
                   Cancel
                 </button>

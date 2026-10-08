@@ -1,22 +1,22 @@
 @import "tailwindcss";
 
 :root {
-  --background: #09090b;
-  --foreground: #f4f4f5;
-  --card: #121215;
-  --card-foreground: #f4f4f5;
-  --surface: #18181b;
-  --surface-hover: #27272a;
+  --background: #ffffff;
+  --foreground: #09090b;
+  --card: #ffffff;
+  --card-foreground: #09090b;
+  --surface: #f4f4f5;
+  --surface-hover: #e4e4e7;
   --primary: #f97316;
   --primary-foreground: #ffffff;
-  --secondary: #27272a;
-  --secondary-foreground: #f4f4f5;
-  --muted: #27272a;
-  --muted-foreground: #a1a1aa;
+  --secondary: #f4f4f5;
+  --secondary-foreground: #18181b;
+  --muted: #f4f4f5;
+  --muted-foreground: #71717a;
   --accent: #f97316;
   --accent-foreground: #ffffff;
-  --border: #27272a;
-  --border-light: #3f3f46;
+  --border: #e4e4e7;
+  --border-light: #d4d4d8;
   --ring: #f97316;
   --radius: 0.75rem;
 }
@@ -61,11 +61,11 @@ body {
 
 /* Streetwear Glow & Elevation Effects */
 .shadow-soft {
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 1px 2px -1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
 }
 
 .shadow-card {
-  box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.6), 0 2px 6px -2px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.1), 0 2px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 .shadow-orange-glow {
@@ -73,16 +73,16 @@ body {
 }
 
 .glass-panel {
-  background: rgba(18, 18, 21, 0.85);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(39, 39, 42, 0.8);
+  border: 1px solid rgba(228, 228, 231, 0.8);
 }
 
 .glass-dropdown {
-  background: #121215;
-  border: 1px solid #27272a;
-  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.8), 0 0 1px 1px rgba(255, 255, 255, 0.05);
+  background: #ffffff;
+  border: 1px solid #e4e4e7;
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.1), 0 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 
 .card-hover-lift {
@@ -91,27 +91,27 @@ body {
 
 .card-hover-lift:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.8), 0 0 15px rgba(249, 115, 22, 0.15);
+  box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.1), 0 0 15px rgba(249, 115, 22, 0.15);
   border-color: #f97316;
 }
 
-/* Custom dark scrollbar */
+/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #09090b;
+  background: #f4f4f5;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #27272a;
+  background: #d4d4d8;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #3f3f46;
+  background: #a1a1aa;
 }
 
 /* Pulse & shimmer animation for skeletons */
@@ -125,7 +125,7 @@ body {
 }
 
 .shimmer-loading {
-  background: linear-gradient(90deg, #18181b 25%, #27272a 50%, #18181b 75%);
+  background: linear-gradient(90deg, #f4f4f5 25%, #e4e4e7 50%, #f4f4f5 75%);
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite;
 }

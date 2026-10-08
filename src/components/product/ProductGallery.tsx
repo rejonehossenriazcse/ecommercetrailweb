@@ -29,7 +29,7 @@ export default function ProductGallery({
   return (
     <div className="space-y-4">
       {/* Main Image Stage */}
-      <div className="relative aspect-square w-full rounded-3xl overflow-hidden bg-black border border-zinc-800 group shadow-2xl">
+      <div className="relative aspect-square w-full rounded-3xl overflow-hidden bg-black border border-zinc-200 group shadow-2xl">
         <Image
           src={activeImage}
           alt={productName}
@@ -65,14 +65,14 @@ export default function ProductGallery({
               setIs360Active(!is360Active);
               handleRotate();
             }}
-            className="p-2.5 rounded-full bg-zinc-900/80 backdrop-blur border border-zinc-700 text-zinc-300 hover:text-white hover:bg-zinc-800 shadow-md transition-all cursor-pointer"
+            className="p-2.5 rounded-full bg-zinc-50/80 backdrop-blur border border-zinc-300 text-zinc-800 font-bold hover:text-zinc-900 font-bold hover:bg-zinc-100 shadow-md transition-all cursor-pointer"
             title="360° Studio Rotation"
           >
             <RotateCw className="w-4 h-4" />
           </button>
           <button
             onClick={() => setIsLightboxOpen(true)}
-            className="p-2.5 rounded-full bg-zinc-900/80 backdrop-blur border border-zinc-700 text-zinc-300 hover:text-white hover:bg-zinc-800 shadow-md transition-all cursor-pointer"
+            className="p-2.5 rounded-full bg-zinc-50/80 backdrop-blur border border-zinc-300 text-zinc-800 font-bold hover:text-zinc-900 font-bold hover:bg-zinc-100 shadow-md transition-all cursor-pointer"
             title="Full-Resolution Lightbox"
           >
             <Maximize2 className="w-4 h-4" />
@@ -80,8 +80,8 @@ export default function ProductGallery({
         </div>
 
         {is360Active && (
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-zinc-900/90 border border-zinc-700 backdrop-blur text-white text-[11px] font-mono flex items-center gap-1.5 shadow">
-            <RotateCw className="w-3.5 h-3.5 animate-spin text-orange-400" />
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-zinc-50/90 border border-zinc-300 backdrop-blur text-white text-[11px] font-mono flex items-center gap-1.5 shadow">
+            <RotateCw className="w-3.5 h-3.5 animate-spin text-orange-600 font-bold" />
             <span>Interactive 360° View Mode</span>
           </div>
         )}
@@ -100,7 +100,7 @@ export default function ProductGallery({
               className={`relative w-20 h-20 rounded-2xl overflow-hidden shrink-0 border-2 transition-all cursor-pointer ${
                 activeImageIndex === idx
                   ? 'border-orange-500 ring-2 ring-orange-500/40 shadow-md'
-                  : 'border-zinc-800 opacity-60 hover:opacity-100'
+                  : 'border-zinc-200 opacity-60 hover:opacity-100'
               }`}
             >
               <Image src={img} alt="" fill className="object-cover" />
@@ -117,7 +117,7 @@ export default function ProductGallery({
         >
           <button
             onClick={() => setIsLightboxOpen(false)}
-            className="absolute top-6 right-6 p-3 rounded-full bg-zinc-900 text-white hover:bg-zinc-800 shadow-lg cursor-pointer"
+            className="absolute top-6 right-6 p-3 rounded-full bg-zinc-50 text-white hover:bg-zinc-100 shadow-lg cursor-pointer"
           >
             <X className="w-6 h-6" />
           </button>

@@ -147,45 +147,45 @@ export default function AdminMediaPage() {
 
       {/* KPI Stats */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div className="bg-[#12151a] border border-zinc-800/80 p-5 rounded-2xl">
-          <div className="flex items-center justify-between text-zinc-400 mb-2">
+        <div className="bg-[#12151a] border border-zinc-200/80 p-5 rounded-2xl">
+          <div className="flex items-center justify-between text-zinc-800 font-semibold mb-2">
             <span className="text-xs font-medium">Total Assets</span>
             <FileImage className="w-4 h-4 text-amber-400" />
           </div>
-          <div className="text-2xl font-black text-white">{assets.length} items</div>
-          <div className="text-[11px] text-zinc-500 mt-1 font-mono">Edge CDN Synced</div>
+          <div className="text-2xl font-black text-zinc-900 font-bold">{assets.length} items</div>
+          <div className="text-[11px] text-zinc-800 font-semibold font-medium mt-1 font-mono">Edge CDN Synced</div>
         </div>
 
-        <div className="bg-[#12151a] border border-zinc-800/80 p-5 rounded-2xl">
-          <div className="flex items-center justify-between text-zinc-400 mb-2">
+        <div className="bg-[#12151a] border border-zinc-200/80 p-5 rounded-2xl">
+          <div className="flex items-center justify-between text-zinc-800 font-semibold mb-2">
             <span className="text-xs font-medium">Storage Consumed</span>
             <HardDrive className="w-4 h-4 text-cyan-400" />
           </div>
-          <div className="text-2xl font-black text-white">{totalMB} MB</div>
-          <div className="text-[11px] text-zinc-500 mt-1 font-mono">Of 50 GB Global Quota</div>
+          <div className="text-2xl font-black text-zinc-900 font-bold">{totalMB} MB</div>
+          <div className="text-[11px] text-zinc-800 font-semibold font-medium mt-1 font-mono">Of 50 GB Global Quota</div>
         </div>
 
-        <div className="bg-[#12151a] border border-zinc-800/80 p-5 rounded-2xl">
-          <div className="flex items-center justify-between text-zinc-400 mb-2">
+        <div className="bg-[#12151a] border border-zinc-200/80 p-5 rounded-2xl">
+          <div className="flex items-center justify-between text-zinc-800 font-semibold mb-2">
             <span className="text-xs font-medium">Format Compression</span>
             <Sparkles className="w-4 h-4 text-emerald-400" />
           </div>
-          <div className="text-2xl font-black text-white">68.4% Saved</div>
+          <div className="text-2xl font-black text-zinc-900 font-bold">68.4% Saved</div>
           <div className="text-[11px] text-emerald-400/90 mt-1 font-mono">Lossless WebP Pipeline</div>
         </div>
 
-        <div className="bg-[#12151a] border border-zinc-800/80 p-5 rounded-2xl">
-          <div className="flex items-center justify-between text-zinc-400 mb-2">
+        <div className="bg-[#12151a] border border-zinc-200/80 p-5 rounded-2xl">
+          <div className="flex items-center justify-between text-zinc-800 font-semibold mb-2">
             <span className="text-xs font-medium">Active Folders</span>
             <Folder className="w-4 h-4 text-purple-400" />
           </div>
-          <div className="text-2xl font-black text-white">{FOLDERS.length - 1} taxonomies</div>
-          <div className="text-[11px] text-zinc-500 mt-1 font-mono">Structured Buckets</div>
+          <div className="text-2xl font-black text-zinc-900 font-bold">{FOLDERS.length - 1} taxonomies</div>
+          <div className="text-[11px] text-zinc-800 font-semibold font-medium mt-1 font-mono">Structured Buckets</div>
         </div>
       </div>
 
       {/* Folder Tabs & Search Bar */}
-      <div className="bg-[#12151a] border border-zinc-800/80 p-4 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-4">
+      <div className="bg-[#12151a] border border-zinc-200/80 p-4 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-4">
         {/* Folders */}
         <div className="flex items-center gap-1.5 overflow-x-auto w-full md:w-auto pb-1 md:pb-0">
           {FOLDERS.map((folder) => (
@@ -195,7 +195,7 @@ export default function AdminMediaPage() {
               className={`px-3.5 py-1.5 rounded-xl text-xs font-medium transition-colors shrink-0 ${
                 selectedFolder === folder
                   ? 'bg-amber-400 text-zinc-950 font-bold'
-                  : 'bg-zinc-900 text-zinc-400 hover:text-white hover:bg-zinc-800'
+                  : 'bg-zinc-50 text-zinc-600 hover:text-white hover:bg-zinc-100'
               }`}
             >
               {folder}
@@ -205,13 +205,13 @@ export default function AdminMediaPage() {
 
         {/* Search */}
         <div className="relative w-full md:w-72">
-          <Search className="w-4 h-4 text-zinc-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
+          <Search className="w-4 h-4 text-zinc-800 font-semibold font-medium absolute left-3.5 top-1/2 -translate-y-1/2" />
           <input
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search assets by filename or alt text..."
-            className="w-full pl-9 pr-4 py-2 rounded-xl bg-zinc-900 border border-zinc-800 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-amber-400"
+            className="w-full pl-9 pr-4 py-2 rounded-xl bg-zinc-50 border border-zinc-200 text-xs text-zinc-900 font-bold placeholder-zinc-500 focus:outline-none focus:border-amber-400"
           />
         </div>
       </div>
@@ -219,21 +219,21 @@ export default function AdminMediaPage() {
       {/* Asset Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {loading ? (
-          <div className="col-span-full py-16 text-center text-zinc-500 text-xs">
+          <div className="col-span-full py-16 text-center text-zinc-800 font-semibold font-medium text-xs">
             Querying edge media storage...
           </div>
         ) : filteredAssets.length === 0 ? (
-          <div className="col-span-full py-16 text-center text-zinc-500 text-xs">
+          <div className="col-span-full py-16 text-center text-zinc-800 font-semibold font-medium text-xs">
             No media assets found in this folder.
           </div>
         ) : (
           filteredAssets.map((asset) => (
             <div
               key={asset.id}
-              className="bg-[#12151a] border border-zinc-800/80 rounded-2xl overflow-hidden group hover:border-zinc-700 transition-all flex flex-col"
+              className="bg-[#12151a] border border-zinc-200/80 rounded-2xl overflow-hidden group hover:border-zinc-300 transition-all flex flex-col"
             >
               {/* Image Preview Container */}
-              <div className="relative aspect-video w-full bg-zinc-950 overflow-hidden">
+              <div className="relative aspect-video w-full bg-white overflow-hidden">
                 <Image
                   src={asset.url}
                   alt={asset.altText}
@@ -244,7 +244,7 @@ export default function AdminMediaPage() {
                 <div className="absolute top-2 left-2 px-2 py-0.5 rounded-md bg-black/70 backdrop-blur-md text-[10px] font-mono font-semibold text-amber-400 border border-white/10">
                   {asset.folder}
                 </div>
-                <div className="absolute top-2 right-2 px-1.5 py-0.5 rounded-md bg-black/70 backdrop-blur-md text-[9px] font-mono text-zinc-300 border border-white/10">
+                <div className="absolute top-2 right-2 px-1.5 py-0.5 rounded-md bg-black/70 backdrop-blur-md text-[9px] font-mono text-zinc-800 font-bold border border-white/10">
                   {asset.mimeType.split('/')[1]?.toUpperCase()}
                 </div>
               </div>
@@ -252,13 +252,13 @@ export default function AdminMediaPage() {
               {/* Metadata */}
               <div className="p-4 flex-1 flex flex-col justify-between space-y-3">
                 <div>
-                  <div className="font-mono text-xs font-bold text-white truncate" title={asset.name}>
+                  <div className="font-mono text-xs font-bold text-zinc-900 font-bold truncate" title={asset.name}>
                     {asset.name}
                   </div>
-                  <div className="text-[11px] text-zinc-400 line-clamp-1 mt-0.5" title={asset.altText}>
+                  <div className="text-[11px] text-zinc-800 font-semibold line-clamp-1 mt-0.5" title={asset.altText}>
                     Alt: {asset.altText}
                   </div>
-                  <div className="flex items-center gap-3 text-[10px] font-mono text-zinc-500 mt-2">
+                  <div className="flex items-center gap-3 text-[10px] font-mono text-zinc-800 font-semibold font-medium mt-2">
                     <span>{asset.dimensions || '1920x1080'}</span>
                     <span>•</span>
                     <span>{(asset.sizeBytes / 1024).toFixed(0)} KB</span>
@@ -268,10 +268,10 @@ export default function AdminMediaPage() {
                 </div>
 
                 {/* Actions */}
-                <div className="pt-2 border-t border-zinc-800/60 flex items-center justify-between gap-2">
+                <div className="pt-2 border-t border-zinc-200/60 flex items-center justify-between gap-2">
                   <button
                     onClick={() => handleCopyUrl(asset.id, asset.url)}
-                    className="flex-1 py-1.5 px-2.5 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-zinc-200 text-[11px] font-medium transition-colors flex items-center justify-center gap-1.5"
+                    className="flex-1 py-1.5 px-2.5 rounded-lg bg-zinc-100 hover:bg-zinc-200 text-zinc-800 text-[11px] font-medium transition-colors flex items-center justify-center gap-1.5"
                   >
                     {copiedId === asset.id ? (
                       <>
@@ -280,7 +280,7 @@ export default function AdminMediaPage() {
                       </>
                     ) : (
                       <>
-                        <Copy className="w-3.5 h-3.5 text-zinc-400" />
+                        <Copy className="w-3.5 h-3.5 text-zinc-800 font-semibold" />
                         <span>Copy CDN</span>
                       </>
                     )}
@@ -290,7 +290,7 @@ export default function AdminMediaPage() {
                     href={asset.url}
                     target="_blank"
                     rel="noreferrer"
-                    className="p-1.5 rounded-lg bg-zinc-800/80 hover:bg-zinc-700 text-zinc-400 hover:text-white transition-colors"
+                    className="p-1.5 rounded-lg bg-zinc-100/80 hover:bg-zinc-200 text-zinc-800 font-semibold hover:text-zinc-900 font-bold transition-colors"
                     title="Open Full Resolution"
                   >
                     <ExternalLink className="w-3.5 h-3.5" />
@@ -298,7 +298,7 @@ export default function AdminMediaPage() {
 
                   <button
                     onClick={() => setDeleteAssetId(asset.id)}
-                    className="p-1.5 rounded-lg bg-zinc-800/80 hover:bg-rose-500/20 text-zinc-500 hover:text-rose-400 transition-colors"
+                    className="p-1.5 rounded-lg bg-zinc-100/80 hover:bg-rose-500/20 text-zinc-800 font-semibold font-medium hover:text-rose-400 transition-colors"
                     title="Delete Media Asset"
                   >
                     <Trash2 className="w-3.5 h-3.5" />
@@ -313,51 +313,51 @@ export default function AdminMediaPage() {
       {/* Upload Asset Modal */}
       {isUploadOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in">
-          <div className="bg-[#14171f] border border-zinc-800 rounded-3xl w-full max-w-lg p-6 sm:p-8 shadow-2xl relative">
+          <div className="bg-[#14171f] border border-zinc-200 rounded-3xl w-full max-w-lg p-6 sm:p-8 shadow-2xl relative">
             <button
               onClick={() => setIsUploadOpen(false)}
-              className="absolute top-6 right-6 p-2 rounded-xl bg-zinc-800/80 hover:bg-zinc-800 text-zinc-400 hover:text-white transition-colors"
+              className="absolute top-6 right-6 p-2 rounded-xl bg-zinc-100/80 hover:bg-zinc-100 text-zinc-800 font-semibold hover:text-white transition-colors"
             >
               <X className="w-5 h-5" />
             </button>
 
-            <h2 className="text-lg font-bold text-white mb-1">Upload Digital Media Asset</h2>
-            <p className="text-xs text-zinc-400 mb-6 font-mono">
+            <h2 className="text-lg font-bold text-zinc-900 font-bold mb-1">Upload Digital Media Asset</h2>
+            <p className="text-xs text-zinc-800 font-semibold mb-6 font-mono">
               Asset will be cached and delivered across global Cloudflare / Fastly CDN edges.
             </p>
 
             <form onSubmit={handleUploadSubmit} className="space-y-4">
               <div>
-                <label className="block text-xs font-mono text-zinc-400 mb-1">Asset Filename</label>
+                <label className="block text-xs font-mono text-zinc-800 font-semibold mb-1">Asset Filename</label>
                 <input
                   type="text"
                   required
                   placeholder="e.g. signature-watch-banner.webp"
                   value={uploadForm.name}
                   onChange={(e) => setUploadForm({ ...uploadForm, name: e.target.value })}
-                  className="w-full px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-800 text-xs text-white focus:outline-none focus:border-amber-400"
+                  className="w-full px-3 py-2 rounded-xl bg-zinc-50 border border-zinc-200 text-xs text-zinc-900 font-bold focus:outline-none focus:border-amber-400"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-mono text-zinc-400 mb-1">Direct Image CDN URL</label>
+                <label className="block text-xs font-mono text-zinc-800 font-semibold mb-1">Direct Image CDN URL</label>
                 <input
                   type="url"
                   required
                   placeholder="https://images.unsplash.com/photo-..."
                   value={uploadForm.url}
                   onChange={(e) => setUploadForm({ ...uploadForm, url: e.target.value })}
-                  className="w-full px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-800 text-xs text-white focus:outline-none focus:border-amber-400"
+                  className="w-full px-3 py-2 rounded-xl bg-zinc-50 border border-zinc-200 text-xs text-zinc-900 font-bold focus:outline-none focus:border-amber-400"
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-mono text-zinc-400 mb-1">Folder Taxonomy</label>
+                  <label className="block text-xs font-mono text-zinc-800 font-semibold mb-1">Folder Taxonomy</label>
                   <select
                     value={uploadForm.folder}
                     onChange={(e) => setUploadForm({ ...uploadForm, folder: e.target.value as any })}
-                    className="w-full px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-800 text-xs text-white focus:outline-none focus:border-amber-400"
+                    className="w-full px-3 py-2 rounded-xl bg-zinc-50 border border-zinc-200 text-xs text-zinc-900 font-bold focus:outline-none focus:border-amber-400"
                   >
                     {FOLDERS.filter((f) => f !== 'All').map((f) => (
                       <option key={f} value={f}>
@@ -368,24 +368,24 @@ export default function AdminMediaPage() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono text-zinc-400 mb-1">Dimensions</label>
+                  <label className="block text-xs font-mono text-zinc-800 font-semibold mb-1">Dimensions</label>
                   <input
                     type="text"
                     value={uploadForm.dimensions}
                     onChange={(e) => setUploadForm({ ...uploadForm, dimensions: e.target.value })}
-                    className="w-full px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-800 text-xs text-white focus:outline-none focus:border-amber-400"
+                    className="w-full px-3 py-2 rounded-xl bg-zinc-50 border border-zinc-200 text-xs text-zinc-900 font-bold focus:outline-none focus:border-amber-400"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-mono text-zinc-400 mb-1">SEO Alt Text</label>
+                <label className="block text-xs font-mono text-zinc-800 font-semibold mb-1">SEO Alt Text</label>
                 <input
                   type="text"
                   placeholder="Descriptive text for accessibility & Google Image Search"
                   value={uploadForm.altText}
                   onChange={(e) => setUploadForm({ ...uploadForm, altText: e.target.value })}
-                  className="w-full px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-800 text-xs text-white focus:outline-none focus:border-amber-400"
+                  className="w-full px-3 py-2 rounded-xl bg-zinc-50 border border-zinc-200 text-xs text-zinc-900 font-bold focus:outline-none focus:border-amber-400"
                 />
               </div>
 

@@ -26,9 +26,9 @@ export default function ProductCard({ product, viewMode = 'grid' }: ProductCardP
 
   if (viewMode === 'list') {
     return (
-      <div className="group bg-zinc-900/80 rounded-2xl border border-zinc-800 hover:border-orange-500/60 p-4 sm:p-5 flex flex-col sm:flex-row gap-5 transition-all duration-300">
+      <div className="group bg-zinc-50/80 rounded-2xl border border-zinc-200 hover:border-orange-500/60 p-4 sm:p-5 flex flex-col sm:flex-row gap-5 transition-all duration-300">
         {/* Thumbnail */}
-        <div className="relative w-full sm:w-48 aspect-square rounded-xl overflow-hidden bg-black shrink-0 border border-zinc-800">
+        <div className="relative w-full sm:w-48 aspect-square rounded-xl overflow-hidden bg-black shrink-0 border border-zinc-200">
           <Image
             src={primaryImage}
             alt={product.name}
@@ -58,17 +58,17 @@ export default function ProductCard({ product, viewMode = 'grid' }: ProductCardP
         {/* Info */}
         <div className="flex-1 flex flex-col justify-between">
           <div>
-            <div className="flex items-center justify-between text-xs text-orange-400 font-mono font-bold uppercase tracking-wider mb-1">
+            <div className="flex items-center justify-between text-xs text-orange-600 font-bold font-mono font-bold uppercase tracking-wider mb-1">
               <span>{product.brand}</span>
-              <span className="text-zinc-500 text-[10px]">SKU: {product.sku}</span>
+              <span className="text-zinc-800 font-semibold font-medium text-[10px]">SKU: {product.sku}</span>
             </div>
             <Link
               href={`/product/${product.slug}`}
-              className="text-base sm:text-lg font-bold text-white hover:text-orange-400 line-clamp-1 transition-colors"
+              className="text-base sm:text-lg font-bold text-zinc-900 font-bold hover:text-orange-600 font-bold line-clamp-1 transition-colors"
             >
               {product.name}
             </Link>
-            <p className="text-xs text-zinc-400 mt-1 line-clamp-2 leading-relaxed">
+            <p className="text-xs text-zinc-800 font-semibold mt-1 line-clamp-2 leading-relaxed">
               {product.shortDescription || product.description}
             </p>
 
@@ -84,18 +84,18 @@ export default function ProductCard({ product, viewMode = 'grid' }: ProductCardP
                   />
                 ))}
               </div>
-              <span className="text-xs font-bold text-white">
+              <span className="text-xs font-bold text-zinc-900 font-bold">
                 {product.rating.toFixed(1)}
               </span>
-              <span className="text-xs text-zinc-500">({product.reviewCount})</span>
+              <span className="text-xs text-zinc-800 font-semibold font-medium">({product.reviewCount})</span>
             </div>
           </div>
 
-          <div className="flex items-center justify-between mt-4 pt-3 border-t border-zinc-800">
+          <div className="flex items-center justify-between mt-4 pt-3 border-t border-zinc-200">
             <div className="flex items-baseline gap-2">
-              <span className="text-lg font-black text-white">{formatPrice(product.price)}</span>
+              <span className="text-lg font-black text-zinc-900 font-bold">{formatPrice(product.price)}</span>
               {product.compareAtPrice && (
-                <span className="text-xs text-zinc-500 line-through">
+                <span className="text-xs text-zinc-800 font-semibold font-medium line-through">
                   {formatPrice(product.compareAtPrice)}
                 </span>
               )}
@@ -104,7 +104,7 @@ export default function ProductCard({ product, viewMode = 'grid' }: ProductCardP
             <div className="flex items-center gap-2">
               <button
                 onClick={() => setQuickViewProduct(product)}
-                className="p-2.5 rounded-xl border border-zinc-700 bg-zinc-800 text-zinc-300 hover:text-white hover:bg-zinc-700 transition-colors cursor-pointer"
+                className="p-2.5 rounded-xl border border-zinc-300 bg-zinc-100 text-zinc-800 font-bold hover:text-zinc-900 font-bold hover:bg-zinc-200 transition-colors cursor-pointer"
                 title="Quick View"
               >
                 <Eye className="w-4 h-4" />
@@ -114,7 +114,7 @@ export default function ProductCard({ product, viewMode = 'grid' }: ProductCardP
                 className={`p-2.5 rounded-xl border transition-colors cursor-pointer ${
                   isWishlisted
                     ? 'bg-rose-500/20 border-rose-500/50 text-rose-400'
-                    : 'border-zinc-700 bg-zinc-800 text-zinc-300 hover:text-white'
+                    : 'border-zinc-300 bg-zinc-100 text-zinc-700 hover:text-white'
                 }`}
                 title="Wishlist"
               >
@@ -137,12 +137,12 @@ export default function ProductCard({ product, viewMode = 'grid' }: ProductCardP
   // Grid view (Standard)
   return (
     <div
-      className="group relative bg-zinc-900/80 rounded-2xl border border-zinc-800 hover:border-orange-500/60 overflow-hidden flex flex-col transition-all duration-300 card-hover-lift"
+      className="group relative bg-zinc-50/80 rounded-2xl border border-zinc-200 hover:border-orange-500/60 overflow-hidden flex flex-col transition-all duration-300 card-hover-lift"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Image container */}
-      <div className="relative aspect-square w-full bg-black overflow-hidden border-b border-zinc-800/80">
+      <div className="relative aspect-square w-full bg-black overflow-hidden border-b border-zinc-200/80">
         <Link href={`/product/${product.slug}`} className="relative block w-full h-full">
           <Image
             src={isHovered ? secondaryImage : primaryImage}
@@ -165,7 +165,7 @@ export default function ProductCard({ product, viewMode = 'grid' }: ProductCardP
                   ? 'bg-lime-400 text-black'
                   : badge === 'Trending'
                   ? 'bg-orange-500 text-white'
-                  : 'bg-zinc-800 text-zinc-200 border border-zinc-700'
+                  : 'bg-zinc-100 text-zinc-800 border border-zinc-300'
               }`}
             >
               {badge}
@@ -188,7 +188,7 @@ export default function ProductCard({ product, viewMode = 'grid' }: ProductCardP
           className={`absolute top-3 right-3 z-10 p-2 rounded-full backdrop-blur-md shadow-md transition-all cursor-pointer ${
             isWishlisted
               ? 'bg-rose-500 text-white shadow-[0_0_10px_rgba(244,63,94,0.6)]'
-              : 'bg-zinc-900/80 text-zinc-300 hover:text-white hover:bg-zinc-800'
+              : 'bg-zinc-50/80 text-zinc-700 hover:text-white hover:bg-zinc-100'
           }`}
           title={isWishlisted ? 'Remove from wishlist' : 'Add to wishlist'}
         >
@@ -199,7 +199,7 @@ export default function ProductCard({ product, viewMode = 'grid' }: ProductCardP
         <div className="absolute inset-x-3 bottom-3 z-10 hidden sm:flex gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
           <button
             onClick={() => setQuickViewProduct(product)}
-            className="flex-1 flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-zinc-900/90 backdrop-blur border border-zinc-700 text-white text-xs font-bold uppercase tracking-wider hover:bg-zinc-800 transition-all cursor-pointer"
+            className="flex-1 flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-zinc-50/90 backdrop-blur border border-zinc-300 text-zinc-900 font-bold text-xs font-bold uppercase tracking-wider hover:bg-zinc-100 transition-all cursor-pointer"
           >
             <Eye className="w-3.5 h-3.5" />
             <span>Quick View</span>
@@ -217,7 +217,7 @@ export default function ProductCard({ product, viewMode = 'grid' }: ProductCardP
       {/* Product Content Details */}
       <div className="p-4 flex-1 flex flex-col justify-between">
         <div>
-          <div className="flex items-center justify-between text-[11px] font-mono font-bold uppercase tracking-wider text-orange-400 mb-1">
+          <div className="flex items-center justify-between text-[11px] font-mono font-bold uppercase tracking-wider text-orange-600 font-bold mb-1">
             <span>{product.brand}</span>
             <span className="flex items-center gap-1 text-[10px] font-medium text-emerald-400">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
@@ -227,7 +227,7 @@ export default function ProductCard({ product, viewMode = 'grid' }: ProductCardP
 
           <Link
             href={`/product/${product.slug}`}
-            className="font-bold text-sm text-white hover:text-orange-400 line-clamp-1 block transition-colors leading-tight"
+            className="font-bold text-sm text-zinc-900 font-bold hover:text-orange-600 font-bold line-clamp-1 block transition-colors leading-tight"
           >
             {product.name}
           </Link>
@@ -244,27 +244,27 @@ export default function ProductCard({ product, viewMode = 'grid' }: ProductCardP
                 />
               ))}
             </div>
-            <span className="text-[11px] font-bold text-white">
+            <span className="text-[11px] font-bold text-zinc-900 font-bold">
               {product.rating.toFixed(1)}
             </span>
-            <span className="text-[11px] text-zinc-500">({product.reviewCount})</span>
+            <span className="text-[11px] text-zinc-800 font-semibold font-medium">({product.reviewCount})</span>
           </div>
         </div>
 
         {/* Pricing and Options */}
-        <div className="mt-3 pt-2.5 border-t border-zinc-800 flex items-center justify-between">
+        <div className="mt-3 pt-2.5 border-t border-zinc-200 flex items-center justify-between">
           <div className="flex items-baseline gap-2">
-            <span className="text-base font-black text-white">
+            <span className="text-base font-black text-zinc-900 font-bold">
               {formatPrice(product.price)}
             </span>
             {product.compareAtPrice && (
-              <span className="text-xs text-zinc-500 line-through">
+              <span className="text-xs text-zinc-800 font-semibold font-medium line-through">
                 {formatPrice(product.compareAtPrice)}
               </span>
             )}
           </div>
 
-          <span className="text-[10px] font-mono uppercase bg-zinc-800 text-zinc-400 px-2 py-0.5 rounded border border-zinc-700">
+          <span className="text-[10px] font-mono uppercase bg-zinc-100 text-zinc-800 font-semibold px-2 py-0.5 rounded border border-zinc-300">
             {product.category}
           </span>
         </div>

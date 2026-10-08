@@ -33,15 +33,15 @@ export default function SizeGuideModal({ isOpen, onClose }: SizeGuideModalProps)
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200">
-      <div className="w-full max-w-lg bg-zinc-900 text-white rounded-3xl p-6 sm:p-8 shadow-2xl border border-zinc-800">
-        <div className="flex items-center justify-between pb-4 border-b border-zinc-800">
+      <div className="w-full max-w-lg bg-zinc-50 text-zinc-900 font-bold rounded-3xl p-6 sm:p-8 shadow-2xl border border-zinc-200">
+        <div className="flex items-center justify-between pb-4 border-b border-zinc-200">
           <div className="flex items-center gap-2">
-            <Ruler className="w-5 h-5 text-orange-400" />
-            <h3 className="text-base font-black uppercase text-white">District Fit & Sizing Guide</h3>
+            <Ruler className="w-5 h-5 text-orange-600 font-bold" />
+            <h3 className="text-base font-black uppercase text-zinc-900 font-bold">District Fit & Sizing Guide</h3>
           </div>
           <button
             onClick={onClose}
-            className="p-1 rounded-full text-zinc-400 hover:text-white cursor-pointer"
+            className="p-1 rounded-full text-zinc-800 font-semibold hover:text-zinc-900 font-bold cursor-pointer"
           >
             <X className="w-5 h-5" />
           </button>
@@ -54,7 +54,7 @@ export default function SizeGuideModal({ isOpen, onClose }: SizeGuideModalProps)
             className={`flex-1 py-2 rounded-xl text-xs font-bold uppercase transition-all ${
               tab === 'sneakers'
                 ? 'bg-orange-500 text-white shadow-md'
-                : 'bg-zinc-800 text-zinc-400 hover:text-white'
+                : 'bg-zinc-100 text-zinc-600 hover:text-white'
             }`}
           >
             Sneakers & Kicks
@@ -64,7 +64,7 @@ export default function SizeGuideModal({ isOpen, onClose }: SizeGuideModalProps)
             className={`flex-1 py-2 rounded-xl text-xs font-bold uppercase transition-all ${
               tab === 'apparel'
                 ? 'bg-orange-500 text-white shadow-md'
-                : 'bg-zinc-800 text-zinc-400 hover:text-white'
+                : 'bg-zinc-100 text-zinc-600 hover:text-white'
             }`}
           >
             Hoodies & Tees
@@ -75,53 +75,53 @@ export default function SizeGuideModal({ isOpen, onClose }: SizeGuideModalProps)
         {tab === 'sneakers' ? (
           <div className="space-y-3">
             <div className="rounded-2xl border border-zinc-850 overflow-hidden divide-y divide-zinc-850 text-xs font-mono">
-              <div className="grid grid-cols-4 p-2.5 bg-zinc-950 font-bold text-orange-400">
+              <div className="grid grid-cols-4 p-2.5 bg-white font-bold text-orange-600 font-bold">
                 <span>US MEN</span>
                 <span>UK</span>
                 <span>EU</span>
                 <span>CM</span>
               </div>
               {sneakerSizes.map((row) => (
-                <div key={row.us} className="grid grid-cols-4 p-2.5 hover:bg-zinc-850/50 text-zinc-300">
-                  <span className="font-bold text-white">{row.us}</span>
+                <div key={row.us} className="grid grid-cols-4 p-2.5 hover:bg-zinc-850/50 text-zinc-800 font-bold">
+                  <span className="font-bold text-zinc-900 font-bold">{row.us}</span>
                   <span>{row.uk}</span>
                   <span>{row.eu}</span>
                   <span>{row.cm}</span>
                 </div>
               ))}
             </div>
-            <p className="text-[11px] text-zinc-400 leading-normal">
+            <p className="text-[11px] text-zinc-800 font-semibold leading-normal">
               <strong>Tip:</strong> Air Jordan 1 and Dunks fit True To Size (TTS). Yeezy slides recommend going 1 full size up.
             </p>
           </div>
         ) : (
           <div className="space-y-3">
             <div className="rounded-2xl border border-zinc-850 overflow-hidden divide-y divide-zinc-850 text-xs font-mono">
-              <div className="grid grid-cols-4 p-2.5 bg-zinc-950 font-bold text-orange-400">
+              <div className="grid grid-cols-4 p-2.5 bg-white font-bold text-orange-600 font-bold">
                 <span>SIZE</span>
                 <span>CHEST</span>
                 <span>LENGTH</span>
                 <span>FIT</span>
               </div>
               {apparelSizes.map((row) => (
-                <div key={row.size} className="grid grid-cols-4 p-2.5 hover:bg-zinc-850/50 text-zinc-300">
-                  <span className="font-bold text-white">{row.size}</span>
+                <div key={row.size} className="grid grid-cols-4 p-2.5 hover:bg-zinc-850/50 text-zinc-800 font-bold">
+                  <span className="font-bold text-zinc-900 font-bold">{row.size}</span>
                   <span>{row.chest}</span>
                   <span>{row.length}</span>
-                  <span className="text-orange-400">{row.fit}</span>
+                  <span className="text-orange-600 font-bold">{row.fit}</span>
                 </div>
               ))}
             </div>
-            <p className="text-[11px] text-zinc-400 leading-normal">
+            <p className="text-[11px] text-zinc-800 font-semibold leading-normal">
               <strong>Tip:</strong> Stussy and Essentials cut hoodies with dropped shoulders for an oversized streetwear drape.
             </p>
           </div>
         )}
 
-        <div className="mt-6 pt-4 border-t border-zinc-800 flex justify-end">
+        <div className="mt-6 pt-4 border-t border-zinc-200 flex justify-end">
           <button
             onClick={onClose}
-            className="px-6 py-2 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-white text-xs font-bold uppercase transition-colors"
+            className="px-6 py-2 rounded-xl bg-zinc-100 hover:bg-zinc-200 text-zinc-900 font-bold text-xs font-bold uppercase transition-colors"
           >
             Got It
           </button>

@@ -18,7 +18,7 @@ export default async function CategoryShowcase({
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-4">
         <div>
-          <div className="flex items-center gap-1.5 text-xs font-mono font-semibold uppercase tracking-widest text-zinc-500 mb-2">
+          <div className="flex items-center gap-1.5 text-xs font-mono font-semibold uppercase tracking-widest text-zinc-800 font-semibold font-medium mb-2">
             <Sparkles className="w-3.5 h-3.5 text-amber-500" />
             <span>{subtitle}</span>
           </div>
@@ -51,22 +51,22 @@ export default async function CategoryShowcase({
               className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
             />
             {/* Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/85 via-zinc-950/30 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-white/85 via-white/30 to-transparent" />
 
             {/* Badge */}
-            <div className="absolute top-4 right-4 z-10 px-3 py-1 rounded-full bg-white/20 backdrop-blur-md border border-white/20 text-white text-[11px] font-mono font-semibold">
+            <div className="absolute top-4 right-4 z-10 px-3 py-1 rounded-full bg-white/20 backdrop-blur-md border border-white/20 text-zinc-950 text-[11px] font-mono font-semibold">
               {cat.itemCount} Designs
             </div>
 
             {/* Info */}
-            <div className="absolute bottom-6 left-6 right-6 z-10 text-white space-y-1.5">
-              <h3 className="text-xl font-bold tracking-tight text-white group-hover:text-amber-200 transition-colors">
+            <div className="absolute bottom-6 left-6 right-6 z-10 text-zinc-950 space-y-1.5">
+              <h3 className="text-xl font-bold tracking-tight text-zinc-950 group-hover:text-amber-200 transition-colors">
                 {cat.name}
               </h3>
-              <p className="text-xs text-zinc-300 line-clamp-2 leading-relaxed">
+              <p className="text-xs text-zinc-800 font-bold line-clamp-2 leading-relaxed">
                 {cat.description}
               </p>
-              <div className="pt-2 flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-white group-hover:translate-x-1 transition-transform">
+              <div className="pt-2 flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-zinc-950 group-hover:translate-x-1 transition-transform">
                 <span>Discover Collection</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </div>

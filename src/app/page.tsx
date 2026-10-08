@@ -38,7 +38,7 @@ export default async function HomePage() {
   const featuredCategories = categories.filter((c) => c.isFeatured);
 
   return (
-    <div className="w-full bg-zinc-950 font-sans selection:bg-orange-500 selection:text-white">
+    <div className="w-full bg-white font-sans selection:bg-orange-500 selection:text-white">
       {activeSections.map((sec, index) => {
         // 1. HERO SLIDER & AD BANNER
         if (sec.type === 'hero_slider') {
@@ -63,7 +63,7 @@ export default async function HomePage() {
                   </span>
                   <Link 
                     href={settings.adLinkUrl || '/shop?filter=sale'} 
-                    className="inline-flex items-center gap-1 font-black text-zinc-950 hover:text-white underline underline-offset-2 transition-colors shrink-0"
+                    className="inline-flex items-center gap-1 font-black text-zinc-950 hover:text-zinc-900 font-bold underline underline-offset-2 transition-colors shrink-0"
                   >
                     {settings.adLinkText || 'Shop Shock Drop'} <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
@@ -71,7 +71,7 @@ export default async function HomePage() {
               )}
 
               {/* Main Hero Showcase */}
-              <section className="relative w-full min-h-[85vh] md:min-h-[90vh] flex items-center bg-[#0a0a0a] overflow-hidden border-b border-zinc-800">
+              <section className="relative w-full min-h-[85vh] md:min-h-[90vh] flex items-center bg-[#0a0a0a] overflow-hidden border-b border-zinc-200">
                 <div className="absolute inset-0 z-0">
                   <div className="absolute inset-0 bg-gradient-to-r from-black via-black/85 to-transparent z-10" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10" />
@@ -91,14 +91,14 @@ export default async function HomePage() {
                       {settings.titleLine1 || 'BUILT FOR'} <br />
                       <span className="text-orange-500">{settings.titleHighlight || 'MOVEMENT'}</span>
                     </h1>
-                    <p className="text-zinc-300 text-lg md:text-xl max-w-md mb-8 leading-snug">
+                    <p className="text-zinc-300 font-medium text-lg md:text-xl max-w-md mb-8 leading-snug">
                       {settings.description || 'Exclusive sneakers and streetwear for the culture. For the bold. For you.'}
                     </p>
                     
                     <div className="flex flex-col sm:flex-row gap-4">
                       <Link 
                         href={settings.primaryBtnLink || '/shop?sort=newest'}
-                        className="px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-bold text-sm uppercase tracking-widest transition-colors flex items-center justify-center gap-2 rounded-sm"
+                        className="px-8 py-4 bg-orange-500 hover:bg-orange-600 text-zinc-950 font-bold text-sm uppercase tracking-widest transition-colors flex items-center justify-center gap-2 rounded-sm"
                       >
                         {settings.primaryBtnText || 'Shop New Arrivals'} <ArrowRight className="w-4 h-4" />
                       </Link>
@@ -123,27 +123,27 @@ export default async function HomePage() {
 
                 {/* Trust Badges Bar */}
                 {showTrust && (
-                  <div className="absolute bottom-0 left-0 w-full z-20 bg-gradient-to-r from-black via-black/80 to-transparent py-5 border-t border-zinc-900/60">
+                  <div className="absolute bottom-0 left-0 w-full z-20 bg-gradient-to-r from-black via-black/80 to-transparent py-5 border-t border-zinc-200/60">
                     <AnimatedSection delay={0.4} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap gap-6 sm:gap-10 text-white">
                       <div className="flex items-center gap-3">
                         <CheckCircle2 className="w-6 h-6 text-orange-500 shrink-0" />
                         <div>
                           <h4 className="text-xs font-bold uppercase tracking-wider">{settings.badge1Title || '100% Authentic'}</h4>
-                          <p className="text-[10px] text-zinc-400">{settings.badge1Sub || 'Guaranteed'}</p>
+                          <p className="text-[10px] text-zinc-400 font-medium">{settings.badge1Sub || 'Guaranteed'}</p>
                         </div>
                       </div>
                       <div className="flex items-center gap-3">
                         <RefreshCcw className="w-6 h-6 text-orange-500 shrink-0" />
                         <div>
                           <h4 className="text-xs font-bold uppercase tracking-wider">{settings.badge2Title || 'Easy Returns'}</h4>
-                          <p className="text-[10px] text-zinc-400">{settings.badge2Sub || '14-Day Policy'}</p>
+                          <p className="text-[10px] text-zinc-400 font-medium">{settings.badge2Sub || '14-Day Policy'}</p>
                         </div>
                       </div>
                       <div className="flex items-center gap-3">
                         <Lock className="w-6 h-6 text-orange-500 shrink-0" />
                         <div>
                           <h4 className="text-xs font-bold uppercase tracking-wider">{settings.badge3Title || 'Secure Checkout'}</h4>
-                          <p className="text-[10px] text-zinc-400">{settings.badge3Sub || 'Shop with Confidence'}</p>
+                          <p className="text-[10px] text-zinc-400 font-medium">{settings.badge3Sub || 'Shop with Confidence'}</p>
                         </div>
                       </div>
                     </AnimatedSection>
@@ -168,13 +168,13 @@ export default async function HomePage() {
                       {sec.title || 'Shop By Category'}
                     </h2>
                     {sec.subtitle && (
-                      <p className="text-xs md:text-sm text-zinc-600 mt-1">{sec.subtitle}</p>
+                      <p className="text-xs md:text-sm text-zinc-800 font-semibold mt-1">{sec.subtitle}</p>
                     )}
                     <div className="w-20 h-1 bg-orange-500 mt-2"></div>
                   </div>
                   <Link 
                     href={sec.settings?.viewAllLink || '/shop'} 
-                    className="text-xs font-bold uppercase tracking-widest text-zinc-600 hover:text-orange-500 flex items-center gap-1 transition-colors"
+                    className="text-xs font-bold uppercase tracking-widest text-zinc-800 font-semibold hover:text-orange-500 flex items-center gap-1 transition-colors"
                   >
                     {sec.settings?.viewAllText || 'View All Categories'} <ArrowRight className="w-3 h-3" />
                   </Link>
@@ -184,7 +184,7 @@ export default async function HomePage() {
                   {displayCategories.map((cat, i) => (
                     <AnimatedSection key={cat.id} delay={i * 0.1}>
                       <Link href={`/shop?category=${cat.slug}`} className="group relative h-80 rounded-xl overflow-hidden bg-white shadow-sm flex flex-col justify-end p-6">
-                        <div className="absolute inset-0 flex items-center justify-center bg-zinc-900 group-hover:bg-black transition-colors">
+                        <div className="absolute inset-0 flex items-center justify-center bg-zinc-50 group-hover:bg-black transition-colors">
                           <img src={cat.image} alt={cat.name} className="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-500" />
                         </div>
                         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10" />
@@ -209,21 +209,21 @@ export default async function HomePage() {
           const displayArrivals = newArrivals.slice(0, count);
 
           return (
-            <section key={sec.id || `products-${index}`} className="bg-zinc-950 py-16 md:py-24 border-y border-zinc-800">
+            <section key={sec.id || `products-${index}`} className="bg-white py-16 md:py-24 border-y border-zinc-200">
               <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
                 <AnimatedSection className="flex justify-between items-end mb-10">
                   <div>
-                    <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tight">
+                    <h2 className="text-3xl md:text-4xl font-black text-zinc-950 uppercase tracking-tight">
                       {sec.title || 'New Arrivals'}
                     </h2>
                     {sec.subtitle && (
-                      <p className="text-xs md:text-sm text-zinc-400 mt-1">{sec.subtitle}</p>
+                      <p className="text-xs md:text-sm text-zinc-800 font-semibold mt-1">{sec.subtitle}</p>
                     )}
                     <div className="w-20 h-1 bg-orange-500 mt-2"></div>
                   </div>
                   <Link 
                     href={sec.settings?.viewAllLink || '/shop?sort=newest'} 
-                    className="text-xs font-bold uppercase tracking-widest text-zinc-400 hover:text-white flex items-center gap-1 transition-colors"
+                    className="text-xs font-bold uppercase tracking-widest text-zinc-800 font-semibold hover:text-zinc-900 font-bold flex items-center gap-1 transition-colors"
                   >
                     {sec.settings?.viewAllText || 'View All'} <ArrowRight className="w-3 h-3" />
                   </Link>
@@ -232,24 +232,24 @@ export default async function HomePage() {
                 <div className="relative">
                   <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 overflow-hidden">
                     {displayArrivals.map((prod, i) => (
-                      <AnimatedSection key={prod.id} delay={i * 0.1} className={`group flex flex-col bg-zinc-900 rounded-sm overflow-hidden ${i > 1 ? 'hidden md:flex' : ''} ${i > 2 ? 'lg:flex' : ''}`}>
+                      <AnimatedSection key={prod.id} delay={i * 0.1} className={`group flex flex-col bg-zinc-50 rounded-sm overflow-hidden ${i > 1 ? 'hidden md:flex' : ''} ${i > 2 ? 'lg:flex' : ''}`}>
                         <Link href={`/product/${prod.slug}`} className="relative aspect-square bg-[#222] p-6 flex items-center justify-center overflow-hidden cursor-pointer">
                           {prod.badges?.[0] && (
                             <span className="absolute top-3 left-3 bg-lime-400 text-black text-[10px] font-bold px-2 py-0.5 rounded-sm uppercase z-10">{prod.badges[0]}</span>
                           )}
-                          <div className="absolute top-3 right-3 text-zinc-400 hover:text-white z-10">
+                          <div className="absolute top-3 right-3 text-zinc-800 font-semibold hover:text-white z-10">
                             <Heart className="w-5 h-5" />
                           </div>
                           <img src={prod.images[0]} alt={prod.name} className="w-full h-full object-cover mix-blend-screen group-hover:scale-110 transition-transform duration-500" />
                         </Link>
                         <div className="p-4 flex-1 flex flex-col">
                           <Link href={`/product/${prod.slug}`}>
-                            <h4 className="text-zinc-100 font-semibold text-sm mb-1 leading-tight line-clamp-2 hover:text-orange-500 transition-colors">{prod.name}</h4>
+                            <h4 className="text-zinc-900 font-semibold text-sm mb-1 leading-tight line-clamp-2 hover:text-orange-500 transition-colors">{prod.name}</h4>
                           </Link>
                           <div className="mt-auto pt-3 flex items-center justify-between">
-                            <span className="text-white font-bold">${prod.price.toFixed(2)}</span>
+                            <span className="text-zinc-950 font-bold">${prod.price.toFixed(2)}</span>
                             {prod.compareAtPrice && (
-                              <span className="text-zinc-500 line-through text-xs">${prod.compareAtPrice.toFixed(2)}</span>
+                              <span className="text-zinc-800 font-semibold font-medium line-through text-xs">${prod.compareAtPrice.toFixed(2)}</span>
                             )}
                           </div>
                         </div>
@@ -287,7 +287,7 @@ export default async function HomePage() {
                   </div>
                   
                   <div className="flex flex-col items-center md:items-end gap-6 text-center md:text-right">
-                    <h3 className="text-white font-black italic text-3xl md:text-4xl uppercase tracking-widest" style={{ WebkitTextStroke: '1px black' }}>
+                    <h3 className="text-zinc-900 font-bold font-black italic text-3xl md:text-4xl uppercase tracking-widest" style={{ WebkitTextStroke: '1px black' }}>
                       {settings.subtitle || 'ON SELECT STYLES'}
                     </h3>
                     <Link 
@@ -319,15 +319,15 @@ export default async function HomePage() {
           const galleryImages = settings.images && Array.isArray(settings.images) && settings.images.length > 0
             ? settings.images
             : [
-                'https://images.unsplash.com/photo-1512353087810-254cb3617d12?q=80&w=400&auto=format&fit=crop',
+                'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=400&auto=format&fit=crop',
                 'https://images.unsplash.com/photo-1521566652839-697aa473761a?q=80&w=400&auto=format&fit=crop',
                 'https://images.unsplash.com/photo-1475403614135-5f1aa0eb5015?q=80&w=400&auto=format&fit=crop',
                 'https://images.unsplash.com/photo-1509316785289-025f5b846b35?q=80&w=400&auto=format&fit=crop',
-                'https://images.unsplash.com/photo-1520975954732-57dd22299614?q=80&w=400&auto=format&fit=crop',
+                'https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=400&auto=format&fit=crop',
               ];
 
           return (
-            <section key={sec.id || `social-${index}`} className="bg-zinc-950 py-16 md:py-24 text-white border-b border-zinc-900">
+            <section key={sec.id || `social-${index}`} className="bg-white py-16 md:py-24 text-zinc-950 border-b border-zinc-200">
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-0 items-center">
                   
@@ -336,12 +336,12 @@ export default async function HomePage() {
                       {settings.headingLine1 || 'MORE THAN\nA BRAND.'}<br/>
                       <span className="text-orange-500">{settings.headingHighlight || "IT'S A CULTURE."}</span>
                     </h2>
-                    <p className="text-zinc-400 text-sm md:text-base mb-8 leading-relaxed">
+                    <p className="text-zinc-800 font-semibold text-sm md:text-base mb-8 leading-relaxed">
                       {settings.description || 'Stride District is built on passion, creativity, and community. Tag us in your fits #StrideDistrict to be featured.'}
                     </p>
                     <Link 
                       href={settings.btnLink || '/community'}
-                      className="inline-flex px-8 py-4 border border-zinc-600 hover:border-white text-white font-bold text-xs uppercase tracking-widest transition-colors items-center justify-center gap-2 rounded-sm"
+                      className="inline-flex px-8 py-4 border border-zinc-600 hover:border-white text-zinc-950 font-bold text-xs uppercase tracking-widest transition-colors items-center justify-center gap-2 rounded-sm"
                     >
                       {settings.btnText || 'Join The District'} <ArrowRight className="w-4 h-4" />
                     </Link>
@@ -376,7 +376,7 @@ export default async function HomePage() {
                     {sec.title || 'What Our Customers Say'}
                   </h2>
                   {sec.subtitle && (
-                    <p className="text-xs md:text-sm text-zinc-600 mt-1">{sec.subtitle}</p>
+                    <p className="text-xs md:text-sm text-zinc-800 font-semibold mt-1">{sec.subtitle}</p>
                   )}
                   <div className="w-20 h-1 bg-orange-500 mt-4"></div>
                 </AnimatedSection>
@@ -386,7 +386,7 @@ export default async function HomePage() {
                     <AnimatedSection key={i} delay={i * 0.1}>
                       <div className="bg-white p-8 rounded-xl shadow-sm border border-zinc-200">
                         <div className="text-orange-500 font-serif text-6xl leading-none opacity-40 mb-2">"</div>
-                        <p className="text-zinc-700 font-medium italic mb-6 min-h-[80px]">
+                        <p className="text-zinc-800 font-bold font-medium italic mb-6 min-h-[80px]">
                           {i === 0 ? "Fast shipping, authentic products, and fire streetwear. Stride District never misses!" :
                             i === 1 ? "The quality is top-tier and the fits hit different. My new go-to store for everything street." :
                             "Love the community and the drops. Stride District is more than a store, it's a vibe."}
@@ -447,34 +447,34 @@ export default async function HomePage() {
           if (!spotlightProduct) return null;
 
           return (
-            <section key={sec.id || `deal-${index}`} className="bg-zinc-900 py-16 md:py-20 border-y border-zinc-800 text-white">
+            <section key={sec.id || `deal-${index}`} className="bg-zinc-50 py-16 md:py-20 border-y border-zinc-200 text-zinc-900 font-bold">
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="bg-black/60 border border-zinc-800 rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-8 justify-between">
+                <div className="bg-black/60 border border-zinc-200 rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-8 justify-between">
                   <div className="max-w-xl">
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-orange-500/10 text-orange-400 border border-orange-500/20 text-xs font-bold uppercase tracking-wider mb-4">
-                      <Flame className="w-3.5 h-3.5 text-orange-400" /> {sec.title || 'Drop of the Day Spotlight'}
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-orange-500/10 text-orange-600 font-bold border border-orange-500/20 text-xs font-bold uppercase tracking-wider mb-4">
+                      <Flame className="w-3.5 h-3.5 text-orange-600 font-bold" /> {sec.title || 'Drop of the Day Spotlight'}
                     </span>
                     <h3 className="text-3xl md:text-4xl font-black uppercase tracking-tight mb-3">
                       {spotlightProduct.name}
                     </h3>
-                    <p className="text-zinc-400 text-sm mb-6 leading-relaxed">
+                    <p className="text-zinc-800 font-semibold text-sm mb-6 leading-relaxed">
                       {spotlightProduct.description}
                     </p>
                     <div className="flex items-baseline gap-4 mb-6">
-                      <span className="text-3xl font-black text-white">${spotlightProduct.price.toFixed(2)}</span>
+                      <span className="text-3xl font-black text-zinc-900 font-bold">${spotlightProduct.price.toFixed(2)}</span>
                       {spotlightProduct.compareAtPrice && (
-                        <span className="text-zinc-500 line-through text-lg">${spotlightProduct.compareAtPrice.toFixed(2)}</span>
+                        <span className="text-zinc-800 font-semibold font-medium line-through text-lg">${spotlightProduct.compareAtPrice.toFixed(2)}</span>
                       )}
                       <span className="bg-lime-400 text-black text-xs font-black px-2 py-0.5 rounded">AUTHENTICATED</span>
                     </div>
                     <Link 
                       href={`/product/${spotlightProduct.slug}`}
-                      className="px-8 py-3.5 bg-orange-500 hover:bg-orange-600 text-white font-bold text-xs uppercase tracking-widest inline-flex items-center gap-2 rounded-sm transition-colors"
+                      className="px-8 py-3.5 bg-orange-500 hover:bg-orange-600 text-zinc-950 font-bold text-xs uppercase tracking-widest inline-flex items-center gap-2 rounded-sm transition-colors"
                     >
                       Cop Now <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>
-                  <div className="w-full md:w-80 aspect-square bg-[#1a1a1a] rounded-xl overflow-hidden flex items-center justify-center p-6 border border-zinc-800">
+                  <div className="w-full md:w-80 aspect-square bg-[#1a1a1a] rounded-xl overflow-hidden flex items-center justify-center p-6 border border-zinc-200">
                     <img src={spotlightProduct.images[0]} alt={spotlightProduct.name} className="w-full h-full object-cover mix-blend-screen" />
                   </div>
                 </div>
@@ -487,30 +487,30 @@ export default async function HomePage() {
         if (sec.type === 'blog_section') {
           const displayBlogs = blogs.slice(0, 3);
           return (
-            <section key={sec.id || `blog-${index}`} className="bg-zinc-950 py-16 md:py-24 border-b border-zinc-900 text-white">
+            <section key={sec.id || `blog-${index}`} className="bg-white py-16 md:py-24 border-b border-zinc-200 text-zinc-950">
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-end mb-10">
                   <div>
                     <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight">
                       {sec.title || 'Culture, Legit Check & Drop Journal'}
                     </h2>
-                    <p className="text-xs md:text-sm text-zinc-400 mt-1">Sneaker authentications and streetwear editorials</p>
+                    <p className="text-xs md:text-sm text-zinc-800 font-semibold mt-1">Sneaker authentications and streetwear editorials</p>
                     <div className="w-20 h-1 bg-orange-500 mt-2"></div>
                   </div>
-                  <Link href="/blog" className="text-xs font-bold uppercase tracking-widest text-zinc-400 hover:text-white flex items-center gap-1">
+                  <Link href="/blog" className="text-xs font-bold uppercase tracking-widest text-zinc-800 font-semibold hover:text-zinc-900 font-bold flex items-center gap-1">
                     View Journal <ArrowRight className="w-3 h-3" />
                   </Link>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   {displayBlogs.map((b) => (
-                    <Link key={b.id} href={`/blog/${b.slug}`} className="group bg-zinc-900 border border-zinc-800 rounded-xl overflow-hidden flex flex-col">
-                      <div className="h-48 overflow-hidden bg-zinc-800">
+                    <Link key={b.id} href={`/blog/${b.slug}`} className="group bg-zinc-50 border border-zinc-200 rounded-xl overflow-hidden flex flex-col">
+                      <div className="h-48 overflow-hidden bg-zinc-100">
                         <img src={b.coverImage} alt={b.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                       </div>
                       <div className="p-6 flex-1 flex flex-col">
-                        <span className="text-[10px] font-mono uppercase tracking-wider text-orange-400 mb-2">{b.category}</span>
+                        <span className="text-[10px] font-mono uppercase tracking-wider text-orange-600 font-bold mb-2">{b.category}</span>
                         <h3 className="text-lg font-bold group-hover:text-orange-500 transition-colors line-clamp-2 mb-2">{b.title}</h3>
-                        <p className="text-xs text-zinc-400 line-clamp-2 mt-auto">{b.excerpt}</p>
+                        <p className="text-xs text-zinc-800 font-semibold line-clamp-2 mt-auto">{b.excerpt}</p>
                       </div>
                     </Link>
                   ))}
@@ -523,19 +523,19 @@ export default async function HomePage() {
         // 10. APP DOWNLOAD / VIP BANNER
         if (sec.type === 'app_download') {
           return (
-            <section key={sec.id || `app-${index}`} className="bg-gradient-to-r from-zinc-900 via-black to-zinc-900 py-12 border-b border-zinc-800 text-white">
+            <section key={sec.id || `app-${index}`} className="bg-gradient-to-r from-zinc-50 via-zinc-100 to-zinc-50 py-12 border-b border-zinc-200 text-zinc-950">
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-orange-400">
+                  <div className="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-orange-600 font-bold">
                     <Smartphone className="w-6 h-6" />
                   </div>
                   <div>
                     <h4 className="text-lg font-black uppercase tracking-tight">{sec.title || 'Download Stride District VIP'}</h4>
-                    <p className="text-xs text-zinc-400">Instant shock drop notifications & priority deadstock access</p>
+                    <p className="text-xs text-zinc-800 font-semibold">Instant shock drop notifications & priority deadstock access</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
-                  <button className="px-5 py-2.5 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-xs font-bold uppercase tracking-wider flex items-center gap-2 border border-zinc-700">
+                  <button className="px-5 py-2.5 rounded-xl bg-zinc-100 hover:bg-zinc-200 text-xs font-bold uppercase tracking-wider flex items-center gap-2 border border-zinc-300">
                     <QrCode className="w-4 h-4 text-amber-400" /> Scan QR Code
                   </button>
                   <Link href="/shop" className="px-6 py-2.5 rounded-xl bg-orange-500 hover:bg-orange-600 text-white text-xs font-bold uppercase tracking-wider">

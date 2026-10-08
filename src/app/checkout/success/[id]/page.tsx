@@ -72,13 +72,13 @@ export default function OrderSuccessPage() {
           Thank You for Your Acquisition
         </h1>
 
-        <p className="text-xs text-zinc-500 leading-relaxed">
+        <p className="text-xs text-zinc-800 font-semibold font-medium leading-relaxed">
           Your order has been encrypted and transmitted to our Zurich & Copenhagen Vault facilities for white-glove inspection and custom packaging.
         </p>
       </div>
 
       {loading ? (
-        <div className="py-16 text-center text-xs font-mono text-zinc-400">
+        <div className="py-16 text-center text-xs font-mono text-zinc-800 font-semibold">
           Generating official consignment dossier...
         </div>
       ) : order ? (
@@ -86,28 +86,28 @@ export default function OrderSuccessPage() {
           {/* Order Identity Bar */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-4 rounded-2xl bg-zinc-50 border border-zinc-200/60 font-mono text-xs">
             <div>
-              <div className="text-zinc-400 text-[10px] uppercase">Consignment Number</div>
+              <div className="text-zinc-800 font-semibold text-[10px] uppercase">Consignment Number</div>
               <div className="text-sm font-bold text-zinc-900 mt-0.5">{order.orderNumber}</div>
             </div>
 
             <div>
-              <div className="text-zinc-400 text-[10px] uppercase">Confirmation Dispatched To</div>
+              <div className="text-zinc-800 font-semibold text-[10px] uppercase">Confirmation Dispatched To</div>
               <div className="text-sm font-bold text-zinc-900 mt-0.5">{order.customerEmail}</div>
             </div>
 
             <div>
-              <div className="text-zinc-400 text-[10px] uppercase">Est. Air Delivery</div>
+              <div className="text-zinc-800 font-semibold text-[10px] uppercase">Est. Air Delivery</div>
               <div className="text-sm font-bold text-emerald-600 mt-0.5">3–5 Business Days</div>
             </div>
           </div>
 
           {/* Real-time Dispatch Milestones */}
-          <div className="p-6 rounded-2xl bg-zinc-900 text-white space-y-4">
+          <div className="p-6 rounded-2xl bg-zinc-50 text-zinc-900 font-bold space-y-4">
             <div className="flex items-center justify-between text-xs">
               <div className="flex items-center gap-2">
                 <Truck className="w-4 h-4 text-amber-400" />
                 <span className="font-bold">{order.carrier || 'DHL Express Priority Air'}</span>
-                <span className="text-zinc-400 font-mono">#{order.trackingNumber || 'DHL-9481928371'}</span>
+                <span className="text-zinc-800 font-semibold font-mono">#{order.trackingNumber || 'DHL-9481928371'}</span>
               </div>
               <span className="text-emerald-400 font-mono text-[11px] font-bold">● Active Dispatch</span>
             </div>
@@ -115,26 +115,26 @@ export default function OrderSuccessPage() {
             <div className="grid grid-cols-4 gap-2 pt-2 text-center text-[10px] font-mono">
               <div>
                 <div className="h-1.5 rounded-full bg-emerald-400 mb-1" />
-                <span className="text-white">Confirmed</span>
+                <span className="text-zinc-900 font-bold">Confirmed</span>
               </div>
               <div>
                 <div className="h-1.5 rounded-full bg-emerald-400 mb-1" />
-                <span className="text-white">Vault QC</span>
+                <span className="text-zinc-900 font-bold">Vault QC</span>
               </div>
               <div>
-                <div className="h-1.5 rounded-full bg-zinc-700 mb-1" />
-                <span className="text-zinc-400">In Air Transit</span>
+                <div className="h-1.5 rounded-full bg-zinc-200 mb-1" />
+                <span className="text-zinc-800 font-semibold">In Air Transit</span>
               </div>
               <div>
-                <div className="h-1.5 rounded-full bg-zinc-700 mb-1" />
-                <span className="text-zinc-400">Delivered</span>
+                <div className="h-1.5 rounded-full bg-zinc-200 mb-1" />
+                <span className="text-zinc-800 font-semibold">Delivered</span>
               </div>
             </div>
           </div>
 
           {/* Ordered Line Items */}
           <div className="space-y-4">
-            <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-zinc-400">
+            <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-zinc-800 font-semibold">
               Purchased Hardware ({order.items.length})
             </h3>
             <div className="divide-y divide-zinc-100">
@@ -151,11 +151,11 @@ export default function OrderSuccessPage() {
                     </div>
                     <div>
                       <h4 className="text-xs font-bold text-zinc-900">{item.name}</h4>
-                      <div className="text-[11px] text-zinc-500 font-mono">
+                      <div className="text-[11px] text-zinc-800 font-semibold font-medium font-mono">
                         SKU: {item.sku} • Quantity: {item.quantity}
                       </div>
                       {item.selectedOptions && (
-                        <div className="text-[10px] text-zinc-400 font-mono">
+                        <div className="text-[10px] text-zinc-800 font-semibold font-mono">
                           {Object.values(item.selectedOptions).join(', ')}
                         </div>
                       )}
@@ -174,7 +174,7 @@ export default function OrderSuccessPage() {
 
           {/* Financial Breakdown & Destination */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6 border-t border-zinc-100">
-            <div className="text-xs text-zinc-600 space-y-1">
+            <div className="text-xs text-zinc-800 font-semibold space-y-1">
               <div className="font-bold text-zinc-900 font-mono uppercase text-[11px] mb-2">
                 Shipping Destination:
               </div>
@@ -187,7 +187,7 @@ export default function OrderSuccessPage() {
             </div>
 
             <div className="space-y-2 text-xs font-mono text-right">
-              <div className="flex justify-between text-zinc-500">
+              <div className="flex justify-between text-zinc-800 font-semibold font-medium">
                 <span>Subtotal</span>
                 <span className="font-semibold text-zinc-900">${order.subtotal.toFixed(2)}</span>
               </div>
@@ -197,13 +197,13 @@ export default function OrderSuccessPage() {
                   <span>-${order.discount.toFixed(2)}</span>
                 </div>
               )}
-              <div className="flex justify-between text-zinc-500">
+              <div className="flex justify-between text-zinc-800 font-semibold font-medium">
                 <span>Air Freight Shipping</span>
                 <span className="font-semibold text-zinc-900">
                   {order.shipping === 0 ? 'FREE' : `$${order.shipping.toFixed(2)}`}
                 </span>
               </div>
-              <div className="flex justify-between text-zinc-500">
+              <div className="flex justify-between text-zinc-800 font-semibold font-medium">
                 <span>Estimated Sales Tax (8%)</span>
                 <span className="font-semibold text-zinc-900">${order.tax.toFixed(2)}</span>
               </div>
@@ -237,7 +237,7 @@ export default function OrderSuccessPage() {
 
             <Link
               href="/shop"
-              className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl bg-zinc-900 hover:bg-black text-white font-bold text-xs uppercase tracking-wider transition-colors shadow-md"
+              className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl bg-zinc-50 hover:bg-black text-white font-bold text-xs uppercase tracking-wider transition-colors shadow-md"
             >
               <span>Explore More Atelier Pieces</span>
               <ArrowRight className="w-4 h-4" />
@@ -246,12 +246,12 @@ export default function OrderSuccessPage() {
         </div>
       ) : (
         <div className="bg-white border border-zinc-200/80 rounded-3xl p-10 text-center space-y-4">
-          <p className="text-xs text-zinc-500">
+          <p className="text-xs text-zinc-800 font-semibold font-medium">
             Order confirmed. Your invoice and tracking telemetry have been dispatched to your email.
           </p>
           <Link
             href="/account"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-zinc-900 text-white font-bold text-xs"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-zinc-50 text-zinc-900 font-bold font-bold text-xs"
           >
             <span>View in Patron Portal</span>
             <ArrowRight className="w-4 h-4" />

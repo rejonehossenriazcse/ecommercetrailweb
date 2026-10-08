@@ -73,20 +73,20 @@ export default function QuickViewModal() {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200">
       <div
-        className="relative w-full max-w-4xl bg-zinc-900 border border-zinc-800 rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row max-h-[90vh] text-white"
+        className="relative w-full max-w-4xl bg-zinc-50 border border-zinc-200 rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row max-h-[90vh] text-zinc-900 font-bold"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
         <button
           onClick={() => setQuickViewProduct(null)}
-          className="absolute top-4 right-4 z-10 p-2 rounded-full bg-zinc-800/80 hover:bg-zinc-700 text-zinc-300 hover:text-white transition-all cursor-pointer"
+          className="absolute top-4 right-4 z-10 p-2 rounded-full bg-zinc-100/80 hover:bg-zinc-200 text-zinc-800 font-bold hover:text-white transition-all cursor-pointer"
         >
           <X className="w-5 h-5" />
         </button>
 
         {/* Gallery column */}
-        <div className="w-full md:w-1/2 p-6 bg-zinc-950 flex flex-col justify-between border-b md:border-b-0 md:border-r border-zinc-800">
-          <div className="relative aspect-square w-full rounded-2xl overflow-hidden bg-black border border-zinc-800">
+        <div className="w-full md:w-1/2 p-6 bg-white flex flex-col justify-between border-b md:border-b-0 md:border-r border-zinc-200">
+          <div className="relative aspect-square w-full rounded-2xl overflow-hidden bg-black border border-zinc-200">
             <Image
               src={selectedImage || quickViewProduct.thumbnail}
               alt={quickViewProduct.name}
@@ -111,7 +111,7 @@ export default function QuickViewModal() {
                   className={`relative w-16 h-16 rounded-xl overflow-hidden border-2 transition-all ${
                     selectedImage === img
                       ? 'border-orange-500 ring-1 ring-orange-500'
-                      : 'border-zinc-800 opacity-60 hover:opacity-100'
+                      : 'border-zinc-200 opacity-60 hover:opacity-100'
                   }`}
                 >
                   <Image src={img} alt="" fill className="object-cover" />
@@ -125,11 +125,11 @@ export default function QuickViewModal() {
         <div className="w-full md:w-1/2 p-6 sm:p-8 flex flex-col justify-between overflow-y-auto">
           <div className="space-y-4">
             <div>
-              <div className="flex items-center justify-between text-xs font-mono uppercase tracking-widest text-orange-400 font-bold mb-1">
+              <div className="flex items-center justify-between text-xs font-mono uppercase tracking-widest text-orange-600 font-bold font-bold mb-1">
                 <span>{quickViewProduct.brand}</span>
-                <span className="text-zinc-500">SKU: {quickViewProduct.sku}</span>
+                <span className="text-zinc-800 font-semibold font-medium">SKU: {quickViewProduct.sku}</span>
               </div>
-              <h2 className="text-xl sm:text-2xl font-black text-white leading-tight uppercase">
+              <h2 className="text-xl sm:text-2xl font-black text-zinc-900 font-bold leading-tight uppercase">
                 {quickViewProduct.name}
               </h2>
             </div>
@@ -146,21 +146,21 @@ export default function QuickViewModal() {
                   />
                 ))}
               </div>
-              <span className="text-xs font-bold text-white">{quickViewProduct.rating.toFixed(1)}</span>
-              <span className="text-xs text-zinc-500">({quickViewProduct.reviewCount} reviews)</span>
+              <span className="text-xs font-bold text-zinc-900 font-bold">{quickViewProduct.rating.toFixed(1)}</span>
+              <span className="text-xs text-zinc-800 font-semibold font-medium">({quickViewProduct.reviewCount} reviews)</span>
             </div>
 
             {/* Price */}
             <div className="flex items-baseline gap-3 pt-1">
-              <span className="text-2xl font-black text-white">{formatPrice(activePrice)}</span>
+              <span className="text-2xl font-black text-zinc-900 font-bold">{formatPrice(activePrice)}</span>
               {activeCompareAt && (
-                <span className="text-sm text-zinc-500 line-through">
+                <span className="text-sm text-zinc-800 font-semibold font-medium line-through">
                   {formatPrice(activeCompareAt)}
                 </span>
               )}
             </div>
 
-            <p className="text-xs text-zinc-400 leading-relaxed">
+            <p className="text-xs text-zinc-800 font-semibold leading-relaxed">
               {quickViewProduct.shortDescription || quickViewProduct.description}
             </p>
 
@@ -168,8 +168,8 @@ export default function QuickViewModal() {
             {quickViewProduct.options.map((opt) => (
               <div key={opt.name} className="space-y-2 pt-2">
                 <div className="flex justify-between text-xs">
-                  <span className="font-bold text-zinc-300 uppercase tracking-wider">{opt.name}:</span>
-                  <span className="font-mono text-orange-400 font-bold">{selectedOptions[opt.name]}</span>
+                  <span className="font-bold text-zinc-800 font-bold uppercase tracking-wider">{opt.name}:</span>
+                  <span className="font-mono text-orange-600 font-bold font-bold">{selectedOptions[opt.name]}</span>
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {opt.values.map((val) => {
@@ -181,7 +181,7 @@ export default function QuickViewModal() {
                         className={`px-3 py-2 rounded-xl text-xs font-bold transition-all ${
                           isSelected
                             ? 'bg-orange-500 text-white shadow-[0_0_12px_rgba(249,115,22,0.5)]'
-                            : 'bg-zinc-800 text-zinc-300 hover:bg-zinc-700 hover:text-white border border-zinc-700/50'
+                            : 'bg-zinc-100 text-zinc-700 hover:bg-zinc-200 hover:text-white border border-zinc-300/50'
                         }`}
                       >
                         {val}
@@ -202,7 +202,7 @@ export default function QuickViewModal() {
           </div>
 
           {/* Action buttons */}
-          <div className="pt-6 mt-6 border-t border-zinc-800 space-y-3">
+          <div className="pt-6 mt-6 border-t border-zinc-200 space-y-3">
             <div className="flex gap-3">
               <button
                 onClick={handleAddToCart}
@@ -216,7 +216,7 @@ export default function QuickViewModal() {
                 className={`p-3.5 rounded-xl border transition-all ${
                   isWishlisted
                     ? 'bg-rose-500/20 border-rose-500/50 text-rose-400'
-                    : 'bg-zinc-800 border-zinc-700 text-zinc-400 hover:text-white'
+                    : 'bg-zinc-100 border-zinc-300 text-zinc-600 hover:text-white'
                 }`}
                 title="Wishlist"
               >
@@ -227,7 +227,7 @@ export default function QuickViewModal() {
             <Link
               href={`/product/${quickViewProduct.slug}`}
               onClick={() => setQuickViewProduct(null)}
-              className="flex items-center justify-center gap-1.5 text-xs text-zinc-400 hover:text-orange-400 transition-colors uppercase font-bold tracking-wider pt-1"
+              className="flex items-center justify-center gap-1.5 text-xs text-zinc-800 font-semibold hover:text-orange-600 font-bold transition-colors uppercase font-bold tracking-wider pt-1"
             >
               <span>View Full Lookbook & Tech Specs</span>
               <ArrowRight className="w-3.5 h-3.5" />

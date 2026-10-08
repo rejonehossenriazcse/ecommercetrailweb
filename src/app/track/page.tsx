@@ -73,14 +73,14 @@ export default function OrderTrackingPage() {
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
       {/* Page Header */}
       <div className="text-center max-w-2xl mx-auto mb-10">
-        <div className="flex items-center justify-center gap-1.5 text-xs font-mono font-semibold uppercase tracking-widest text-zinc-500 mb-2">
+        <div className="flex items-center justify-center gap-1.5 text-xs font-mono font-semibold uppercase tracking-widest text-zinc-800 font-semibold font-medium mb-2">
           <Truck className="w-3.5 h-3.5 text-amber-500" />
           <span>Real-Time Consignment Telemetry</span>
         </div>
         <h1 className="text-3xl sm:text-4xl font-black text-zinc-900 tracking-tight">
           Track Your Dispatch
         </h1>
-        <p className="text-xs text-zinc-500 mt-2 leading-relaxed">
+        <p className="text-xs text-zinc-800 font-semibold font-medium mt-2 leading-relaxed">
           Input your order number and customer email to view real-time transit telemetry, temperature-controlled vault packing, and air carrier milestones.
         </p>
       </div>
@@ -89,7 +89,7 @@ export default function OrderTrackingPage() {
       <div className="max-w-xl mx-auto bg-white border border-zinc-200/80 rounded-3xl p-6 sm:p-8 shadow-xl shadow-zinc-900/5 mb-10">
         {/* Quick Fill Testing Helper */}
         <div className="mb-6 p-3 rounded-2xl bg-zinc-50 border border-zinc-200/60 flex items-center justify-between gap-3">
-          <div className="text-xs text-zinc-600">
+          <div className="text-xs text-zinc-800 font-semibold">
             Test Order: <span className="font-mono font-bold text-zinc-900">AUR-2026-9042</span>
           </div>
           <button
@@ -110,7 +110,7 @@ export default function OrderTrackingPage() {
 
         <form onSubmit={handleTrackSubmit} className="space-y-4">
           <div>
-            <label className="block text-xs font-mono font-semibold text-zinc-700 mb-1 uppercase">
+            <label className="block text-xs font-mono font-semibold text-zinc-800 font-bold mb-1 uppercase">
               Order Number or Consignment ID
             </label>
             <input
@@ -119,12 +119,12 @@ export default function OrderTrackingPage() {
               value={orderNumber}
               onChange={(e) => setOrderNumber(e.target.value)}
               placeholder="e.g. AUR-2026-9042"
-              className="w-full px-4 py-2.5 rounded-xl bg-zinc-50 border border-zinc-200 text-xs text-zinc-900 focus:outline-none focus:border-zinc-900 uppercase font-mono"
+              className="w-full px-4 py-2.5 rounded-xl bg-zinc-50 border border-zinc-200 text-xs text-zinc-900 focus:outline-none focus:border-zinc-200 uppercase font-mono"
             />
           </div>
 
           <div>
-            <label className="block text-xs font-mono font-semibold text-zinc-700 mb-1 uppercase">
+            <label className="block text-xs font-mono font-semibold text-zinc-800 font-bold mb-1 uppercase">
               Billing or Shipping Email
             </label>
             <input
@@ -133,14 +133,14 @@ export default function OrderTrackingPage() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="marcus.vance@collector.com"
-              className="w-full px-4 py-2.5 rounded-xl bg-zinc-50 border border-zinc-200 text-xs text-zinc-900 focus:outline-none focus:border-zinc-900"
+              className="w-full px-4 py-2.5 rounded-xl bg-zinc-50 border border-zinc-200 text-xs text-zinc-900 focus:outline-none focus:border-zinc-200"
             />
           </div>
 
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-3 rounded-xl bg-zinc-900 hover:bg-black text-white font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md mt-2 disabled:opacity-50"
+            className="w-full py-3 rounded-xl bg-zinc-50 hover:bg-black text-white font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md mt-2 disabled:opacity-50"
           >
             {loading ? (
               <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
@@ -174,7 +174,7 @@ export default function OrderTrackingPage() {
                   {orderResult.status}
                 </span>
               </div>
-              <div className="text-xs text-zinc-500 font-mono mt-1">
+              <div className="text-xs text-zinc-800 font-semibold font-medium font-mono mt-1">
                 Air Freight Carrier: <span className="font-bold text-zinc-900">{orderResult.carrier || 'DHL Express Priority'}</span> • Tracking:{' '}
                 <span className="font-bold text-zinc-900">{orderResult.trackingNumber || 'DHL-9481928371'}</span>
               </div>
@@ -200,7 +200,7 @@ export default function OrderTrackingPage() {
                 </div>
                 <div>
                   <div className="text-xs font-bold text-zinc-900">Order Confirmed</div>
-                  <div className="text-[10px] text-zinc-500 font-mono">Payment Tokenized</div>
+                  <div className="text-[10px] text-zinc-800 font-semibold font-medium font-mono">Payment Tokenized</div>
                 </div>
               </div>
 
@@ -210,7 +210,7 @@ export default function OrderTrackingPage() {
                 </div>
                 <div>
                   <div className="text-xs font-bold text-zinc-900">Vault Inspection</div>
-                  <div className="text-[10px] text-zinc-500 font-mono">Zurich Vault QC Passed</div>
+                  <div className="text-[10px] text-zinc-800 font-semibold font-medium font-mono">Zurich Vault QC Passed</div>
                 </div>
               </div>
 
@@ -220,7 +220,7 @@ export default function OrderTrackingPage() {
                 </div>
                 <div>
                   <div className="text-xs font-bold text-zinc-900">In Air Transit</div>
-                  <div className="text-[10px] text-zinc-500 font-mono">{orderResult.carrier || 'DHL Express Air'}</div>
+                  <div className="text-[10px] text-zinc-800 font-semibold font-medium font-mono">{orderResult.carrier || 'DHL Express Air'}</div>
                 </div>
               </div>
 
@@ -230,7 +230,7 @@ export default function OrderTrackingPage() {
                 </div>
                 <div>
                   <div className="text-xs font-bold text-zinc-900">Final Delivery</div>
-                  <div className="text-[10px] text-zinc-500 font-mono">{orderResult.status === 'delivered' ? 'Signed at Destination' : 'Out for Delivery'}</div>
+                  <div className="text-[10px] text-zinc-800 font-semibold font-medium font-mono">{orderResult.status === 'delivered' ? 'Signed at Destination' : 'Out for Delivery'}</div>
                 </div>
               </div>
             </div>
@@ -238,7 +238,7 @@ export default function OrderTrackingPage() {
 
           {/* Consignment Items */}
           <div>
-            <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-zinc-500 mb-3">
+            <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-zinc-800 font-semibold font-medium mb-3">
               Consignment Contents ({orderResult.items.length})
             </h3>
             <div className="space-y-3">
@@ -258,7 +258,7 @@ export default function OrderTrackingPage() {
                     </div>
                     <div>
                       <div className="text-xs font-bold text-zinc-900">{item.name}</div>
-                      <div className="text-[10px] text-zinc-500 font-mono">
+                      <div className="text-[10px] text-zinc-800 font-semibold font-medium font-mono">
                         SKU: {item.sku} • Quantity: {item.quantity}
                       </div>
                     </div>
@@ -277,7 +277,7 @@ export default function OrderTrackingPage() {
             <MapPin className="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
             <div>
               <div className="font-bold text-zinc-900">Destination Address</div>
-              <div className="text-zinc-600 mt-0.5">
+              <div className="text-zinc-800 font-semibold mt-0.5">
                 {orderResult.shippingAddress.street}, {orderResult.shippingAddress.city}, {orderResult.shippingAddress.state} {orderResult.shippingAddress.zip}, {orderResult.shippingAddress.country}
               </div>
             </div>

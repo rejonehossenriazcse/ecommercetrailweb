@@ -53,7 +53,7 @@ export default function Footer() {
         {/* Top Feature / Trust Bar */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pb-12 border-b border-zinc-800">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-orange-400 shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-orange-500 shrink-0">
               <ShieldCheck className="w-5 h-5" />
             </div>
             <div>
@@ -63,7 +63,7 @@ export default function Footer() {
           </div>
 
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-orange-400 shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-orange-500 shrink-0">
               <Truck className="w-5 h-5" />
             </div>
             <div>
@@ -73,7 +73,7 @@ export default function Footer() {
           </div>
 
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-orange-400 shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-orange-500 shrink-0">
               <RotateCcw className="w-5 h-5" />
             </div>
             <div>
@@ -83,7 +83,7 @@ export default function Footer() {
           </div>
 
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-orange-400 shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-orange-500 shrink-0">
               <Lock className="w-5 h-5" />
             </div>
             <div>
@@ -112,7 +112,7 @@ export default function Footer() {
             </p>
 
             <div className="pt-2">
-              <span className="text-[11px] font-mono uppercase tracking-widest text-orange-400 font-bold block mb-2">
+              <span className="text-[11px] font-mono uppercase tracking-widest text-orange-500 font-bold block mb-2">
                 JOIN THE DISTRICT • GET 10% OFF
               </span>
 
@@ -128,7 +128,7 @@ export default function Footer() {
                     value={newsletterEmail}
                     onChange={(e) => setNewsletterEmail(e.target.value)}
                     placeholder="Enter your email address"
-                    className="flex-1 bg-zinc-900 border border-zinc-800 text-white placeholder:text-zinc-500 text-xs px-4 py-2.5 rounded-xl focus:outline-none focus:border-orange-500 transition-colors"
+                    className="flex-1 bg-zinc-900 border border-zinc-800 text-white placeholder:text-zinc-400 font-medium text-xs px-4 py-2.5 rounded-xl focus:outline-none focus:border-orange-500 transition-colors"
                   />
                   <button
                     type="submit"
@@ -145,12 +145,12 @@ export default function Footer() {
           <div className="lg:col-span-2 space-y-3">
             <h4 className="text-xs font-bold uppercase tracking-wider text-white">Catalog</h4>
             <ul className="space-y-2 text-xs text-zinc-400">
-              <li><Link href="/shop" className="hover:text-orange-400 transition-colors">All Grails</Link></li>
-              <li><Link href="/shop?category=sneakers" className="hover:text-orange-400 transition-colors">Sneakers & Retros</Link></li>
-              <li><Link href="/shop?category=hoodies" className="hover:text-orange-400 transition-colors">Hoodies & Fleece</Link></li>
-              <li><Link href="/shop?category=t-shirts" className="hover:text-orange-400 transition-colors">Vintage Graphic Tees</Link></li>
-              <li><Link href="/shop?category=accessories" className="hover:text-orange-400 transition-colors">Tactical Bags & Caps</Link></li>
-              <li><Link href="/shop?filter=sale" className="text-orange-400 hover:text-orange-300 font-bold transition-colors">Sale & Drops</Link></li>
+              <li><Link href="/shop" className="hover:text-orange-500 transition-colors">All Grails</Link></li>
+              <li><Link href="/shop?category=sneakers" className="hover:text-orange-500 transition-colors">Sneakers & Retros</Link></li>
+              <li><Link href="/shop?category=hoodies" className="hover:text-orange-500 transition-colors">Hoodies & Fleece</Link></li>
+              <li><Link href="/shop?category=t-shirts" className="hover:text-orange-500 transition-colors">Vintage Graphic Tees</Link></li>
+              <li><Link href="/shop?category=accessories" className="hover:text-orange-500 transition-colors">Tactical Bags & Caps</Link></li>
+              <li><Link href="/shop?filter=sale" className="text-orange-500 hover:text-orange-300 font-bold transition-colors">Sale & Drops</Link></li>
             </ul>
           </div>
 
@@ -158,12 +158,12 @@ export default function Footer() {
           <div className="lg:col-span-2 space-y-3">
             <h4 className="text-xs font-bold uppercase tracking-wider text-white">Top Brands</h4>
             <ul className="space-y-2 text-xs text-zinc-400">
-              <li><Link href="/shop?brand=Jordan" className="hover:text-orange-400 transition-colors">Air Jordan</Link></li>
-              <li><Link href="/shop?brand=Nike" className="hover:text-orange-400 transition-colors">Nike Sportswear</Link></li>
-              <li><Link href="/shop?brand=Adidas" className="hover:text-orange-400 transition-colors">Adidas & Yeezy</Link></li>
-              <li><Link href="/shop?brand=Supreme" className="hover:text-orange-400 transition-colors">Supreme New York</Link></li>
-              <li><Link href="/shop?brand=Stussy" className="hover:text-orange-400 transition-colors">Stussy World Tour</Link></li>
-              <li><Link href="/shop?brand=Essentials" className="hover:text-orange-400 transition-colors">Fear of God Essentials</Link></li>
+              <li><Link href="/shop?brand=Jordan" className="hover:text-orange-500 transition-colors">Air Jordan</Link></li>
+              <li><Link href="/shop?brand=Nike" className="hover:text-orange-500 transition-colors">Nike Sportswear</Link></li>
+              <li><Link href="/shop?brand=Adidas" className="hover:text-orange-500 transition-colors">Adidas & Yeezy</Link></li>
+              <li><Link href="/shop?brand=Supreme" className="hover:text-orange-500 transition-colors">Supreme New York</Link></li>
+              <li><Link href="/shop?brand=Stussy" className="hover:text-orange-500 transition-colors">Stussy World Tour</Link></li>
+              <li><Link href="/shop?brand=Essentials" className="hover:text-orange-500 transition-colors">Fear of God Essentials</Link></li>
             </ul>
           </div>
 
@@ -171,18 +171,18 @@ export default function Footer() {
           <div className="lg:col-span-3 space-y-3">
             <h4 className="text-xs font-bold uppercase tracking-wider text-white">Assistance & Vault</h4>
             <ul className="space-y-2 text-xs text-zinc-400">
-              <li><Link href="/track" className="hover:text-orange-400 transition-colors">Track Your Package</Link></li>
-              <li><Link href="/faq" className="hover:text-orange-400 transition-colors">Authenticity & Legit Checks</Link></li>
-              <li><Link href="/shipping-policy" className="hover:text-orange-400 transition-colors">Worldwide Shipping Policy</Link></li>
-              <li><Link href="/refund-policy" className="hover:text-orange-400 transition-colors">Returns & Exchange Portal</Link></li>
-              <li><Link href="/contact" className="hover:text-orange-400 transition-colors">Street Concierge Hotline</Link></li>
+              <li><Link href="/track" className="hover:text-orange-500 transition-colors">Track Your Package</Link></li>
+              <li><Link href="/faq" className="hover:text-orange-500 transition-colors">Authenticity & Legit Checks</Link></li>
+              <li><Link href="/shipping-policy" className="hover:text-orange-500 transition-colors">Worldwide Shipping Policy</Link></li>
+              <li><Link href="/refund-policy" className="hover:text-orange-500 transition-colors">Returns & Exchange Portal</Link></li>
+              <li><Link href="/contact" className="hover:text-orange-500 transition-colors">Street Concierge Hotline</Link></li>
             </ul>
           </div>
 
         </div>
 
         {/* Bottom Copyright & Payment Methods */}
-        <div className="pt-8 border-t border-zinc-800/80 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
+        <div className="pt-8 border-t border-zinc-800 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-zinc-400 font-medium">
           <p>© 2026 STRIDE DISTRICT INC. ALL RIGHTS RESERVED. FOR THE CULTURE.</p>
           
           <div className="flex flex-wrap items-center gap-2">

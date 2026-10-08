@@ -36,7 +36,7 @@ export default function ProductGridSection({
       {/* Header with Switcher Tabs */}
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
         <div>
-          <div className="flex items-center gap-1.5 text-xs font-mono font-semibold uppercase tracking-widest text-zinc-400 mb-2">
+          <div className="flex items-center gap-1.5 text-xs font-mono font-semibold uppercase tracking-widest text-zinc-800 font-semibold mb-2">
             <Sparkles className="w-3.5 h-3.5 text-zinc-900" />
             <span>{subtitle}</span>
           </div>
@@ -95,7 +95,7 @@ export default function ProductGridSection({
       <div className="mt-12 text-center">
         <Link
           href="/shop"
-          className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-zinc-900 hover:text-black py-3 px-6 rounded-2xl border border-zinc-300 hover:border-zinc-900 transition-all cursor-pointer"
+          className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-zinc-900 hover:text-black py-3 px-6 rounded-2xl border border-zinc-300 hover:border-zinc-200 transition-all cursor-pointer"
         >
           <span>Explore All 24 Flagship Designs</span>
           <ArrowRight className="w-4 h-4" />

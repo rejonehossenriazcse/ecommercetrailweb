@@ -30,7 +30,7 @@ export default function DealOfTheDay({ products = [] }: { products?: Product[] }
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"
             />
-            <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-zinc-950 text-white text-[11px] font-mono font-bold uppercase tracking-wider shadow-soft">
+            <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-white text-white text-[11px] font-mono font-bold uppercase tracking-wider shadow-soft">
               Spotlight Deal of the Day
             </div>
           </div>
@@ -38,7 +38,7 @@ export default function DealOfTheDay({ products = [] }: { products?: Product[] }
           {/* Details & Live Inventory Claim */}
           <div className="lg:col-span-6 space-y-6">
             <div>
-              <div className="flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-zinc-500 mb-2">
+              <div className="flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-zinc-800 font-semibold font-medium mb-2">
                 <Sparkles className="w-4 h-4 text-zinc-900" />
                 <span>{dealProduct.brand} &bull; Limited Allocation</span>
               </div>
@@ -54,11 +54,11 @@ export default function DealOfTheDay({ products = [] }: { products?: Product[] }
                   ))}
                 </div>
                 <span className="text-xs font-bold text-zinc-900">4.9 / 5.0</span>
-                <span className="text-xs text-zinc-500">({dealProduct.reviewCount} verified collector reviews)</span>
+                <span className="text-xs text-zinc-800 font-semibold font-medium">({dealProduct.reviewCount} verified collector reviews)</span>
               </div>
             </div>
 
-            <p className="text-sm text-zinc-600 leading-relaxed font-normal">
+            <p className="text-sm text-zinc-800 font-semibold leading-relaxed font-normal">
               {dealProduct.shortDescription}
             </p>
 
@@ -68,7 +68,7 @@ export default function DealOfTheDay({ products = [] }: { products?: Product[] }
                 {formatPrice(dealProduct.price)}
               </span>
               {dealProduct.compareAtPrice && (
-                <span className="text-lg text-zinc-400 line-through">
+                <span className="text-lg text-zinc-800 font-semibold line-through">
                   {formatPrice(dealProduct.compareAtPrice)}
                 </span>
               )}
@@ -80,18 +80,18 @@ export default function DealOfTheDay({ products = [] }: { products?: Product[] }
             {/* Stock Progress Bar */}
             <div className="space-y-2 p-4 rounded-2xl bg-zinc-50 border border-zinc-200/80">
               <div className="flex justify-between text-xs font-medium">
-                <span className="text-zinc-700">
+                <span className="text-zinc-800 font-bold">
                   Claimed: <strong>{claimedCount} of {totalAllocation} units</strong>
                 </span>
                 <span className="text-zinc-900 font-bold">{claimedPercent}% Claimed</span>
               </div>
               <div className="w-full h-2 bg-zinc-200 rounded-full overflow-hidden">
                 <div
-                  className="h-full bg-zinc-950 rounded-full transition-all duration-500"
+                  className="h-full bg-white rounded-full transition-all duration-500"
                   style={{ width: `${claimedPercent}%` }}
                 />
               </div>
-              <p className="text-[11px] text-zinc-500">
+              <p className="text-[11px] text-zinc-800 font-semibold font-medium">
                 Guaranteed dispatch within 24 hours with certified tamper-proof seal.
               </p>
             </div>
@@ -100,7 +100,7 @@ export default function DealOfTheDay({ products = [] }: { products?: Product[] }
             <div className="flex flex-col sm:flex-row items-center gap-3 pt-2">
               <button
                 onClick={() => addToCart(dealProduct, 1)}
-                className="w-full sm:w-auto flex-1 flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl bg-zinc-950 hover:bg-black text-white text-xs font-bold uppercase tracking-wider transition-all shadow-soft active:scale-95 cursor-pointer"
+                className="w-full sm:w-auto flex-1 flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl bg-white hover:bg-black text-white text-xs font-bold uppercase tracking-wider transition-all shadow-soft active:scale-95 cursor-pointer"
               >
                 <ShoppingBag className="w-4 h-4" />
                 <span>Claim Spotlight Deal</span>
@@ -113,13 +113,13 @@ export default function DealOfTheDay({ products = [] }: { products?: Product[] }
               </Link>
             </div>
 
-            <div className="flex items-center gap-6 text-xs text-zinc-500 pt-1">
+            <div className="flex items-center gap-6 text-xs text-zinc-800 font-semibold font-medium pt-1">
               <div className="flex items-center gap-1.5">
                 <ShieldCheck className="w-4 h-4 text-emerald-600" />
                 <span>3-Year Warranty</span>
               </div>
               <div className="flex items-center gap-1.5">
-                <ArrowRight className="w-4 h-4 text-zinc-700" />
+                <ArrowRight className="w-4 h-4 text-zinc-800 font-bold" />
                 <span>Complimentary Express Shipping</span>
               </div>
             </div>

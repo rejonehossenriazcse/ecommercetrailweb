@@ -2,11 +2,11 @@ import React from 'react';
 
 export default function ShippingPolicyPage() {
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-14 space-y-8 text-xs text-zinc-700 leading-relaxed">
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-14 space-y-8 text-xs text-zinc-800 font-bold leading-relaxed">
       <div>
-        <span className="font-mono text-zinc-400 uppercase tracking-widest text-[11px]">Logistics Protocol</span>
+        <span className="font-mono text-zinc-800 font-semibold uppercase tracking-widest text-[11px]">Logistics Protocol</span>
         <h1 className="text-3xl font-black text-zinc-900 tracking-tight mt-1">Shipping & Transit Policy</h1>
-        <p className="text-zinc-500 mt-1">Carbon-Neutral Global Fulfillment</p>
+        <p className="text-zinc-800 font-semibold font-medium mt-1">Carbon-Neutral Global Fulfillment</p>
       </div>
 
       <div className="space-y-6">

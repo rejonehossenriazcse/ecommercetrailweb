@@ -74,7 +74,7 @@ function LoginForm() {
     <div className="min-h-[80vh] flex flex-col justify-center items-center py-12 px-4 sm:px-6 lg:px-8 bg-zinc-50/50">
       <div className="w-full max-w-md bg-white border border-zinc-200/80 rounded-3xl p-8 sm:p-10 shadow-xl shadow-zinc-900/5 relative overflow-hidden">
         {/* Top badge */}
-        <div className="flex items-center justify-center gap-1.5 text-xs font-mono font-semibold uppercase tracking-widest text-zinc-500 mb-3">
+        <div className="flex items-center justify-center gap-1.5 text-xs font-mono font-semibold uppercase tracking-widest text-zinc-800 font-semibold font-medium mb-3">
           <Sparkles className="w-3.5 h-3.5 text-amber-500" />
           <span>Patron Concierge</span>
         </div>
@@ -82,7 +82,7 @@ function LoginForm() {
         <h1 className="text-2xl sm:text-3xl font-black text-center text-zinc-900 tracking-tight mb-2">
           Sign In to AURA
         </h1>
-        <p className="text-xs text-center text-zinc-500 mb-8 leading-relaxed">
+        <p className="text-xs text-center text-zinc-800 font-semibold font-medium mb-8 leading-relaxed">
           Access your collector tier benefits, saved shipping destinations, and real-time parcel dispatch tracking.
         </p>
 
@@ -114,7 +114,7 @@ function LoginForm() {
           <div className="absolute inset-0 flex items-center">
             <div className="w-full border-t border-zinc-200" />
           </div>
-          <span className="relative bg-white px-3 text-[11px] font-mono text-zinc-400 uppercase">
+          <span className="relative bg-white px-3 text-[11px] font-mono text-zinc-800 font-semibold uppercase">
             Or sign in with email
           </span>
         </div>
@@ -128,44 +128,44 @@ function LoginForm() {
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-xs font-semibold text-zinc-700 mb-1.5 uppercase font-mono">
+            <label className="block text-xs font-semibold text-zinc-800 font-bold mb-1.5 uppercase font-mono">
               Email Address
             </label>
             <div className="relative">
-              <Mail className="w-4 h-4 text-zinc-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+              <Mail className="w-4 h-4 text-zinc-800 font-semibold absolute left-3.5 top-1/2 -translate-y-1/2" />
               <input
                 type="email"
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="patron@aurastudios.com"
-                className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-zinc-50 border border-zinc-200 text-zinc-900 placeholder-zinc-400 text-xs focus:outline-none focus:border-zinc-900 focus:bg-white transition-all"
+                className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-zinc-50 border border-zinc-200 text-zinc-900 placeholder-zinc-400 text-xs focus:outline-none focus:border-zinc-200 focus:bg-white transition-all"
               />
             </div>
           </div>
 
           <div>
             <div className="flex items-center justify-between mb-1.5">
-              <label className="block text-xs font-semibold text-zinc-700 uppercase font-mono">
+              <label className="block text-xs font-semibold text-zinc-800 font-bold uppercase font-mono">
                 Password
               </label>
               <button
                 type="button"
                 onClick={() => addToast('Password reset link dispatched to registered email', 'info')}
-                className="text-[11px] text-zinc-500 hover:text-zinc-900 transition-colors"
+                className="text-[11px] text-zinc-800 font-semibold font-medium hover:text-zinc-900 transition-colors"
               >
                 Forgot password?
               </button>
             </div>
             <div className="relative">
-              <Lock className="w-4 h-4 text-zinc-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+              <Lock className="w-4 h-4 text-zinc-800 font-semibold absolute left-3.5 top-1/2 -translate-y-1/2" />
               <input
                 type="password"
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••••••"
-                className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-zinc-50 border border-zinc-200 text-zinc-900 placeholder-zinc-400 text-xs focus:outline-none focus:border-zinc-900 focus:bg-white transition-all"
+                className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-zinc-50 border border-zinc-200 text-zinc-900 placeholder-zinc-400 text-xs focus:outline-none focus:border-zinc-200 focus:bg-white transition-all"
               />
             </div>
           </div>
@@ -173,7 +173,7 @@ function LoginForm() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-3 rounded-xl bg-zinc-900 hover:bg-black text-white font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-md cursor-pointer disabled:opacity-50 mt-2"
+            className="w-full py-3 rounded-xl bg-zinc-50 hover:bg-black text-white font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-md cursor-pointer disabled:opacity-50 mt-2"
           >
             <span>Sign In to Account</span>
             <ArrowRight className="w-4 h-4" />
@@ -181,7 +181,7 @@ function LoginForm() {
         </form>
 
         {/* Footer Links */}
-        <div className="mt-8 pt-6 border-t border-zinc-100 flex flex-col gap-3 text-center text-xs text-zinc-500">
+        <div className="mt-8 pt-6 border-t border-zinc-100 flex flex-col gap-3 text-center text-xs text-zinc-800 font-semibold font-medium">
           <div>
             Don&apos;t have an account yet?{' '}
             <Link href="/register" className="font-bold text-zinc-900 hover:underline">
@@ -189,9 +189,9 @@ function LoginForm() {
             </Link>
           </div>
 
-          <div className="flex items-center justify-center gap-4 text-[11px] font-mono text-zinc-400 pt-2">
+          <div className="flex items-center justify-center gap-4 text-[11px] font-mono text-zinc-800 font-semibold pt-2">
             <Link href="/track" className="hover:text-zinc-900 flex items-center gap-1">
-              <Truck className="w-3.5 h-3.5 text-zinc-500" />
+              <Truck className="w-3.5 h-3.5 text-zinc-800 font-semibold font-medium" />
               <span>Lookup Guest Order</span>
             </Link>
             <span>•</span>
@@ -208,7 +208,7 @@ function LoginForm() {
 
 export default function LoginPage() {
   return (
-    <Suspense fallback={<div className="min-h-[80vh] flex items-center justify-center text-xs font-mono text-zinc-400">Loading Concierge...</div>}>
+    <Suspense fallback={<div className="min-h-[80vh] flex items-center justify-center text-xs font-mono text-zinc-800 font-semibold">Loading Concierge...</div>}>
       <LoginForm />
     </Suspense>
   );

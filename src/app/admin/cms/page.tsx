@@ -323,7 +323,7 @@ export default function AdminHomepageBuilderPage() {
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
-        <div className="flex flex-col items-center gap-3 text-zinc-400">
+        <div className="flex flex-col items-center gap-3 text-zinc-800 font-semibold">
           <div className="w-6 h-6 border-2 border-amber-400 border-t-transparent rounded-full animate-spin" />
           <span className="text-xs font-mono">Loading Homepage CMS Builder...</span>
         </div>
@@ -372,7 +372,7 @@ export default function AdminHomepageBuilderPage() {
       />
 
       {/* Navigation Quick Tabs */}
-      <div className="flex flex-wrap items-center gap-2 p-1.5 rounded-2xl bg-zinc-900 border border-zinc-800 text-xs">
+      <div className="flex flex-wrap items-center gap-2 p-1.5 rounded-2xl bg-zinc-50 border border-zinc-200 text-xs">
         <Link
           href="/admin/cms"
           className="px-3.5 py-1.5 rounded-xl bg-amber-400 text-zinc-950 font-bold flex items-center gap-1.5 shadow-sm"
@@ -382,35 +382,35 @@ export default function AdminHomepageBuilderPage() {
         </Link>
         <Link
           href="/admin/header"
-          className="px-3.5 py-1.5 rounded-xl text-zinc-400 hover:text-white hover:bg-zinc-800 flex items-center gap-1.5 transition-colors"
+          className="px-3.5 py-1.5 rounded-xl text-zinc-800 font-semibold hover:text-zinc-900 font-bold hover:bg-zinc-100 flex items-center gap-1.5 transition-colors"
         >
           <MenuIcon className="w-3.5 h-3.5" />
           <span>Header & Navigation</span>
         </Link>
         <Link
           href="/admin/footer"
-          className="px-3.5 py-1.5 rounded-xl text-zinc-400 hover:text-white hover:bg-zinc-800 flex items-center gap-1.5 transition-colors"
+          className="px-3.5 py-1.5 rounded-xl text-zinc-800 font-semibold hover:text-zinc-900 font-bold hover:bg-zinc-100 flex items-center gap-1.5 transition-colors"
         >
           <Columns className="w-3.5 h-3.5" />
           <span>Footer Management</span>
         </Link>
         <Link
           href="/admin/pages"
-          className="px-3.5 py-1.5 rounded-xl text-zinc-400 hover:text-white hover:bg-zinc-800 flex items-center gap-1.5 transition-colors"
+          className="px-3.5 py-1.5 rounded-xl text-zinc-800 font-semibold hover:text-zinc-900 font-bold hover:bg-zinc-100 flex items-center gap-1.5 transition-colors"
         >
           <FileText className="w-3.5 h-3.5" />
           <span>Custom Pages</span>
         </Link>
         <Link
           href="/admin/blog"
-          className="px-3.5 py-1.5 rounded-xl text-zinc-400 hover:text-white hover:bg-zinc-800 flex items-center gap-1.5 transition-colors"
+          className="px-3.5 py-1.5 rounded-xl text-zinc-800 font-semibold hover:text-zinc-900 font-bold hover:bg-zinc-100 flex items-center gap-1.5 transition-colors"
         >
           <BookOpen className="w-3.5 h-3.5" />
           <span>Blog / Articles</span>
         </Link>
         <Link
           href="/admin/seo"
-          className="px-3.5 py-1.5 rounded-xl text-zinc-400 hover:text-white hover:bg-zinc-800 flex items-center gap-1.5 transition-colors"
+          className="px-3.5 py-1.5 rounded-xl text-zinc-800 font-semibold hover:text-zinc-900 font-bold hover:bg-zinc-100 flex items-center gap-1.5 transition-colors"
         >
           <Globe className="w-3.5 h-3.5" />
           <span>SEO Settings</span>
@@ -429,15 +429,15 @@ export default function AdminHomepageBuilderPage() {
           <div className="flex flex-wrap items-center gap-2">
             <button
               onClick={() => setIsResetModalOpen(true)}
-              className="px-3.5 py-2 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-zinc-300 font-semibold text-xs transition-colors border border-zinc-700 flex items-center gap-1.5"
+              className="px-3.5 py-2 rounded-xl bg-zinc-100 hover:bg-zinc-200 text-zinc-800 font-bold font-semibold text-xs transition-colors border border-zinc-300 flex items-center gap-1.5"
               title="Reset homepage to standard streetwear layout"
             >
-              <RotateCcw className="w-3.5 h-3.5 text-zinc-400" />
+              <RotateCcw className="w-3.5 h-3.5 text-zinc-800 font-semibold" />
               <span>Reset Defaults</span>
             </button>
             <button
               onClick={() => setIsAddModalOpen(true)}
-              className="px-4 py-2 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-white font-semibold text-xs transition-colors border border-zinc-700 flex items-center gap-1.5"
+              className="px-4 py-2 rounded-xl bg-zinc-100 hover:bg-zinc-200 text-zinc-900 font-bold font-semibold text-xs transition-colors border border-zinc-300 flex items-center gap-1.5"
             >
               <Plus className="w-4 h-4 text-amber-400" />
               <span>Add New Section</span>
@@ -455,20 +455,20 @@ export default function AdminHomepageBuilderPage() {
       />
 
       {/* Visual Section Sequence List */}
-      <div className="bg-[#14171d] border border-zinc-800 rounded-2xl p-6 space-y-4 shadow-xl">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-zinc-800">
+      <div className="bg-[#14171d] border border-zinc-200 rounded-2xl p-6 space-y-4 shadow-xl">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-zinc-200">
           <div>
-            <h3 className="text-sm font-bold text-white flex items-center gap-2">
+            <h3 className="text-sm font-bold text-zinc-900 font-bold flex items-center gap-2">
               <span>Homepage Section Sequence (Top to Bottom)</span>
-              <span className="text-xs font-mono font-normal text-zinc-400 bg-zinc-800 px-2.5 py-0.5 rounded-full border border-zinc-700">
+              <span className="text-xs font-mono font-normal text-zinc-800 font-semibold bg-zinc-100 px-2.5 py-0.5 rounded-full border border-zinc-300">
                 {sections.filter((s) => s.isEnabled).length} of {sections.length} Visible
               </span>
             </h3>
-            <p className="text-xs text-zinc-400 mt-1">
-              Use <strong className="text-zinc-200">Up / Down arrows</strong> to reorder. Click <strong className="text-zinc-200">Enabled / Disabled</strong> to hide or show on the website instantly. Click <strong className="text-amber-400">Edit (pencil)</strong> to customize texts, ads, buttons, and photos.
+            <p className="text-xs text-zinc-800 font-semibold mt-1">
+              Use <strong className="text-zinc-800">Up / Down arrows</strong> to reorder. Click <strong className="text-zinc-800">Enabled / Disabled</strong> to hide or show on the website instantly. Click <strong className="text-amber-400">Edit (pencil)</strong> to customize texts, ads, buttons, and photos.
             </p>
           </div>
-          <div className="text-[11px] font-mono text-zinc-500 flex items-center gap-3 shrink-0">
+          <div className="text-[11px] font-mono text-zinc-800 font-semibold font-medium flex items-center gap-3 shrink-0">
             <span className="flex items-center gap-1.5">
               <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" /> Live on Storefront
             </span>
@@ -499,20 +499,20 @@ export default function AdminHomepageBuilderPage() {
                 key={section.id}
                 className={`p-4 rounded-xl border transition-all ${
                   section.isEnabled
-                    ? 'bg-zinc-900/90 border-zinc-800 hover:border-zinc-700 shadow-sm'
-                    : 'bg-zinc-950/40 border-zinc-900 opacity-60'
+                    ? 'bg-zinc-50/90 border-zinc-200 hover:border-zinc-300 shadow-sm'
+                    : 'bg-white/40 border-zinc-200 opacity-60'
                 }`}
               >
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                   {/* Left: Reorder & Info */}
                   <div className="flex items-start sm:items-center gap-3.5 min-w-0">
                     {/* Up / Down Controls */}
-                    <div className="flex flex-col gap-1 shrink-0 bg-zinc-950 p-1 rounded-lg border border-zinc-800">
+                    <div className="flex flex-col gap-1 shrink-0 bg-white p-1 rounded-lg border border-zinc-200">
                       <button
                         onClick={() => handleMove(index, 'up')}
                         disabled={index === 0}
                         title="Move Up"
-                        className="p-1 rounded text-zinc-400 hover:text-white hover:bg-zinc-800 disabled:opacity-20 transition-colors"
+                        className="p-1 rounded text-zinc-800 font-semibold hover:text-zinc-900 font-bold hover:bg-zinc-100 disabled:opacity-20 transition-colors"
                       >
                         <ArrowUp className="w-3.5 h-3.5" />
                       </button>
@@ -520,7 +520,7 @@ export default function AdminHomepageBuilderPage() {
                         onClick={() => handleMove(index, 'down')}
                         disabled={index === sections.length - 1}
                         title="Move Down"
-                        className="p-1 rounded text-zinc-400 hover:text-white hover:bg-zinc-800 disabled:opacity-20 transition-colors"
+                        className="p-1 rounded text-zinc-800 font-semibold hover:text-zinc-900 font-bold hover:bg-zinc-100 disabled:opacity-20 transition-colors"
                       >
                         <ArrowDown className="w-3.5 h-3.5" />
                       </button>
@@ -528,7 +528,7 @@ export default function AdminHomepageBuilderPage() {
 
                     {/* Order Badge & Icon */}
                     <div className="flex items-center gap-2 shrink-0">
-                      <span className="w-7 h-7 rounded-lg bg-zinc-800 text-zinc-300 font-mono text-xs font-bold flex items-center justify-center border border-zinc-700 shadow-inner">
+                      <span className="w-7 h-7 rounded-lg bg-zinc-100 text-zinc-800 font-bold font-mono text-xs font-bold flex items-center justify-center border border-zinc-300 shadow-inner">
                         {index + 1}
                       </span>
                       <span className="text-2xl">{meta.icon}</span>
@@ -537,14 +537,14 @@ export default function AdminHomepageBuilderPage() {
                     {/* Title & Description */}
                     <div className="min-w-0">
                       <div className="flex items-center gap-2 flex-wrap">
-                        <span className="text-sm font-bold text-white">{meta.label}</span>
-                        <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-zinc-800 text-amber-300 border border-zinc-700 font-semibold">
+                        <span className="text-sm font-bold text-zinc-900 font-bold">{meta.label}</span>
+                        <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-zinc-100 text-amber-300 border border-zinc-300 font-semibold">
                           {meta.defaultTag}
                         </span>
                         
                         {/* Special Badges for the 4 Sections */}
                         {isHero && hasHeroAds && (
-                          <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-orange-500/10 text-orange-400 border border-orange-500/30 flex items-center gap-1 font-bold">
+                          <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-orange-500/10 text-orange-600 font-bold border border-orange-500/30 flex items-center gap-1 font-bold">
                             <Megaphone className="w-3 h-3" /> Ads Bar Active
                           </span>
                         )}
@@ -569,12 +569,12 @@ export default function AdminHomepageBuilderPage() {
                             <Check className="w-3 h-3" /> Live
                           </span>
                         ) : (
-                          <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-zinc-800 text-zinc-500 border border-zinc-700">
+                          <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-zinc-100 text-zinc-800 font-semibold font-medium border border-zinc-300">
                             Hidden / Inactive
                           </span>
                         )}
                       </div>
-                      <p className="text-xs text-zinc-400 mt-1 leading-relaxed line-clamp-1">
+                      <p className="text-xs text-zinc-800 font-semibold mt-1 leading-relaxed line-clamp-1">
                         {meta.frontendDescription}
                       </p>
                     </div>
@@ -588,11 +588,11 @@ export default function AdminHomepageBuilderPage() {
                       className={`px-3 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all border ${
                         section.isEnabled
                           ? 'bg-emerald-500/15 text-emerald-300 border-emerald-500/40 hover:bg-emerald-500/25 shadow-sm'
-                          : 'bg-zinc-800 text-zinc-400 border-zinc-700 hover:text-white hover:bg-zinc-700'
+                          : 'bg-zinc-100 text-zinc-600 border-zinc-300 hover:text-white hover:bg-zinc-200'
                       }`}
                       title={section.isEnabled ? 'Click to hide this section from website' : 'Click to display this section on website'}
                     >
-                      {section.isEnabled ? <Eye className="w-3.5 h-3.5 text-emerald-400" /> : <EyeOff className="w-3.5 h-3.5 text-zinc-500" />}
+                      {section.isEnabled ? <Eye className="w-3.5 h-3.5 text-emerald-400" /> : <EyeOff className="w-3.5 h-3.5 text-zinc-800 font-semibold font-medium" />}
                       <span>{section.isEnabled ? 'Visible (Show)' : 'Hidden (Off)'}</span>
                     </button>
 
@@ -609,7 +609,7 @@ export default function AdminHomepageBuilderPage() {
                     {/* Delete Section */}
                     <button
                       onClick={() => setDeleteSectionId(section.id)}
-                      className="p-2 text-zinc-500 hover:text-rose-400 hover:bg-rose-950/30 rounded-xl transition-colors border border-zinc-800 hover:border-rose-900"
+                      className="p-2 text-zinc-800 font-semibold font-medium hover:text-rose-400 hover:bg-rose-950/30 rounded-xl transition-colors border border-zinc-200 hover:border-rose-900"
                       title="Remove Section from Homepage"
                     >
                       <Trash2 className="w-3.5 h-3.5" />
@@ -627,19 +627,19 @@ export default function AdminHomepageBuilderPage() {
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-150 overflow-y-auto">
           <form
             onSubmit={handleSaveEdit}
-            className="bg-[#16191f] border border-zinc-800 rounded-2xl p-6 max-w-2xl w-full shadow-2xl space-y-5 my-8 max-h-[90vh] overflow-y-auto"
+            className="bg-[#16191f] border border-zinc-200 rounded-2xl p-6 max-w-2xl w-full shadow-2xl space-y-5 my-8 max-h-[90vh] overflow-y-auto"
           >
             {/* Modal Header */}
-            <div className="flex items-center justify-between pb-3 border-b border-zinc-800">
+            <div className="flex items-center justify-between pb-3 border-b border-zinc-200">
               <div className="flex items-center gap-3">
                 <div className="w-9 h-9 rounded-xl bg-amber-400/10 border border-amber-400/20 flex items-center justify-center text-xl">
                   {SECTION_METADATA[editingSection.type]?.icon || '⚙️'}
                 </div>
                 <div>
-                  <h3 className="text-base font-bold text-white flex items-center gap-2">
+                  <h3 className="text-base font-bold text-zinc-900 font-bold flex items-center gap-2">
                     <span>Customize: {SECTION_METADATA[editingSection.type]?.label || editingSection.title}</span>
                   </h3>
-                  <p className="text-xs text-zinc-400 font-mono mt-0.5">
+                  <p className="text-xs text-zinc-800 font-semibold font-mono mt-0.5">
                     Position #{editingSection.order} &bull; Type: <span className="text-amber-400">{editingSection.type}</span>
                   </p>
                 </div>
@@ -647,16 +647,16 @@ export default function AdminHomepageBuilderPage() {
               <button
                 type="button"
                 onClick={() => setEditingSection(null)}
-                className="w-8 h-8 rounded-lg text-zinc-400 hover:text-white hover:bg-zinc-800 flex items-center justify-center transition-colors"
+                className="w-8 h-8 rounded-lg text-zinc-800 font-semibold hover:text-zinc-900 font-bold hover:bg-zinc-100 flex items-center justify-center transition-colors"
               >
                 ✕
               </button>
             </div>
 
             {/* Quick Visibility Bar */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 p-3 rounded-xl bg-zinc-900/60 border border-zinc-800">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 p-3 rounded-xl bg-zinc-50/60 border border-zinc-200">
               <div>
-                <label className="block text-[11px] font-bold uppercase tracking-wider text-zinc-400 mb-1">
+                <label className="block text-[11px] font-bold uppercase tracking-wider text-zinc-800 font-semibold mb-1">
                   Storefront Visibility Status
                 </label>
                 <select
@@ -664,7 +664,7 @@ export default function AdminHomepageBuilderPage() {
                   onChange={(e) =>
                     setSectionForm({ ...sectionForm, isEnabled: e.target.value === 'enabled' })
                   }
-                  className="w-full px-3 py-2 rounded-xl bg-zinc-950 border border-zinc-700 text-xs text-white focus:outline-none focus:border-amber-400"
+                  className="w-full px-3 py-2 rounded-xl bg-white border border-zinc-300 text-xs text-zinc-900 font-bold focus:outline-none focus:border-amber-400"
                 >
                   <option value="enabled">🟢 Visible on Live Homepage (Published)</option>
                   <option value="disabled">⚪ Hidden from Live Homepage (Draft / Inactive)</option>
@@ -672,7 +672,7 @@ export default function AdminHomepageBuilderPage() {
               </div>
 
               <div>
-                <label className="block text-[11px] font-bold uppercase tracking-wider text-zinc-400 mb-1">
+                <label className="block text-[11px] font-bold uppercase tracking-wider text-zinc-800 font-semibold mb-1">
                   Device Visibility
                 </label>
                 <select
@@ -680,7 +680,7 @@ export default function AdminHomepageBuilderPage() {
                   onChange={(e: any) =>
                     setSectionForm({ ...sectionForm, deviceVisibility: e.target.value })
                   }
-                  className="w-full px-3 py-2 rounded-xl bg-zinc-950 border border-zinc-700 text-xs text-white focus:outline-none focus:border-amber-400"
+                  className="w-full px-3 py-2 rounded-xl bg-white border border-zinc-300 text-xs text-zinc-900 font-bold focus:outline-none focus:border-amber-400"
                 >
                   <option value="all">🖥️ Desktop & 📱 Mobile</option>
                   <option value="desktop">🖥️ Desktop Only</option>
@@ -693,11 +693,11 @@ export default function AdminHomepageBuilderPage() {
             {editingSection.type === 'hero_slider' && (
               <div className="space-y-5">
                 {/* HERO ADS & ANNOUNCEMENT BAR SECTION */}
-                <div className="p-4 rounded-xl bg-gradient-to-r from-orange-950/40 via-zinc-900 to-zinc-900 border border-orange-500/30 space-y-3">
-                  <div className="flex items-center justify-between pb-2 border-b border-zinc-800">
+                <div className="p-4 rounded-xl bg-gradient-to-r from-orange-950/40 via-zinc-50 to-zinc-50 border border-orange-500/30 space-y-3">
+                  <div className="flex items-center justify-between pb-2 border-b border-zinc-200">
                     <div className="flex items-center gap-2">
-                      <Megaphone className="w-4 h-4 text-orange-400" />
-                      <h4 className="text-xs font-bold text-white uppercase tracking-wider">
+                      <Megaphone className="w-4 h-4 text-orange-600 font-bold" />
+                      <h4 className="text-xs font-bold text-zinc-900 font-bold uppercase tracking-wider">
                         Hero Announcement & Ads Bar (Top Alert)
                       </h4>
                     </div>
@@ -708,7 +708,7 @@ export default function AdminHomepageBuilderPage() {
                         onChange={(e) =>
                           setCustomSettings({ ...customSettings, showAdBanner: e.target.checked })
                         }
-                        className="rounded border-zinc-700 text-amber-500 focus:ring-amber-400"
+                        className="rounded border-zinc-300 text-amber-500 focus:ring-amber-400"
                       />
                       <span>Show Ads Bar in Hero</span>
                     </label>
@@ -718,7 +718,7 @@ export default function AdminHomepageBuilderPage() {
                     <div className="space-y-3 pt-1">
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                         <div>
-                          <label className="block text-[11px] font-semibold text-zinc-300 mb-1">
+                          <label className="block text-[11px] font-semibold text-zinc-800 font-bold mb-1">
                             Ad Badge Tag
                           </label>
                           <input
@@ -728,12 +728,12 @@ export default function AdminHomepageBuilderPage() {
                               setCustomSettings({ ...customSettings, adBadgeText: e.target.value })
                             }
                             placeholder="e.g. 🔥 HOT DROP or ⚡ FLASH SALE"
-                            className="w-full px-3 py-2 rounded-xl bg-zinc-950 border border-zinc-700 text-xs text-white focus:outline-none focus:border-amber-400"
+                            className="w-full px-3 py-2 rounded-xl bg-white border border-zinc-300 text-xs text-zinc-900 font-bold focus:outline-none focus:border-amber-400"
                           />
                         </div>
 
                         <div>
-                          <label className="block text-[11px] font-semibold text-zinc-300 mb-1">
+                          <label className="block text-[11px] font-semibold text-zinc-800 font-bold mb-1">
                             Ad Link Text
                           </label>
                           <input
@@ -743,12 +743,12 @@ export default function AdminHomepageBuilderPage() {
                               setCustomSettings({ ...customSettings, adLinkText: e.target.value })
                             }
                             placeholder="e.g. Shop Shock Drop"
-                            className="w-full px-3 py-2 rounded-xl bg-zinc-950 border border-zinc-700 text-xs text-white focus:outline-none focus:border-amber-400"
+                            className="w-full px-3 py-2 rounded-xl bg-white border border-zinc-300 text-xs text-zinc-900 font-bold focus:outline-none focus:border-amber-400"
                           />
                         </div>
 
                         <div>
-                          <label className="block text-[11px] font-semibold text-zinc-300 mb-1">
+                          <label className="block text-[11px] font-semibold text-zinc-800 font-bold mb-1">
                             Ad Target URL
                           </label>
                           <input
@@ -758,13 +758,13 @@ export default function AdminHomepageBuilderPage() {
                               setCustomSettings({ ...customSettings, adLinkUrl: e.target.value })
                             }
                             placeholder="e.g. /shop?filter=sale"
-                            className="w-full px-3 py-2 rounded-xl bg-zinc-950 border border-zinc-700 text-xs text-white focus:outline-none focus:border-amber-400"
+                            className="w-full px-3 py-2 rounded-xl bg-white border border-zinc-300 text-xs text-zinc-900 font-bold focus:outline-none focus:border-amber-400"
                           />
                         </div>
                       </div>
 
                       <div>
-                        <label className="block text-[11px] font-semibold text-zinc-300 mb-1">
+                        <label className="block text-[11px] font-semibold text-zinc-800 font-bold mb-1">
                           Ad Message Headline
                         </label>
                         <input
@@ -774,12 +774,12 @@ export default function AdminHomepageBuilderPage() {
                             setCustomSettings({ ...customSettings, adText: e.target.value })
                           }
                           placeholder="e.g. MIDNIGHT DROP IS LIVE: 20% OFF SELECT GRAILS WITH CODE: CULTURE20 | FREE SHIPPING"
-                          className="w-full px-3 py-2 rounded-xl bg-zinc-950 border border-zinc-700 text-xs text-white focus:outline-none focus:border-amber-400"
+                          className="w-full px-3 py-2 rounded-xl bg-white border border-zinc-300 text-xs text-zinc-900 font-bold focus:outline-none focus:border-amber-400"
                         />
                       </div>
 
                       <div className="flex items-center gap-3">
-                        <label className="text-[11px] font-semibold text-zinc-300 shrink-0">
+                        <label className="text-[11px] font-semibold text-zinc-800 font-bold shrink-0">
                           Ad Bar Color:
                         </label>
                         <div className="flex items-center gap-2 flex-wrap">
@@ -789,7 +789,7 @@ export default function AdminHomepageBuilderPage() {
                               type="button"
                               onClick={() => setCustomSettings({ ...customSettings, adBgColor: color })}
                               className={`w-6 h-6 rounded-full border-2 transition-transform ${
-                                customSettings.adBgColor === color ? 'scale-125 border-white shadow-lg' : 'border-zinc-700'
+                                customSettings.adBgColor === color ? 'scale-125 border-white shadow-lg' : 'border-zinc-300'
                               }`}
                               style={{ backgroundColor: color }}
                               title={color}
@@ -801,7 +801,7 @@ export default function AdminHomepageBuilderPage() {
                             onChange={(e) =>
                               setCustomSettings({ ...customSettings, adBgColor: e.target.value })
                             }
-                            className="w-24 px-2 py-1 rounded-lg bg-zinc-950 border border-zinc-700 text-[11px] text-zinc-300 font-mono"
+                            className="w-24 px-2 py-1 rounded-lg bg-white border border-zinc-300 text-[11px] text-zinc-800 font-bold font-mono"
                           />
                         </div>
                       </div>
@@ -810,14 +810,14 @@ export default function AdminHomepageBuilderPage() {
                 </div>
 
                 {/* HERO MAIN TEXTS */}
-                <div className="p-4 rounded-xl bg-zinc-900 border border-zinc-800 space-y-3">
-                  <h4 className="text-xs font-bold text-white uppercase tracking-wider pb-2 border-b border-zinc-800 flex items-center gap-1.5">
+                <div className="p-4 rounded-xl bg-zinc-50 border border-zinc-200 space-y-3">
+                  <h4 className="text-xs font-bold text-zinc-900 font-bold uppercase tracking-wider pb-2 border-b border-zinc-200 flex items-center gap-1.5">
                     <span>Hero Headlines & Streetwear Copy</span>
                   </h4>
 
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                     <div>
-                      <label className="block text-[11px] font-semibold text-zinc-300 mb-1">
+                      <label className="block text-[11px] font-semibold text-zinc-800 font-bold mb-1">
                         Top Tagline (Italic Lime)
                       </label>
                       <input
@@ -827,12 +827,12 @@ export default function AdminHomepageBuilderPage() {
                           setCustomSettings({ ...customSettings, tagline: e.target.value })
                         }
                         placeholder="@OWN THE STREETS"
-                        className="w-full px-3 py-2 rounded-xl bg-zinc-950 border border-zinc-700 text-xs text-lime-400 font-serif italic focus:outline-none focus:border-amber-400"
+                        className="w-full px-3 py-2 rounded-xl bg-white border border-zinc-300 text-xs text-lime-400 font-serif italic focus:outline-none focus:border-amber-400"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-[11px] font-semibold text-zinc-300 mb-1">
+                      <label className="block text-[11px] font-semibold text-zinc-800 font-bold mb-1">
                         Main Title Line 1 (White)
                       </label>
                       <input
@@ -842,12 +842,12 @@ export default function AdminHomepageBuilderPage() {
                           setCustomSettings({ ...customSettings, titleLine1: e.target.value })
                         }
                         placeholder="BUILT FOR"
-                        className="w-full px-3 py-2 rounded-xl bg-zinc-950 border border-zinc-700 text-xs text-white font-black uppercase focus:outline-none focus:border-amber-400"
+                        className="w-full px-3 py-2 rounded-xl bg-white border border-zinc-300 text-xs text-zinc-900 font-bold font-black uppercase focus:outline-none focus:border-amber-400"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-[11px] font-semibold text-zinc-300 mb-1">
+                      <label className="block text-[11px] font-semibold text-zinc-800 font-bold mb-1">
                         Main Title Highlight (Orange)
                       </label>
                       <input
@@ -857,13 +857,13 @@ export default function AdminHomepageBuilderPage() {
                           setCustomSettings({ ...customSettings, titleHighlight: e.target.value })
                         }
                         placeholder="MOVEMENT"
-                        className="w-full px-3 py-2 rounded-xl bg-zinc-950 border border-zinc-700 text-xs text-orange-400 font-black uppercase focus:outline-none focus:border-amber-400"
+                        className="w-full px-3 py-2 rounded-xl bg-white border border-zinc-300 text-xs text-orange-600 font-bold font-black uppercase focus:outline-none focus:border-amber-400"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-[11px] font-semibold text-zinc-300 mb-1">
+                    <label className="block text-[11px] font-semibold text-zinc-800 font-bold mb-1">
                       Paragraph Description
                     </label>
                     <textarea
@@ -873,14 +873,14 @@ export default function AdminHomepageBuilderPage() {
                         setCustomSettings({ ...customSettings, description: e.target.value })
                       }
                       placeholder="Exclusive sneakers and streetwear for the culture. For the bold. For you."
-                      className="w-full px-3 py-2 rounded-xl bg-zinc-950 border border-zinc-700 text-xs text-white focus:outline-none focus:border-amber-400"
+                      className="w-full px-3 py-2 rounded-xl bg-white border border-zinc-300 text-xs text-zinc-900 font-bold focus:outline-none focus:border-amber-400"
                     />
                   </div>
 
                   {/* HERO BUTTONS */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-                    <div className="p-3 rounded-xl bg-zinc-950 border border-zinc-800 space-y-2">
-                      <span className="text-[10px] font-bold text-orange-400 uppercase tracking-wider block">
+                    <div className="p-3 rounded-xl bg-white border border-zinc-200 space-y-2">
+                      <span className="text-[10px] font-bold text-orange-600 font-bold uppercase tracking-wider block">
                         Primary Button (Orange Solid)
                       </span>
                       <input
@@ -890,7 +890,7 @@ export default function AdminHomepageBuilderPage() {
                           setCustomSettings({ ...customSettings, primaryBtnText: e.target.value })
                         }
                         placeholder="Button Text"
-                        className="w-full px-3 py-1.5 rounded-lg bg-zinc-900 border border-zinc-700 text-xs text-white"
+                        className="w-full px-3 py-1.5 rounded-lg bg-zinc-50 border border-zinc-300 text-xs text-zinc-900 font-bold"
                       />
                       <input
                         type="text"
@@ -899,12 +899,12 @@ export default function AdminHomepageBuilderPage() {
                           setCustomSettings({ ...customSettings, primaryBtnLink: e.target.value })
                         }
                         placeholder="Target URL (e.g. /shop?sort=newest)"
-                        className="w-full px-3 py-1.5 rounded-lg bg-zinc-900 border border-zinc-700 text-xs text-zinc-300 font-mono"
+                        className="w-full px-3 py-1.5 rounded-lg bg-zinc-50 border border-zinc-300 text-xs text-zinc-800 font-bold font-mono"
                       />
                     </div>
 
-                    <div className="p-3 rounded-xl bg-zinc-950 border border-zinc-800 space-y-2">
-                      <span className="text-[10px] font-bold text-zinc-300 uppercase tracking-wider block">
+                    <div className="p-3 rounded-xl bg-white border border-zinc-200 space-y-2">
+                      <span className="text-[10px] font-bold text-zinc-800 font-bold uppercase tracking-wider block">
                         Secondary Button (Bordered Outline)
                       </span>
                       <input
@@ -914,7 +914,7 @@ export default function AdminHomepageBuilderPage() {
                           setCustomSettings({ ...customSettings, secondaryBtnText: e.target.value })
                         }
                         placeholder="Button Text"
-                        className="w-full px-3 py-1.5 rounded-lg bg-zinc-900 border border-zinc-700 text-xs text-white"
+                        className="w-full px-3 py-1.5 rounded-lg bg-zinc-50 border border-zinc-300 text-xs text-zinc-900 font-bold"
                       />
                       <input
                         type="text"
@@ -923,21 +923,21 @@ export default function AdminHomepageBuilderPage() {
                           setCustomSettings({ ...customSettings, secondaryBtnLink: e.target.value })
                         }
                         placeholder="Target URL (e.g. /shop)"
-                        className="w-full px-3 py-1.5 rounded-lg bg-zinc-900 border border-zinc-700 text-xs text-zinc-300 font-mono"
+                        className="w-full px-3 py-1.5 rounded-lg bg-zinc-50 border border-zinc-300 text-xs text-zinc-800 font-bold font-mono"
                       />
                     </div>
                   </div>
                 </div>
 
                 {/* BACKGROUND & WATERMARK */}
-                <div className="p-4 rounded-xl bg-zinc-900 border border-zinc-800 space-y-3">
-                  <h4 className="text-xs font-bold text-white uppercase tracking-wider pb-2 border-b border-zinc-800 flex items-center gap-1.5">
+                <div className="p-4 rounded-xl bg-zinc-50 border border-zinc-200 space-y-3">
+                  <h4 className="text-xs font-bold text-zinc-900 font-bold uppercase tracking-wider pb-2 border-b border-zinc-200 flex items-center gap-1.5">
                     <ImageIcon className="w-4 h-4 text-amber-400" />
                     <span>Hero Background Image & Visual Style</span>
                   </h4>
 
                   <div>
-                    <label className="block text-[11px] font-semibold text-zinc-300 mb-1">
+                    <label className="block text-[11px] font-semibold text-zinc-800 font-bold mb-1">
                       Hero Background Image URL
                     </label>
                     <input
@@ -947,10 +947,10 @@ export default function AdminHomepageBuilderPage() {
                         setCustomSettings({ ...customSettings, backgroundImage: e.target.value })
                       }
                       placeholder="https://images.unsplash.com/..."
-                      className="w-full px-3 py-2 rounded-xl bg-zinc-950 border border-zinc-700 text-xs text-white font-mono focus:outline-none focus:border-amber-400"
+                      className="w-full px-3 py-2 rounded-xl bg-white border border-zinc-300 text-xs text-zinc-900 font-bold font-mono focus:outline-none focus:border-amber-400"
                     />
                     {customSettings.backgroundImage && (
-                      <div className="mt-2 h-24 w-full rounded-lg overflow-hidden border border-zinc-700 relative">
+                      <div className="mt-2 h-24 w-full rounded-lg overflow-hidden border border-zinc-300 relative">
                         <img
                           src={customSettings.backgroundImage}
                           alt="Hero Preview"
@@ -962,7 +962,7 @@ export default function AdminHomepageBuilderPage() {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
                     <div>
-                      <label className="block text-[11px] font-semibold text-zinc-300 mb-1">
+                      <label className="block text-[11px] font-semibold text-zinc-800 font-bold mb-1">
                         Floating Watermark Text
                       </label>
                       <input
@@ -972,7 +972,7 @@ export default function AdminHomepageBuilderPage() {
                           setCustomSettings({ ...customSettings, watermarkText: e.target.value })
                         }
                         placeholder="STRIDE DISTRICT"
-                        className="w-full px-3 py-2 rounded-xl bg-zinc-950 border border-zinc-700 text-xs text-white"
+                        className="w-full px-3 py-2 rounded-xl bg-white border border-zinc-300 text-xs text-zinc-900 font-bold"
                       />
                     </div>
 
@@ -984,9 +984,9 @@ export default function AdminHomepageBuilderPage() {
                         onChange={(e) =>
                           setCustomSettings({ ...customSettings, showWatermark: e.target.checked })
                         }
-                        className="rounded border-zinc-700 text-amber-500 focus:ring-amber-400"
+                        className="rounded border-zinc-300 text-amber-500 focus:ring-amber-400"
                       />
-                      <label htmlFor="showWatermarkCheck" className="text-xs text-zinc-300 font-semibold cursor-pointer">
+                      <label htmlFor="showWatermarkCheck" className="text-xs text-zinc-800 font-bold font-semibold cursor-pointer">
                         Display Floating Watermark Text
                       </label>
                     </div>
@@ -994,20 +994,20 @@ export default function AdminHomepageBuilderPage() {
                 </div>
 
                 {/* TRUST BADGES BAR */}
-                <div className="p-4 rounded-xl bg-zinc-900 border border-zinc-800 space-y-3">
-                  <div className="flex items-center justify-between pb-2 border-b border-zinc-800">
-                    <h4 className="text-xs font-bold text-white uppercase tracking-wider flex items-center gap-1.5">
-                      <ShieldCheck className="w-4 h-4 text-orange-400" />
+                <div className="p-4 rounded-xl bg-zinc-50 border border-zinc-200 space-y-3">
+                  <div className="flex items-center justify-between pb-2 border-b border-zinc-200">
+                    <h4 className="text-xs font-bold text-zinc-900 font-bold uppercase tracking-wider flex items-center gap-1.5">
+                      <ShieldCheck className="w-4 h-4 text-orange-600 font-bold" />
                       <span>Trust Badges Bar (Hero Bottom)</span>
                     </h4>
-                    <label className="flex items-center gap-2 cursor-pointer text-xs font-semibold text-zinc-300">
+                    <label className="flex items-center gap-2 cursor-pointer text-xs font-semibold text-zinc-800 font-bold">
                       <input
                         type="checkbox"
                         checked={customSettings.showTrustBadges !== false}
                         onChange={(e) =>
                           setCustomSettings({ ...customSettings, showTrustBadges: e.target.checked })
                         }
-                        className="rounded border-zinc-700 text-amber-500 focus:ring-amber-400"
+                        className="rounded border-zinc-300 text-amber-500 focus:ring-amber-400"
                       />
                       <span>Show Trust Badges</span>
                     </label>
@@ -1015,15 +1015,15 @@ export default function AdminHomepageBuilderPage() {
 
                   {customSettings.showTrustBadges !== false && (
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                      <div className="p-2.5 rounded-lg bg-zinc-950 border border-zinc-800">
-                        <span className="text-[10px] font-bold text-orange-400 block mb-1">Badge 1</span>
+                      <div className="p-2.5 rounded-lg bg-white border border-zinc-200">
+                        <span className="text-[10px] font-bold text-orange-600 font-bold block mb-1">Badge 1</span>
                         <input
                           type="text"
                           value={customSettings.badge1Title || '100% Authentic'}
                           onChange={(e) =>
                             setCustomSettings({ ...customSettings, badge1Title: e.target.value })
                           }
-                          className="w-full px-2 py-1 mb-1 rounded bg-zinc-900 border border-zinc-700 text-xs text-white font-bold"
+                          className="w-full px-2 py-1 mb-1 rounded bg-zinc-50 border border-zinc-300 text-xs text-zinc-900 font-bold font-bold"
                           placeholder="Title"
                         />
                         <input
@@ -1032,20 +1032,20 @@ export default function AdminHomepageBuilderPage() {
                           onChange={(e) =>
                             setCustomSettings({ ...customSettings, badge1Sub: e.target.value })
                           }
-                          className="w-full px-2 py-1 rounded bg-zinc-900 border border-zinc-700 text-[11px] text-zinc-400"
+                          className="w-full px-2 py-1 rounded bg-zinc-50 border border-zinc-300 text-[11px] text-zinc-800 font-semibold"
                           placeholder="Subtitle"
                         />
                       </div>
 
-                      <div className="p-2.5 rounded-lg bg-zinc-950 border border-zinc-800">
-                        <span className="text-[10px] font-bold text-orange-400 block mb-1">Badge 2</span>
+                      <div className="p-2.5 rounded-lg bg-white border border-zinc-200">
+                        <span className="text-[10px] font-bold text-orange-600 font-bold block mb-1">Badge 2</span>
                         <input
                           type="text"
                           value={customSettings.badge2Title || 'Easy Returns'}
                           onChange={(e) =>
                             setCustomSettings({ ...customSettings, badge2Title: e.target.value })
                           }
-                          className="w-full px-2 py-1 mb-1 rounded bg-zinc-900 border border-zinc-700 text-xs text-white font-bold"
+                          className="w-full px-2 py-1 mb-1 rounded bg-zinc-50 border border-zinc-300 text-xs text-zinc-900 font-bold font-bold"
                           placeholder="Title"
                         />
                         <input
@@ -1054,20 +1054,20 @@ export default function AdminHomepageBuilderPage() {
                           onChange={(e) =>
                             setCustomSettings({ ...customSettings, badge2Sub: e.target.value })
                           }
-                          className="w-full px-2 py-1 rounded bg-zinc-900 border border-zinc-700 text-[11px] text-zinc-400"
+                          className="w-full px-2 py-1 rounded bg-zinc-50 border border-zinc-300 text-[11px] text-zinc-800 font-semibold"
                           placeholder="Subtitle"
                         />
                       </div>
 
-                      <div className="p-2.5 rounded-lg bg-zinc-950 border border-zinc-800">
-                        <span className="text-[10px] font-bold text-orange-400 block mb-1">Badge 3</span>
+                      <div className="p-2.5 rounded-lg bg-white border border-zinc-200">
+                        <span className="text-[10px] font-bold text-orange-600 font-bold block mb-1">Badge 3</span>
                         <input
                           type="text"
                           value={customSettings.badge3Title || 'Secure Checkout'}
                           onChange={(e) =>
                             setCustomSettings({ ...customSettings, badge3Title: e.target.value })
                           }
-                          className="w-full px-2 py-1 mb-1 rounded bg-zinc-900 border border-zinc-700 text-xs text-white font-bold"
+                          className="w-full px-2 py-1 mb-1 rounded bg-zinc-50 border border-zinc-300 text-xs text-zinc-900 font-bold font-bold"
                           placeholder="Title"
                         />
                         <input
@@ -1076,7 +1076,7 @@ export default function AdminHomepageBuilderPage() {
                           onChange={(e) =>
                             setCustomSettings({ ...customSettings, badge3Sub: e.target.value })
                           }
-                          className="w-full px-2 py-1 rounded bg-zinc-900 border border-zinc-700 text-[11px] text-zinc-400"
+                          className="w-full px-2 py-1 rounded bg-zinc-50 border border-zinc-300 text-[11px] text-zinc-800 font-semibold"
                           placeholder="Subtitle"
                         />
                       </div>
@@ -1088,15 +1088,15 @@ export default function AdminHomepageBuilderPage() {
 
             {/* 2. TAILORED FORM FOR PROMOTIONAL SALE BANNER (40% OFF) */}
             {(editingSection.type === 'promotional_banners' || editingSection.type === 'flash_sale') && (
-              <div className="space-y-4 p-4 rounded-xl bg-zinc-900 border border-zinc-800">
-                <h4 className="text-xs font-bold text-white uppercase tracking-wider pb-2 border-b border-zinc-800 flex items-center gap-1.5">
-                  <Flame className="w-4 h-4 text-orange-400" />
+              <div className="space-y-4 p-4 rounded-xl bg-zinc-50 border border-zinc-200">
+                <h4 className="text-xs font-bold text-zinc-900 font-bold uppercase tracking-wider pb-2 border-b border-zinc-200 flex items-center gap-1.5">
+                  <Flame className="w-4 h-4 text-orange-600 font-bold" />
                   <span>Promotional Sale Banner (Up to 40% Off)</span>
                 </h4>
 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                   <div>
-                    <label className="block text-[11px] font-semibold text-zinc-300 mb-1">
+                    <label className="block text-[11px] font-semibold text-zinc-800 font-bold mb-1">
                       Corner Tagline (Italic Yellow)
                     </label>
                     <input
@@ -1106,12 +1106,12 @@ export default function AdminHomepageBuilderPage() {
                         setCustomSettings({ ...customSettings, tagline: e.target.value })
                       }
                       placeholder="LIMITED TIME ONLY"
-                      className="w-full px-3 py-2 rounded-xl bg-zinc-950 border border-zinc-700 text-xs text-yellow-300 font-serif italic"
+                      className="w-full px-3 py-2 rounded-xl bg-white border border-zinc-300 text-xs text-yellow-300 font-serif italic"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-[11px] font-semibold text-zinc-300 mb-1">
+                    <label className="block text-[11px] font-semibold text-zinc-800 font-bold mb-1">
                       Big Discount Heading
                     </label>
                     <input
@@ -1121,12 +1121,12 @@ export default function AdminHomepageBuilderPage() {
                         setCustomSettings({ ...customSettings, heading: e.target.value })
                       }
                       placeholder="UP TO 40% OFF"
-                      className="w-full px-3 py-2 rounded-xl bg-zinc-950 border border-zinc-700 text-xs text-white font-black"
+                      className="w-full px-3 py-2 rounded-xl bg-white border border-zinc-300 text-xs text-zinc-900 font-bold font-black"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-[11px] font-semibold text-zinc-300 mb-1">
+                    <label className="block text-[11px] font-semibold text-zinc-800 font-bold mb-1">
                       Right Subtitle Text
                     </label>
                     <input
@@ -1136,14 +1136,14 @@ export default function AdminHomepageBuilderPage() {
                         setCustomSettings({ ...customSettings, subtitle: e.target.value })
                       }
                       placeholder="ON SELECT STYLES"
-                      className="w-full px-3 py-2 rounded-xl bg-zinc-950 border border-zinc-700 text-xs text-white font-bold"
+                      className="w-full px-3 py-2 rounded-xl bg-white border border-zinc-300 text-xs text-zinc-900 font-bold font-bold"
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-[11px] font-semibold text-zinc-300 mb-1">
+                    <label className="block text-[11px] font-semibold text-zinc-800 font-bold mb-1">
                       CTA Button Text
                     </label>
                     <input
@@ -1153,12 +1153,12 @@ export default function AdminHomepageBuilderPage() {
                         setCustomSettings({ ...customSettings, btnText: e.target.value })
                       }
                       placeholder="Shop The Sale"
-                      className="w-full px-3 py-2 rounded-xl bg-zinc-950 border border-zinc-700 text-xs text-white"
+                      className="w-full px-3 py-2 rounded-xl bg-white border border-zinc-300 text-xs text-zinc-900 font-bold"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-[11px] font-semibold text-zinc-300 mb-1">
+                    <label className="block text-[11px] font-semibold text-zinc-800 font-bold mb-1">
                       CTA Button URL
                     </label>
                     <input
@@ -1168,14 +1168,14 @@ export default function AdminHomepageBuilderPage() {
                         setCustomSettings({ ...customSettings, btnLink: e.target.value })
                       }
                       placeholder="/shop?filter=sale"
-                      className="w-full px-3 py-2 rounded-xl bg-zinc-950 border border-zinc-700 text-xs text-zinc-300 font-mono"
+                      className="w-full px-3 py-2 rounded-xl bg-white border border-zinc-300 text-xs text-zinc-800 font-bold font-mono"
                     />
                   </div>
                 </div>
 
-                <div className="flex items-center justify-between pt-2 border-t border-zinc-800">
+                <div className="flex items-center justify-between pt-2 border-t border-zinc-200">
                   <div className="flex items-center gap-3">
-                    <label className="text-[11px] font-semibold text-zinc-300">
+                    <label className="text-[11px] font-semibold text-zinc-800 font-bold">
                       Background Color:
                     </label>
                     <div className="flex items-center gap-2">
@@ -1185,7 +1185,7 @@ export default function AdminHomepageBuilderPage() {
                           type="button"
                           onClick={() => setCustomSettings({ ...customSettings, bgColor: c })}
                           className={`w-6 h-6 rounded-full border-2 ${
-                            customSettings.bgColor === c ? 'scale-125 border-white' : 'border-zinc-700'
+                            customSettings.bgColor === c ? 'scale-125 border-white' : 'border-zinc-300'
                           }`}
                           style={{ backgroundColor: c }}
                         />
@@ -1196,19 +1196,19 @@ export default function AdminHomepageBuilderPage() {
                         onChange={(e) =>
                           setCustomSettings({ ...customSettings, bgColor: e.target.value })
                         }
-                        className="w-20 px-2 py-1 rounded bg-zinc-950 border border-zinc-700 text-xs text-zinc-300 font-mono"
+                        className="w-20 px-2 py-1 rounded bg-white border border-zinc-300 text-xs text-zinc-800 font-bold font-mono"
                       />
                     </div>
                   </div>
 
-                  <label className="flex items-center gap-2 cursor-pointer text-xs font-semibold text-zinc-300">
+                  <label className="flex items-center gap-2 cursor-pointer text-xs font-semibold text-zinc-800 font-bold">
                     <input
                       type="checkbox"
                       checked={customSettings.showSmileWatermark !== false}
                       onChange={(e) =>
                         setCustomSettings({ ...customSettings, showSmileWatermark: e.target.checked })
                       }
-                      className="rounded border-zinc-700 text-amber-500 focus:ring-amber-400"
+                      className="rounded border-zinc-300 text-amber-500 focus:ring-amber-400"
                     />
                     <span>Show Smiley Graphic</span>
                   </label>
@@ -1218,15 +1218,15 @@ export default function AdminHomepageBuilderPage() {
 
             {/* 3. TAILORED FORM FOR COMMUNITY & CULTURE GALLERY */}
             {editingSection.type === 'social_gallery' && (
-              <div className="space-y-4 p-4 rounded-xl bg-zinc-900 border border-zinc-800">
-                <h4 className="text-xs font-bold text-white uppercase tracking-wider pb-2 border-b border-zinc-800 flex items-center gap-1.5">
+              <div className="space-y-4 p-4 rounded-xl bg-zinc-50 border border-zinc-200">
+                <h4 className="text-xs font-bold text-zinc-900 font-bold uppercase tracking-wider pb-2 border-b border-zinc-200 flex items-center gap-1.5">
                   <ImageIcon className="w-4 h-4 text-purple-400" />
                   <span>Streetwear Community & Culture Section</span>
                 </h4>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-[11px] font-semibold text-zinc-300 mb-1">
+                    <label className="block text-[11px] font-semibold text-zinc-800 font-bold mb-1">
                       Title Line 1 (White)
                     </label>
                     <input
@@ -1236,12 +1236,12 @@ export default function AdminHomepageBuilderPage() {
                         setCustomSettings({ ...customSettings, headingLine1: e.target.value })
                       }
                       placeholder="MORE THAN A BRAND."
-                      className="w-full px-3 py-2 rounded-xl bg-zinc-950 border border-zinc-700 text-xs text-white font-black uppercase"
+                      className="w-full px-3 py-2 rounded-xl bg-white border border-zinc-300 text-xs text-zinc-900 font-bold font-black uppercase"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-[11px] font-semibold text-zinc-300 mb-1">
+                    <label className="block text-[11px] font-semibold text-zinc-800 font-bold mb-1">
                       Title Highlight (Orange)
                     </label>
                     <input
@@ -1251,13 +1251,13 @@ export default function AdminHomepageBuilderPage() {
                         setCustomSettings({ ...customSettings, headingHighlight: e.target.value })
                       }
                       placeholder="IT'S A CULTURE."
-                      className="w-full px-3 py-2 rounded-xl bg-zinc-950 border border-zinc-700 text-xs text-orange-400 font-black uppercase"
+                      className="w-full px-3 py-2 rounded-xl bg-white border border-zinc-300 text-xs text-orange-600 font-bold font-black uppercase"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-[11px] font-semibold text-zinc-300 mb-1">
+                  <label className="block text-[11px] font-semibold text-zinc-800 font-bold mb-1">
                     Description Text
                   </label>
                   <textarea
@@ -1267,13 +1267,13 @@ export default function AdminHomepageBuilderPage() {
                       setCustomSettings({ ...customSettings, description: e.target.value })
                     }
                     placeholder="Stride District is built on passion, creativity, and community..."
-                    className="w-full px-3 py-2 rounded-xl bg-zinc-950 border border-zinc-700 text-xs text-white"
+                    className="w-full px-3 py-2 rounded-xl bg-white border border-zinc-300 text-xs text-zinc-900 font-bold"
                   />
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-[11px] font-semibold text-zinc-300 mb-1">
+                    <label className="block text-[11px] font-semibold text-zinc-800 font-bold mb-1">
                       CTA Button Text
                     </label>
                     <input
@@ -1282,11 +1282,11 @@ export default function AdminHomepageBuilderPage() {
                       onChange={(e) =>
                         setCustomSettings({ ...customSettings, btnText: e.target.value })
                       }
-                      className="w-full px-3 py-2 rounded-xl bg-zinc-950 border border-zinc-700 text-xs text-white"
+                      className="w-full px-3 py-2 rounded-xl bg-white border border-zinc-300 text-xs text-zinc-900 font-bold"
                     />
                   </div>
                   <div>
-                    <label className="block text-[11px] font-semibold text-zinc-300 mb-1">
+                    <label className="block text-[11px] font-semibold text-zinc-800 font-bold mb-1">
                       CTA Button Link
                     </label>
                     <input
@@ -1295,14 +1295,14 @@ export default function AdminHomepageBuilderPage() {
                       onChange={(e) =>
                         setCustomSettings({ ...customSettings, btnLink: e.target.value })
                       }
-                      className="w-full px-3 py-2 rounded-xl bg-zinc-950 border border-zinc-700 text-xs text-zinc-300 font-mono"
+                      className="w-full px-3 py-2 rounded-xl bg-white border border-zinc-300 text-xs text-zinc-800 font-bold font-mono"
                     />
                   </div>
                 </div>
 
                 {/* 5 Fit Gallery Images */}
-                <div className="space-y-2 pt-2 border-t border-zinc-800">
-                  <label className="block text-[11px] font-bold uppercase tracking-wider text-zinc-300">
+                <div className="space-y-2 pt-2 border-t border-zinc-200">
+                  <label className="block text-[11px] font-bold uppercase tracking-wider text-zinc-800 font-bold">
                     5 Streetwear Fit Photos (Image URLs)
                   </label>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -1310,7 +1310,7 @@ export default function AdminHomepageBuilderPage() {
                       const currentImages = customSettings.images || [];
                       return (
                         <div key={idx} className="flex items-center gap-2">
-                          <span className="text-[10px] font-mono text-zinc-500 w-4">{idx + 1}.</span>
+                          <span className="text-[10px] font-mono text-zinc-800 font-semibold font-medium w-4">{idx + 1}.</span>
                           <input
                             type="text"
                             value={currentImages[idx] || ''}
@@ -1320,7 +1320,7 @@ export default function AdminHomepageBuilderPage() {
                               setCustomSettings({ ...customSettings, images: newImgs });
                             }}
                             placeholder={`Fit photo ${idx + 1} URL`}
-                            className="w-full px-2.5 py-1.5 rounded-lg bg-zinc-950 border border-zinc-700 text-[11px] text-zinc-300 font-mono"
+                            className="w-full px-2.5 py-1.5 rounded-lg bg-white border border-zinc-300 text-[11px] text-zinc-800 font-bold font-mono"
                           />
                         </div>
                       );
@@ -1332,14 +1332,14 @@ export default function AdminHomepageBuilderPage() {
 
             {/* 4. TAILORED FORM FOR TOP BRANDS ROW */}
             {editingSection.type === 'brand_showcase' && (
-              <div className="space-y-4 p-4 rounded-xl bg-zinc-900 border border-zinc-800">
-                <h4 className="text-xs font-bold text-white uppercase tracking-wider pb-2 border-b border-zinc-800 flex items-center gap-1.5">
+              <div className="space-y-4 p-4 rounded-xl bg-zinc-50 border border-zinc-200">
+                <h4 className="text-xs font-bold text-zinc-900 font-bold uppercase tracking-wider pb-2 border-b border-zinc-200 flex items-center gap-1.5">
                   <Tag className="w-4 h-4 text-blue-400" />
                   <span>Featured Streetwear Brands Ticker Row</span>
                 </h4>
 
                 <div>
-                  <label className="block text-[11px] font-semibold text-zinc-300 mb-1">
+                  <label className="block text-[11px] font-semibold text-zinc-800 font-bold mb-1">
                     Streetwear Brand Names (Comma Separated)
                   </label>
                   <input
@@ -1349,16 +1349,16 @@ export default function AdminHomepageBuilderPage() {
                       setCustomSettings({ ...customSettings, brands: e.target.value })
                     }
                     placeholder="NIKE, JORDAN, adidas, NB, Supreme, stussy, ESSENTIALS, Dickies"
-                    className="w-full px-3 py-2 rounded-xl bg-zinc-950 border border-zinc-700 text-xs text-white font-bold"
+                    className="w-full px-3 py-2 rounded-xl bg-white border border-zinc-300 text-xs text-zinc-900 font-bold font-bold"
                   />
-                  <p className="text-[11px] text-zinc-400 mt-1">
+                  <p className="text-[11px] text-zinc-800 font-semibold mt-1">
                     Separate brand names by commas. "Supreme" will automatically get its signature red rectangular styling.
                   </p>
                 </div>
 
                 {/* Live Brand Preview Badges */}
-                <div className="p-3 rounded-xl bg-zinc-950 border border-zinc-800">
-                  <span className="text-[10px] font-mono uppercase tracking-wider text-zinc-500 block mb-2">
+                <div className="p-3 rounded-xl bg-white border border-zinc-200">
+                  <span className="text-[10px] font-mono uppercase tracking-wider text-zinc-800 font-semibold font-medium block mb-2">
                     Live Brand Ticker Preview:
                   </span>
                   <div className="flex flex-wrap items-center gap-3">
@@ -1374,7 +1374,7 @@ export default function AdminHomepageBuilderPage() {
                             className={`text-xs font-bold ${
                               isSupreme
                                 ? 'bg-red-600 text-white px-2 py-0.5 italic'
-                                : 'text-zinc-300 bg-zinc-900 border border-zinc-700 px-2.5 py-1 rounded-md'
+                                : 'text-zinc-700 bg-zinc-50 border border-zinc-300 px-2.5 py-1 rounded-md'
                             }`}
                           >
                             {brandName}
@@ -1388,41 +1388,41 @@ export default function AdminHomepageBuilderPage() {
 
             {/* 5. FORM FOR FEATURED CATEGORIES & PRODUCT GRID */}
             {(editingSection.type === 'featured_categories' || editingSection.type === 'product_grid') && (
-              <div className="space-y-4 p-4 rounded-xl bg-zinc-900 border border-zinc-800">
-                <h4 className="text-xs font-bold text-white uppercase tracking-wider pb-2 border-b border-zinc-800 flex items-center gap-1.5">
+              <div className="space-y-4 p-4 rounded-xl bg-zinc-50 border border-zinc-200">
+                <h4 className="text-xs font-bold text-zinc-900 font-bold uppercase tracking-wider pb-2 border-b border-zinc-200 flex items-center gap-1.5">
                   <Layers className="w-4 h-4 text-emerald-400" />
                   <span>Category & Catalog Display Settings</span>
                 </h4>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-[11px] font-semibold text-zinc-300 mb-1">
+                    <label className="block text-[11px] font-semibold text-zinc-800 font-bold mb-1">
                       Section Headline
                     </label>
                     <input
                       type="text"
                       value={sectionForm.title}
                       onChange={(e) => setSectionForm({ ...sectionForm, title: e.target.value })}
-                      className="w-full px-3 py-2 rounded-xl bg-zinc-950 border border-zinc-700 text-xs text-white"
+                      className="w-full px-3 py-2 rounded-xl bg-white border border-zinc-300 text-xs text-zinc-900 font-bold"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-[11px] font-semibold text-zinc-300 mb-1">
+                    <label className="block text-[11px] font-semibold text-zinc-800 font-bold mb-1">
                       Section Subtitle / Description
                     </label>
                     <input
                       type="text"
                       value={sectionForm.subtitle}
                       onChange={(e) => setSectionForm({ ...sectionForm, subtitle: e.target.value })}
-                      className="w-full px-3 py-2 rounded-xl bg-zinc-950 border border-zinc-700 text-xs text-white"
+                      className="w-full px-3 py-2 rounded-xl bg-white border border-zinc-300 text-xs text-zinc-900 font-bold"
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-[11px] font-semibold text-zinc-300 mb-1">
+                    <label className="block text-[11px] font-semibold text-zinc-800 font-bold mb-1">
                       View All Button Text
                     </label>
                     <input
@@ -1431,12 +1431,12 @@ export default function AdminHomepageBuilderPage() {
                       onChange={(e) =>
                         setCustomSettings({ ...customSettings, viewAllText: e.target.value })
                       }
-                      className="w-full px-3 py-2 rounded-xl bg-zinc-950 border border-zinc-700 text-xs text-white"
+                      className="w-full px-3 py-2 rounded-xl bg-white border border-zinc-300 text-xs text-zinc-900 font-bold"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-[11px] font-semibold text-zinc-300 mb-1">
+                    <label className="block text-[11px] font-semibold text-zinc-800 font-bold mb-1">
                       Items to Display
                     </label>
                     <input
@@ -1447,7 +1447,7 @@ export default function AdminHomepageBuilderPage() {
                       onChange={(e) =>
                         setCustomSettings({ ...customSettings, itemsCount: parseInt(e.target.value) || 4 })
                       }
-                      className="w-full px-3 py-2 rounded-xl bg-zinc-950 border border-zinc-700 text-xs text-white"
+                      className="w-full px-3 py-2 rounded-xl bg-white border border-zinc-300 text-xs text-zinc-900 font-bold"
                     />
                   </div>
                 </div>
@@ -1456,31 +1456,31 @@ export default function AdminHomepageBuilderPage() {
 
             {/* 6. GENERIC SECTION SETTINGS FOR OTHERS */}
             {editingSection.type === 'testimonials' && (
-              <div className="space-y-4 p-4 rounded-xl bg-zinc-900 border border-zinc-800">
-                <h4 className="text-xs font-bold text-white uppercase tracking-wider pb-2 border-b border-zinc-800 flex items-center gap-1.5">
+              <div className="space-y-4 p-4 rounded-xl bg-zinc-50 border border-zinc-200">
+                <h4 className="text-xs font-bold text-zinc-900 font-bold uppercase tracking-wider pb-2 border-b border-zinc-200 flex items-center gap-1.5">
                   <Star className="w-4 h-4 text-amber-400" />
                   <span>Testimonials & Reviews</span>
                 </h4>
                 <div>
-                  <label className="block text-[11px] font-semibold text-zinc-300 mb-1">
+                  <label className="block text-[11px] font-semibold text-zinc-800 font-bold mb-1">
                     Section Headline
                   </label>
                   <input
                     type="text"
                     value={sectionForm.title}
                     onChange={(e) => setSectionForm({ ...sectionForm, title: e.target.value })}
-                    className="w-full px-3 py-2 rounded-xl bg-zinc-950 border border-zinc-700 text-xs text-white"
+                    className="w-full px-3 py-2 rounded-xl bg-white border border-zinc-300 text-xs text-zinc-900 font-bold"
                   />
                 </div>
               </div>
             )}
 
             {/* Modal Actions */}
-            <div className="flex items-center justify-end gap-2.5 pt-4 border-t border-zinc-800">
+            <div className="flex items-center justify-end gap-2.5 pt-4 border-t border-zinc-200">
               <button
                 type="button"
                 onClick={() => setEditingSection(null)}
-                className="px-4 py-2 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-zinc-300 text-xs font-semibold transition-colors"
+                className="px-4 py-2 rounded-xl bg-zinc-100 hover:bg-zinc-200 text-zinc-800 font-bold text-xs font-semibold transition-colors"
               >
                 Cancel
               </button>
@@ -1502,16 +1502,16 @@ export default function AdminHomepageBuilderPage() {
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-150">
           <form
             onSubmit={handleAddSection}
-            className="bg-[#16191f] border border-zinc-800 rounded-2xl p-6 max-w-lg w-full shadow-2xl space-y-4"
+            className="bg-[#16191f] border border-zinc-200 rounded-2xl p-6 max-w-lg w-full shadow-2xl space-y-4"
           >
-            <div className="flex items-center justify-between pb-3 border-b border-zinc-800">
-              <h3 className="text-base font-bold text-white flex items-center gap-2">
+            <div className="flex items-center justify-between pb-3 border-b border-zinc-200">
+              <h3 className="text-base font-bold text-zinc-900 font-bold flex items-center gap-2">
                 <Plus className="w-4 h-4 text-amber-400" /> Add Section to Homepage
               </h3>
               <button
                 type="button"
                 onClick={() => setIsAddModalOpen(false)}
-                className="text-zinc-500 hover:text-white"
+                className="text-zinc-800 font-semibold font-medium hover:text-zinc-900 font-bold"
               >
                 ✕
               </button>
@@ -1519,13 +1519,13 @@ export default function AdminHomepageBuilderPage() {
 
             <div className="space-y-3">
               <div>
-                <label className="block text-xs font-semibold text-zinc-300 mb-1">
+                <label className="block text-xs font-semibold text-zinc-800 font-bold mb-1">
                   Choose Section Type
                 </label>
                 <select
                   value={newSectionType}
                   onChange={(e) => setNewSectionType(e.target.value as CMSSectionRecord['type'])}
-                  className="w-full px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-700 text-xs text-white focus:outline-none focus:border-amber-400"
+                  className="w-full px-3 py-2 rounded-xl bg-zinc-50 border border-zinc-300 text-xs text-zinc-900 font-bold focus:outline-none focus:border-amber-400"
                 >
                   {Object.entries(SECTION_METADATA).map(([key, meta]) => (
                     <option key={key} value={key}>
@@ -1536,7 +1536,7 @@ export default function AdminHomepageBuilderPage() {
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-zinc-300 mb-1">
+                <label className="block text-xs font-semibold text-zinc-800 font-bold mb-1">
                   Custom Section Title (Optional)
                 </label>
                 <input
@@ -1544,20 +1544,20 @@ export default function AdminHomepageBuilderPage() {
                   value={newSectionTitle}
                   onChange={(e) => setNewSectionTitle(e.target.value)}
                   placeholder="Leave blank to use default name"
-                  className="w-full px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-700 text-xs text-white focus:outline-none focus:border-amber-400"
+                  className="w-full px-3 py-2 rounded-xl bg-zinc-50 border border-zinc-300 text-xs text-zinc-900 font-bold focus:outline-none focus:border-amber-400"
                 />
               </div>
 
-              <div className="p-3 rounded-xl bg-zinc-900 border border-zinc-800 text-xs text-zinc-400">
+              <div className="p-3 rounded-xl bg-zinc-50 border border-zinc-200 text-xs text-zinc-800 font-semibold">
                 {SECTION_METADATA[newSectionType]?.frontendDescription}
               </div>
             </div>
 
-            <div className="flex items-center justify-end gap-2 pt-3 border-t border-zinc-800">
+            <div className="flex items-center justify-end gap-2 pt-3 border-t border-zinc-200">
               <button
                 type="button"
                 onClick={() => setIsAddModalOpen(false)}
-                className="px-4 py-2 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-zinc-300 text-xs font-semibold"
+                className="px-4 py-2 rounded-xl bg-zinc-100 hover:bg-zinc-200 text-zinc-800 font-bold text-xs font-semibold"
               >
                 Cancel
               </button>

@@ -61,13 +61,13 @@ export default function ProductQA({ product }: ProductQAProps) {
           <h4 className="text-base font-bold text-zinc-900">
             Community & Technical Q&A ({qaList.length})
           </h4>
-          <p className="text-xs text-zinc-500 mt-0.5">
+          <p className="text-xs text-zinc-800 font-semibold font-medium mt-0.5">
             Direct inquiries answered by our industrial design and acoustic engineering teams.
           </p>
         </div>
         <button
           onClick={() => setIsModalOpen(true)}
-          className="px-4 py-2 rounded-xl bg-zinc-900 hover:bg-black text-white text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 transition-colors cursor-pointer shadow-sm"
+          className="px-4 py-2 rounded-xl bg-zinc-50 hover:bg-black text-white text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 transition-colors cursor-pointer shadow-sm"
         >
           <Plus className="w-3.5 h-3.5" />
           <span>Ask Question</span>
@@ -84,7 +84,7 @@ export default function ProductQA({ product }: ProductQAProps) {
               </span>
               <div>
                 <h5 className="text-sm font-semibold text-zinc-900">{item.question}</h5>
-                <span className="text-[11px] text-zinc-400">
+                <span className="text-[11px] text-zinc-800 font-semibold">
                   Asked by {item.askedBy} • {item.date}
                 </span>
               </div>
@@ -93,12 +93,12 @@ export default function ProductQA({ product }: ProductQAProps) {
             {/* Answer */}
             {item.answer && (
               <div className="flex items-start gap-3 pl-9">
-                <span className="w-6 h-6 rounded-full bg-zinc-900 text-white font-bold text-xs flex items-center justify-center shrink-0">
+                <span className="w-6 h-6 rounded-full bg-zinc-50 text-zinc-900 font-bold font-bold text-xs flex items-center justify-center shrink-0">
                   A
                 </span>
                 <div className="p-3.5 rounded-2xl bg-zinc-50 border border-zinc-200 flex-1">
-                  <p className="text-xs text-zinc-700 leading-relaxed">{item.answer}</p>
-                  <div className="flex items-center gap-1.5 text-[11px] text-zinc-500 font-medium mt-2">
+                  <p className="text-xs text-zinc-800 font-bold leading-relaxed">{item.answer}</p>
+                  <div className="flex items-center gap-1.5 text-[11px] text-zinc-800 font-semibold font-medium font-medium mt-2">
                     <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
                     <span>Answered by {item.answeredBy}</span>
                     <span>•</span>
@@ -119,7 +119,7 @@ export default function ProductQA({ product }: ProductQAProps) {
               <h3 className="text-base font-bold text-zinc-900">Ask the Engineering Team</h3>
               <button
                 onClick={() => setIsModalOpen(false)}
-                className="p-1 rounded-full text-zinc-400 hover:text-black"
+                className="p-1 rounded-full text-zinc-800 font-semibold hover:text-black"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -127,7 +127,7 @@ export default function ProductQA({ product }: ProductQAProps) {
 
             <form onSubmit={handleAskQuestion} className="space-y-4 pt-4 text-xs">
               <div>
-                <label className="font-bold text-zinc-700 block mb-1">Your Name</label>
+                <label className="font-bold text-zinc-800 font-bold block mb-1">Your Name</label>
                 <input
                   type="text"
                   value={askerName}
@@ -139,7 +139,7 @@ export default function ProductQA({ product }: ProductQAProps) {
               </div>
 
               <div>
-                <label className="font-bold text-zinc-700 block mb-1">Your Question</label>
+                <label className="font-bold text-zinc-800 font-bold block mb-1">Your Question</label>
                 <textarea
                   value={questionText}
                   onChange={(e) => setQuestionText(e.target.value)}
@@ -154,13 +154,13 @@ export default function ProductQA({ product }: ProductQAProps) {
                 <button
                   type="button"
                   onClick={() => setIsModalOpen(false)}
-                  className="px-4 py-2.5 rounded-xl text-zinc-600 hover:text-zinc-900 font-semibold"
+                  className="px-4 py-2.5 rounded-xl text-zinc-800 font-semibold hover:text-zinc-900 font-semibold"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="px-6 py-2.5 rounded-xl bg-zinc-900 text-white font-bold uppercase tracking-wider hover:bg-black transition-colors cursor-pointer"
+                  className="px-6 py-2.5 rounded-xl bg-zinc-50 text-white font-bold uppercase tracking-wider hover:bg-black transition-colors cursor-pointer"
                 >
                   Send Inquiry
                 </button>

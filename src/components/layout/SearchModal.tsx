@@ -86,11 +86,11 @@ export default function SearchModal() {
   return (
     <div className="fixed inset-0 z-50 flex items-start justify-center pt-10 sm:pt-20 px-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200">
       <div
-        className="w-full max-w-2xl bg-zinc-900 border border-zinc-800 rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[85vh] text-white"
+        className="w-full max-w-2xl bg-zinc-50 border border-zinc-200 rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[85vh] text-zinc-900 font-bold"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Search Input Bar */}
-        <div className="flex items-center gap-3 px-5 py-4 border-b border-zinc-800">
+        <div className="flex items-center gap-3 px-5 py-4 border-b border-zinc-200">
           <Search className="w-5 h-5 text-orange-500 shrink-0" />
           <input
             ref={inputRef}
@@ -98,32 +98,32 @@ export default function SearchModal() {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search kicks, hoodies, tees, Dunks, Jordan..."
-            className="w-full bg-transparent text-white placeholder:text-zinc-500 text-sm md:text-base font-medium focus:outline-none"
+            className="w-full bg-transparent text-zinc-900 font-bold placeholder:text-zinc-800 font-semibold font-medium text-sm md:text-base font-medium focus:outline-none"
           />
           {query && (
             <button
               onClick={() => setQuery('')}
-              className="p-1 rounded-full text-zinc-400 hover:text-white transition-colors"
+              className="p-1 rounded-full text-zinc-800 font-semibold hover:text-zinc-900 font-bold transition-colors"
             >
               <X className="w-4 h-4" />
             </button>
           )}
           <button
             onClick={() => setIsSearchModalOpen(false)}
-            className="text-[11px] font-mono px-2 py-1 rounded bg-zinc-800 text-zinc-400 hover:text-white transition-colors"
+            className="text-[11px] font-mono px-2 py-1 rounded bg-zinc-100 text-zinc-800 font-semibold hover:text-zinc-900 font-bold transition-colors"
           >
             ESC
           </button>
         </div>
 
         {/* Category Pills */}
-        <div className="flex items-center gap-2 px-5 py-3 border-b border-zinc-800/80 overflow-x-auto text-xs">
+        <div className="flex items-center gap-2 px-5 py-3 border-b border-zinc-200/80 overflow-x-auto text-xs">
           <button
             onClick={() => setSelectedCategory('all')}
             className={`px-3 py-1 rounded-full whitespace-nowrap transition-colors ${
               selectedCategory === 'all'
                 ? 'bg-orange-500 text-white font-bold'
-                : 'bg-zinc-800 text-zinc-400 hover:text-white'
+                : 'bg-zinc-100 text-zinc-600 hover:text-white'
             }`}
           >
             All Drops
@@ -135,7 +135,7 @@ export default function SearchModal() {
               className={`px-3 py-1 rounded-full whitespace-nowrap transition-colors ${
                 selectedCategory === c.slug
                   ? 'bg-orange-500 text-white font-bold'
-                  : 'bg-zinc-800 text-zinc-400 hover:text-white'
+                  : 'bg-zinc-100 text-zinc-600 hover:text-white'
               }`}
             >
               {c.name}
@@ -148,7 +148,7 @@ export default function SearchModal() {
           {/* Popular searches suggestions */}
           {!query.trim() && (
             <div>
-              <div className="flex items-center gap-1.5 text-xs font-mono uppercase tracking-widest text-zinc-400 font-bold mb-3">
+              <div className="flex items-center gap-1.5 text-xs font-mono uppercase tracking-widest text-zinc-800 font-semibold font-bold mb-3">
                 <Flame className="w-3.5 h-3.5 text-orange-500" />
                 <span>Trending Searches</span>
               </div>
@@ -157,7 +157,7 @@ export default function SearchModal() {
                   <button
                     key={term}
                     onClick={() => handleSelectTag(term)}
-                    className="px-3 py-1.5 rounded-lg bg-zinc-800/80 hover:bg-zinc-800 border border-zinc-700/60 text-xs text-zinc-300 hover:text-orange-400 transition-colors cursor-pointer"
+                    className="px-3 py-1.5 rounded-lg bg-zinc-100/80 hover:bg-zinc-100 border border-zinc-300/60 text-xs text-zinc-800 font-bold hover:text-orange-600 font-bold transition-colors cursor-pointer"
                   >
                     {term}
                   </button>
@@ -168,13 +168,13 @@ export default function SearchModal() {
 
           {/* Results list */}
           <div>
-            <div className="flex items-center justify-between text-xs font-mono uppercase tracking-widest text-zinc-400 font-bold mb-3">
+            <div className="flex items-center justify-between text-xs font-mono uppercase tracking-widest text-zinc-800 font-semibold font-bold mb-3">
               <span>{query.trim() ? `Found ${filteredProducts.length} Results` : 'Recommended Drops'}</span>
               {filteredProducts.length > 0 && query.trim() && (
                 <Link
                   href={`/shop?q=${encodeURIComponent(query.trim())}`}
                   onClick={() => setIsSearchModalOpen(false)}
-                  className="text-orange-400 hover:underline flex items-center gap-1 text-[11px]"
+                  className="text-orange-600 font-bold hover:underline flex items-center gap-1 text-[11px]"
                 >
                   View All in Catalog <ArrowRight className="w-3 h-3" />
                 </Link>
@@ -182,7 +182,7 @@ export default function SearchModal() {
             </div>
 
             {filteredProducts.length === 0 ? (
-              <div className="text-center py-12 text-zinc-500 text-sm">
+              <div className="text-center py-12 text-zinc-800 font-semibold font-medium text-sm">
                 No matching streetwear found for "{query}". Try searching for Jordan, Dunks, Stussy, or Essentials.
               </div>
             ) : (
@@ -191,7 +191,7 @@ export default function SearchModal() {
                   <div
                     key={p.id}
                     onClick={() => handleSelectProduct(p.slug)}
-                    className="group flex items-center gap-3 p-3 rounded-xl bg-zinc-800/50 hover:bg-zinc-800 border border-zinc-800/80 hover:border-orange-500/50 transition-all cursor-pointer"
+                    className="group flex items-center gap-3 p-3 rounded-xl bg-zinc-100/50 hover:bg-zinc-100 border border-zinc-200/80 hover:border-orange-500/50 transition-all cursor-pointer"
                   >
                     <div className="relative w-14 h-14 rounded-lg overflow-hidden bg-black shrink-0">
                       <Image
@@ -202,16 +202,16 @@ export default function SearchModal() {
                       />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <span className="text-[10px] font-mono uppercase tracking-wider text-orange-400 font-bold block truncate">
+                      <span className="text-[10px] font-mono uppercase tracking-wider text-orange-600 font-bold font-bold block truncate">
                         {p.brand}
                       </span>
-                      <h4 className="text-xs font-bold text-white group-hover:text-orange-400 truncate transition-colors">
+                      <h4 className="text-xs font-bold text-zinc-900 font-bold group-hover:text-orange-600 font-bold truncate transition-colors">
                         {p.name}
                       </h4>
                       <div className="flex items-center gap-2 mt-1">
-                        <span className="text-xs font-black text-white">{formatPrice(p.price)}</span>
+                        <span className="text-xs font-black text-zinc-900 font-bold">{formatPrice(p.price)}</span>
                         {p.compareAtPrice && (
-                          <span className="text-[10px] text-zinc-500 line-through">
+                          <span className="text-[10px] text-zinc-800 font-semibold font-medium line-through">
                             {formatPrice(p.compareAtPrice)}
                           </span>
                         )}
@@ -225,12 +225,12 @@ export default function SearchModal() {
         </div>
 
         {/* Modal Bottom Bar */}
-        <div className="px-5 py-3 bg-zinc-950 border-t border-zinc-800 flex items-center justify-between text-[11px] text-zinc-500">
+        <div className="px-5 py-3 bg-white border-t border-zinc-200 flex items-center justify-between text-[11px] text-zinc-800 font-semibold font-medium">
           <span>Tip: Press ESC anytime to exit</span>
           <Link
             href="/shop"
             onClick={() => setIsSearchModalOpen(false)}
-            className="text-orange-400 hover:text-orange-300 font-bold flex items-center gap-1"
+            className="text-orange-600 font-bold hover:text-orange-300 font-bold flex items-center gap-1"
           >
             Explore Complete Lookbook <ArrowRight className="w-3 h-3" />
           </Link>

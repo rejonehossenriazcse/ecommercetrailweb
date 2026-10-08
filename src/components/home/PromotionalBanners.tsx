@@ -10,23 +10,23 @@ export default function PromotionalBanners() {
     <section className="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Banner 1 */}
-        <div className="group relative h-96 rounded-3xl overflow-hidden bg-zinc-950 text-white shadow-xl card-hover-lift">
+        <div className="group relative h-96 rounded-3xl overflow-hidden bg-white text-zinc-900 font-bold shadow-xl card-hover-lift">
           <Image
             src="https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&w=1000&q=80"
             alt="Technical Outerwear"
             fill
             className="object-cover group-hover:scale-105 transition-transform duration-700 opacity-60"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-zinc-950/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-white/40 to-transparent" />
 
           <div className="absolute inset-0 p-8 sm:p-10 flex flex-col justify-end">
             <span className="text-xs font-mono font-semibold uppercase tracking-widest text-amber-400 mb-2">
               Autumn Transit Lookbook
             </span>
-            <h3 className="text-2xl sm:text-3xl font-black text-white leading-tight">
+            <h3 className="text-2xl sm:text-3xl font-black text-zinc-900 font-bold leading-tight">
               3-Layer GORE-TEX & Merino Thermals
             </h3>
-            <p className="text-xs sm:text-sm text-zinc-300 mt-2 max-w-md">
+            <p className="text-xs sm:text-sm text-zinc-800 font-bold mt-2 max-w-md">
               Engineered for extreme sub-zero city climates and alpine ascents with taped seams and RECCO reflectors.
             </p>
             <div className="pt-4">
@@ -42,23 +42,23 @@ export default function PromotionalBanners() {
         </div>
 
         {/* Banner 2 */}
-        <div className="group relative h-96 rounded-3xl overflow-hidden bg-zinc-950 text-white shadow-xl card-hover-lift">
+        <div className="group relative h-96 rounded-3xl overflow-hidden bg-white text-zinc-900 font-bold shadow-xl card-hover-lift">
           <Image
             src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1000&q=80"
             alt="Mechanical Horology"
             fill
             className="object-cover group-hover:scale-105 transition-transform duration-700 opacity-60"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-zinc-950/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-white/40 to-transparent" />
 
           <div className="absolute inset-0 p-8 sm:p-10 flex flex-col justify-end">
             <span className="text-xs font-mono font-semibold uppercase tracking-widest text-amber-400 mb-2">
               Horological Archive
             </span>
-            <h3 className="text-2xl sm:text-3xl font-black text-white leading-tight">
+            <h3 className="text-2xl sm:text-3xl font-black text-zinc-900 font-bold leading-tight">
               Swiss Calibre V-88 Automatics
             </h3>
-            <p className="text-xs sm:text-sm text-zinc-300 mt-2 max-w-md">
+            <p className="text-xs sm:text-sm text-zinc-800 font-bold mt-2 max-w-md">
               Forged from Grade 5 titanium with sapphire crystal display backs and 68-hour power reserves.
             </p>
             <div className="pt-4">

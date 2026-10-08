@@ -29,7 +29,7 @@ export default function ToastContainer() {
         return (
           <div
             key={toast.id}
-            className={`pointer-events-auto flex items-center justify-between gap-3 p-4 rounded-xl bg-zinc-900 text-white shadow-2xl border ${borderClass} animate-in fade-in slide-in-from-bottom-3 duration-200`}
+            className={`pointer-events-auto flex items-center justify-between gap-3 p-4 rounded-xl bg-zinc-50 text-white shadow-2xl border ${borderClass} animate-in fade-in slide-in-from-bottom-3 duration-200`}
           >
             <div className="flex items-center gap-3">
               {icon}
@@ -37,7 +37,7 @@ export default function ToastContainer() {
             </div>
             <button
               onClick={() => removeToast(toast.id)}
-              className="text-zinc-400 hover:text-white transition-colors p-1"
+              className="text-zinc-800 font-semibold hover:text-zinc-900 font-bold transition-colors p-1"
               aria-label="Close notification"
             >
               <X className="w-4 h-4" />

@@ -7,7 +7,7 @@ export default function Loading() {
         <div className="absolute inset-0 rounded-full border-2 border-zinc-200"></div>
         <div className="absolute inset-0 rounded-full border-2 border-zinc-950 border-t-transparent animate-spin"></div>
       </div>
-      <p className="text-xs font-mono font-bold uppercase tracking-widest text-zinc-400 animate-pulse">
+      <p className="text-xs font-mono font-bold uppercase tracking-widest text-zinc-800 font-semibold animate-pulse">
         Synchronizing Atelier Feed...
       </p>
     </div>

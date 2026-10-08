@@ -68,7 +68,7 @@ export default function ContactPage() {
         <h1 className="text-3xl sm:text-5xl font-black text-zinc-950 tracking-tight font-serif">
           Atelier Concierge & Advisory
         </h1>
-        <p className="text-sm sm:text-base text-zinc-600 leading-relaxed font-serif italic">
+        <p className="text-sm sm:text-base text-zinc-800 font-semibold leading-relaxed font-serif italic">
           Direct dialogue with our master watchmakers, acoustic engineers, and logistics directors across Zurich and Copenhagen.
         </p>
       </div>
@@ -84,7 +84,7 @@ export default function ContactPage() {
               <h3 className="text-2xl font-bold text-zinc-900 font-serif">
                 Inquiry Transmitted to Private Concierge
               </h3>
-              <p className="text-xs text-zinc-500 max-w-md mx-auto leading-relaxed">
+              <p className="text-xs text-zinc-800 font-semibold font-medium max-w-md mx-auto leading-relaxed">
                 {feedback}
               </p>
               <div className="pt-4">
@@ -94,7 +94,7 @@ export default function ContactPage() {
                     setSubmitted(false);
                     setMessage('');
                   }}
-                  className="px-5 py-2.5 rounded-xl bg-zinc-900 hover:bg-black text-white text-xs font-bold transition-colors cursor-pointer"
+                  className="px-5 py-2.5 rounded-xl bg-zinc-50 hover:bg-black text-white text-xs font-bold transition-colors cursor-pointer"
                 >
                   Send Another Inquiry
                 </button>
@@ -114,7 +114,7 @@ export default function ContactPage() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-bold text-zinc-700 mb-1">
+                  <label className="block text-xs font-bold text-zinc-800 font-bold mb-1">
                     Full Name <span className="text-rose-500">*</span>
                   </label>
                   <input
@@ -123,12 +123,12 @@ export default function ContactPage() {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="Marcus Vance"
-                    className="w-full px-4 py-2.5 rounded-xl border border-zinc-200 text-xs text-zinc-900 focus:outline-none focus:border-zinc-900"
+                    className="w-full px-4 py-2.5 rounded-xl border border-zinc-200 text-xs text-zinc-900 focus:outline-none focus:border-zinc-200"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-zinc-700 mb-1">
+                  <label className="block text-xs font-bold text-zinc-800 font-bold mb-1">
                     Email Address <span className="text-rose-500">*</span>
                   </label>
                   <input
@@ -137,14 +137,14 @@ export default function ContactPage() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="marcus.vance@collector.com"
-                    className="w-full px-4 py-2.5 rounded-xl border border-zinc-200 text-xs text-zinc-900 focus:outline-none focus:border-zinc-900"
+                    className="w-full px-4 py-2.5 rounded-xl border border-zinc-200 text-xs text-zinc-900 focus:outline-none focus:border-zinc-200"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-bold text-zinc-700 mb-1">
+                  <label className="block text-xs font-bold text-zinc-800 font-bold mb-1">
                     Telephone (Optional)
                   </label>
                   <input
@@ -152,12 +152,12 @@ export default function ContactPage() {
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                     placeholder="+1 (415) 555-0192"
-                    className="w-full px-4 py-2.5 rounded-xl border border-zinc-200 text-xs text-zinc-900 focus:outline-none focus:border-zinc-900"
+                    className="w-full px-4 py-2.5 rounded-xl border border-zinc-200 text-xs text-zinc-900 focus:outline-none focus:border-zinc-200"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-zinc-700 mb-1">
+                  <label className="block text-xs font-bold text-zinc-800 font-bold mb-1">
                     Consignment / Order # (Optional)
                   </label>
                   <input
@@ -165,19 +165,19 @@ export default function ContactPage() {
                     value={orderNumber}
                     onChange={(e) => setOrderNumber(e.target.value)}
                     placeholder="e.g. AUR-2026-9042"
-                    className="w-full px-4 py-2.5 rounded-xl border border-zinc-200 text-xs text-zinc-900 font-mono focus:outline-none focus:border-zinc-900"
+                    className="w-full px-4 py-2.5 rounded-xl border border-zinc-200 text-xs text-zinc-900 font-mono focus:outline-none focus:border-zinc-200"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-zinc-700 mb-1">
+                <label className="block text-xs font-bold text-zinc-800 font-bold mb-1">
                   Inquiry Nature
                 </label>
                 <select
                   value={subject}
                   onChange={(e) => setSubject(e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-xl border border-zinc-200 text-xs text-zinc-900 focus:outline-none focus:border-zinc-900"
+                  className="w-full px-4 py-2.5 rounded-xl border border-zinc-200 text-xs text-zinc-900 focus:outline-none focus:border-zinc-200"
                 >
                   <option value="Bespoke Horology Commission">Bespoke Horology Commission</option>
                   <option value="Showroom Private Appointment">Zurich / Copenhagen Showroom Viewing</option>
@@ -189,7 +189,7 @@ export default function ContactPage() {
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-zinc-700 mb-1">
+                <label className="block text-xs font-bold text-zinc-800 font-bold mb-1">
                   Message <span className="text-rose-500">*</span>
                 </label>
                 <textarea
@@ -198,14 +198,14 @@ export default function ContactPage() {
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   placeholder="Detail your requirements, desired timeframes, or specific designs..."
-                  className="w-full px-4 py-2.5 rounded-xl border border-zinc-200 text-xs text-zinc-900 focus:outline-none focus:border-zinc-900 leading-relaxed"
+                  className="w-full px-4 py-2.5 rounded-xl border border-zinc-200 text-xs text-zinc-900 focus:outline-none focus:border-zinc-200 leading-relaxed"
                 />
               </div>
 
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full py-3 rounded-2xl bg-zinc-900 hover:bg-black text-white text-xs font-bold uppercase tracking-wider transition-colors flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 shadow-md"
+                className="w-full py-3 rounded-2xl bg-zinc-50 hover:bg-black text-white text-xs font-bold uppercase tracking-wider transition-colors flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 shadow-md"
               >
                 {isSubmitting ? (
                   <span>Transmitting...</span>
@@ -222,26 +222,26 @@ export default function ContactPage() {
 
         {/* Global Showrooms & Vault Info */}
         <div className="lg:col-span-5 space-y-6">
-          <div className="p-6 sm:p-7 rounded-3xl bg-zinc-900 text-white border border-zinc-800 space-y-4">
+          <div className="p-6 sm:p-7 rounded-3xl bg-zinc-50 text-zinc-900 font-bold border border-zinc-200 space-y-4">
             <div className="flex items-center gap-2 text-amber-400 font-bold text-xs uppercase tracking-wider font-mono">
               <Building className="w-4 h-4" />
               <span>Zurich Vault & Cleanrooms</span>
             </div>
-            <div className="text-xs text-zinc-300 space-y-2 font-mono">
+            <div className="text-xs text-zinc-800 font-bold space-y-2 font-mono">
               <div className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-zinc-500 shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-zinc-800 font-semibold font-medium shrink-0 mt-0.5" />
                 <span>Bahnhofstrasse 48, 8001 Zürich, Switzerland</span>
               </div>
               <div className="flex items-center gap-2.5">
-                <Clock className="w-4 h-4 text-zinc-500 shrink-0" />
+                <Clock className="w-4 h-4 text-zinc-800 font-semibold font-medium shrink-0" />
                 <span>Monday – Friday: 09:00 – 18:30 CET</span>
               </div>
               <div className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-zinc-500 shrink-0" />
+                <Phone className="w-4 h-4 text-zinc-800 font-semibold font-medium shrink-0" />
                 <span>+41 44 211 88 00</span>
               </div>
               <div className="flex items-center gap-2.5">
-                <Mail className="w-4 h-4 text-zinc-500 shrink-0" />
+                <Mail className="w-4 h-4 text-zinc-800 font-semibold font-medium shrink-0" />
                 <span>concierge.zurich@aurastudios.com</span>
               </div>
             </div>
@@ -252,21 +252,21 @@ export default function ContactPage() {
               <Sparkles className="w-4 h-4 text-amber-600" />
               <span>Copenhagen Design Studio</span>
             </div>
-            <div className="text-xs text-zinc-600 space-y-2 font-mono">
+            <div className="text-xs text-zinc-800 font-semibold space-y-2 font-mono">
               <div className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-zinc-400 shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-zinc-800 font-semibold shrink-0 mt-0.5" />
                 <span>Bredgade 24, 1260 København K, Denmark</span>
               </div>
               <div className="flex items-center gap-2.5">
-                <Clock className="w-4 h-4 text-zinc-400 shrink-0" />
+                <Clock className="w-4 h-4 text-zinc-800 font-semibold shrink-0" />
                 <span>Tuesday – Saturday: 10:00 – 18:00 CET</span>
               </div>
               <div className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-zinc-400 shrink-0" />
+                <Phone className="w-4 h-4 text-zinc-800 font-semibold shrink-0" />
                 <span>+45 33 12 40 80</span>
               </div>
               <div className="flex items-center gap-2.5">
-                <Mail className="w-4 h-4 text-zinc-400 shrink-0" />
+                <Mail className="w-4 h-4 text-zinc-800 font-semibold shrink-0" />
                 <span>studio.cph@aurastudios.com</span>
               </div>
             </div>

@@ -227,7 +227,7 @@ export default function AdminProductsPage() {
             <button
               type="button"
               onClick={handleExportCSV}
-              className="px-3.5 py-2.5 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-white text-xs font-bold transition-colors flex items-center gap-1.5 cursor-pointer border border-zinc-700"
+              className="px-3.5 py-2.5 rounded-xl bg-zinc-100 hover:bg-zinc-200 text-zinc-900 font-bold text-xs font-bold transition-colors flex items-center gap-1.5 cursor-pointer border border-zinc-300"
             >
               <Download className="w-3.5 h-3.5 text-amber-400" />
               <span>Export CSV</span>
@@ -236,7 +236,7 @@ export default function AdminProductsPage() {
             <button
               type="button"
               onClick={() => setIsImportModalOpen(true)}
-              className="px-3.5 py-2.5 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-white text-xs font-bold transition-colors flex items-center gap-1.5 cursor-pointer border border-zinc-700"
+              className="px-3.5 py-2.5 rounded-xl bg-zinc-100 hover:bg-zinc-200 text-zinc-900 font-bold text-xs font-bold transition-colors flex items-center gap-1.5 cursor-pointer border border-zinc-300"
             >
               <Upload className="w-3.5 h-3.5 text-blue-400" />
               <span>Import (.JSON/.CSV)</span>
@@ -259,22 +259,22 @@ export default function AdminProductsPage() {
       />
 
       {/* Filter and Search Bar */}
-      <div className="flex flex-col sm:flex-row gap-3 p-4 rounded-2xl bg-[#14181f] border border-zinc-800/80">
+      <div className="flex flex-col sm:flex-row gap-3 p-4 rounded-2xl bg-[#14181f] border border-zinc-200/80">
         <div className="relative flex-1">
-          <Search className="w-4 h-4 text-zinc-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
+          <Search className="w-4 h-4 text-zinc-800 font-semibold font-medium absolute left-3.5 top-1/2 -translate-y-1/2" />
           <input
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search by name, SKU, or brand (Jordan, Supreme, Nike)..."
-            className="w-full pl-9 pr-4 py-2 rounded-xl bg-zinc-900 border border-zinc-800 text-xs text-white placeholder:text-zinc-500 focus:outline-none focus:ring-1 focus:ring-amber-400"
+            className="w-full pl-9 pr-4 py-2 rounded-xl bg-zinc-50 border border-zinc-200 text-xs text-zinc-900 font-bold placeholder:text-zinc-800 font-semibold font-medium focus:outline-none focus:ring-1 focus:ring-amber-400"
           />
         </div>
 
         <select
           value={selectedCategory}
           onChange={(e) => setSelectedCategory(e.target.value)}
-          className="px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-800 text-xs text-zinc-300 focus:outline-none focus:ring-1 focus:ring-amber-400 cursor-pointer"
+          className="px-3 py-2 rounded-xl bg-zinc-50 border border-zinc-200 text-xs text-zinc-800 font-bold focus:outline-none focus:ring-1 focus:ring-amber-400 cursor-pointer"
         >
           <option value="">All Categories</option>
           <option value="Sneakers">Sneakers</option>
@@ -285,10 +285,10 @@ export default function AdminProductsPage() {
       </div>
 
       {/* Products Table */}
-      <div className="rounded-3xl bg-[#14181f] border border-zinc-800/80 overflow-hidden shadow-sm">
+      <div className="rounded-3xl bg-[#14181f] border border-zinc-200/80 overflow-hidden shadow-sm">
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs">
-            <thead className="bg-[#0f1217] border-b border-zinc-800 text-zinc-400 font-bold uppercase tracking-wider">
+            <thead className="bg-[#0f1217] border-b border-zinc-200 text-zinc-800 font-semibold font-bold uppercase tracking-wider">
               <tr>
                 <th className="p-4">Product Item</th>
                 <th className="p-4">SKU</th>
@@ -299,31 +299,31 @@ export default function AdminProductsPage() {
                 <th className="p-4 text-right">Actions</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-zinc-800/60 text-zinc-300">
+            <tbody className="divide-y divide-zinc-200/60 text-zinc-800 font-bold">
               {filtered.map((product) => (
-                <tr key={product.id} className="hover:bg-zinc-800/30 transition-colors">
+                <tr key={product.id} className="hover:bg-zinc-100/30 transition-colors">
                   <td className="p-4">
                     <div className="flex items-center gap-3">
-                      <div className="relative w-12 h-12 rounded-xl overflow-hidden bg-zinc-800 shrink-0 border border-zinc-700/50">
+                      <div className="relative w-12 h-12 rounded-xl overflow-hidden bg-zinc-100 shrink-0 border border-zinc-300/50">
                         <Image src={product.thumbnail} alt={product.name} fill className="object-cover" />
                       </div>
                       <div>
-                        <div className="font-bold text-white line-clamp-1">{product.name}</div>
-                        <div className="text-[11px] text-zinc-500 font-mono">{product.brand}</div>
+                        <div className="font-bold text-zinc-900 font-bold line-clamp-1">{product.name}</div>
+                        <div className="text-[11px] text-zinc-800 font-semibold font-medium font-mono">{product.brand}</div>
                       </div>
                     </div>
                   </td>
 
-                  <td className="p-4 font-mono font-semibold text-zinc-400">{product.sku}</td>
+                  <td className="p-4 font-mono font-semibold text-zinc-800 font-semibold">{product.sku}</td>
 
                   <td className="p-4">{product.category}</td>
 
-                  <td className="p-4 font-mono font-bold text-white">
+                  <td className="p-4 font-mono font-bold text-zinc-900 font-bold">
                     ${product.price.toFixed(2)}
                   </td>
 
                   <td className="p-4 font-mono">
-                    <span className={product.stock <= 5 ? 'text-rose-400 font-bold' : 'text-zinc-300'}>
+                    <span className={product.stock <= 5 ? 'text-rose-400 font-bold' : 'text-zinc-700'}>
                       {product.stock} units
                     </span>
                   </td>
@@ -346,14 +346,14 @@ export default function AdminProductsPage() {
                     <div className="flex items-center justify-end gap-2">
                       <button
                         onClick={() => handleEditClick(product)}
-                        className="p-2 text-zinc-400 hover:text-amber-400 hover:bg-zinc-800 rounded-lg transition-colors cursor-pointer"
+                        className="p-2 text-zinc-800 font-semibold hover:text-amber-400 hover:bg-zinc-100 rounded-lg transition-colors cursor-pointer"
                         title="Edit product"
                       >
                         <Edit3 className="w-4 h-4" />
                       </button>
                       <button
                         onClick={() => handleDelete(product.id, product.name)}
-                        className="p-2 text-zinc-400 hover:text-rose-400 hover:bg-zinc-800 rounded-lg transition-colors cursor-pointer"
+                        className="p-2 text-zinc-800 font-semibold hover:text-rose-400 hover:bg-zinc-100 rounded-lg transition-colors cursor-pointer"
                         title="Delete product"
                       >
                         <Trash2 className="w-4 h-4" />
@@ -370,9 +370,9 @@ export default function AdminProductsPage() {
       {/* Add Product Modal */}
       {isAddModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm animate-in fade-in duration-200">
-          <div className="w-full max-w-xl bg-[#14181f] text-white rounded-3xl p-6 sm:p-8 border border-zinc-800 shadow-2xl max-h-[90vh] overflow-y-auto">
-            <div className="flex items-center justify-between pb-4 border-b border-zinc-800">
-              <h3 className="text-base font-bold text-white">
+          <div className="w-full max-w-xl bg-[#14181f] text-zinc-900 font-bold rounded-3xl p-6 sm:p-8 border border-zinc-200 shadow-2xl max-h-[90vh] overflow-y-auto">
+            <div className="flex items-center justify-between pb-4 border-b border-zinc-200">
+              <h3 className="text-base font-bold text-zinc-900 font-bold">
                 {editingProduct ? 'Edit Product' : 'Create New Product Drop'}
               </h3>
               <button
@@ -380,7 +380,7 @@ export default function AdminProductsPage() {
                   setIsAddModalOpen(false);
                   setEditingProduct(null);
                 }}
-                className="p-1 rounded-lg text-zinc-400 hover:text-white"
+                className="p-1 rounded-lg text-zinc-800 font-semibold hover:text-zinc-900 font-bold"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -388,34 +388,34 @@ export default function AdminProductsPage() {
 
             <form onSubmit={handleCreateProduct} className="space-y-4 pt-4 text-xs">
               <div>
-                <label className="font-bold text-zinc-300 block mb-1">Product Title</label>
+                <label className="font-bold text-zinc-800 font-bold block mb-1">Product Title</label>
                 <input
                   type="text"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   placeholder="e.g. Air Jordan 4 Retro 'Military Black'"
-                  className="w-full px-3.5 py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-white focus:outline-none focus:ring-1 focus:ring-amber-400"
+                  className="w-full px-3.5 py-2.5 rounded-xl bg-zinc-50 border border-zinc-200 text-zinc-900 font-bold focus:outline-none focus:ring-1 focus:ring-amber-400"
                   required
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="font-bold text-zinc-300 block mb-1">Brand / Label</label>
+                  <label className="font-bold text-zinc-800 font-bold block mb-1">Brand / Label</label>
                   <input
                     type="text"
                     value={formData.brand}
                     onChange={(e) => setFormData({ ...formData, brand: e.target.value })}
                     placeholder="e.g. Jordan, Nike, Supreme"
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-white focus:outline-none focus:ring-1 focus:ring-amber-400"
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-zinc-50 border border-zinc-200 text-zinc-900 font-bold focus:outline-none focus:ring-1 focus:ring-amber-400"
                   />
                 </div>
                 <div>
-                  <label className="font-bold text-zinc-300 block mb-1">Category</label>
+                  <label className="font-bold text-zinc-800 font-bold block mb-1">Category</label>
                   <select
                     value={formData.category}
                     onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-white focus:outline-none focus:ring-1 focus:ring-amber-400 cursor-pointer"
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-zinc-50 border border-zinc-200 text-zinc-900 font-bold focus:outline-none focus:ring-1 focus:ring-amber-400 cursor-pointer"
                   >
                     <option value="Sneakers">Sneakers</option>
                     <option value="Hoodies & Fleece">Hoodies & Fleece</option>
@@ -427,55 +427,55 @@ export default function AdminProductsPage() {
 
               <div className="grid grid-cols-3 gap-4">
                 <div>
-                  <label className="font-bold text-zinc-300 block mb-1">SKU</label>
+                  <label className="font-bold text-zinc-800 font-bold block mb-1">SKU</label>
                   <input
                     type="text"
                     value={formData.sku}
                     onChange={(e) => setFormData({ ...formData, sku: e.target.value })}
                     placeholder="e.g. AJ4-MIL-BLK"
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-white font-mono focus:outline-none focus:ring-1 focus:ring-amber-400"
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-zinc-50 border border-zinc-200 text-zinc-900 font-bold font-mono focus:outline-none focus:ring-1 focus:ring-amber-400"
                     required
                   />
                 </div>
                 <div>
-                  <label className="font-bold text-zinc-300 block mb-1">Price ($)</label>
+                  <label className="font-bold text-zinc-800 font-bold block mb-1">Price ($)</label>
                   <input
                     type="number"
                     value={formData.price}
                     onChange={(e) => setFormData({ ...formData, price: Number(e.target.value) })}
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-white font-mono focus:outline-none focus:ring-1 focus:ring-amber-400"
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-zinc-50 border border-zinc-200 text-zinc-900 font-bold font-mono focus:outline-none focus:ring-1 focus:ring-amber-400"
                     required
                   />
                 </div>
                 <div>
-                  <label className="font-bold text-zinc-300 block mb-1">Stock</label>
+                  <label className="font-bold text-zinc-800 font-bold block mb-1">Stock</label>
                   <input
                     type="number"
                     value={formData.stock}
                     onChange={(e) => setFormData({ ...formData, stock: Number(e.target.value) })}
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-white font-mono focus:outline-none focus:ring-1 focus:ring-amber-400"
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-zinc-50 border border-zinc-200 text-zinc-900 font-bold font-mono focus:outline-none focus:ring-1 focus:ring-amber-400"
                     required
                   />
                 </div>
               </div>
 
               <div>
-                <label className="font-bold text-zinc-300 block mb-1">High-Res Image URL</label>
+                <label className="font-bold text-zinc-800 font-bold block mb-1">High-Res Image URL</label>
                 <input
                   type="text"
                   value={formData.thumbnail}
                   onChange={(e) => setFormData({ ...formData, thumbnail: e.target.value })}
-                  className="w-full px-3.5 py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-white focus:outline-none focus:ring-1 focus:ring-amber-400"
+                  className="w-full px-3.5 py-2.5 rounded-xl bg-zinc-50 border border-zinc-200 text-zinc-900 font-bold focus:outline-none focus:ring-1 focus:ring-amber-400"
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="font-bold text-zinc-300 block mb-1">Product Type</label>
+                  <label className="font-bold text-zinc-800 font-bold block mb-1">Product Type</label>
                   <select
                     value={formData.type}
                     onChange={(e: any) => setFormData({ ...formData, type: e.target.value })}
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-white focus:outline-none focus:ring-1 focus:ring-amber-400 cursor-pointer"
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-zinc-50 border border-zinc-200 text-zinc-900 font-bold focus:outline-none focus:ring-1 focus:ring-amber-400 cursor-pointer"
                   >
                     <option value="simple">Standard Sneaker / Streetwear Item</option>
                     <option value="variable">Sized Footwear / Apparel (Multiple Sizes)</option>
@@ -487,24 +487,24 @@ export default function AdminProductsPage() {
 
                 {formData.type === 'digital' && (
                   <div>
-                    <label className="font-bold text-zinc-300 block mb-1">Digital Asset Download URL</label>
+                    <label className="font-bold text-zinc-800 font-bold block mb-1">Digital Asset Download URL</label>
                     <input
                       type="text"
                       value={formData.digitalFileUrl}
                       onChange={(e) => setFormData({ ...formData, digitalFileUrl: e.target.value })}
                       placeholder="https://assets.stridedistrict.com/downloads/lookbook.pdf"
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-white focus:outline-none focus:ring-1 focus:ring-amber-400"
+                      className="w-full px-3.5 py-2.5 rounded-xl bg-zinc-50 border border-zinc-200 text-zinc-900 font-bold focus:outline-none focus:ring-1 focus:ring-amber-400"
                     />
                   </div>
                 )}
 
                 {formData.type === 'subscription' && (
                   <div>
-                    <label className="font-bold text-zinc-300 block mb-1">Billing Interval</label>
+                    <label className="font-bold text-zinc-800 font-bold block mb-1">Billing Interval</label>
                     <select
                       value={formData.subscriptionInterval}
                       onChange={(e: any) => setFormData({ ...formData, subscriptionInterval: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-white focus:outline-none focus:ring-1 focus:ring-amber-400 cursor-pointer"
+                      className="w-full px-3.5 py-2.5 rounded-xl bg-zinc-50 border border-zinc-200 text-zinc-900 font-bold focus:outline-none focus:ring-1 focus:ring-amber-400 cursor-pointer"
                     >
                       <option value="monthly">Monthly Cycle</option>
                       <option value="quarterly">Quarterly Dispatch</option>
@@ -515,24 +515,24 @@ export default function AdminProductsPage() {
               </div>
 
               <div>
-                <label className="font-bold text-zinc-300 block mb-1">Short Description</label>
+                <label className="font-bold text-zinc-800 font-bold block mb-1">Short Description</label>
                 <textarea
                   value={formData.shortDescription}
                   onChange={(e) => setFormData({ ...formData, shortDescription: e.target.value })}
                   rows={3}
                   placeholder="Summary of materials, transducers, and design architecture..."
-                  className="w-full px-3.5 py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-white focus:outline-none focus:ring-1 focus:ring-amber-400"
+                  className="w-full px-3.5 py-2.5 rounded-xl bg-zinc-50 border border-zinc-200 text-zinc-900 font-bold focus:outline-none focus:ring-1 focus:ring-amber-400"
                 />
               </div>
 
-              <div className="pt-4 border-t border-zinc-800 flex justify-end gap-3">
+              <div className="pt-4 border-t border-zinc-200 flex justify-end gap-3">
                 <button
                   type="button"
                   onClick={() => {
                     setIsAddModalOpen(false);
                     setEditingProduct(null);
                   }}
-                  className="px-4 py-2 rounded-xl text-zinc-400 hover:text-white"
+                  className="px-4 py-2 rounded-xl text-zinc-800 font-semibold hover:text-zinc-900 font-bold"
                 >
                   Cancel
                 </button>
@@ -551,28 +551,28 @@ export default function AdminProductsPage() {
       {/* Bulk Catalog Import Modal */}
       {isImportModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in">
-          <div className="bg-[#14181f] text-white rounded-3xl w-full max-w-xl p-6 sm:p-8 border border-zinc-800 shadow-2xl relative">
+          <div className="bg-[#14181f] text-zinc-900 font-bold rounded-3xl w-full max-w-xl p-6 sm:p-8 border border-zinc-200 shadow-2xl relative">
             <button
               onClick={() => {
                 setIsImportModalOpen(false);
                 setImportResult('');
               }}
-              className="absolute top-6 right-6 p-2 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-zinc-400 hover:text-white"
+              className="absolute top-6 right-6 p-2 rounded-xl bg-zinc-100 hover:bg-zinc-200 text-zinc-800 font-semibold hover:text-white"
             >
               <X className="w-5 h-5" />
             </button>
 
             <div className="flex items-center gap-2 mb-2">
               <Upload className="w-5 h-5 text-blue-400" />
-              <h3 className="text-lg font-bold text-white">Bulk Catalog Import</h3>
+              <h3 className="text-lg font-bold text-zinc-900 font-bold">Bulk Catalog Import</h3>
             </div>
-            <p className="text-xs text-zinc-400 mb-4">
+            <p className="text-xs text-zinc-800 font-semibold mb-4">
               Paste catalog records in JSON format (array of objects) or CSV schema. Products with existing SKUs will be updated; new SKUs will be created.
             </p>
 
             <form onSubmit={handleImportSubmit} className="space-y-4">
               <div>
-                <label className="block text-xs font-mono text-zinc-300 mb-1">
+                <label className="block text-xs font-mono text-zinc-800 font-bold mb-1">
                   Catalog JSON Payload
                 </label>
                 <textarea
@@ -580,7 +580,7 @@ export default function AdminProductsPage() {
                   onChange={(e) => setImportJsonText(e.target.value)}
                   rows={8}
                   placeholder={`[\n  {\n    "sku": "AUR-IMP-01",\n    "name": "Beryllium Reference Amp",\n    "price": 890,\n    "category": "Audio & Acoustics",\n    "stock": 15\n  }\n]`}
-                  className="w-full p-3 bg-zinc-900 border border-zinc-800 rounded-xl text-xs font-mono text-white focus:outline-none focus:ring-1 focus:ring-blue-400"
+                  className="w-full p-3 bg-zinc-50 border border-zinc-200 rounded-xl text-xs font-mono text-zinc-900 font-bold focus:outline-none focus:ring-1 focus:ring-blue-400"
                   required
                 />
               </div>
@@ -597,17 +597,17 @@ export default function AdminProductsPage() {
                 </div>
               )}
 
-              <div className="flex justify-end gap-3 pt-2 border-t border-zinc-800">
+              <div className="flex justify-end gap-3 pt-2 border-t border-zinc-200">
                 <button
                   type="button"
                   onClick={() => setIsImportModalOpen(false)}
-                  className="px-4 py-2 rounded-xl text-zinc-400 hover:text-white text-xs font-bold"
+                  className="px-4 py-2 rounded-xl text-zinc-800 font-semibold hover:text-zinc-900 font-bold text-xs font-bold"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="px-6 py-2.5 rounded-xl bg-blue-500 hover:bg-blue-400 text-white text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer"
+                  className="px-6 py-2.5 rounded-xl bg-blue-500 hover:bg-blue-400 text-zinc-900 font-bold text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer"
                 >
                   Execute Bulk Import
                 </button>

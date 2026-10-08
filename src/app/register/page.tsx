@@ -87,7 +87,7 @@ export default function RegisterPage() {
         <h1 className="text-2xl sm:text-3xl font-black text-center text-zinc-900 tracking-tight mb-2">
           Create Patron Account
         </h1>
-        <p className="text-xs text-center text-zinc-500 mb-8 leading-relaxed">
+        <p className="text-xs text-center text-zinc-800 font-semibold font-medium mb-8 leading-relaxed">
           Join our global community of collectors and enjoy priority access to limited edition horology, acoustics, and optics.
         </p>
 
@@ -101,7 +101,7 @@ export default function RegisterPage() {
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-semibold text-zinc-700 mb-1.5 uppercase font-mono">
+              <label className="block text-xs font-semibold text-zinc-800 font-bold mb-1.5 uppercase font-mono">
                 First Name
               </label>
               <input
@@ -110,12 +110,12 @@ export default function RegisterPage() {
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
                 placeholder="Elena"
-                className="w-full px-4 py-2.5 rounded-xl bg-zinc-50 border border-zinc-200 text-zinc-900 placeholder-zinc-400 text-xs focus:outline-none focus:border-zinc-900 focus:bg-white transition-all"
+                className="w-full px-4 py-2.5 rounded-xl bg-zinc-50 border border-zinc-200 text-zinc-900 placeholder-zinc-400 text-xs focus:outline-none focus:border-zinc-200 focus:bg-white transition-all"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-zinc-700 mb-1.5 uppercase font-mono">
+              <label className="block text-xs font-semibold text-zinc-800 font-bold mb-1.5 uppercase font-mono">
                 Last Name
               </label>
               <input
@@ -124,50 +124,50 @@ export default function RegisterPage() {
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
                 placeholder="Rostova"
-                className="w-full px-4 py-2.5 rounded-xl bg-zinc-50 border border-zinc-200 text-zinc-900 placeholder-zinc-400 text-xs focus:outline-none focus:border-zinc-900 focus:bg-white transition-all"
+                className="w-full px-4 py-2.5 rounded-xl bg-zinc-50 border border-zinc-200 text-zinc-900 placeholder-zinc-400 text-xs focus:outline-none focus:border-zinc-200 focus:bg-white transition-all"
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-zinc-700 mb-1.5 uppercase font-mono">
+            <label className="block text-xs font-semibold text-zinc-800 font-bold mb-1.5 uppercase font-mono">
               Email Address
             </label>
             <div className="relative">
-              <Mail className="w-4 h-4 text-zinc-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+              <Mail className="w-4 h-4 text-zinc-800 font-semibold absolute left-3.5 top-1/2 -translate-y-1/2" />
               <input
                 type="email"
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="elena.rostova@studio.com"
-                className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-zinc-50 border border-zinc-200 text-zinc-900 placeholder-zinc-400 text-xs focus:outline-none focus:border-zinc-900 focus:bg-white transition-all"
+                className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-zinc-50 border border-zinc-200 text-zinc-900 placeholder-zinc-400 text-xs focus:outline-none focus:border-zinc-200 focus:bg-white transition-all"
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-zinc-700 mb-1.5 uppercase font-mono">
+            <label className="block text-xs font-semibold text-zinc-800 font-bold mb-1.5 uppercase font-mono">
               Telephone (For Dispatch Updates)
             </label>
             <div className="relative">
-              <Phone className="w-4 h-4 text-zinc-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+              <Phone className="w-4 h-4 text-zinc-800 font-semibold absolute left-3.5 top-1/2 -translate-y-1/2" />
               <input
                 type="tel"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 placeholder="+1 (415) 555-0192"
-                className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-zinc-50 border border-zinc-200 text-zinc-900 placeholder-zinc-400 text-xs focus:outline-none focus:border-zinc-900 focus:bg-white transition-all"
+                className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-zinc-50 border border-zinc-200 text-zinc-900 placeholder-zinc-400 text-xs focus:outline-none focus:border-zinc-200 focus:bg-white transition-all"
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-zinc-700 mb-1.5 uppercase font-mono">
+            <label className="block text-xs font-semibold text-zinc-800 font-bold mb-1.5 uppercase font-mono">
               Create Master Password
             </label>
             <div className="relative">
-              <Lock className="w-4 h-4 text-zinc-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+              <Lock className="w-4 h-4 text-zinc-800 font-semibold absolute left-3.5 top-1/2 -translate-y-1/2" />
               <input
                 type="password"
                 required
@@ -175,13 +175,13 @@ export default function RegisterPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="At least 8 characters"
-                className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-zinc-50 border border-zinc-200 text-zinc-900 placeholder-zinc-400 text-xs focus:outline-none focus:border-zinc-900 focus:bg-white transition-all"
+                className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-zinc-50 border border-zinc-200 text-zinc-900 placeholder-zinc-400 text-xs focus:outline-none focus:border-zinc-200 focus:bg-white transition-all"
               />
             </div>
           </div>
 
           <div className="pt-2">
-            <label className="flex items-start gap-2.5 text-xs text-zinc-600 cursor-pointer">
+            <label className="flex items-start gap-2.5 text-xs text-zinc-800 font-semibold cursor-pointer">
               <input
                 type="checkbox"
                 checked={consent}
@@ -205,7 +205,7 @@ export default function RegisterPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-3 rounded-xl bg-zinc-900 hover:bg-black text-white font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-md cursor-pointer disabled:opacity-50 mt-4"
+            className="w-full py-3 rounded-xl bg-zinc-50 hover:bg-black text-white font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-md cursor-pointer disabled:opacity-50 mt-4"
           >
             <span>Complete Registration & Claim 100 Pts</span>
             <ArrowRight className="w-4 h-4" />
@@ -213,7 +213,7 @@ export default function RegisterPage() {
         </form>
 
         {/* Footer */}
-        <div className="mt-8 pt-6 border-t border-zinc-100 text-center text-xs text-zinc-500">
+        <div className="mt-8 pt-6 border-t border-zinc-100 text-center text-xs text-zinc-800 font-semibold font-medium">
           Already registered as a Stride District member?{' '}
           <Link href="/login" className="font-bold text-zinc-900 hover:underline">
             Sign In Here

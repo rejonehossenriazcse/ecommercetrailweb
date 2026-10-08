@@ -63,12 +63,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} antialiased scroll-smooth dark`}>
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} antialiased scroll-smooth`}>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
       </head>
-      <body className="min-h-screen flex flex-col bg-zinc-950 text-zinc-100 font-sans selection:bg-orange-500 selection:text-white">
+      <body className="min-h-screen flex flex-col bg-white text-zinc-950 font-sans selection:bg-orange-500 selection:text-white">
         <StoreProvider>
           <StoreLayout>{children}</StoreLayout>
         </StoreProvider>

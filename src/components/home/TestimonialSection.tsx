@@ -10,13 +10,13 @@ export default function TestimonialSection() {
     <section className="py-16 sm:py-20 bg-zinc-50 border-t border-zinc-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-14">
-          <span className="text-xs font-mono font-semibold uppercase tracking-widest text-zinc-400">
+          <span className="text-xs font-mono font-semibold uppercase tracking-widest text-zinc-800 font-semibold">
             Collector Verification
           </span>
           <h2 className="text-2xl sm:text-3xl font-black text-zinc-900 tracking-tight mt-1.5">
             Endorsed by Discerning Architects & Engineers
           </h2>
-          <p className="text-xs sm:text-sm text-zinc-500 mt-2">
+          <p className="text-xs sm:text-sm text-zinc-800 font-semibold font-medium mt-2">
             Real feedback from verified purchasers across London, Tokyo, Zurich, and San Francisco.
           </p>
         </div>
@@ -27,7 +27,7 @@ export default function TestimonialSection() {
               key={t.id}
               className="bg-white rounded-3xl p-8 border border-zinc-200 shadow-sm flex flex-col justify-between card-hover-lift relative"
             >
-              <Quote className="absolute top-6 right-6 w-8 h-8 text-zinc-100 -z-0" />
+              <Quote className="absolute top-6 right-6 w-8 h-8 text-zinc-900 -z-0" />
 
               <div className="relative z-10 space-y-4">
                 <div className="flex text-amber-400">
@@ -35,7 +35,7 @@ export default function TestimonialSection() {
                     <Star key={i} className="w-4 h-4 fill-current" />
                   ))}
                 </div>
-                <p className="text-sm text-zinc-700 leading-relaxed italic">
+                <p className="text-sm text-zinc-800 font-bold leading-relaxed italic">
                   &ldquo;{t.quote}&rdquo;
                 </p>
               </div>
@@ -53,9 +53,9 @@ export default function TestimonialSection() {
                       </span>
                     )}
                   </div>
-                  <p className="text-[11px] text-zinc-500">{t.role} • {t.company}</p>
+                  <p className="text-[11px] text-zinc-800 font-semibold font-medium">{t.role} • {t.company}</p>
                   {t.productPurchased && (
-                    <p className="text-[10px] font-mono text-zinc-400 mt-0.5">Purchased: {t.productPurchased}</p>
+                    <p className="text-[10px] font-mono text-zinc-800 font-semibold mt-0.5">Purchased: {t.productPurchased}</p>
                   )}
                 </div>
               </div>

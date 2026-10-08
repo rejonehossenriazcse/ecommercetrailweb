@@ -14,11 +14,11 @@ export default function SocialGallery() {
     <section className="py-16 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-4">
         <div>
-          <div className="flex items-center gap-1.5 text-xs font-mono font-semibold uppercase tracking-widest text-orange-400 mb-2">
+          <div className="flex items-center gap-1.5 text-xs font-mono font-semibold uppercase tracking-widest text-orange-600 font-bold mb-2">
             <Camera className="w-3.5 h-3.5 text-orange-500" />
             <span>@STRIDEDISTRICT</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
+          <h2 className="text-2xl sm:text-3xl font-black text-zinc-900 font-bold tracking-tight">
             As Seen on the Streets
           </h2>
         </div>
@@ -26,7 +26,7 @@ export default function SocialGallery() {
           href="https://instagram.com"
           target="_blank"
           rel="noreferrer"
-          className="text-xs font-bold uppercase tracking-wider text-orange-400 hover:text-orange-300"
+          className="text-xs font-bold uppercase tracking-wider text-orange-600 font-bold hover:text-orange-300"
         >
           Tag #StrideDistrict to be featured
         </a>
@@ -49,7 +49,7 @@ export default function SocialGallery() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-4 text-white">
                 <div className="flex items-center justify-between text-xs">
-                  <span className="font-semibold text-zinc-200">{post.handle}</span>
+                  <span className="font-semibold text-zinc-800">{post.handle}</span>
                   <div className="flex items-center gap-1 text-xs">
                     <Heart className="w-3.5 h-3.5 fill-rose-500 text-rose-500" />
                     <span>{post.likes}</span>
@@ -57,7 +57,7 @@ export default function SocialGallery() {
                 </div>
 
                 <div>
-                  <p className="text-[11px] text-zinc-200 line-clamp-2 leading-relaxed mb-3">
+                  <p className="text-[11px] text-zinc-800 line-clamp-2 leading-relaxed mb-3">
                     {post.caption}
                   </p>
 

@@ -20,7 +20,7 @@ export default function HeroSlider() {
   const slide = HERO_SLIDES[currentSlide];
 
   return (
-    <div className="relative w-full h-[620px] sm:h-[680px] lg:h-[720px] overflow-hidden bg-zinc-950 text-white">
+    <div className="relative w-full h-[620px] sm:h-[680px] lg:h-[720px] overflow-hidden bg-white text-zinc-900 font-bold">
       {/* Background Slides */}
       {HERO_SLIDES.map((s, index) => (
         <div
@@ -37,8 +37,8 @@ export default function HeroSlider() {
             className="object-cover object-center scale-105 animate-in zoom-in-95 duration-10000"
           />
           {/* Subtle gradient overlays for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-zinc-950/90 via-zinc-950/60 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-zinc-950/30" />
+          <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/60 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-white/30" />
         </div>
       ))}
 
@@ -52,7 +52,7 @@ export default function HeroSlider() {
           </div>
 
           {/* Heading */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-none">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-zinc-900 font-bold leading-none">
             {slide.title} <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-100 via-zinc-300 to-zinc-500">
               {slide.highlightText}
@@ -60,7 +60,7 @@ export default function HeroSlider() {
           </h1>
 
           {/* Subtitle */}
-          <p className="text-sm sm:text-base text-zinc-300 leading-relaxed font-normal max-w-xl">
+          <p className="text-sm sm:text-base text-zinc-800 font-bold leading-relaxed font-normal max-w-xl">
             {slide.subtitle}
           </p>
 
@@ -77,7 +77,7 @@ export default function HeroSlider() {
             {slide.secondaryCtaText && slide.secondaryCtaLink && (
               <Link
                 href={slide.secondaryCtaLink}
-                className="px-6 py-4 rounded-2xl bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white text-xs font-bold uppercase tracking-wider transition-all cursor-pointer"
+                className="px-6 py-4 rounded-2xl bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-zinc-900 font-bold text-xs font-bold uppercase tracking-wider transition-all cursor-pointer"
               >
                 {slide.secondaryCtaText}
               </Link>
@@ -89,10 +89,10 @@ export default function HeroSlider() {
             <div className="pt-6 border-t border-white/15 grid grid-cols-3 gap-6 max-w-md">
               {slide.stats.map((st, i) => (
                 <div key={i}>
-                  <div className="text-xl sm:text-2xl font-black font-mono text-white">
+                  <div className="text-xl sm:text-2xl font-black font-mono text-zinc-900 font-bold">
                     {st.value}
                   </div>
-                  <div className="text-[11px] text-zinc-400 uppercase tracking-wider font-semibold">
+                  <div className="text-[11px] text-zinc-800 font-semibold uppercase tracking-wider font-semibold">
                     {st.label}
                   </div>
                 </div>
@@ -106,7 +106,7 @@ export default function HeroSlider() {
       <div className="absolute z-20 bottom-8 right-4 sm:right-8 flex items-center gap-3">
         <button
           onClick={() => setCurrentSlide((prev) => (prev - 1 + HERO_SLIDES.length) % HERO_SLIDES.length)}
-          className="p-3 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white transition-all cursor-pointer"
+          className="p-3 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-zinc-900 font-bold transition-all cursor-pointer"
           aria-label="Previous Slide"
         >
           <ChevronLeft className="w-5 h-5" />
@@ -128,7 +128,7 @@ export default function HeroSlider() {
 
         <button
           onClick={() => setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length)}
-          className="p-3 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white transition-all cursor-pointer"
+          className="p-3 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-zinc-900 font-bold transition-all cursor-pointer"
           aria-label="Next Slide"
         >
           <ChevronRight className="w-5 h-5" />

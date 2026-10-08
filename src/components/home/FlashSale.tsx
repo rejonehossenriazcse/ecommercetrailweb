@@ -45,32 +45,32 @@ export default function FlashSale({ products = [] }: { products?: Product[] }) {
             <h2 className="text-2xl sm:text-3xl font-black text-zinc-900 tracking-tight">
               Midnight Flash Release
             </h2>
-            <p className="text-xs sm:text-sm text-zinc-500 mt-1">
+            <p className="text-xs sm:text-sm text-zinc-800 font-semibold font-medium mt-1">
               Up to 30% off architectural flagships. Once inventory is claimed, prices revert.
             </p>
           </div>
 
           {/* Countdown Clock */}
           <div className="flex items-center gap-3">
-            <div className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-zinc-400 mr-1">
+            <div className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-zinc-800 font-semibold mr-1">
               <Clock className="w-4 h-4 text-rose-500" />
               <span className="hidden sm:inline">Ends In:</span>
             </div>
 
             <div className="flex items-center gap-1.5 font-mono">
-              <div className="flex flex-col items-center bg-zinc-900 text-white px-3 py-2 rounded-xl min-w-12 shadow-sm">
+              <div className="flex flex-col items-center bg-zinc-50 text-zinc-900 font-bold px-3 py-2 rounded-xl min-w-12 shadow-sm">
                 <span className="text-lg font-black">{String(timeLeft.hours).padStart(2, '0')}</span>
-                <span className="text-[9px] uppercase tracking-widest text-zinc-400">HRS</span>
+                <span className="text-[9px] uppercase tracking-widest text-zinc-800 font-semibold">HRS</span>
               </div>
-              <span className="text-zinc-400 font-bold">:</span>
-              <div className="flex flex-col items-center bg-zinc-900 text-white px-3 py-2 rounded-xl min-w-12 shadow-sm">
+              <span className="text-zinc-800 font-semibold font-bold">:</span>
+              <div className="flex flex-col items-center bg-zinc-50 text-zinc-900 font-bold px-3 py-2 rounded-xl min-w-12 shadow-sm">
                 <span className="text-lg font-black">{String(timeLeft.minutes).padStart(2, '0')}</span>
-                <span className="text-[9px] uppercase tracking-widest text-zinc-400">MIN</span>
+                <span className="text-[9px] uppercase tracking-widest text-zinc-800 font-semibold">MIN</span>
               </div>
-              <span className="text-zinc-400 font-bold">:</span>
+              <span className="text-zinc-800 font-semibold font-bold">:</span>
               <div className="flex flex-col items-center bg-rose-600 text-white px-3 py-2 rounded-xl min-w-12 shadow-sm">
                 <span className="text-lg font-black">{String(timeLeft.seconds).padStart(2, '0')}</span>
-                <span className="text-[9px] uppercase tracking-widest text-white/80">SEC</span>
+                <span className="text-[9px] uppercase tracking-widest text-zinc-900 font-bold/80">SEC</span>
               </div>
             </div>
           </div>
@@ -87,7 +87,7 @@ export default function FlashSale({ products = [] }: { products?: Product[] }) {
         <div className="mt-10 text-center">
           <Link
             href="/shop?filter=sale"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-zinc-900 hover:bg-black text-white text-xs font-bold uppercase tracking-wider transition-all shadow-md active:scale-95 cursor-pointer"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-zinc-50 hover:bg-black text-white text-xs font-bold uppercase tracking-wider transition-all shadow-md active:scale-95 cursor-pointer"
           >
             <span>View All Flash Allocations</span>
             <ArrowRight className="w-4 h-4" />

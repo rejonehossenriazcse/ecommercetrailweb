@@ -49,12 +49,12 @@ export default function FrequentlyBoughtTogether({ mainProduct }: FrequentlyBoug
   };
 
   return (
-    <div className="bg-zinc-900 rounded-3xl border border-zinc-800 p-6 sm:p-8 shadow-xl text-white">
-      <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-orange-400 mb-2">
+    <div className="bg-zinc-50 rounded-3xl border border-zinc-200 p-6 sm:p-8 shadow-xl text-zinc-900 font-bold">
+      <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-orange-600 font-bold mb-2">
         <Flame className="w-4 h-4" />
         <span>Complete The District Fit</span>
       </div>
-      <h3 className="text-xl sm:text-2xl font-black uppercase text-white tracking-tight mb-6">
+      <h3 className="text-xl sm:text-2xl font-black uppercase text-zinc-900 font-bold tracking-tight mb-6">
         Frequently Paired Together
       </h3>
 
@@ -67,7 +67,7 @@ export default function FrequentlyBoughtTogether({ mainProduct }: FrequentlyBoug
             return (
               <React.Fragment key={p.id}>
                 {idx > 0 && (
-                  <div className="w-8 h-8 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center text-zinc-400 text-sm font-bold">
+                  <div className="w-8 h-8 rounded-full bg-zinc-100 border border-zinc-300 flex items-center justify-center text-zinc-800 font-semibold text-sm font-bold">
                     +
                   </div>
                 )}
@@ -75,8 +75,8 @@ export default function FrequentlyBoughtTogether({ mainProduct }: FrequentlyBoug
                   onClick={() => !isMain && toggleSelect(p.id)}
                   className={`group relative w-32 sm:w-36 p-3 rounded-2xl border transition-all cursor-pointer ${
                     isSelected
-                      ? 'bg-zinc-950 border-orange-500 shadow-[0_0_15px_rgba(249,115,22,0.2)]'
-                      : 'bg-zinc-950/50 border-zinc-800 opacity-50 hover:opacity-100'
+                      ? 'bg-white border-orange-500 shadow-[0_0_15px_rgba(249,115,22,0.2)]'
+                      : 'bg-white/50 border-zinc-200 opacity-50 hover:opacity-100'
                   }`}
                 >
                   <div className="relative aspect-square w-full rounded-xl overflow-hidden bg-black mb-2">
@@ -88,16 +88,16 @@ export default function FrequentlyBoughtTogether({ mainProduct }: FrequentlyBoug
                     />
                     <div
                       className={`absolute top-2 right-2 w-5 h-5 rounded-full flex items-center justify-center text-xs ${
-                        isSelected ? 'bg-orange-500 text-white' : 'bg-zinc-800 border border-zinc-700'
+                        isSelected ? 'bg-orange-500 text-white' : 'bg-zinc-100 border border-zinc-300'
                       }`}
                     >
                       {isSelected && <Check className="w-3 h-3 stroke-[3]" />}
                     </div>
                   </div>
-                  <h4 className="text-[11px] font-bold text-white line-clamp-1 group-hover:text-orange-400 transition-colors">
+                  <h4 className="text-[11px] font-bold text-zinc-900 font-bold line-clamp-1 group-hover:text-orange-600 font-bold transition-colors">
                     {p.name}
                   </h4>
-                  <span className="text-xs font-mono font-bold text-orange-400">
+                  <span className="text-xs font-mono font-bold text-orange-600 font-bold">
                     {formatPrice(p.price)}
                   </span>
                 </div>
@@ -107,17 +107,17 @@ export default function FrequentlyBoughtTogether({ mainProduct }: FrequentlyBoug
         </div>
 
         {/* Pricing & Add to Bag CTA */}
-        <div className="lg:col-span-4 bg-zinc-950 p-6 rounded-2xl border border-zinc-800 space-y-4">
+        <div className="lg:col-span-4 bg-white p-6 rounded-2xl border border-zinc-200 space-y-4">
           <div>
-            <span className="text-[10px] font-mono uppercase tracking-wider text-zinc-400 block mb-1">
+            <span className="text-[10px] font-mono uppercase tracking-wider text-zinc-800 font-semibold block mb-1">
               Bundle Summary ({selectedItems.length} Items)
             </span>
             <div className="flex items-baseline gap-2">
-              <span className="text-2xl font-black text-white">
+              <span className="text-2xl font-black text-zinc-900 font-bold">
                 {formatPrice(finalBundlePrice)}
               </span>
               {hasBundleDiscount && (
-                <span className="text-xs text-zinc-500 line-through">
+                <span className="text-xs text-zinc-800 font-semibold font-medium line-through">
                   {formatPrice(rawTotal)}
                 </span>
               )}
