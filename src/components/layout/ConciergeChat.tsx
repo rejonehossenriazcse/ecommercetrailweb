@@ -32,12 +32,12 @@ export default function ConciergeChat() {
     {
       id: 'm-1',
       sender: 'concierge',
-      text: "Yo! I'm KAI, your streetwear concierge at Stride District. Need help with sizing, legit checks, order tracking, or upcoming hype drops?",
+      text: "Yo! I'm KAI, your streetwear concierge at Stride District. I can help you track orders, or even recommend the best products based on what you're looking for! What's on your mind?",
       timestamp: 'Just now',
       quickReplies: [
+        'Recommend me something',
+        'Show me some Jordans',
         'Check Order Delivery Status',
-        'Do Jordans & Dunks fit True To Size?',
-        'Authenticity & Legit Check Guarantee',
         'How do I use code STREET10?',
       ],
     },

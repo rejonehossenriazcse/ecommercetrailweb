@@ -48,7 +48,12 @@ export async function POST(req: Request) {
       quickReplies = ['Show me something else', 'How do I use code STREET10?', 'Check Order Delivery Status'];
     } else {
       // Fallbacks
-      if (lowerMsg.includes('order') || lowerMsg.includes('track') || lowerMsg.includes('delivery')) {
+      if (lowerMsg.includes('suggest') || lowerMsg.includes('recommend') || lowerMsg.includes('trending') || lowerMsg.includes('best') || lowerMsg.includes('hot')) {
+        const featured = products.filter(p => p.isFeatured || p.price > 200).slice(0, 3);
+        replyText = "Here are some of our most exclusive and trending pieces right now. These are flying off the shelves!";
+        topMatches.push(...featured);
+        quickReplies = ['Show me Jordans', 'How do I use code STREET10?'];
+      } else if (lowerMsg.includes('order') || lowerMsg.includes('track') || lowerMsg.includes('delivery')) {
         replyText = "You can track any package instantly using your Order ID. Tap below to launch our live tracker!";
         quickReplies = ['Open Order Tracker', 'Return Policy'];
       } else if (lowerMsg.includes('size') || lowerMsg.includes('fit') || lowerMsg.includes('jordan')) {
@@ -57,9 +62,12 @@ export async function POST(req: Request) {
       } else if (lowerMsg.includes('coupon') || lowerMsg.includes('discount')) {
         replyText = "Use promo code STREET10 at checkout to get 10% off your order! Plus, orders over $150 get Free Express Shipping!";
         quickReplies = ['Check Order Delivery Status', 'Sneaker Sizing Guide'];
+      } else if (lowerMsg.includes('hello') || lowerMsg.includes('hi') || lowerMsg.includes('hey')) {
+        replyText = "Yo! What's good? I'm KAI, your streetwear concierge. Tell me what kind of drip you're looking for (e.g. 'I need some fresh Jordans' or 'show me cheap hoodies'), and I'll hook you up!";
+        quickReplies = ['Recommend me something', 'Show me Jordans', 'Do Jordans fit True To Size?'];
       } else {
         replyText = "I couldn't find exact matches for that right now. We drop new grails every week. Want to browse all our newest arrivals or look for something specific like 'Jordans' or 'Hoodies'?";
-        quickReplies = ['Show me Jordans', 'Show me Hoodies', 'What is authentic guaranteed?'];
+        quickReplies = ['Recommend me something', 'Show me Jordans', 'What is authentic guaranteed?'];
       }
     }
 

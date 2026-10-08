@@ -95,6 +95,16 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
+  // Authentication Check
+  useEffect(() => {
+    if (pathname !== '/admin/login') {
+      const token = localStorage.getItem('stride_admin_token') || localStorage.getItem('aura_admin_token');
+      if (!token) {
+        window.location.href = '/admin/login';
+      }
+    }
+  }, [pathname]);
+
   // Allow standalone fullscreen for login page
   if (pathname === '/admin/login') {
     return <>{children}</>;

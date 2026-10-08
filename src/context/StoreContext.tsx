@@ -135,8 +135,8 @@ export function StoreProvider({ children }: { children: ReactNode }) {
   const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
   const [quickViewProduct, setQuickViewProduct] = useState<Product | null>(null);
   const [toasts, setToasts] = useState<ToastItem[]>([]);
-  const [customer, setCustomer] = useState<CustomerUser | null>(DEFAULT_DEMO_CUSTOMER);
-  const [isCustomerLoggedIn, setIsCustomerLoggedIn] = useState(true);
+  const [customer, setCustomer] = useState<CustomerUser | null>(null);
+  const [isCustomerLoggedIn, setIsCustomerLoggedIn] = useState(false);
 
   // Load initial stored states on browser mount
   useEffect(() => {
@@ -167,10 +167,13 @@ export function StoreProvider({ children }: { children: ReactNode }) {
 
       const storedCustomer = localStorage.getItem('stride_customer') || localStorage.getItem('aura_customer');
       if (storedCustomer) {
-        setCustomer(JSON.parse(storedCustomer));
-        setIsCustomerLoggedIn(true);
-      } else {
-        localStorage.setItem('stride_customer', JSON.stringify(DEFAULT_DEMO_CUSTOMER));
+        try {
+          const parsed = JSON.parse(storedCustomer);
+          if (parsed && Object.keys(parsed).length > 0) {
+            setCustomer(parsed);
+            setIsCustomerLoggedIn(true);
+          }
+        } catch (e) {}
       }
     } catch {
       // LocalStorage access issues in private mode
